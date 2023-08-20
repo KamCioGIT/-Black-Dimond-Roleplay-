@@ -1,0 +1,1 @@
+	['police-shield'] 			 	 = {['name'] = 'police-shield', 				['label'] = 'Police Shield', 			['weight'] = 10000, 	['type'] = 'item', 		['image'] = 'police-shield.png', 		['unique'] = true, 		['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A Shield for Police'},

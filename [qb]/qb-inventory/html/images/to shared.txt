@@ -1,0 +1,31 @@
+["burger-bleeder"] 				 = {["name"] = "burger-bleeder", 			 	["label"] = "Bleeder", 					["weight"] = 250, 		["type"] = "item", 		["image"] = "burger-bleeder.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "One of the finest will it kill you?"},
+	["burger-moneyshot"] 			 = {["name"] = "burger-moneyshot", 			 	["label"] = "Moneyshot", 				["weight"] = 300, 		["type"] = "item", 		["image"] = "burger-moneyshot.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Is there money in here?! ?"},
+	["burger-torpedo"] 				 = {["name"] = "burger-torpedo", 			 	["label"] = "Torpedo", 					["weight"] = 310, 		["type"] = "item", 		["image"] = "burger-torpedo.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Does this not belong in a submarine."},
+	["burger-heartstopper"] 		 = {["name"] = "burger-heartstopper", 			["label"] = "Heartstopper", 			["weight"] = 2500, 		["type"] = "item", 		["image"] = "burger-heartstopper.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "My heart can not handle this."},
+	["burger-softdrink"] 			 = {["name"] = "burger-softdrink", 				["label"] = "Soda Cup", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-softdrink.png", 	["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Take a sippie."},
+	["burger-coffee"] 			     = {["name"] = "burger-coffee", 				["label"] = "Cup of offee", 			["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-coffee.png", 	    ["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Watch it, hot!"},
+	["burger-fries"] 				 = {["name"] = "burger-fries", 			 	  	["label"] = "Fries", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-fries.png", 		["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Some nice fries"},
+	
+	["burger-bun"] 				 	 = {["name"] = "burger-bun", 			 	  	["label"] = "Burger Bun", 			["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-bun.png", 		    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Lekker warm en knapperig."},
+	["burger-meat"] 				 = {["name"] = "burger-meat", 			 	  	["label"] = "Burger Meat", 			["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-meat.png", 		    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Juicy meat."},
+	["burger-lettuce"] 				 = {["name"] = "burger-lettuce", 			 	["label"] = "Burger Lettuce", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-lettuce.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Looks like poison."},
+	
+	["burger-raw"] 				 	 = {["name"] = "burger-raw", 			 		["label"] = "Raw Meat", 				["weight"] = 125, 		["type"] = "item", 		["image"] = "burger-raw.png", 	        ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "You can not eat this yet..."},
+	["burger-potato"] 				 = {["name"] = "burger-potato", 			 	["label"] = "Raw Potatoe", 		["weight"] = 1500, 		["type"] = "item", 		["image"] = "burger-potato.png", 	    ["unique"] = false, 	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Potatoe or potatoe."},
+	
+	["burger-ticket"] 				 = {["name"] = "burger-ticket", 			 	["label"] = "Receipt", 	     	["weight"] = 150, 		["type"] = "item", 		["image"] = "burger-ticket.png", 	    ["unique"] = true,   	["useable"] = false, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "This contains a order that needs to be made!"},
+	["burger-box"] 				 	 = {["name"] = "burger-box", 			 	    ["label"] = "Burger Box", 	     	    ["weight"] = 1000, 		["type"] = "item", 		["image"] = "burger-box.png", 	        ["unique"] = true,   	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "There is some delicious stuff in here!"},
+	
+
+
+    ["burger"] = {
+		label = "Burgershot",
+		payment = 80,
+		grades = {
+            ['0'] = {
+                name = "Employee",
+                payment = 80
+			},
+		},
+		defaultDuty = true,
+	},

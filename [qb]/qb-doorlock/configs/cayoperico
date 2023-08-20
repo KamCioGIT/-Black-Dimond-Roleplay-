@@ -1,0 +1,15 @@
+
+
+-- 001 created by FiveM Store
+Config.DoorList['cayoperico-001'] = {
+    locked = true,
+    doors = {
+        {objName = -23367131, objYaw = 0.0, objCoords = vec3(4964.219726, -4830.154296, 5.741168)},
+        {objName = -1747016523, objYaw = 0.0, objCoords = vec3(4958.748046, -4830.153320, 5.744020)}
+    },
+    doorLabel = '001',
+    distance = 5,
+    doorRate = 1.0,
+    doorType = 'double',
+    items = { ['key1'] = 1 },
+}

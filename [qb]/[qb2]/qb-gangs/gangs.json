@@ -1,0 +1,17 @@
+{
+  "none": {
+    "label": "No Gang"
+  },
+  "mafia": {
+    "label": "Mafia"
+  },
+  "vagos": {
+    "label": "Vagos"
+  },
+  "cartel": {
+    "label": "Cartel"
+  },
+  "lostmc": {
+    "label": "The Lost MC"
+  }
+}

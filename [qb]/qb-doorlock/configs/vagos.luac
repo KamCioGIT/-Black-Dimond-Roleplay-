@@ -1,0 +1,73 @@
+
+
+-- 001 created by FiveM Store
+Config.DoorList['vagos-001'] = {
+    doorRate = 1.0,
+    distance = 3,
+    locked = true,
+    objYaw = 50.178722381592,
+    authorizedGangs = { ['vagos'] = 0 },
+    doorType = 'door',
+    fixText = false,
+    objName = -5479653,
+    objCoords = vec3(356.708160, -2031.036500, 22.486494),
+    doorLabel = '001',
+}
+
+-- 002 created by FiveM Store
+Config.DoorList['vagos-002'] = {
+    doorType = 'double',
+    distance = 3,
+    locked = true,
+    doors = {
+        {objName = 1349340477, objYaw = 319.99993896484, objCoords = vec3(353.319732, -2035.506348, 22.523308)},
+        {objName = 1349340477, objYaw = 140.0001525879, objCoords = vec3(352.915008, -2035.108276, 22.523308)}
+    },
+    doorLabel = '002',
+    doorRate = 1.0,
+    authorizedGangs = { ['vagos'] = 0 },
+}
+
+
+-- 003 created by FiveM Store
+Config.DoorList['vagos-003'] = {
+    doorLabel = '003',
+    objCoords = vec3(360.626342, -2041.637208, 22.523306),
+    doorRate = 1.0,
+    fixText = false,
+    objYaw = 319.99993896484,
+    locked = true,
+    doorType = 'door',
+    objName = 1349340477,
+    distance = 4,
+    authorizedGangs = { ['vagos'] = 0 },
+}
+
+-- 005 created by FiveM Store
+Config.DoorList['vagos-005'] = {
+    distance = 3,
+    doorLabel = '005',
+    authorizedGangs = { ['vagos'] = 0 },
+    doorType = 'double',
+    locked = true,
+    doors = {
+        {objName = 1349340477, objYaw = 319.99993896484, objCoords = vec3(344.594636, -2028.184448, 22.523306)},
+        {objName = 1349340477, objYaw = 140.0001525879, objCoords = vec3(344.190278, -2027.786622, 22.523308)}
+    },
+    doorRate = 1.0,
+}
+
+
+-- 006 created by FiveM Store
+Config.DoorList['vagos-006'] = {
+    objCoords = vec3(336.539794, -2010.693482, 22.523308),
+    doorLabel = '006',
+    locked = true,
+    authorizedGangs = { ['vagos'] = 0 },
+    doorType = 'door',
+    distance = 2,
+    fixText = false,
+    objYaw = 230.00003051758,
+    doorRate = 1.0,
+    objName = 1349340477,
+}
