@@ -64,7 +64,7 @@ RegisterNetEvent('jim-mechanic:client:Paints:Apply', function(data)
 			spraying = false
 			updateCar(vehicle)
 			TriggerEvent("QBCore:Notify", Loc[Config.Lan]["paint"].installed, "success")
-			if Config.CosmeticRemoval then TriggerServerEvent("QBCore:Server:RemoveItem", 'paintcan', 1) TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['paintcan'], "remove", 1)
+			if Config.CosmeticRemoval then --[[ TriggerServerEvent("QBCore:Server:RemoveItem", 'paintcan', 1) TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items['paintcan'], "remove", 1) ]]
 			else TriggerEvent('jim-mechanic:client:Paints:Choose:Paint', data) end
 			emptyHands(playerPed)
 		end, function() -- Cancel
