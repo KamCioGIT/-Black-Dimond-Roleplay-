@@ -21,12 +21,12 @@ escrow_ignore {
 
 dependencies {
 	"/onesync",
-	---"mysql-async",
+	"mysql-async",
 	"kimi_callbacks"
 }
 
 server_scripts {
-	---"@mysql-async/lib/MySQL.lua",
+	"@mysql-async/lib/MySQL.lua",
 
 	"Log.lua",
 	"server/timerTasks.lua",
