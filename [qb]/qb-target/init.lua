@@ -201,6 +201,8 @@ Config.PolyZones = {
 }
 
 Config.TargetBones = {
+    
+    
 	["mechanic"] = {
         bones = {
             "door_dside_f",
