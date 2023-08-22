@@ -255,7 +255,7 @@ Config.TargetModels = {
         options = {
             {
                 type = "client",
-                event = "qb-clothingopen",
+                event = "qb-clothing:open",
                 label = "Buy Clothes",
             },
 			{
