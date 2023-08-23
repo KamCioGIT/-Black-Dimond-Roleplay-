@@ -760,8 +760,3 @@ RegisterNUICallback('engine', function()
     ToggleEngine(GetVehicle())
 	SetNuiFocus(false, false)
 end)
-
-
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
-    TriggerServerEvent('vehiclekeys:server:CheckOwnerExt')
-end)
