@@ -328,7 +328,7 @@ end
 RegisterNetEvent('vns_cs_wheel:winCar', function(vehicle, plate)
     QBCore.Functions.SpawnVehicle(vehicle, function(veh)
         TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
-        exports['LegacyFuel']:SetFuel(veh, 100)
+        exports['cdn-fuel']:SetFuel(veh, 100)
         SetVehicleNumberPlateText(veh, plate)
         SetEntityHeading(veh, Config.VehicleWinPos.w)
         SetEntityAsMissionEntity(veh, true, true)

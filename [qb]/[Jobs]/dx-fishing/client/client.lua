@@ -223,7 +223,7 @@ function SpawnFishBoat()
     }
     QBCore.Functions.SpawnVehicle('dinghy', function(vehicle)
         TaskWarpPedIntoVehicle(PlayerPedId(), vehicle, -1)
-        exports['LegacyFuel']:SetFuel(vehicle, 100.0)
+        exports['cdn-fuel']:SetFuel(vehicle, 100.0)
         TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(vehicle))
         SetVehicleEngineOn(vehicle, true, true)
         Citizen.Wait(100)

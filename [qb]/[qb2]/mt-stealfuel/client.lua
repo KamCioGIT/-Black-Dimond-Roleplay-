@@ -21,7 +21,7 @@ RegisterNetEvent('mt-stealfuel:client:RoubarCombustivel', function()
                 ClearPedTasks(PlayerPedId())
                 TriggerServerEvent('mt-stealfuel:server:DarJerryCan')
                 QBCore.Functions.Notify('You have robbed vehicle fuel!', 'success', 7500)
-                exports['LegacyFuel']:SetFuel(veiculo, 0)
+                exports['cdn-fuel']:SetFuel(veiculo, 0)
                 SetVehicleDoorShut(veiculo, 4, false, false)
             end)
         else

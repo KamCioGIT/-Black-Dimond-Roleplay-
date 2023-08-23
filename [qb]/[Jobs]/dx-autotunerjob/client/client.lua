@@ -1681,7 +1681,7 @@ AddEventHandler('CheckVehStatus', function()
     engineHealth = GetVehicleEngineHealth(veh)
     vehTemp = GetVehicleEngineTemperature(veh)
     bodyHealth = GetVehicleBodyHealth(veh)
-    fuelHealth = exports["LegacyFuel"]:GetFuel(veh)
+    fuelHealth = exports["cdn-fuel"]:GetFuel(veh)
     tankHealth = GetVehiclePetrolTankHealth(veh)
  
     exports['qb-menu']:openMenu({

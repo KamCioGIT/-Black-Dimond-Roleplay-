@@ -35,8 +35,8 @@ end
 Config.UseLegacyFuel = true -- true enabled -- false disabled
 
 Config.SetVehicleFuel = function(vehicle,fuel_level) -- you can change LegacyFuel export if you use another fuel system 
-    if Config.UseLegacyFuel then
-        return exports["LegacyFuel"]:SetFuel(vehicle, fuel_level)
+    if Config.Usecdn-fuel then
+        return exports["cdn-fuel"]:SetFuel(vehicle, fuel_level)
     else
         return SetVehicleFuelLevel(vehicle, fuel_level + 0.0)
     end

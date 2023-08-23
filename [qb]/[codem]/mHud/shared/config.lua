@@ -320,8 +320,8 @@ Config.SpeedometerRefreshRateTimes = {
 
 Config.Fuel = function(vehicle)
     if DoesEntityExist(vehicle) then
-        if GetResourceState('LegacyFuel') == 'started' then
-            return exports["LegacyFuel"]:GetFuel(vehicle)
+        if GetResourceState('cdn-fuel') == 'started' then
+            return exports["cdn-fuel"]:GetFuel(vehicle)
         end
         return GetVehicleFuelLevel(vehicle)
     end

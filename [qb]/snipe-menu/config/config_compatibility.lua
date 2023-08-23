@@ -37,7 +37,7 @@ Config.WeatherScript = "none" -- "none", "cd_easytime"
 -- ox is for ox-fuel
 -- cdn is for cdn-fuel
 -- other is for other fuel scripts (you need to configure in cl_vehicles_customise.lua)
-Config.Fuel = "legacy" -- "ps" "ox" "other", "cdn", "legacy"
+Config.Fuel = "cdn" -- "ps" "ox" "other", "cdn", "legacy"
 
 -- garage
 -- none is for default ESX or QBCore garage
