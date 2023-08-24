@@ -59,7 +59,7 @@ Config.DealershipLocations = {
     testDriveSpawn = vector4(-47.41, -1081.12, 26.74, 58.54),
     camera = {
       name = 'Car',
-      coords = vector4(471.2, -1996.61, 3.97, 324.23),
+      coords = vector4(-23.99, -1098.19, 26.5, 118.35),
       positions = {
         5,
         8,
@@ -100,7 +100,7 @@ Config.DealershipLocations = {
     testDriveSpawn = vector4(-1238.53, -331.73, 37.28, 24.5),
     camera = {
       name = 'Car',
-      coords = vector4(471.2, -1996.61, 3.97, 324.23),
+      coords = vector4(-23.99, -1098.19, 26.5, 118.35),
       positions = {
         5,
         8,

@@ -53,9 +53,10 @@ Config.classesBlacklist = {
 -- other vehicles that you do not want to save can be inserted here (use `MODELNAME` when you put 
 -- them in there)
 Config.vehiclesBlacklist = {
-	--`blista`,
-	--`firetruk`,
-	--`adder`,
+	`hauler`,
+	`phantom`,
+	`packer`,
+	`tanker`,
 }
 
 -- any plates from vehicles you do not want to save, go here (not case sensitive and can use 

@@ -13,13 +13,18 @@ local blips = {
     {title="House 9", colour=1, id=40, x = -348.51, y = 420.72, z = 111.02},
     {title="House 10", colour=1, id=40, x = -1571.68, y = 33.8, z = 59.29},
     {title="House 11", colour=1, id=40, x = -118.91, y = 986.15, z = 235.75},
-    {title="House 12", colour=1, id=40, x = 771.97, y = 3404.79, z = 62.68},
+    {title="Founder's Desert Mansion", colour=40, id=40, x = 771.97, y = 3404.79, z = 62.68},
     {title="House 13", colour=1, id=40, x = 3431.59, y = 4908.69, z = 36.0},
     {title="House 14", colour=1, id=40, x = 1260.15, y = -866.82, z = 75.39},
     {title="House 15", colour=1, id=40, x = 1609.88, y = -2610.98, z = 53.74},
     {title="House 16", colour=1, id=40, x = -1638.38, y = 402.45, z = 91.19},
     {title="House 17", colour=1, id=40, x = -252.11, y = 1044.21, z = 236.75},
     {title="House 18", colour=1, id=40, x = 244.74, y = 922.97, z = 210.91},
+    {title="Founder's Private Mansion", colour=40, id=40, x = -1639.77, y = 461.95, z = 138.53},
+    {title="Founder's Beach Mansion", colour=40, id=40, x = -2704.57, y = -94.5, z = 16.81},
+
+
+
 
  }
 
