@@ -3,7 +3,7 @@ Config.UseRadial = true
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- no integration yet, not sure if worth it
 
 Config.Shops = {
-    ['lscustoms'] = {
+    --[[ ['lscustoms'] = {
         ['job'] = 'mechanic', -- Unlocked for job role, comes from society
         ['zone'] = {
             ['shape'] = {
@@ -21,7 +21,7 @@ Config.Shops = {
         ['blipSprite'] = 72, -- Blip sprite
         ['blipColor'] = 46, -- Blip color
         ['blipCoords'] = vector3(-337.86, -136.35, 39.01) -- Blip coordinates
-    },
+    }, ]]
     ['bennys'] = {
         ['job'] = 'none', -- Unlocked for all, comes from player cash/bank
         ['zone'] = {
@@ -43,7 +43,7 @@ Config.Shops = {
         ['blipColor'] = 46, -- Blip color
         ['blipCoords'] = vector3(-211.73, -1325.28, 30.89) -- Blip coordinates
     },
-    ['harmony'] = {
+    --[[ ['harmony'] = {
         ['job'] = 'none',
         ['zone'] = {
             ['shape'] = {
@@ -97,7 +97,7 @@ Config.Shops = {
         ['blipSprite'] = 72, -- Blip sprite
         ['blipColor'] = 46, -- Blip color
         ['blipCoords'] = vector3(-1154.92, -2006.41, 13.18) -- Blip coordinates
-    },
+    }, ]]
 }
 
 Config.Pricing = {
