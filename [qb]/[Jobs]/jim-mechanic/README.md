@@ -493,7 +493,7 @@ NosBindings = {
 - When adding Nos to a vehicle there are three skillcheck script options available
 	- "qb-skillbar"
 	- "qb-lock"
-	- "ps-ui"
+	- "dx-ui"
 
 ### Config.explosiveFail
 - When `true` there is a `1 in 10` chance for when you fail the skillcheck for the tank to explode in the vehicle.

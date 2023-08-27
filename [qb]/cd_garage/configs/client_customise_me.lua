@@ -526,13 +526,13 @@ function Notification(notif_type, message)
                 exports['okokNotify']:Alert(L('garage'), message, 5000, 'error')
             end
         
-        elseif Config.Notification == 'ps-ui' then
+        elseif Config.Notification == 'dx-ui' then
             if notif_type == 1 then
-                exports['ps-ui']:Notify(message, 'success', 5000)
+                exports['dx-ui']:Notify(message, 'success', 5000)
             elseif notif_type == 2 then
-                exports['ps-ui']:Notify(message, 'primary', 5000)
+                exports['dx-ui']:Notify(message, 'primary', 5000)
             elseif notif_type == 3 then
-                exports['ps-ui']:Notify(message, 'error', 5000)
+                exports['dx-ui']:Notify(message, 'error', 5000)
             end
         
         elseif Config.Notification == 'ox_lib' then

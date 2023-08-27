@@ -1,18 +1,25 @@
-fx_version 'adamant'
+fx_version 'cerulean'
 game 'gta5'
-author 'FiveM Store'
-description 'Text UI for QBCore Framework'
-version '1.1.0'
 
-ui_page 'web/ui.html'
+description 'https://github.com/Project-Sloth/dx-ui'
+
+credits 'https://github.com/sharkiller/nopixel_minigame'
+
 
 client_scripts {
-	'client.lua',
+  'client/*.lua',
+}
+
+ui_page {
+  'html/index.html'
 }
 
 files {
-	'web/*.*'
+    'html/js/*.js',
+    'html/index.html',
+    'html/style.css',
 }
 
-export 'Open'
-export 'Close'
+exports {
+  "circle"
+}

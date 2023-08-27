@@ -124,3 +124,14 @@ QBCore.Commands.Add("removekeys", Lang:t("addcom.rkeys"), {{name = Lang:t("addco
     end
     RemoveKeys(tonumber(args[1]), args[2])
 end, 'admin')
+RegisterNetEvent('vehiclekeys:server:CheckOwnerExt', function()
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    exports.oxmysql:execute('SELECT citizenid, plate FROM player_vehicles WHERE citizenid = ?', {Player.PlayerData.citizenid}, function(result)
+        if #result > 0 then
+            for i = 1, #result do
+                TriggerClientEvent('vehiclekeys:client:SetOwner', src, result[i].plate)
+            end
+        end
+    end)
+end)

@@ -17,7 +17,7 @@ function L(cd) if Locales[Config.Language][cd] then return Locales[Config.Langua
 Config.Framework = 'auto_detect' --[ 'auto_detect' / 'other' ]   If you select 'auto_detect', only ESX and QBCore frameworks will be detected. Use 'other' for custom frameworks.
 Config.Database = 'auto_detect' --[ 'auto_detect' ]   If you select 'auto_detect', only MySQL, GHMattimysql, and Oxmysql SQL database resources will be detected.
 Config.AutoInsertSQL = true --Would you like the script to insert the necessary SQL tables into your database automatically? If you have already done this, please set it to false.
-Config.Notification = 'auto_detect' --[ 'auto_detect' / 'other' ]   If you select 'auto_detect', only ESX, QBCore, okokNotify, ps-ui and ox_lib notifications will be detected. Use 'other' for custom notification resources.
+Config.Notification = 'auto_detect' --[ 'auto_detect' / 'other' ]   If you select 'auto_detect', only ESX, QBCore, okokNotify, dx-ui and ox_lib notifications will be detected. Use 'other' for custom notification resources.
 Config.Language = 'EN' --[ 'EN' / 'CZ' / 'DE' / 'DK' / 'ES' / 'FI' / 'FR' / 'NL' / 'PT' / 'SE' / 'SK' ]   You can add your own locales to locales.lua, but be sure to update the Config.Language to match it.
 
 Config.FrameworkTriggers = {
@@ -875,19 +875,45 @@ Config.Locations = {
 ------------------------------HOUSE
 
 {
-    Garage_ID = 'r', --The very first car garage's `garage_id` must be the same as the default value of the `garage_id` in the database as when a vehicle is purchased it gets sent to this garage. You can change the garage id's to what ever you like but make sure to also change the default garage_id in the database.
+    Garage_ID = 'PrivateFounderGarage', --The very first car garage's `garage_id` must be the same as the default value of the `garage_id` in the database as when a vehicle is purchased it gets sent to this garage. You can change the garage id's to what ever you like but make sure to also change the default garage_id in the database.
     Type = 'car', --The type of vehicles which use this garage. ('car'/'boat'/'air').
     Dist = 10, --The distance that you can use this garage.
-    x_1 = -1238.36, y_1 = 820.96, z_1 = 193.38, --This is the location of the garage, where you press e to open for example.vector3(, , )
+    x_1 = -1683.91, y_1 = 472.15, z_1 = 130.29, --This is the location of the garage, where you press e to open for example.vector3(, , )
     EventName1 = 'cd_garage:QuickChoose', --DONT CHANGE THIS.
     EventName2 = 'cd_garage:EnterGarage', --DONT CHANGE THIS.
     Name = UIText, --You dont need to change this.
-    x_2 = -1229.92, y_2 = 817.45, z_2 = 193.38, h_2 = 99.45, --This is the location where the vehicle spawns.vector4(, , , )
+    x_2 = -1676.92, y_2 = 474.74, z_2 = 130.29, h_2 = 2.37, --This is the location where the vehicle spawns.vector4(, , , )
     EnableBlip = false, --If disabled, this garage blip will not show on the map.
     JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
     ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.
 },
 
+{
+    Garage_ID = 'DesertFounderGarage', --The very first car garage's `garage_id` must be the same as the default value of the `garage_id` in the database as when a vehicle is purchased it gets sent to this garage. You can change the garage id's to what ever you like but make sure to also change the default garage_id in the database.
+    Type = 'car', --The type of vehicles which use this garage. ('car'/'boat'/'air').
+    Dist = 10, --The distance that you can use this garage.
+    x_1 = 809.31, y_1 = 3411.22, z_1 = 61.8, --This is the location of the garage, where you press e to open for example.vector3(, , )
+    EventName1 = 'cd_garage:QuickChoose', --DONT CHANGE THIS.
+    EventName2 = 'cd_garage:EnterGarage', --DONT CHANGE THIS.
+    Name = UIText, --You dont need to change this.
+    x_2 = 811.69, y_2 = 3415.44, z_2 = 60.56, h_2 = 154.96, --This is the location where the vehicle spawns.vector4(, , , )
+    EnableBlip = false, --If disabled, this garage blip will not show on the map.
+    JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
+    ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.
+},
+{               
+    Garage_ID = 'r', --The very first car garage's `garage_id` must be the same as the default value of the `garage_id` in the database as when a vehicle is purchased it gets sent to this garage. You can change the garage id's to what ever you like but make sure to also change the default garage_id in the database.
+    Type = 'car', --The type of vehicles which use this garage. ('car'/'boat'/'air').
+    Dist = 10, --The distance that you can use this garage.
+    x_1 = -1679.49, y_1 = 33.2, z_1 = 63.55, --This is the location of the garage, where you press e to open for example.vector3(, , )
+    EventName1 = 'cd_garage:QuickChoose', --DONT CHANGE THIS.
+    EventName2 = 'cd_garage:EnterGarage', --DONT CHANGE THIS.
+    Name = UIText, --You dont need to change this.
+    x_2 = -1685.22, y_2 = 37.39, z_2 = 64.0, h_2 = 218.31, --This is the location where the vehicle spawns.vector4(, , , )
+    EnableBlip = true, --If disabled, this garage blip will not show on the map.
+    JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
+    ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.
+},
 
 
     {   --THIS IS A BOAT GARAGE, YOU CAN REMOVE OR ADD NEW BOAT GARAGES IF YOU WISH.
@@ -1039,8 +1065,8 @@ end
 if Config.Notification == 'auto_detect' then
     if GetResourceState('okokNotify') == 'started' then
         Config.Notification = 'okokNotify'
-    elseif GetResourceState('ps-ui') == 'started' then
-        Config.Notification = 'ps-ui'
+    elseif GetResourceState('dx-ui') == 'started' then
+        Config.Notification = 'dx-ui'
     elseif GetResourceState('ox_lib') == 'started' then
         Config.Notification = 'ox_lib'
     else

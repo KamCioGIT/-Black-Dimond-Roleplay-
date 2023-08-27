@@ -8,15 +8,12 @@ function QBCore.Functions.GetPlayerData(cb)
 end
 
 function QBCore.Functions.GetCoords(entity)
-    return vector4(GetEntityCoords(entity), GetEntityHeading(entity))
+    local coords = GetEntityCoords(entity)
+    return vector4(coords.x, coords.y, coords.z, GetEntityHeading(entity))
 end
 
-function QBCore.Functions.HasItem(item)
-    local p = promise.new()
-    QBCore.Functions.TriggerCallback('QBCore:HasItem', function(result)
-        p:resolve(result)
-    end, item)
-    return Citizen.Await(p)
+function QBCore.Functions.HasItem(items, amount)
+    return exports['qb-inventory']:HasItem(items, amount)
 end
 
 -- Utility
@@ -24,13 +21,8 @@ end
 function QBCore.Functions.DrawText(x, y, width, height, scale, r, g, b, a, text)
     -- Use local function instead
     SetTextFont(4)
-    SetTextProportional(0)
     SetTextScale(scale, scale)
     SetTextColour(r, g, b, a)
-    SetTextDropShadow(0, 0, 0, 0, 255)
-    SetTextEdge(2, 0, 0, 0, 255)
-    SetTextDropShadow()
-    SetTextOutline()
     SetTextEntry('STRING')
     AddTextComponentString(text)
     DrawText(x - width / 2, y - height / 2 + 0.005)
@@ -52,21 +44,6 @@ function QBCore.Functions.DrawText3D(x, y, z, text)
     ClearDrawOrigin()
 end
 
-QBCore.Functions.Draw2DText = function(x, y, text, scale)
-    SetTextFont(4)
-    SetTextProportional(7)
-    SetTextScale(scale, scale)
-    SetTextColour(255, 255, 255, 255)
-    SetTextDropShadow(0, 0, 0, 0,255)
-    SetTextDropShadow()
-    SetTextEdge(4, 0, 0, 0, 255)
-    SetTextOutline()
-    SetTextCentre(true)
-    SetTextEntry("STRING")
-    AddTextComponentString(text)
-    DrawText(x, y)
-end
-
 function QBCore.Functions.RequestAnimDict(animDict)
 	if HasAnimDictLoaded(animDict) then return end
 	RequestAnimDict(animDict)
@@ -76,8 +53,8 @@ function QBCore.Functions.RequestAnimDict(animDict)
 end
 
 function QBCore.Functions.PlayAnim(animDict, animName, upperbodyOnly, duration)
-    local flags = upperbodyOnly == true and 16 or 0
-    local runTime = duration ~= nil and duration or -1
+    local flags = upperbodyOnly and 16 or 0
+    local runTime = duration or -1
     QBCore.Functions.RequestAnimDict(animDict)
     TaskPlayAnim(PlayerPedId(), animDict, animName, 8.0, 1.0, runTime, flags, 0.0, false, false, true)
     RemoveAnimDict(animDict)
@@ -104,8 +81,8 @@ RegisterNUICallback('getNotifyConfig', function(_, cb)
 end)
 
 function QBCore.Functions.Notify(text, texttype, length)
-    if type(text) == "table" then
-        --[[local ttext = text.text or 'Placeholder'
+    --[[ if type(text) == "table" then
+        local ttext = text.text or 'Placeholder'
         local caption = text.caption or 'Placeholder'
         texttype = texttype or 'primary'
         length = length or 5000
@@ -115,36 +92,37 @@ function QBCore.Functions.Notify(text, texttype, length)
             length = length,
             text = ttext,
             caption = caption
-        })]]--
-
-        local ttext = text.text or 'Placeholder'
-        local caption = text.caption or 'Placeholder'
-        local ttype = texttype or 'info'
-        local length = length or 5000
-
-        exports['dx-notify']:Alert(caption, ttext, length, ttype)
+        })
     else
-        --[[texttype = texttype or 'primary'
+        texttype = texttype or 'primary'
         length = length or 5000
         SendNUIMessage({
             action = 'notify',
             type = texttype,
             length = length,
             text = text
-        })]]--
-
-        local ttype = texttype or 'info'
-        local length = length or 5000
-
-        exports['dx-notify']:Alert("", text, length, ttype)
-
-    end
+        })
+    end ]]
+    exports['dx-ui']:Notify(text, texttype, length)
 end
 
 function QBCore.Debug(resource, obj, depth)
     TriggerServerEvent('QBCore:DebugSomething', resource, obj, depth)
 end
 
+-- Callback Functions --
+
+-- Client Callback
+function QBCore.Functions.CreateClientCallback(name, cb)
+    QBCore.ClientCallbacks[name] = cb
+end
+
+function QBCore.Functions.TriggerClientCallback(name, cb, ...)
+    if not QBCore.ClientCallbacks[name] then return end
+    QBCore.ClientCallbacks[name](cb, ...)
+end
+
+-- Server Callback
 function QBCore.Functions.TriggerCallback(name, cb, ...)
     QBCore.ServerCallbacks[name] = cb
     TriggerServerEvent('QBCore:Server:TriggerCallback', name, ...)
@@ -386,7 +364,7 @@ function QBCore.Functions.SpawnVehicle(model, cb, coords, isnetworked, teleportI
     else
         coords = GetEntityCoords(ped)
     end
-    isnetworked = isnetworked or true
+    isnetworked = isnetworked == nil or isnetworked
     QBCore.Functions.LoadModel(model)
     local veh = CreateVehicle(model, coords.x, coords.y, coords.z, coords.w, isnetworked, false)
     local netid = NetworkGetNetworkIdFromEntity(veh)
@@ -408,6 +386,11 @@ end
 function QBCore.Functions.GetPlate(vehicle)
     if vehicle == 0 then return end
     return QBCore.Shared.Trim(GetVehicleNumberPlateText(vehicle))
+end
+
+function QBCore.Functions.GetVehicleLabel(vehicle)
+    if vehicle == nil or vehicle == 0 then return end
+    return GetLabelText(GetDisplayNameFromVehicleModel(GetEntityModel(vehicle)))
 end
 
 function QBCore.Functions.SpawnClear(coords, radius)
@@ -434,6 +417,12 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
         local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicle)
 		local colorPrimary, colorSecondary = GetVehicleColours(vehicle)
 
+        if GetVehicleXenonLightsCustomColor(vehicle) == 1 then
+            local _, r, g, b = GetVehicleXenonLightsCustomColor(vehicle)
+            headlightColor = { r, g, b }
+        else
+            headlightColor = GetVehicleHeadlightsColour(vehicle)
+        end
         if GetIsVehiclePrimaryColourCustom(vehicle) then
             local r, g, b = GetVehicleCustomPrimaryColour(vehicle)
             colorPrimary = { r, g, b, colorPrimary }
@@ -452,11 +441,13 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
         local modLivery = GetVehicleMod(vehicle, 48)
         if GetVehicleMod(vehicle, 48) == -1 and GetVehicleLivery(vehicle) ~= 0 then modLivery = GetVehicleLivery(vehicle) end
         local tireHealth = {}
-        for i = 0, 3 do tireHealth[i] = GetVehicleWheelHealth(vehicle, i) end
         local tireBurstState = {}
-        for i = 0, 5 do tireBurstState[i] = IsVehicleTyreBurst(vehicle, i, false) end
         local tireBurstCompletely = {}
-        for i = 0, 5 do tireBurstCompletely[i] = IsVehicleTyreBurst(vehicle, i, true) end
+        for _, id in pairs({0, 1, 2, 3, 4, 5, 45, 47}) do
+            tireHealth[id] = GetVehicleWheelHealth(vehicle, id, false)
+            tireBurstState[id] = IsVehicleTyreBurst(vehicle, id, false)
+            tireBurstCompletely[id] = IsVehicleTyreBurst(vehicle, id, true)
+        end
         local windowStatus = {}
         for i = 0, 7 do windowStatus[i] = IsVehicleWindowIntact(vehicle, i) == 1 end
         local doorStatus = {}
@@ -485,7 +476,7 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
             windowTint = GetVehicleWindowTint(vehicle),
             windowStatus = windowStatus,
             doorStatus = doorStatus,
-            xenonColor = GetVehicleXenonLightsColour(vehicle),
+            headlightColor = headlightColor,
             neonEnabled = {
                 IsVehicleNeonLightEnabled(vehicle, 0),
                 IsVehicleNeonLightEnabled(vehicle, 1),
@@ -493,7 +484,6 @@ function QBCore.Functions.GetVehicleProperties(vehicle)
                 IsVehicleNeonLightEnabled(vehicle, 3)
             },
             neonColor = table.pack(GetVehicleNeonLightsColour(vehicle)),
-            headlightColor = GetVehicleHeadlightsColour(vehicle),
             interiorColor = GetVehicleInteriorColour(vehicle),
             extras = extras,
             tyreSmokeColor = table.pack(GetVehicleTyreSmokeColor(vehicle)),
@@ -562,10 +552,8 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
     if DoesEntityExist(vehicle) then
         if props.extras then
             for id, enabled in pairs(props.extras) do
-                if enabled then
-                    SetVehicleExtra(vehicle, tonumber(id), 0)
-                else
-                    SetVehicleExtra(vehicle, tonumber(id), 1)
+                if enabled then SetVehicleExtra(vehicle, tonumber(id), 0)
+                else SetVehicleExtra(vehicle, tonumber(id), 1)
                 end
             end
         end
@@ -588,7 +576,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
 				colorPrimary = props.color1[4]
 				SetVehicleCustomPrimaryColour(vehicle, props.color1[1], props.color1[2], props.color1[3])
 				SetVehicleColours(vehicle, props.color1[4], colorSecondary)
-           end
+            end
         end
         if props.color2 then
             if type(props.color2) == "number" then
@@ -596,7 +584,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
 			else
                 SetVehicleCustomSecondaryColour(vehicle, props.color2[1], props.color2[2], props.color2[3])
 				SetVehicleColours(vehicle, colorPrimary, props.color2[4])
-           end
+            end
         end
         if props.pearlescentColor then SetVehicleExtraColours(vehicle, props.pearlescentColor, wheelColor) end
         if props.interiorColor then SetVehicleInteriorColor(vehicle, props.interiorColor) end
@@ -642,7 +630,10 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
             SetVehicleNeonLightEnabled(vehicle, 3, props.neonEnabled[4])
         end
 		if props.neonColor then SetVehicleNeonLightsColour(vehicle, props.neonColor[1], props.neonColor[2], props.neonColor[3]) end
-        if props.headlightColor then SetVehicleHeadlightsColour(vehicle, props.headlightColor) end
+        if props.headlightColor then
+            if type(props.headlightColor) == "number" then ClearVehicleXenonLightsCustomColor(vehicle) SetVehicleXenonLightsColor(vehicle, props.headlightColor)
+            else SetVehicleXenonLightsCustomColor(vehicle, props.headlightColor[1], props.headlightColor[2], props.headlightColor[3]) SetVehicleXenonLightsColor(vehicle, -1) end
+        end
         if props.interiorColor then SetVehicleInteriorColour(vehicle, props.interiorColor) end
         if props.wheelSize then SetVehicleWheelSize(vehicle, props.wheelSize) end
         if props.wheelWidth then SetVehicleWheelWidth(vehicle, props.wheelWidth) end
@@ -670,7 +661,6 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
         if props.modSmokeEnabled then ToggleVehicleMod(vehicle, 20, props.modSmokeEnabled) end
         if props.modKit21 then SetVehicleMod(vehicle, 21, props.modKit21, false) end
         if props.modXenon then ToggleVehicleMod(vehicle, 22, props.modXenon) end
-        if props.xenonColor then SetVehicleXenonLightsColor(vehicle, props.xenonColor) end
         if props.modFrontWheels then SetVehicleMod(vehicle, 23, props.modFrontWheels, false) end
         if props.modBackWheels then SetVehicleMod(vehicle, 24, props.modBackWheels, false) end
         if props.modCustomTiresF then SetVehicleMod(vehicle, 23, props.modFrontWheels, props.modCustomTiresF) end
@@ -703,7 +693,7 @@ function QBCore.Functions.SetVehicleProperties(vehicle, props)
         if props.liveryRoof then SetVehicleRoofLivery(vehicle, props.liveryRoof) end
 		if props.modDrift then SetDriftTyresEnabled(vehicle, true) end
 		SetVehicleTyresCanBurst(vehicle, not props.modBProofTires)
-		TriggerServerEvent('jim-mechanic:server:loadStatus', props.plate)
+		TriggerServerEvent('jim-mechanic:server:loadStatus', props, VehToNet(vehicle))
     end
 end
 
@@ -785,35 +775,68 @@ function QBCore.Functions.StartParticleOnEntity(dict, ptName, looped, entity, bo
     return particleHandle
 end
 
-QBCore.Functions.SpawnObject = function(model, coords, cb)
-    local model = (type(model) == 'number' and model or GetHashKey(model))
-
-    Citizen.CreateThread(function()
-        RequestModel(model)
-        local obj = CreateObject(model, coords.x, coords.y, coords.z, true, false, true)
-        SetModelAsNoLongerNeeded(model)
-
-        if cb then
-            cb(obj)
-        end
-    end)
+function QBCore.Functions.GetStreetNametAtCoords(coords)
+    local streetname1, streetname2 = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
+    return { main = GetStreetNameFromHashKey(streetname1), cross = GetStreetNameFromHashKey(streetname2) }
 end
 
-QBCore.Functions.SpawnLocalObject = function(model, coords, cb)
-    local model = (type(model) == 'number' and model or GetHashKey(model))
-
-    Citizen.CreateThread(function()
-        RequestModel(model)
-        local obj = CreateObject(model, coords.x, coords.y, coords.z, false, false, true)
-        SetModelAsNoLongerNeeded(model)
-
-        if cb then
-            cb(obj)
-        end
-    end)
+function QBCore.Functions.GetZoneAtCoords(coords)
+    return GetLabelText(GetNameOfZone(coords))
 end
 
-QBCore.Functions.DeleteObject = function(object)
-    SetEntityAsMissionEntity(object, false, true)
-    DeleteObject(object)
+function QBCore.Functions.GetCardinalDirection(entity)
+    entity = DoesEntityExist(entity) and entity or PlayerPedId()
+    if DoesEntityExist(entity) then
+        local heading = GetEntityHeading(entity)
+        if ((heading >= 0 and heading < 45) or (heading >= 315 and heading < 360)) then
+            return "North"
+        elseif (heading >= 45 and heading < 135) then
+            return "West"
+        elseif (heading >= 135 and heading < 225) then
+            return "South"
+        elseif (heading >= 225 and heading < 315) then
+            return "East"
+        end
+    else
+        return "Cardinal Direction Error"
+    end
+end
+
+function QBCore.Functions.GetCurrentTime()
+    local obj = {}
+    obj.min = GetClockMinutes()
+    obj.hour = GetClockHours()
+
+    if obj.hour <= 12 then
+        obj.ampm = "AM"
+    elseif obj.hour >= 13 then
+        obj.ampm = "PM"
+        obj.formattedHour = obj.hour - 12
+    end
+
+    if obj.min <= 9 then
+        obj.formattedMin = "0" .. obj.min
+    end
+
+    return obj
+end
+
+function QBCore.Functions.GetGroundZCoord(coords)
+    if not coords then return end
+
+    local retval, groundZ = GetGroundZFor_3dCoord(coords.x, coords.y, coords.z, 0)
+    if retval then
+        return vector3(coords.x, coords.y, groundZ)
+    else
+        print('Couldn\'t find Ground Z Coordinates given 3D Coordinates')
+        print(coords)
+        return coords
+    end
+end
+
+function QBCore.Functions.GetGroundHash(entity)
+    local coords = GetEntityCoords(entity)
+    local num = StartShapeTestCapsule(coords.x, coords.y, coords.z + 4, coords.x, coords.y, coords.z - 2.0, 1, 1, entity, 7)
+    local retval, success, endCoords, surfaceNormal, materialHash, entityHit = GetShapeTestResultEx(num)
+    return materialHash, entityHit, surfaceNormal, endCoords, success, retval
 end

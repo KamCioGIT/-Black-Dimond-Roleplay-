@@ -1,10 +1,8 @@
-name "qb-inventory"
-author "Mr_Dx#0879"
-version "7.0"
-description "Made By Mr_Dx"
-fx_version "cerulean"
-game "gta5"
-lua54 'yes'
+fx_version 'cerulean'
+game 'gta5'
+
+description 'qb-inventory'
+version '1.1'
 
 shared_scripts {
 	'config.lua',
@@ -31,11 +29,8 @@ files {
 	'html/images/*.jpg',
 	'html/ammo_images/*.png',
 	'html/attachment_images/*.png',
-	'html/fonts/MoldeCondensedBold.ttf',
+	'html/*.ttf'
 }
 
-dependency 'qb-weapons'
 
 lua54 'yes'
-
-dependency '/assetpacks'

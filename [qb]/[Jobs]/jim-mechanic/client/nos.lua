@@ -89,8 +89,8 @@ RegisterNetEvent('jim-mechanic:client:applyNOS', function()
 					end
 				end
 			end
-		elseif Config.skillcheck == "ps-ui" then
-			exports['ps-ui']:Circle(function(success)
+		elseif Config.skillcheck == "dx-ui" then
+			exports['dx-ui']:Circle(function(success)
 				local time = math.random(7000,10000)
 				if success then
 					QBCore.Functions.Progressbar("drink_something", Loc[Config.Lan]["common"].installing.."NOS..", time, false, true, { disableMovement = true, disableCarMovement = true, disableMouse = false, disableCombat = false, },

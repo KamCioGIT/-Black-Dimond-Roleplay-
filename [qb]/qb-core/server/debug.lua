@@ -25,21 +25,20 @@ local function tPrint(tbl, indent)
     end
 end
 
-RegisterServerEvent('QBCore:DebugSomething', function(tbl, indent)
-    local resource = GetInvokingResource() or "qb-core"
+RegisterServerEvent('QBCore:DebugSomething', function(tbl, indent, resource)
     print(('\x1b[4m\x1b[36m[ %s : DEBUG]\x1b[0m'):format(resource))
     tPrint(tbl, indent)
     print('\x1b[4m\x1b[36m[ END DEBUG ]\x1b[0m')
 end)
 
 function QBCore.Debug(tbl, indent)
-    TriggerEvent('QBCore:DebugSomething', tbl, indent)
+    TriggerEvent('QBCore:DebugSomething', tbl, indent, GetInvokingResource() or "qb-core")
 end
 
 function QBCore.ShowError(resource, msg)
-    print('\x1b[31m['..resource..':ERROR]\x1b[0m '..msg)
+    print('\x1b[31m[' .. resource .. ':ERROR]\x1b[0m ' .. msg)
 end
 
 function QBCore.ShowSuccess(resource, msg)
-    print('\x1b[32m['..resource..':LOG]\x1b[0m '..msg)
+    print('\x1b[32m[' .. resource .. ':LOG]\x1b[0m ' .. msg)
 end

@@ -35,8 +35,8 @@ function Framework.Client.ShowTextUI(text)
     exports['ox_lib']:showTextUI(text, {
       position = "left-center"
     })
-  elseif Config.DrawText == "ps-ui" then
-    exports['ps-ui']:DisplayText(text, "primary")
+  elseif Config.DrawText == "dx-ui" then
+    exports['dx-ui']:DisplayText(text, "primary")
   end
 end
 
@@ -49,8 +49,8 @@ function Framework.Client.HideTextUI()
     exports['okokTextUI']:Close()
   elseif Config.DrawText == "ox_lib" then
     exports['ox_lib']:hideTextUI()
-  elseif Config.DrawText == "ps-ui" then
-    exports['ps-ui']:HideText()
+  elseif Config.DrawText == "dx-ui" then
+    exports['dx-ui']:HideText()
   end
 end
 
@@ -66,8 +66,8 @@ function Framework.Client.Notify(msg, type, time)
       description = msg,
       type = type
     })
-  elseif Config.Notifications == "ps-ui" then
-    exports['ps-ui']:Notify(msg, type, time)
+  elseif Config.Notifications == "dx-ui" then
+    exports['dx-ui']:Notify(msg, type, time)
   else
     if Config.Framework == "QBCore" then
       return QBCore.Functions.Notify(msg, type, time)

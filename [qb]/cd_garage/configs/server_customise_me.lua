@@ -305,13 +305,13 @@ function Notification(source, notif_type, message)
                 TriggerClientEvent('okokNotify:Alert', source, L('garage'), message, 5000, 'error')
             end
 
-        elseif Config.Notification == 'ps-ui' then
+        elseif Config.Notification == 'dx-ui' then
             if notif_type == 1 then
-                TriggerClientEvent('ps-ui:Notify', source, message, 'success')
+                TriggerClientEvent('dx-ui:Notify', source, message, 'success')
             elseif notif_type == 2 then
-                TriggerClientEvent('ps-ui:Notify', source, message, 'primary')
+                TriggerClientEvent('dx-ui:Notify', source, message, 'primary')
             elseif notif_type == 3 then
-                TriggerClientEvent('ps-ui:Notify', source, message, 'error')
+                TriggerClientEvent('dx-ui:Notify', source, message, 'error')
             end
 
         elseif Config.Notification == 'ox_lib' then

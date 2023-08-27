@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'https://github.com/Project-Sloth/qb-ui'
+description 'https://github.com/Project-Sloth/dx-ui'
 
 credits 'https://github.com/sharkiller/nopixel_minigame'
 
