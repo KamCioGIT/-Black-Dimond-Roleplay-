@@ -901,6 +901,19 @@ Config.Locations = {
     JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
     ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.
 },
+{
+    Garage_ID = 'PaletoFounderGarage', --The very first car garage's `garage_id` must be the same as the default value of the `garage_id` in the database as when a vehicle is purchased it gets sent to this garage. You can change the garage id's to what ever you like but make sure to also change the default garage_id in the database.
+    Type = 'car', --The type of vehicles which use this garage. ('car'/'boat'/'air').
+    Dist = 10, --The distance that you can use this garage.
+    x_1 = -88.866584777832, y_1 = 6623.248046875, z_1 = 30.617097854614, --This is the location of the garage, where you press e to open for example.vector3(, , )
+    EventName1 = 'cd_garage:QuickChoose', --DONT CHANGE THIS.
+    EventName2 = 'cd_garage:EnterGarage', --DONT CHANGE THIS.
+    Name = UIText, --You dont need to change this.
+    x_2 = -88.866584777832, y_2 = 6623.248046875, z_2 = 30.617097854614, h_2 = 120.5548248291, --This is the location where the vehicle spawns.vector4(, , , )
+    EnableBlip = false, --If disabled, this garage blip will not show on the map.
+    JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
+    ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.
+},
 {               
     Garage_ID = 'r', --The very first car garage's `garage_id` must be the same as the default value of the `garage_id` in the database as when a vehicle is purchased it gets sent to this garage. You can change the garage id's to what ever you like but make sure to also change the default garage_id in the database.
     Type = 'car', --The type of vehicles which use this garage. ('car'/'boat'/'air').

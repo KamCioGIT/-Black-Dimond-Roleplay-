@@ -134,10 +134,10 @@ Config.DealershipLocations = {
   },
   pdm = {
     type = 'owned',
-    openShowroom = vector3(-37.75, -1088.61, 26.43),
-    openManagement = vector3(-33.09, -1116.92, 26.43),
-    purchaseSpawn = vector4(-47.32, -1080.38, 26.71, 64.01),
-    testDriveSpawn = vector4(-59.67, -1114.59, 26.43, 4.50),
+    openShowroom = vector3(-32.829696655273, -1096.5209960938, 27.274415969849),
+    openManagement = vector3(-26.67, -1108.48, 27.27),
+    purchaseSpawn = vector4(-13.68, -1092.31, 26.67, 159.82),
+    testDriveSpawn = vector4(-49.77, -1110.83, 26.44, 75.94),
     camera = {
       name = 'Custom',
       coords = vector4(-24.22, -1098.44, 26.50, 78.22),

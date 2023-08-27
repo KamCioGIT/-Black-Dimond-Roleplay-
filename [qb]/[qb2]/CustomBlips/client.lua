@@ -22,7 +22,7 @@ local blips = {
     {title="House 18", colour=1, id=40, x = 244.74, y = 922.97, z = 210.91},
     {title="Founder's Private Mansion", colour=40, id=40, x = -1639.77, y = 461.95, z = 138.53},
     {title="Founder's Beach Mansion", colour=40, id=40, x = -2704.57, y = -94.5, z = 16.81},
-
+    {title="Founder's Paletobay Mansion", colour=40, id=40, x = -101.39144134521, y = 6630.2734375, z = 11.473020553589},
 
 
 
