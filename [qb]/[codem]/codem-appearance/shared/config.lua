@@ -52,11 +52,11 @@ Config.Surgery = {
         rgba = {255, 0, 0, 255}   
     },
     drawText = {
-        enable = false,
+        enable = true,
         text = "PRESS ~r~ [E] ~w~ to open surgery"
     },
     textui = {
-        enable = false,
+        enable = true,
         text = "PRESS [E] to open surgery"
     },
 }
@@ -93,11 +93,11 @@ Config.Barber = {
         rgba = {255, 0, 0, 255}   
     },
     drawText = {
-        enable = false,
+        enable = true,
         text = "PRESS ~r~ [E] ~w~ to open barber shop"
     },    
     textui = {
-        enable = false,
+        enable = true,
         text = "PRESS [E] to open barber shop"
     },
 
@@ -126,11 +126,11 @@ Config.Tattoo = {
         rgba = {255, 0, 0, 255}   
     },
     drawText = {
-        enable = false,
+        enable = true,
         text = "PRESS ~r~ [E] ~w~ to open tattoo shop"
     },
     textui = {
-        enable = false,
+        enable = true,
         text = "PRESS [E] to open tattoo shop"
     },
 }
@@ -222,11 +222,11 @@ Config.Clothing = {
         rgba = {255, 0, 0, 255}   
     },
     drawText = {
-        enable = false,
+        enable = true,
         text = "PRESS ~r~ [E] ~w~ to open clothing shop"
     },
     textui = {
-        enable = false,
+        enable = true,
         text = "PRESS [E] to open clothing shop"
     },
 }
