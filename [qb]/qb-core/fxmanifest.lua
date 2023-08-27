@@ -6,6 +6,7 @@ version '1.2.6'
 
 shared_scripts {
     'config.lua',
+    'fixDeleteVehicle.lua',
     'shared/locale.lua',
     'locale/en.lua',
     'locale/*.lua',
