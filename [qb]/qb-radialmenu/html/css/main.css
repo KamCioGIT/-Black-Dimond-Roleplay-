@@ -1,13 +1,4 @@
-@font-face {
-    font-family: "SparK";
-    src: url("../fonts/MoldeCondensedBold.ttf");
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-
-*{
-    font-family: "SparK";
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
 
 h1 {
     font-weight: normal;
@@ -15,7 +6,7 @@ h1 {
 }
 
 div.info {
-    margin: 12px 0;
+    margin: 10px 0;
 }
 
 div.info * {
@@ -46,22 +37,22 @@ div.menuHolder {
     margin-left: auto;
     margin-right: auto;
     top: 30%;
-    
 }
 
 svg.icons {
     display: none;
+    filter:url(#drop-shadow);
 }
 
 svg.menu {
     position: absolute;
     overflow: visible;
     transition: .1s;
-    transition-timing-function: ease-out;
+    transition-timing-function: linear;
 }
 
 svg.menu.inner {
-    transform: scale(0.66) rotate(-10deg);
+    transform: scale(1.0) rotate(-10deg);
     opacity: 0;
     visibility: hidden;
 }
@@ -69,14 +60,11 @@ svg.menu.inner {
 svg.menu.outer {
     opacity: 0;
     visibility: hidden;
-
 }
 
 svg.menu > g > path {
-    fill: rgb(1,0,71,0.6);
-    stroke: #ffffff90;
-    stroke-width: 0.7px;
-    filter: drop-shadow(2px 2px 15px rgb(1,0,71,1));
+    fill: #00000080;
+    transition: 0.3s;
 }
 
 svg.menu > g.sector > path {
@@ -85,28 +73,31 @@ svg.menu > g.sector > path {
 
 svg.menu > g.sector > text,
 svg.menu > g.sector > use {
-    margin-top: 5px;
-    font-size: 2.8px;
-    letter-spacing: 0.2px;
+    font-family: 'Roboto';
+    font-weight: 520px;
+    margin-top: 10px;
+    font-size: 3.6px;
     text-transform: uppercase;
     cursor: pointer;
     fill: white;
 }
 
 svg.menu > g.sector:hover > path {
-    fill: #ffffff90;
-    
+    fill: #ff9900;
+    fill-opacity: 0.6;
+    box-shadow: 0px 0px 15px #ff9900;
 }
 
 svg.menu > g.center:hover > circle {
-    fill:#ffffff90;
+    fill: #ff9900;
+    box-shadow: 0px 0px 15px #ff9900;
+    fill-opacity: 0.6;
 }
 
 svg.menu > g.center > circle {
     cursor: pointer;
-    transform: scale(1.00);
-    fill: #0084ff;
-    filter: drop-shadow(2px 2px 20px #0084ff);
+    fill: #00000080;
+    fill-opacity: 0.2s;
 }
 
 svg.menu > g.center > text,

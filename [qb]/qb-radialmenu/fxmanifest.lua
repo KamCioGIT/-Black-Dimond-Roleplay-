@@ -1,10 +1,8 @@
-name "qb-multicharacter"
-author "Mr_Dx#0879"
-version "7.0"
-description "Made By Dx-Born"
-fx_version "cerulean"
-game "gta5"
-lua54 'yes'
+fx_version 'cerulean'
+game 'gta5'
+
+description 'QB-RadialMenu'
+version '1.0.0'
 
 ui_page 'html/index.html'
 
@@ -15,6 +13,7 @@ shared_scripts {
 }
 
 client_scripts {
+    'client/blips.lua',
     'client/main.lua',
     'client/clothing.lua',
     'client/trunk.lua',
@@ -34,4 +33,3 @@ files {
 }
 
 lua54 'yes'
-dependency '/assetpacks'
