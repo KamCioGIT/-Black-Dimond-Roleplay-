@@ -2,7 +2,7 @@
 
 .bg-button { background: var(--color-primary)!important; box-shadow: none!important; }
 .text-check { color: rgba(255, 255, 255, 0.8)!important; }
-.text-checkbox { color: #eeb600!important; }
+.text-checkbox { color: #ffbf0f!important; }
 .q-checkbox__svg { color: #000!important; }
 div#q-loading-bar { display: none!important; }
 .q-card { background: var(--color-primary)!important; }
@@ -11,7 +11,7 @@ p { margin: 0 !important; }
 .text-h6 { color: #fff; }
 .q-card__section.q-card__section--vert.q-pt-none { color: #fff; }
 
-@media screen and (min-width: 1980px) {
+@media screen and (min-width: 2540px) {
     #itembox-label {
         min-height: 1.8vh;
     }
@@ -25,15 +25,15 @@ p { margin: 0 !important; }
 }
 
 :root {
-    /* --color-primary: #23242e; */
+    --color-primary: #23242e;
     --color-secondary: #383942;
-    --color-accent: rgb(255, 187, 51);
+    --color-accent: rgb(199, 141, 65);
 }
 
 .fas.fa-lock {
-    font-size: 22px;
-    top: -82px;
-    right: 0px;
+    font-size: 20px;
+    top: -55px;
+    right: -45px;
     position: relative;
 }
 
@@ -224,15 +224,15 @@ body {
 }
 
 .player-inventory > .item-slot > .item-slot-key > p {
-    position: absolute; 
-    font-weight: 400; 
-    color: #20202062; 
-    padding-top: 4vh; 
-    padding-bottom: 0px; 
-    padding-left: 2.35vh; 
-    text-align: center; 
-    font-size: 7vh; 
-    line-height: 1.8vh; 
+    position: absolute;
+    font-weight: 400;
+    color: hsl(0deg 0% 0% / 15%);
+    padding-top: 3.4vh;
+    padding-bottom: 0px;
+    padding-left: 2.3vh;
+    text-align: left;
+    font-size: 7vh;
+    line-height: 1.8vh;
     font-family: 'Roboto', sans-serif !important;
 }
 
@@ -718,7 +718,7 @@ body {
     width: fit-content;
     position: absolute;
     left: 47%;
-    bottom: 18%;
+    bottom: 9.8%;
     overflow: hidden;
 }
 
@@ -734,9 +734,7 @@ body {
     margin-right: 1vh;
     width: 10vh;
     height: 11vh;
-    border: 2px solid #41414b;
-    background-color: #33343d !important;
-    border-radius: 9px;
+    background: rgba(54, 54, 54, 0.233);
 }
 
 #itembox-action {
@@ -1387,5 +1385,5 @@ body {
 .craft-item-slot {
     width: 30%;
     height: 30%;
-    background: #eeb600;
+    background: #0fffd5;
 }
