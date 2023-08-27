@@ -249,7 +249,7 @@ Config.TargetEntities = {
 }
 
 Config.TargetModels = {
-
+--[[ 
     ["Clothing-OpenOutFit"] = {
         models = {
             "a_m_y_smartcaspat_01"
@@ -257,7 +257,7 @@ Config.TargetModels = {
         options = {
             {
                 type = "client",
-                event = "qb-clothing:open",
+                event = "qb-clothing:client:openMenu",
                 label = "Buy Clothes",
             },
 			{
@@ -282,7 +282,7 @@ Config.TargetModels = {
         },
         distance = 2.5,
     },
-
+ ]]
 
 
 
@@ -426,7 +426,7 @@ Config.GlobalPlayerOptions = {
 
 
 Config.Peds = {
-
+--[[ 
     { -----------Clothing-------------
         model = 'a_m_y_smartcaspat_01',
         coords = vector4(1692.19, 4829.85, 41.06, 179.32),
@@ -547,7 +547,7 @@ Config.Peds = {
         invincible = true,
         blockevents = true,
     },
-
+ ]]
 
     -------ambulance||
 
