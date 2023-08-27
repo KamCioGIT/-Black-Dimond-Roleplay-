@@ -8,42 +8,50 @@ Editable.GetUser = function(source)
     local src = source
     if Config.Framework == "new-qb" or Config.Framework == 'old-qb' then
         return Framework.Functions.GetPlayer(src)
-    elseif Config.Framework == 'new-esx' or Config.Framework == "old-esx" then
+    elseif Config.Framework == 'esx' then
         return Framework.GetPlayerFromId(src)
     end
 end
 
+Editable.GetUserIdentifier = function(source)
+    local Player = Editable.GetUser(source)
+    local identifier = false
+    if Player then
+        if Config.Framework == 'esx' then
+            identifier = Player.identifier
+        else
+            identifier = Player.PlayerData.citizenid
+        end
+    end
+    return identifier
+end
 
 Editable.GetUserItemList = function(source) 
     local user = Editable.GetUser(source)
     ItemList = {}
-    if Config.Inventory == 'qb-inventory' then
-        if Config.Framework == "new-qb" then
-            local inventory = user.PlayerData.items
-            for k,v in pairs(inventory) do
-                if (Config.ItemPrices[v.name] ~= nil) then
-                    ItemList[#ItemList+1] = {
-                        itemname = v.name,
-                        count = v.amount,
-                        type = Config.ItemPrices[v.name].type,
-                        label = v.label
-                    }
-                end
+    if Config.Inventory == 'qb' then
+        local inventory = user.PlayerData.items
+        for k,v in pairs(inventory) do
+            if (Config.ItemPrices[v.name] ~= nil) then
+                ItemList[#ItemList+1] = {
+                    itemname = v.name,
+                    count = v.amount or v.count,
+                    type = Config.ItemPrices[v.name].type,
+                    label = v.label
+                }
             end
-        elseif Config.Framework == 'old-qb' then
-            local inventory = user.PlayerData.items
-            for k,v in pairs(inventory) do
-                if (Config.ItemPrices[v.name] ~= nil) then
-                    ItemList[#ItemList+1] = {
-                        itemname = v.name,
-                        count = v.amount,
-                        type = Config.ItemPrices[v.name].type,
-                        label = v.label
-                    }
-                end
+        end
+    elseif Config.Inventory == 'esx' then
+        local inventory = user.getInventory()
+        for k,v in pairs(inventory) do
+            if (Config.ItemPrices[v.name] ~= nil) then
+                ItemList[#ItemList+1] = {
+                    itemname = v.name,
+                    count = v.count or v.amount,
+                    type = Config.ItemPrices[v.name].type,
+                    label = v.label
+                }
             end
-        else
-
         end
     elseif Config.Inventory == "ox_inventory" then
         local inventory = exports.ox_inventory:GetInventory(source, false)
@@ -64,7 +72,7 @@ end
 Editable.AddItem = function(source, item, amount)
     local src = source
     local user = Editable.GetUser(src)
-    if Config.Inventory == "qb-inventory" then
+    if Config.Inventory == "qb" then
         if item == Config.WeaponHash then
             info = {
                 ammo = Config.Ammo
@@ -73,6 +81,15 @@ Editable.AddItem = function(source, item, amount)
             return
         end
         user.Functions.AddItem(item, amount)
+    elseif Config.Inventory == "esx" then
+        if item == Config.WeaponHash then
+            if Config.WeaponAsItem then
+                user.addInventoryItem(item, amount)
+            else
+                user.addWeapon(item, Config.Ammo)
+            end
+        end
+        user.addInventoryItem(item, amount)
     elseif Config.Inventory == "ox_inventory" then
         if item == Config.WeaponHash then
             info = {
@@ -88,8 +105,10 @@ end
 Editable.RemoveItem = function(source, item, amount)
     local src = source
     local user = Editable.GetUser(src)
-    if Config.Inventory == "qb-inventory" then
+    if Config.Inventory == "qb" then
         user.Functions.RemoveItem(item, amount)
+    elseif Config.Inventory == "esx" then
+        user.removeInventoryItem(item, amount)
     elseif Config.Inventory == "ox_inventory" then
         exports.ox_inventory:RemoveItem(source, item, amount)
     end
@@ -109,10 +128,9 @@ Editable.GetName = function(source)
 end
 
 GetPlayerCharacterNameESX = function(source)
-    local Player = Editable.GetUser(source)
-    identifier = Player.identifier
+    local identifier = Editable.GetUserIdentifier(source)
     local result = HSN.ExecuteSql("SELECT * FROM users WHERE identifier = '"..identifier.."'")
     if result[1] then 
         return result[1].firstname..' '..result[1].lastname 
-    end;
+    end
 end

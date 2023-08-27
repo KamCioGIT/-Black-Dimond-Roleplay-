@@ -2,7 +2,7 @@ fx_version 'adamant'
 lua54 'yes'
 game 'gta5'
 author 'CodeM'
-version '1.1'
+version '1.2'
 
 
 ui_page 'ui/index.html'

@@ -62,7 +62,6 @@ end)
 RegisterNetEvent("m-hunting:client:SpawnVehicle")
 AddEventHandler("m-hunting:client:SpawnVehicle", function(vehicle)
     local plate = GetVehicleNumberPlateText(vehicle)
-    print(plate)
     TriggerServerEvent("qb-vehiclekeys:server:AcquireVehicleKeys", plate)
 end)
 

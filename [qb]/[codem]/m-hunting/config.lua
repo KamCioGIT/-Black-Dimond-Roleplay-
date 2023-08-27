@@ -1,22 +1,24 @@
 Config = {}
-
-
-Config.Framework = "new-qb"
-Config.Inventory = 'qb-inventory'
+Config.Framework = "new-qb" -- new-qb, old-qb, esx
+Config.NewESX = true -- if you are using esx legacy set this to true
+Config.WeaponAsItem = true -- if you want to use weapon as item set this to true (for default esx inventory set this to false)
+Config.Inventory = 'qb-inventory' -- qb , esx , ox_inventory (if you are using a different inventory you can write your default framework e.g QBCore qs-inventory 'qb' or ESX qs-inventory 'esx')
 Config.UseCharacterName = true
 Config.ServerImage = "https://cdn.discordapp.com/attachments/1116058928044843028/1135970581053968485/mrp.png"
 Config.CarSpawnCoord = vector4(-771.86, 5578.4, 33.49, 85.42)
 Config.WeaponHash = "weapon_sniperrifle"
 Config.VehicleHash = "kamacho"
 Config.MySQL = "oxmysql"
-Config.PedCoords = vector4(-771.06, 5597.02, 32.61, 169.49)
+Config.PedCoords = vector4(-767.42, 5600.31, 33.74-0.98, 72.86)
 Config.RandomXPForKillAnimal = {min = 5, max = 20}
 Config.PedSpawnCount = 80
 Config.Ammo = 125
+
 Config.Action = {
     actiontype = 'drawtext', -- or "drawtext"
     target = 'qb-target' -- or "ox_target"
 }
+
 Config.Ped = "cs_hunter"
 Config.HuntingBlip = {
     sprite = 141,
@@ -378,7 +380,7 @@ Config.Translate = {
     ["contractsfor"] = "Contracts For",
     ["leavelobby"] = "Leave Lobby",
     ["xp"] = "EXP",
-    ["action"] = "E - Open Hunt Page",
+    ["action"] = "Open Hunt Page",
     ["finish"] = "You finished your job!",
     ["huntingstarted"] = "Your hunt job has been started , location set to your map!",
     ["claimitems"] = "Press [~g~E~s~] to claim",
