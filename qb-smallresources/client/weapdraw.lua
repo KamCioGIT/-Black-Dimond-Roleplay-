@@ -1,4 +1,6 @@
 local weapons = {
+  
+   
     'WEAPON_KNIFE',
     'WEAPON_NIGHTSTICK',
     'WEAPON_BREAD',
@@ -155,6 +157,18 @@ local weapons = {
     'weapon_g3_2',
     'weapon_awp',
     'weapon_stungrenade',
+}
+ --Weapons that require the Police holster animation
+ local holsterableWeapons = {
+    --'WEAPON_STUNGUN',
+    --Custom Weapon
+    'WEAPON_DE',
+    'WEAPON_GLOCK17',
+    'WEAPON_M9',
+    'WEAPON_M1911',
+    'WEAPON_FNX45',
+    'WEAPON_GLOCK18C',
+    'WEAPON_GLOCK22',
 }
 
 local holstered = true
