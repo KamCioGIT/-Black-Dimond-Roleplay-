@@ -6,7 +6,7 @@ local phoneModel = Config.PhoneModel
 
 -- Item checks to return whether or not the client has a phone or not
 local function HasPhone()
-    return QBCore.Functions.HasItem("phone")
+    return QBCore.Functions.HasItem("phone") 
 end
 
 
@@ -90,6 +90,7 @@ RegisterCommand('911', function(source, args, rawCommand)
                 })
                 Wait(1000)
                 DeletePhone()
+                TriggerServerEvent('qb-jobchat:server:police', job, fname, lname, phone, msg)
                 StopEntityAnim(PlayerPedId(), 'cellphone_text_to_call', "cellphone@", 3)
             else
                 QBCore.Functions.Notify("You can't call without a Phone!", "error", 4500)
@@ -171,10 +172,11 @@ RegisterCommand('311', function(source, args, rawCommand)
                     },
                     dispatchMessage = "Incoming Call", -- message
                     information = msg,
-                    job = {"police", "ambulance"} -- jobs that will get the alerts
+                    job = {"ambulance"} -- jobs that will get the alerts
                 })
                 Wait(1000)
                 DeletePhone()
+                TriggerServerEvent('qb-jobchat:server:ambulance', job, fname, lname, phone, msg)
                 StopEntityAnim(PlayerPedId(), 'cellphone_text_to_call', "cellphone@", 3)
             else
                 QBCore.Functions.Notify("You can't call without a Phone!", "error", 4500)
