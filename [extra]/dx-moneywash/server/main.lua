@@ -11,7 +11,7 @@ QBCore.Functions.CreateCallback('dx-moneywash:server:GetData', function(source, 
     cb(LaundretteData)
 end)
 
-QBCore.Functions.CreateUseableItem("mwkey", function(source, item)
+QBCore.Functions.CreateUseableItem("mc_key", function(source, item)
     local Player = QBCore.Functions.GetPlayer(source)
     local LabKey = item.info.lab ~= nil and item.info.lab or 1
 
@@ -42,6 +42,6 @@ RegisterNetEvent("dx-moneywash:server:giveMoney")
 AddEventHandler("dx-moneywash:server:giveMoney", function(amt)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    payment = math.random(11000,13000)
+    payment = math.random(3000,5000)
     Player.Functions.AddMoney('cash', payment*amt)
 end)

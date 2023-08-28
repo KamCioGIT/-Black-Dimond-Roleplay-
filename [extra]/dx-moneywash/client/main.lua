@@ -338,14 +338,14 @@ AddEventHandler('dx-moneywash:client:startTimer', function(amt)
 end)
 
 RegisterNetEvent('dx-moneywash:client:UseLaundretteKey')
-AddEventHandler('dx-moneywash:client:UseLaundretteKey', function(mwkey)
+AddEventHandler('dx-moneywash:client:UseLaundretteKey', function(mc_key)
     if ClosestLaundrette == Config.CurrentLaundrette then
         local ped = PlayerPedId()
         local pos = GetEntityCoords(ped)
 
         local dist = Vdist(pos, Config.Locations["laundrette"][ClosestLaundrette].coords.x, Config.Locations["laundrette"][ClosestLaundrette].coords.y, Config.Locations["laundrette"][ClosestLaundrette].coords.z, true)
         if dist < 1 then
-            if mwkey == ClosestLaundrette then
+            if mc_key == ClosestLaundrette then
                 EnterLaundrette()
             else
                 QBCore.Functions.Notify('This isn\'t the right key..', 'error')
