@@ -15,10 +15,14 @@ end
 
 local function IsTargetDead(playerId)
     local retval = false
+    local hasReturned = false
     QBCore.Functions.TriggerCallback('police:server:isPlayerDead', function(result)
         retval = result
+        hasReturned = true
     end, playerId)
-    Wait(100)
+    while not hasReturned do
+      Wait(10)
+    end
     return retval
 end
 
@@ -66,7 +70,7 @@ RegisterNetEvent('police:client:PutInVehicle', function()
     if isHandcuffed or isEscorted then
         local vehicle = QBCore.Functions.GetClosestVehicle()
         if DoesEntityExist(vehicle) then
-			for i = GetVehicleMaxNumberOfPassengers(vehicle), 1, -1 do
+            for i = GetVehicleMaxNumberOfPassengers(vehicle), 0, -1 do
                 if IsVehicleSeatFree(vehicle, i) then
                     isEscorted = false
                     TriggerEvent('hospital:client:isEscorted', isEscorted)
@@ -78,7 +82,7 @@ RegisterNetEvent('police:client:PutInVehicle', function()
                     return
                 end
             end
-		end
+        end
     end
 end)
 
@@ -148,14 +152,6 @@ RegisterNetEvent('police:client:RobPlayer', function()
     else
         QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
     end
-end)
-
-RegisterNetEvent('police:client:JailCommand', function(playerId, time)
-    TriggerServerEvent("police:server:JailPlayer", playerId, tonumber(time))
-end)
-
-RegisterNetEvent('police:client:BillCommand', function(playerId, price)
-    TriggerServerEvent("police:server:BillPlayer", playerId, tonumber(price))
 end)
 
 RegisterNetEvent('police:client:JailPlayer', function()
@@ -283,19 +279,18 @@ RegisterNetEvent('police:client:CuffPlayer', function()
     if not IsPedRagdoll(PlayerPedId()) then
         local player, distance = QBCore.Functions.GetClosestPlayer()
         if player ~= -1 and distance < 1.5 then
-            QBCore.Functions.TriggerCallback('QBCore:HasItem', function(result)
-                if result then
-                    local playerId = GetPlayerServerId(player)
-                    if not IsPedInAnyVehicle(GetPlayerPed(player)) and not IsPedInAnyVehicle(PlayerPedId()) then
-                        TriggerServerEvent("police:server:CuffPlayer", playerId, false)
-                        HandCuffAnimation()
-                    else
-                        QBCore.Functions.Notify(Lang:t("error.vehicle_cuff"), "error")
-                    end
+            local result = QBCore.Functions.HasItem(Config.HandCuffItem)
+            if result then
+                local playerId = GetPlayerServerId(player)
+                if not IsPedInAnyVehicle(GetPlayerPed(player)) and not IsPedInAnyVehicle(PlayerPedId()) then
+                    TriggerServerEvent("police:server:CuffPlayer", playerId, false)
+                    HandCuffAnimation()
                 else
-                    QBCore.Functions.Notify(Lang:t("error.no_cuff"), "error")
+                    QBCore.Functions.Notify(Lang:t("error.vehicle_cuff"), "error")
                 end
-            end, Config.HandCuffItem)
+            else
+                QBCore.Functions.Notify(Lang:t("error.no_cuff"), "error")
+            end
         else
             QBCore.Functions.Notify(Lang:t("error.none_nearby"), "error")
         end

@@ -17,49 +17,63 @@ Config.LicenseRank = 2
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(443.01, -980.66, 30.69),
+        [1] = vector3(440.085, -974.924, 30.689),
         [2] = vector3(-449.811, 6012.909, 31.815),
+        [3] = vector3(1833.73, 3678.38, 34.19),
     },
     ["vehicle"] = {
-        [1] = vector4(452.21, -986.29, 25.7, 179.96),
-        [2] = vector4(446.21, -981.3, 25.7, 94.74),
-        [3] = vector4(432.02, -983.67, 25.7, 169.93),
+        [1] = vector4(435.24, -976.11, 25.7, 268.73),
+        [2] = vector4(477.74, -1021.57, 28.03, 272.16),
+        [3] = vector4(-455.39, 6002.02, 31.34, 87.93),
+        [4] = vector4(395.27304077148, -1626.2813720703, 29.292049407959, 51.323364257813),
+        [5] = vector4(1864.5772705078, 3692.6540527344, 33.974628448486, 115.82308959961),
+    },
+    ["boat"] = {
+        [1] = vector4(-797.84, -1508.17, 0.27, 110.44),
+        [2] =vector4(-1796.59, -1230.62, 0.31, 142.7),
     },
     ["stash"] = {
-        [1] = vector3(479.19, -996.78, 30.69),
+        [1] = vector3(453.075, -980.124, 30.889),
+        [2] = vector3(1841.87, 3681.79, 34.19),
     },
     ["impound"] = {
-        [1] = vector4(475.55, -1026.83, 28.11, 338.46),
-        [2] = vector4(-436.14, 5982.63, 31.34, 136.0),
+        [1] = vector3(436.68, -1007.42, 27.32),
+        [2] = vector3(-436.14, 5982.63, 31.34),
     },
     ["helicopter"] = {
-        [1] = vector4(449.32, -981.28, 43.69, 96.84),
+        [1] = vector4(449.168, -981.325, 43.691, 87.234),
         [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
+        [3] = vector4(362.84, -1598.23, 36.95, 326.29),
+        [4] = vector4(1852.6, 3705.89, 33.97, 142.42),
     },
     ["armory"] = {
-        [1] = vector3(482.56, -995.26, 30.69),
+        [1] = vector3(462.23, -981.12, 30.68),
+        [2] = vector3(1836.61, 3685.62, 34.19),
     },
     ["trash"] = {
-        [1] = vector3(487.32, -996.99, 30.69),
+        [1] = vector3(439.0907, -976.746, 30.776),
     },
     ["fingerprint"] = {
-        [1] = vector3(474.19, -1013.4, 26.27),
+        [1] = vector3(460.9667, -989.180, 24.92),
     },
     ["evidence"] = {
-        [1] = vector3(474.77, -995.32, 26.27),
-        [2] = vector3(446.94, -996.87, 30.69),
-        [3] = vector3(474.09, -1005.07, 26.27),
+        [1] = vector3(449.2, -996.09, 30.69),
+        [2] = vector3(451.7031, -973.232, 30.689),
+        [3] = vector3(455.1456, -985.462, 30.689),
+        [4] = vector3(1831.0709228516, 3680.0588378906, 38.85945892334),
     },
     ["stations"] = {
-        [1] = {label = "Police Station", coords = vector4(438.6, -981.92, 30.69, 269.61)},
+        [1] = {label = "Police Station", coords = vector4(428.23, -984.28, 29.76, 3.5)},
         [2] = {label = "Prison", coords = vector4(1845.903, 2585.873, 45.672, 272.249)},
         [3] = {label = "Police Station Paleto", coords = vector4(-451.55, 6014.25, 31.716, 223.81)},
+        [4] = {label = "BCSO Station", coords = vector4(1842.62, 3692.68, 33.97, 123.02)},
+        [5] = {label = "Davis Police Station", coords = vector4(355.56, -1590.75, 29.29, 296.69)},
     },
 }
 
 Config.ArmoryWhitelist = {}
 
-Config.PoliceHelicopter = "polpzulu"
+Config.PoliceHelicopter = "polas350"
 
 Config.SecurityCameras = {
     hideradar = false,
@@ -104,231 +118,239 @@ Config.SecurityCameras = {
 Config.AuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
-	--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
+		["police"] = "Police Car 1",		
+		["police3"] = "Police Car 3",		
 	},
 	-- Grade 1
 	[1] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
-
+		["police"] = "Police Car 1",		
+		["police3"] = "Police Car 3",		
 	},
 	-- Grade 2
 	[2] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
+		["police"] = "Police Car 1",		
+		["police3"] = "Police Car 3",		
 	},
 	-- Grade 3
 	[3] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
+		["police"] = "Police Car",		
+		["police3"] = "Police Car 2",	
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",
 	},
 	-- Grade 4
 	[4] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
+		["police"] = "Police Car 1",		
+		["police3"] = "Police Car 3",		
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
 	},
-
-    -- Grade 5
 	[5] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
-
+		["police"] = "Police Car 1",		
+		["police3"] = "Police Car 3",	
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",		
 	},
-	-- Grade 6
 	[6] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
+		["police"] = "Police Car 1",		
+		["police3"] = "Police Car 3",	
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
 	},
-	-- Grade 7
 	[7] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
+		["police"] = "Police Car 1",		
+		["police3"] = "Police Car 3",	
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",		
 	},
-	-- Grade 8
+    [8] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [9] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [10] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [11] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [12] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [13] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [14] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [15] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+    [16] = {
+        ["police"] = "Police Car 1",
+        ["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",	
+    },
+	[17] = {
+		["police"] = "Police Car 1",
+		["police3"] = "Police Car 3",
+        ["npolcoach"] = "Prison Bus",	
+        ["bcat"] = "Riot Van",		
+	}
+}
+
+Config.Helicopter = {
+	-- Grade 0
+	[0] = {
+		["polas350"] = "Police Heli",
+	},
+	-- Grade 1
+	[1] = {
+		["polas350"] = "Police Heli",
+	},
+	-- Grade 2
+	[2] = {
+		["polas350"] = "Police Heli",
+    },
+	-- Grade 3
+	[3] = {
+		["polas350"] = "Police Heli",
+    },
+	-- Grade 4
+	[4] = {
+		["polas350"] = "Police Heli",
+	},
+    -- Grade 5
+    [5] = {
+		["polas350"] = "Police Heli",
+	},
+    -- Grade 6
+    [6] = {
+		["polas350"] = "Police Heli",
+	},
+    -- Grade 7
+    [7] = {
+		["polas350"] = "Police Heli",
+    },
+    -- Grade 8
+    [8] = {
+		["polas350"] = "Police Heli",
+    },
+    -- Grade 9
+    [9] = {
+		["polas350"] = "Police Heli",
+    },
+    [10] = {
+		["polas350"] = "Police Heli",
+    },
+    [11] = {
+		["polas350"] = "Police Heli",
+    },
+    [12] = {
+		["polas350"] = "Police Heli",
+    },
+    [13] = {
+		["polas350"] = "Police Heli",
+    },
+    [14] = {
+		["polas350"] = "Police Heli",
+    },
+    [15] = {
+		["polas350"] = "Police Heli",
+    },
+    [16] = {
+		["polas350"] = "Police Heli",
+    },
+    [17] = {
+		["polas350"] = "Police Heli",
+    },
+}  
+
+Config.AuthorizedBoat = {
+	-- Grade 0
+	[0] = {
+		["predator"] = "Police Boat Predator",
+	},
+	-- Grade 1
+	[1] = {
+		["predator"] = "Police Boat Predator",
+	},
+	-- Grade 2
+	[2] = {
+		["predator"] = "Police Boat Predator",		
+	},
+	-- Grade 3
+	[3] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	-- Grade 4
+	[4] = {
+		["predator"] = "Police Boat Predator",
+	},
+	[5] = {
+		["predator"] = "Police Boat Predator",
+	},
+	[6] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[7] = {
+		["predator"] = "Police Boat Predator",	
+	},
 	[8] = {
-		--[[	["pddirtbike"] = "Police Offroad Bike",
-        ["2015polstang"] = "Police Mustang",
-        ["c8cop"] = "Police Corvette C8",
-        ["libertyram"] = "Police RAM 2016",
-		["liberty20exp"] = "Police Explorer 2020",
-        ["liberty18charg"] = "Police Dodge Charger 2018",]]
-        ["code3harley"] = "Police Harley Davidson Bike",
-        ["code3mustang"] = "Police Mustang GT",
-        ["code314charg"] = "Police Dodge Charger 2014",
-        ["code316fpiu"] = "Police Ford Interceptor SUV 2016",
-        ["code316impala"] = "Police Chavalotte Impala 2016",
-        ["code318charg"] = "Police Dodge Charger 2018",
-        ["code3f150"] = "Police F150 2021",
-        ["code3durango"] = "Police Durango",
-        ["code3ram"] = "Police RAM 2016",
-        ["code3silverado"] = "Police Chevy Silvarado",
-		["code310charg"] = "Police Dodge Charger 2010",
-        ["code314tahoe"] = "Police Tahoe 2014",
-        ["code318chargk9"] = "Police K9 Dodge Charger 2018",
-        ["code318tahoe"] = "Police Tahoe 2018",
-        ["code318tahoek9"] = "Police K9 Tahoe 2018",
-        ["code320exp"] = "Police Ford Explorer 2020",
+		["predator"] = "Police Boat Predator",
+	},
+	[9] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[10] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[11] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[12] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[13] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[14] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[15] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[16] = {
+		["predator"] = "Police Boat Predator",	
+	},
+	[17] = {
+		["predator"] = "Police Boat Predator",	
 	}
 }
 
@@ -358,28 +380,34 @@ Config.Radars = {
 }
 
 Config.CarItems = {
-    
+    [1] = {
+        name = "heavyarmor",
+        amount = 2,
+        info = {},
+        type = "item",
+        slot = 1,
+    },
+    [2] = {
+        name = "empty_evidence_bag",
+        amount = 10,
+        info = {},
+        type = "item",
+        slot = 2,
+    },
+    [3] = {
+        name = "police_stormram",
+        amount = 1,
+        info = {},
+        type = "item",
+        slot = 3,
+    },
 }
 
 Config.Items = {
     label = "Police Armory",
-    slots = 30,
+    slots = 42,
     items = {
         [1] = {
-            name = "weapon_pistol",
-            price = 0,
-            amount = 1,
-            info = {
-                serie = "",
-                attachments = {
-                    {component = "COMPONENT_AT_PI_FLSH", label = "Flashlight"},
-                }
-            },
-            type = "weapon",
-            slot = 1,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
-        },
-        [2] = {
             name = "weapon_stungun",
             price = 0,
             amount = 1,
@@ -387,282 +415,408 @@ Config.Items = {
                 serie = "",
             },
             type = "weapon",
+            slot = 1,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [2] = {
+            name = "weapon_glock17",
+            price = 0,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_PI_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
             slot = 2,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [3] = {
-            name = "bandage",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 3,
-            authorizedJobGrades = {0, 1, 2, 3, 4,5, 6, 7, 8}
-        },
-        [4] = {
             name = "weapon_smg",
             price = 0,
             amount = 1,
             info = {
-                serie = "",
                 attachments = {
                     {component = "COMPONENT_AT_SCOPE_MACRO_02", label = "1x Scope"},
                     {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
                 }
             },
             type = "weapon",
-            slot = 4,
-            authorizedJobGrades = {0,1,2,3,4, 5, 6, 7, 8}
+            slot = 3,
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
-        [5] = {
-            name = "weapon_carbinerifle",
+        [4] = {
+            name = "weapon_m4",
             price = 0,
             amount = 1,
             info = {
-                serie = "",
                 attachments = {
                     {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
-                    {component = "COMPONENT_AT_SCOPE_MEDIUM", label = "3x Scope"},
+                }
+            },
+            type = "weapon",
+            slot = 4,
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [5] = {
+            name = "weapon_ar15",
+            price = 0,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                    {component = "COMPONENT_AT_SCOPE_MEDIUM", label = "Scope"},
+                    {component = "COMPONENT_AT_AR_AFGRIP", label = "AF-Grip"},
                 }
             },
             type = "weapon",
             slot = 5,
-            authorizedJobGrades = {0,1,2,3,4, 5, 6, 7, 8}
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [6] = {
+            name = "weapon_pumpshotgun_mk2",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_SG_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
+            slot = 6,
+            authorizedJobGrades = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [7] = {
+            name = "weapon_scarh",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_AR_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
+            slot = 7,
+            authorizedJobGrades = {11, 12, 13, 14, 15, 16, 17}
+        },
+        [8] = {
+            name = "weapon_pistol50",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_SCOPE_LARGE", label = "Scope"},
+                }
+            },
+            type = "weapon",
+            slot = 8,
+            authorizedJobGrades = {5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [9] = {
             name = "weapon_nightstick",
             price = 0,
             amount = 1,
             info = {},
             type = "weapon",
-            slot = 6,
-            authorizedJobGrades = {0, 1, 2, 3, 4,5, 6, 7, 8}
-        },
-        [7] = {
-            name = "pistol_ammo",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 7,
-            authorizedJobGrades = {0, 1, 2, 3, 4,5, 6, 7, 8}
-        },
-        [8] = {
-            name = "smg_ammo",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 8,
-            authorizedJobGrades = {0,1,2,3,4, 5, 6, 7, 8}
-        },
-        [9] = {
-            name = "phone",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
             slot = 9,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [10] = {
-            name = "rifle_ammo",
+            name = "pistol_ammo",
             price = 0,
-            amount = 50,
+            amount = 10,
             info = {},
             type = "item",
             slot = 10,
-            authorizedJobGrades = {0,1,2,3,4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [11] = {
+            name = "smg_ammo",
+            price = 0,
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 11,
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [12] = {
+            name = "shotgun_ammo",
+            price = 0,
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 12,
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [13] = {
+            name = "rifle_ammo",
+            price = 0,
+            amount = 10,
+            info = {},
+            type = "item",
+            slot = 13,
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [14] = {
             name = "handcuffs",
             price = 0,
             amount = 1,
             info = {},
             type = "item",
-            slot = 11,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            slot = 14,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
-        [12] = {
+        [15] = {
             name = "weapon_flashlight",
             price = 0,
             amount = 1,
             info = {},
             type = "weapon",
-            slot = 12,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            slot = 15,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
-        [13] = {
+        [16] = {
             name = "empty_evidence_bag",
             price = 0,
             amount = 50,
             info = {},
             type = "item",
-            slot = 13,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            slot = 16,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
-        [14] = {
+        [17] = {
             name = "police_stormram",
             price = 0,
             amount = 50,
             info = {},
             type = "item",
-            slot = 14,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
-        },
-        [15] = {
-            name = "armor",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 15,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
-        },
-        [16] = {
-            name = "radio",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 16,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
-        },
-        [17] = {
-            name = "heavyarmor",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
             slot = 17,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [18] = {
-            name = "drone",
+            name = "radio",
             price = 0,
-            amount = 50,
+            amount = 1,
             info = {},
             type = "item",
             slot = 18,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [19] = {
-            name = "specialbadge",
-            price = 0,
+            name = "heavyarmor",
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
             slot = 19,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [20] = {
-            name = "police-shield",
-            price = 0,
+            name = "ifaks",
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
             slot = 20,
-            authorizedJobGrades = {0,1,2,3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [21] = {
-            name = "uvlight",
-            price = 0,
+            name = "nikon",
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
             slot = 21,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [22] = {
-            name = "weapon_pumpshotgun",
-            price = 0,
-            amount = 10,
-            info = {},
-            type = "item",
-            slot = 22,
-            authorizedJobGrades = {0,1,2,3, 4, 5, 6, 7, 8}
-        },
-        [23] = {
-            name = "shotgun_ammo",
-            price = 0,
-            amount = 50,
-            info = {},
-            type = "item",
-            slot = 23,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
-        }
-       --[[ [22] = {
-            name = "painkillers",
-            price = 0,
+            name = "gsrtestkit",
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
             slot = 22,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [23] = {
-            name = "diving_gear",
-            price = 0,
+            name = "dnatestkit",
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
             slot = 23,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [24] = {
-            name = "parachute",
-            price = 0,
+            name = "drugtestkit",
+            price = 50,
             amount = 50,
             info = {},
             type = "item",
             slot = 24,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [25] = {
-            name = "advancedrepairkit",
-            price = 0,
-            amount = 10,
+            name = "breathalyzer",
+            price = 50,
+            amount = 50,
             info = {},
             type = "item",
             slot = 25,
-            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [26] = {
-            name = "weapon_specialcarbine",
-            price = 0,
-            amount = 10,
+            name = "accesstool",
+            price = 50,
+            amount = 50,
             info = {},
             type = "item",
             slot = 26,
-            authorizedJobGrades = { 1, 2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [27] = {
-            name = "weapon_assaultrifle",
-            price = 0,
-            amount = 10,
+            name = "fingerprintreader",
+            price = 50,
+            amount = 50,
             info = {},
             type = "item",
             slot = 27,
-            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
-        [29] = {
-            name = "weapon_appistol",
-            price = 0,
-            amount = 10,
+        [28] = {
+            name = "sdcard",
+            price = 50,
+            amount = 50,
             info = {},
             type = "item",
-            slot = 29,
-            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8}
+            slot = 28,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [29] = {
+            name = "shepherd",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot =29,
+            authorizedJobGrades = {7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
         },
         [30] = {
-            name = "oxy",
-            price = 0,
-            amount = 10,
+            name = "cctv",
+            price = 50,
+            amount = 50,
             info = {},
             type = "item",
             slot = 30,
-            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8}
-        }]]
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [31] = {
+            name = "camviewer",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 31,
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [32] = {
+            name = "petfood",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 32,
+            authorizedJobGrades = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [33] = {
+            name = "firstaidforpet",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 33,
+            authorizedJobGrades = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [34] = {
+            name = "petwaterbottleportable",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 34,
+            authorizedJobGrades = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [35] = {
+            name = "advancedrepairkit",
+            price = 50,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 35,
+            authorizedJobGrades = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [36] = {
+            name = "megaphone",
+            price = 50,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 36,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [38] = {
+            name = "spikestrip",
+            price = 10,
+            amount = 1,
+            info = {},
+            type = "item",
+            slot = 38,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [39] = {
+            name = "weapon_heavysniper",
+            price = 1000,
+            amount = 1,
+            info = {},
+            type = "weapon",
+            slot = 39,
+            authorizedJobGrades = {15, 16, 17}
+        },
+        [40] = {
+            name = "snp_ammo",
+            price = 50,
+            amount = 1,
+            info = {},
+            type = "weapon",
+            slot = 40,
+            authorizedJobGrades = {15, 16, 17}
+        },
+        [41] = {
+            name = "weapon_remington",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_SG_FLSH", label = "Flashlight"},
+                }
+            },
+            type = "weapon",
+            slot = 41,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
+        [42] = {
+            name = "weapon_mk14",
+            price = 12,
+            amount = 1,
+            info = {
+                attachments = {
+                    {component = "COMPONENT_AT_SCOPE_LARGE", label = "Scope"},
+                }
+            },
+            type = "weapon",
+            slot = 42,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17}
+        },
     }
 }
 

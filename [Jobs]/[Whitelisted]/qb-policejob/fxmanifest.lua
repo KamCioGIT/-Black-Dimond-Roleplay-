@@ -2,12 +2,13 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'QB-PoliceJob'
-version '1.0.0'
+version '1.2.5'
 
 shared_scripts {
     'config.lua',
     '@qb-core/shared/locale.lua',
-    'locales/en.lua' -- Change this to your preferred language
+    'locales/en.lua',
+    'locales/*.lua'
 }
 
 client_scripts {
@@ -20,9 +21,10 @@ client_scripts {
 	'client/job.lua',
 	'client/heli.lua',
 	--'client/anpr.lua',
-	'client/evidence.lua',
+	-- 'client/evidence.lua',
 	'client/objects.lua',
-	'client/tracker.lua'
+	'client/tracker.lua',
+	'client/spike.lua'
 }
 
 server_scripts {
