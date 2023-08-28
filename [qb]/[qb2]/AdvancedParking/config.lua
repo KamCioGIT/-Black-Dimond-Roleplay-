@@ -58,8 +58,21 @@ Config.vehiclesBlacklist = {
 	`packer`,
 	`tanker`,
 	`kamacho`,
-
+	"bison2",
+	"bison3",
+	"burrito",
+	"burrito2",
+	"burrito3",
+	"burrito4",
+	"paradise",
+	"rumbo2",
+	"speedo",
+	"speedo4",
+	"surfer",
+	"youga",
+	"youga2"
 }
+
 
 -- any plates from vehicles you do not want to save, go here (not case sensitive and can use 
 -- partial strings)
