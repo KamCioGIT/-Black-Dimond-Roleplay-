@@ -1,7 +1,7 @@
 Config = {}
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add setr UseTarget true)
 Config.MinimalDoctors = 10 -- How many players with the ambulance job to prevent the hospital check-in system from being used
-Config.WipeInventoryOnRespawn = true -- Enable or disable removing all the players items when they respawn at the hospital
+Config.WipeInventoryOnRespawn = false -- Enable or disable removing all the players items when they respawn at the hospital
 Config.Helicopter = "emspzulu" -- Helicopter model that players with the ambulance job can use
 Config.BillCost = 250 -- Price that players are charged for using the hospital check-in system
 Config.DeathTime = 300 -- How long the timer is for players to bleed out completely and respawn at the hospital
@@ -217,6 +217,7 @@ Config.WeaponClasses = { -- Define gta weapon classe numbers
     ['NOTHING'] = 13
 }
 
+
 Config.MinorInjurWeapons = { -- Define which weapons cause small injuries
     [Config.WeaponClasses['SMALL_CALIBER']] = true,
     [Config.WeaponClasses['MEDIUM_CALIBER']] = true,
@@ -401,6 +402,52 @@ Config.BoneIndexes = { -- Correspond bone labels to their hash number
 }
 
 Config.Weapons = { -- Correspond weapon names to their class number
+    --[[ HIGH CALIBER ]]
+    [`WEAPON_DE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M4`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HK416`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AR15`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_AK47`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M70`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_SCARH`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_MK14`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_M110`] = Config.WeaponClasses['HIGH_CALIBER'],
+    [`WEAPON_HUNTINGRIFLE`] = Config.WeaponClasses['HIGH_CALIBER'],
+    --[[ MEDIUM CALIBER ]]
+    [`WEAPON_UZI`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MAC10`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    [`WEAPON_MP9`] = Config.WeaponClasses['MEDIUM_CALIBER'],
+    --[[ SMALL CALIBER ]]
+    [`WEAPON_GLOCK17`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M9`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_M1911`] = Config.WeaponClasses['SMALL_CALIBER'],
+    [`WEAPON_FNX45`] = Config.WeaponClasses['SMALL_CALIBER'],
+    --[[ SHOTGUN ]]
+    [`WEAPON_REMINGTON`] = Config.WeaponClasses['SHOTGUN'],
+    [`WEAPON_MOSSBERG`] = Config.WeaponClasses['SHOTGUN'],
+    --[[ CUTTING ]]
+    [`WEAPON_SHIV`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_KATANA`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_BAYONETKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_BLUEBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_BFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_CHBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_CRIMSONBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_FADEBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_FLIPKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_FORESTBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_GUTKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_HUNTSMANKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_KARAMBITKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_SAFARIBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_SCORCHEDBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_SLAUGHTERBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_STAINEDRBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    [`WEAPON_URBANRBFKNIFE`] = Config.WeaponClasses['CUTTING'],
+    --[[ HEAVY IMPACT ]]
+    [`WEAPON_SLEDGEHAMMER`] = Config.WeaponClasses['HEAVY_IMPACT'],
+    [`WEAPON_PERFORATOR`] = Config.WeaponClasses['HEAVY_IMPACT'],
+    
     [`WEAPON_STUNGUN`] = Config.WeaponClasses['NONE'],
     [`WEAPON_STUNGUN_MP`] = Config.WeaponClasses['NONE'],
     --[[ Small Caliber ]]--
