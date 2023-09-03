@@ -25,11 +25,11 @@ Config.ExplosionTypes = {9}
 Config.Enable.Speeding = true
 Config.Enable.Shooting = true
 Config.Enable.Autotheft = true
-Config.Enable.Melee = false
-Config.Enable.PlayerDowned = false
+Config.Enable.Melee = true
+Config.Enable.PlayerDowned = true
 
 -- Enable alerts when cops break the law, also prints to console.
-Config.Debug = false
+Config.Debug = true
 
 -- Changes the min and max offset for the radius
 Config.MinOffset = 1
@@ -41,8 +41,9 @@ Config.Locations = {
         [1] = {label = "Hunting Zone", radius = 250.0, coords = vector3(-1339.05, -3044.38, 13.94)},
     },
     ["NoDispatch"] = {
-        [1] = {label = "Ammunation 1", coords = vector3(2944.29, -3915.41, 150), length = 50.0, width = 50.0, heading = 70, minZ = 142, maxZ = 196},
+        [1] = {label = "Ammunation 1", coords = vector3(13.53, -1097.92, 29.8), length = 14.0, width = 5.0, heading = 70, minZ = 28.8, maxZ = 32.8},
         [2] = {label = "Ammunation 2", coords = vector3(821.96, -2163.09, 29.62), length = 14.0, width = 5.0, heading = 270, minZ = 28.62, maxZ = 32.62},
+        --[3] = {label = "GABZ Missions Row PD", coords = vector3(486.05, -1009.3, 30.69), length = 13.0, width = 5.0, heading = 0, minZ = 29.49, maxZ = 32.69},
     },
 }
 

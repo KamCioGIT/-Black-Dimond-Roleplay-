@@ -42,27 +42,7 @@ local WeaponTable = {
     [317205821]   = "CLASS 2: Autoshotgun",
     [-1568386805] = "CLASS 5: GRENADE LAUNCHER",
     [-1312131151] = "CLASS 5: RPG",
-    [125959754]   = "CLASS 5: Compactlauncher",
-    -- Custom weapons
-    [GetHashKey("weapon_ak47")] = "CLASS 3: AK-47",
-    [GetHashKey("weapon_de")] = "CLASS 2: Desert Eagle",
-    [GetHashKey("weapon_fnx45")] = "CLASS 1: FN .45",
-    [GetHashKey("weapon_glock17")] = "CLASS 1: Glock 17",
-    [GetHashKey("weapon_m4")] = "CLASS 3: M4",
-    [GetHashKey("weapon_hk416")] = "CLASS 3: HK-416",
-    [GetHashKey("weapon_mk14")] = "CLASS 4: MK 14",
-    [GetHashKey("weapon_mk14")] = "CLASS 4: M110",
-    [GetHashKey("weapon_huntingrifle")] = "CLASS 3: Hunting Rifle",
-    [GetHashKey("weapon_ar15")] = "CLASS 3: AR-15",
-    [GetHashKey("weapon_m9")] = "CLASS 1: M9",
-    [GetHashKey("weapon_m70")] = "CLASS 3: m70",
-    [GetHashKey("weapon_m1911")] = "CLASS 1: 1911",
-    [GetHashKey("weapon_mac10")] = "CLASS 2: Mac-10",
-    [GetHashKey("weapon_uzi")] = "CLASS 2: Uzi",
-    [GetHashKey("weapon_mp9")] = "CLASS 2: MP9",
-    [GetHashKey("weapon_mossberg")] = "CLASS 2: Mossberg",
-    [GetHashKey("weapon_remington")] = "CLASS 2: Remington",
-    [GetHashKey("weapon_scarh")] = "CLASS 3: Scar-H"
+    [125959754]   = "CLASS 5: Compactlauncher"
 }
 local function VehicleTheft(vehicle)
     local vehdata = vehicleData(vehicle)
@@ -71,7 +51,7 @@ local function VehicleTheft(vehicle)
     local heading = getCardinalDirectionFromHeading()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "vehicletheft", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-67",
+        dispatchCode = "10-35",
         firstStreet = locationInfo,
         model = vehdata.name, -- vehicle name
         plate = vehdata.plate, -- vehicle plate
@@ -110,7 +90,7 @@ local function VehicleShooting(vehdata)
     if doorCount == 2 then doorCount = "Two-Door" elseif doorCount == 3 then doorCount = "Three-Door" elseif doorCount == 4 then doorCount = "Four-Door" else doorCount = "UNKNOWN" end
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "vehicleshots", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-13",
+        dispatchCode = "10-60",
         firstStreet = locationInfo,
         model = vehdata.name,
         plate = vehdata.plate,
@@ -145,7 +125,7 @@ local function Shooting()
 
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "shooting", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-13",
+        dispatchCode = "10-11",
         firstStreet = locationInfo,
         gender = gender,
         weapon = weapon,
@@ -199,7 +179,7 @@ local function Fight()
     local gender = GetPedGender()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "fight", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-35",
+        dispatchCode = "10-10",
         firstStreet = locationInfo,
         gender = gender,
         model = nil,
@@ -225,7 +205,7 @@ local function InjuriedPerson()
     local gender = GetPedGender()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "civdown", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-53",
+        dispatchCode = "10-69",
         firstStreet = locationInfo,
         gender = gender,
         model = nil,
@@ -251,7 +231,7 @@ local function DeceasedPerson()
     local gender = GetPedGender()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "civdead", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-54",
+        dispatchCode = "10-69",
         firstStreet = locationInfo,
         gender = gender,
         model = nil,
@@ -465,7 +445,7 @@ local function YachtHeist()
     local gender = GetPedGender()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "yachtheist", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-90",
+        dispatchCode = "10-65",
         firstStreet = locationInfo,
         gender = gender,
         model = nil,
@@ -491,7 +471,7 @@ local function DrugSale()
     local gender = GetPedGender()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "suspicioushandoff", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-38",
+        dispatchCode = "10-13",
         firstStreet = locationInfo,
         gender = gender,
         model = nil,
@@ -524,7 +504,7 @@ local function CarJacking(vehicle)
     local heading = getCardinalDirectionFromHeading()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "carjack", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-67",
+        dispatchCode = "10-35",
         firstStreet = locationInfo,
         model = vehdata.name, -- vehicle name
         plate = vehdata.plate, -- vehicle plate
@@ -583,7 +563,7 @@ local function EmsDown()
     local callsign = QBCore.Functions.GetPlayerData().metadata["callsign"]
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "emsdown", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-14",
+        dispatchCode = "10-99",
         firstStreet = locationInfo,
         name = "EMS - " .. plyData.charinfo.firstname:sub(1, 1):upper() .. plyData.charinfo.firstname:sub(2) .. " " .. plyData.charinfo.lastname:sub(1, 1):upper() .. plyData.charinfo.lastname:sub(2),
         model = nil,
@@ -614,7 +594,7 @@ local function Explosion()
     local gender = GetPedGender()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "explosion", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-57",
+        dispatchCode = "10-80",
         firstStreet = locationInfo,
         gender = nil,
         model = nil,
@@ -640,7 +620,7 @@ local function SuspiciousActivity()
     local gender = GetPedGender()
     TriggerServerEvent("dispatch:server:notify", {
         dispatchcodename = "susactivity", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-        dispatchCode = "10-31",
+        dispatchCode = "10-66",
         firstStreet = locationInfo,
         gender = gender,
         model = nil,

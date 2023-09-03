@@ -606,7 +606,7 @@ Config.JobOutfits = {
             [0] = {
                 -- Grade Level
                 [1] = {
-                    outfitLabel = 'Short Sleeve',
+                    outfitLabel = 'Female Short Sleeve',
                     outfitData = {
                         pants_1 = 133,
                         pants_2 = 0,

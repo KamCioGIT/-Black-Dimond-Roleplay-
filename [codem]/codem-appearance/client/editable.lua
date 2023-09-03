@@ -300,15 +300,16 @@ function HideHelpNotification()
 end
 
 function Close()
-
     SetNuiFocus(false, false)
     DisableCam()
     DisplayRadar(true)
     accessoryCache = {}
- 
     menuOpen = false
-   
     ClearPedTasks(PlayerPedId())
+    local defaultHeading = GetEntityHeading(PlayerPedId()) 
+    local c = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 5.0, 0.0)
+    SetEntityHeading(PlayerPedId(), GetEntityHeading(PlayerPedId()) + 30.0)
+    TaskLookAtCoord(PlayerPedId(), c, 1, 2048, 3)
     ResetBasket()
     prevSkin = {}
     tattooBasket = {}
@@ -322,5 +323,4 @@ function Close()
     TriggerEvent("codem-appearance:LoadTattoos", currentTattoos)
     currentCharacterPage = false
     Config.OnMenuClose()
-
 end

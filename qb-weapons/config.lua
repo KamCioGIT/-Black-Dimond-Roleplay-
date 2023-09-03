@@ -25,7 +25,62 @@ Config.Throwables = {
 }
 
 Config.DurabilityMultiplier = {
+
+
 	-- Melee
+
+    ['weapon_acwr'] 		= 0.15,
+    ['weapon_heavysmg'] 	= 0.15,
+    ['weapon_gk47'] 		= 0.15,
+    ['weapon_anarchy'] 		= 0.15,
+    ['weapon_far'] 		    = 0.15,
+    ['weapon_tar21'] 		= 0.15,
+    ['weapon_knr'] 		    = 0.15,
+    ['weapon_smg9'] 		= 0.15,
+    ['weapon_hfap'] 		= 0.15,
+    ['weapon_acr'] 		    = 0.15,
+    ['weapon_ump45'] 		= 0.15,
+    ['weapon_sm237'] 		= 0.15,
+    ['weapon_m82'] 		    = 0.15,
+    ['weapon_sb181'] 		= 0.15,
+    ['weapon_ss2_2'] 		= 0.15,
+    ['weapon_r99'] 		    = 0.15,
+    ['weapon_gys'] 		    = 0.15,
+    ['weapon_art64'] 		= 0.15,
+    ['weapon_akpu'] 		= 0.15,
+    ['weapon_an94_2'] 		= 0.15,
+    ['weapon_dcs'] 		    = 0.15,
+    ['weapon_m90s'] 	    = 0.15,
+    ['weapon_lgwii']        = 0.15,
+    ['weapon_pl14'] 	    = 0.15,
+    ['weapon_scarsc'] 	    = 0.15,
+    ['weapon_va030'] 	    = 0.15,
+    ['weapon_ar727'] 	    = 0.15,
+    ['weapon_smg1311'] 	    = 0.15,
+    ['weapon_ar121'] 	    = 0.15,
+    ['weapon_cz75'] 	    = 0.15,
+    ['weapon_ssr56'] 		= 0.15,
+    ['weapon_scifw'] 		= 0.15,
+    ['weapon_anr15'] 		= 0.15,
+    ['weapon_dks501'] 		= 0.15,
+    ['weapon_owshotgun']    = 0.15,
+    ['weapon_book'] 		= 0.15,
+    ['weapon_highboot'] 	= 0.15,
+    ['weapon_energyknife'] 	= 0.15,
+    ['weapon_karambit'] 	= 0.15,
+    ['weapon_brick'] 		= 0.15,
+    ['weapon_limpid'] 		= 0.15,
+    ['weapon_pasmg'] 		= 0.15,
+    ['weapon_l85'] 		    = 0.15,
+    ['weapon_akbg'] 		= 0.15,
+    ['weapon_benellim4'] 	= 0.15,
+    ['weapon_gvandal'] 		= 0.15,
+    ['weapon_autosmg'] 		= 0.15,
+    ['weapon_mx4'] 		    = 0.15,
+    ['weapon_anm4'] 		= 0.15,
+    ['weapon_truvelo'] 		= 0.15,
+
+    
 	-- ['weapon_unarmed'] 				 = 0.05,
 	['weapon_dagger'] 				 = 0.05,
 	['weapon_bat'] 				 	 = 0.05,
@@ -274,7 +329,8 @@ Config.WeaponRepairCosts = {
 
 WeaponAttachments = {
     -- Do It Digital Weapons
-    ['WEAPON_A15RC'] = {
+     -- Do It Digital Weapons
+     ['WEAPON_A15RC'] = {
         ['defaultclip'] = {
             component = 'w_ar_a15rc_mag1',
             item = 'carbinerifle_defaultclip',
@@ -1423,6 +1479,1010 @@ WeaponAttachments = {
             item = 'smg_suppressor',
         },
     },
+    --
+    ['WEAPON_ACWR'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_acwr_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_acwr_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_acwr_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_acwr_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_acwr_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_HEAVYSMG'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_heavysmg_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_heavysmg_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_heavysmg_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_heavysmg_supp',
+            item = 'pistol_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_sb_heavysmg_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_GK47'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_gk47_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_gk47_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_gk47_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_gk47_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_gk47_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_ANARCHY'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_anarchy_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_anarchy_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_anarchy_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_anarchy_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_anarchy_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_FAR'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_far_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_far_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_far_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_far_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_far_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_TAR21'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_tar21_mag1',
+            item = 'advancedrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_tar21_mag2',
+            item = 'advancedrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_tar21_scope',
+            item = 'combatpdw_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_tar21_supp',
+            item = 'rifle_suppressor',
+        },
+    },
+    --
+    ['WEAPON_KNR'] = {
+        ['defaultclip'] = {
+            component = 'w_pi_knr_mag1',
+            item = 'pistol_defaultclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'w_at_pi_knr_comp',
+            item = 'pistol_suppressor',
+        },
+        ['flashlight'] = {
+            component = 'w_at_pi_knr_flsh',
+            item = 'pistol_flashlight',
+        },
+        ['scope'] = {
+            component = 'w_at_pi_knr_scope',
+            item = 'microsmg_scope',
+        },
+    },
+    --  
+    ['WEAPON_SMG9'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_smg9_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_smg9_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_smg9_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_smg9_supp',
+            item = 'pistol_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_sb_smg9_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_HFAP'] = {
+        ['defaultclip'] = {
+            component = 'w_pi_hfap_mag1',
+            item = 'pistol_defaultclip',
+            type = 'clip',
+        },
+    },
+    ['extendedclip'] = {
+        component = 'w_pi_hfap_mag2',
+        item = 'pistol_extendedclip',
+        type = 'clip',
+    },
+    ['suppressor'] = {
+        component = 'w_at_pi_hfap_supp',
+        item = 'pistol_suppressor',
+    },
+    --
+    ['WEAPON_ACR'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_acr_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_acr_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_acr_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_acr_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_acr_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_UMP45'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_ump45_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_ump45_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_ump45_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_ump45_supp',
+            item = 'pistol_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_sb_ump45_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_SM237'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_sm237_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_sm237_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_sm237_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_sm237_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_sm237_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_M82'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_m82_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_m82_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_m82_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_m82_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_m82_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_SB181'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_sb181_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_sb181_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_sb181_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_sb181_supp',
+            item = 'pistol_suppressor',
+        },
+    },
+    --
+    ['WEAPON_SS2_2'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_ss2_2_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_ss2_2_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_ss2_2_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_ss2_2_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_ss2_2_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_R99'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_r99_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_r99_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+    },
+    --
+    ['WEAPON_GYS'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_gys_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_gys_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_gys_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_gys_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_gys_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_ART64'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_art64_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_art64_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_art64_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_art64_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_art64_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_AKPU'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_akpu_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_akpu_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_akpu_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_akpu_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_akpu_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_AN94_2'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_an94_2_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_an94_2_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_an94_2_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_an94_2_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_an94_2_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_DCS'] = {
+        ['defaultclip'] = {
+            component = 'w_sg_dcs_mag1',
+            item = 'assaultshotgun_defaultclip',
+            type = 'clip',
+        },
+        ['grip'] = {
+            component = 'w_at_sg_dcs_grip',
+            item = 'rifle_grip',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sg_dcs_supp',
+            item = 'shotgun_suppressor',
+        },
+    },
+    --
+    ['WEAPON_M90S'] = {
+        ['defaultclip'] = {
+            component = 'w_sg_m90s_mag1',
+            item = 'assaultshotgun_defaultclip',
+            type = 'clip',
+        },
+    },
+    --
+    ['WEAPON_LGWII'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_lgwii_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_lgwii_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_lgwii_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_PL14'] = {
+        ['defaultclip'] = {
+            component = 'w_pi_pl14_mag1',
+            item = 'pistol_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_pi_pl14_mag2',
+            item = 'pistol_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'w_at_pi_pl14_supp',
+            item = 'pistol_suppressor',
+        },
+    },
+    --
+    ['WEAPON_SCARSC'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_scarsc_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_scarsc_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_scarsc_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_scarsc_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_scarsc_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_VA030'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_va030_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_va030_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_va030_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_va030_supp',
+            item = 'pistol_suppressor',
+        },
+    },
+    --
+    ['WEAPON_AR727'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_ar727_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_ar727_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_ar727_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_ar727_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_ar727_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_SMG1311'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_smg1311_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_smg1311_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_smg1311_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_smg1311_supp',
+            item = 'pistol_suppressor',
+        },
+    },
+    --
+    ['WEAPON_AR121'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_ar121_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_ar121_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_ar121_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_ar121_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_ar121_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_CZ75'] = {
+        ['defaultclip'] = {
+            component = 'w_pi_cz75_mag1',
+            item = 'pistol_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_pi_cz75_mag2',
+            item = 'pistol_extendedclip',
+            type = 'clip',
+        },
+        ['suppressor'] = {
+            component = 'w_at_pi_cz75_supp',
+            item = 'pistol_suppressor',
+        },
+    },
+    --
+    ['WEAPON_SSR56'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_ssr56_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_ssr56_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_ssr56_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_ssr56_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_ssr56_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_SCIFW'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_scifw_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_scifw_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_scifw_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_scifw_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_scifw_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_ANR15'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_anr15_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_anr15_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_anr15_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_anr15_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_anr15_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_DKS501'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_dks501_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_dks501_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_dks501_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_dks501_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_dks501_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_KARAMBIT'] = {
+    },
+    --
+    ['WEAPON_OWSHOTGUN'] = {
+    },
+    --
+    ['WEAPON_ENERGYKNIFE'] = {
+    },
+    --
+    ['WEAPON_BOOK'] = {
+    },
+    --
+    ['WEAPON_BRICK'] = {
+    },
+    --
+    --
+    ['WEAPON_HIGHBOOT'] = {
+    },
+    --
+    ['WEAPON_LIMPID'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_limpid_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_limpid_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_limpid_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_limpid_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_limpid_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_PASMG'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_pasmg_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_pasmg_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_pasmg_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_pasmg_supp',
+            item = 'pistol_suppressor',
+        },
+    },
+    --
+    ['WEAPON_L85'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_l85_mag1',
+            item = 'advancedrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_l85_mag2',
+            item = 'advancedrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_l85_scope',
+            item = 'combatpdw_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_l85_supp',
+            item = 'rifle_suppressor',
+        },
+    },
+    --
+    ['WEAPON_AKBG'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_akbg_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_akbg_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_akbg_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_akbg_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_akbg_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_BENELLIM4'] = {
+        ['suppressor'] = {
+            component = 'w_at_sg_benellim4_supp',
+            item = 'shotgun_suppressor',
+        },
+    },
+    --
+    ['WEAPON_GVANDAL'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_gvandal_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_gvandal_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_gvandal_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_gvandal_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_gvandal_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_PASMG'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_autosmg_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_autosmg_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_autosmg_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_autosmg_supp',
+            item = 'pistol_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_sb_autosmg_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_MX4'] = {
+        ['defaultclip'] = {
+            component = 'w_sb_mx4_mag1',
+            item = 'smg_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_sb_mx4_mag2',
+            item = 'smg_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_sb_mx4_scope',
+            item = 'smg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_sb_mx4_supp',
+            item = 'pistol_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_sb_mx4_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_ANM4'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_anm4_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_anm4_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_anm4_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_anm4_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_anm4_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+    ['WEAPON_TRUVELO'] = {
+        ['defaultclip'] = {
+            component = 'w_ar_truvelo_mag1',
+            item = 'assaultrifle_defaultclip',
+            type = 'clip',
+        },
+        ['extendedclip'] = {
+            component = 'w_ar_truvelo_mag2',
+            item = 'assaultrifle_extendedclip',
+            type = 'clip',
+        },
+        ['scope'] = {
+            component = 'w_at_ar_truvelo_scope',
+            item = 'microsmg_scope',
+        },
+        ['suppressor'] = {
+            component = 'w_at_ar_truvelo_supp',
+            item = 'rifle_suppressor',
+        },
+        ['grip'] = {
+            component = 'w_at_ar_truvelo_grip',
+            item = 'rifle_grip',
+        },
+    },
+    --
+
     -- PISTOLS
     ['WEAPON_PISTOL'] = {
         ['defaultclip'] = {
