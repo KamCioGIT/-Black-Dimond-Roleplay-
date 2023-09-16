@@ -14,7 +14,9 @@ function LoadHUD()
     TriggerServerEvent("mHud:UpdatePlayersAmount")
     TriggerServerEvent("mHud:CheckPlayerStress")
     LoadPlayerInformations()
+    
     nuiMessage("SET_HUD_LOADED")
+    TriggerServerEvent("mHud:StartGiftTimer")
     ShowHud()
 end
 
@@ -27,7 +29,7 @@ end)
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     LoadHUD()
-    TriggerServerEvent("mHud:StartGiftTimer")
+
 end)
 
 CreateThread(function()

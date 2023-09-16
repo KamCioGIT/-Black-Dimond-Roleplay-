@@ -103,22 +103,24 @@ if Config.EnableSeatbelt then
         while true do
             local ped = PlayerPed
             if IsPedInAnyVehicle(ped) and CheckVehicleHasSeatbelt(Vehicle) then
-                local vehicle = Vehicle
-                local speed = GetEntitySpeed(vehicle) * 3.6
-                if lastSpeed > (Config.SeatbeltEjectSpeed ) and (lastSpeed - speed) > (speed * 1.7) then
-                    local seatPlayerId = {}
-                    for i=1, GetVehicleModelNumberOfSeats(GetEntityModel(vehicle)) do                       
-                        if not IsVehicleSeatFree(vehicle, i-2) then 
-                            local otherPlayerId = GetPedInVehicleSeat(vehicle, i-2) 
-                            local playerHandle = NetworkGetPlayerIndexFromPed(otherPlayerId)
-                            local playerServerId = GetPlayerServerId(playerHandle)
-                            table.insert(seatPlayerId, playerServerId)
+                if not inPassengerSeat then            
+                    local vehicle = Vehicle
+                    local speed = GetEntitySpeed(vehicle) * 3.6
+                    if lastSpeed > (Config.SeatbeltEjectSpeed ) and (lastSpeed - speed) > (speed * 1.7) then
+                        local seatPlayerId = {}
+                        for i=1, GetVehicleModelNumberOfSeats(GetEntityModel(vehicle)) do                       
+                            if not IsVehicleSeatFree(vehicle, i-2) then 
+                                local otherPlayerId = GetPedInVehicleSeat(vehicle, i-2) 
+                                local playerHandle = NetworkGetPlayerIndexFromPed(otherPlayerId)
+                                local playerServerId = GetPlayerServerId(playerHandle)
+                                table.insert(seatPlayerId, playerServerId)
+                            end
                         end
-                    end
-                    if #seatPlayerId > 0 then TriggerServerEvent("mHud:EjectPlayers", seatPlayerId) end                    
-                end   
-                lastSpeed = speed
-                lastVelocity = GetEntityVelocity(vehicle)
+                        if #seatPlayerId > 0 then TriggerServerEvent("mHud:EjectPlayers", seatPlayerId) end                    
+                    end   
+                    lastSpeed = speed
+                    lastVelocity = GetEntityVelocity(vehicle)
+                end
             else
                 if seatbelt then
                     seatbelt = false

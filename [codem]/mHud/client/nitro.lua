@@ -12,8 +12,14 @@ function nitroActive()
     nuiMessage("NITRO_ACTIVE")
 end
 
-function setNitroValue(value)
-    nuiMessage("SET_NITRO_VALUE", value)
+function setNitroValue(value, plate)
+    local CurrentVehicle = Vehicle
+    if DoesEntityExist(CurrentVehicle) then
+        local Plate = trim(GetVehicleNumberPlateText(CurrentVehicle))
+        if Plate == plate then
+            nuiMessage("SET_NITRO_VALUE", value)
+        end
+    end
 end
 
 
@@ -68,7 +74,7 @@ CreateThread(function()
                         SetVehicleEngineTorqueMultiplier(CurrentVehicle, NitrousBoost)
                         SetEntityMaxSpeed(CurrentVehicle, 999.0)
                         NitrousActivated = true
-                        setNitroValue(VehicleNitrous[Plate].level)
+                        setNitroValue(VehicleNitrous[Plate].level, Plate)
                         CreateThread(function()
                             while NitrousActivated do
                                 if VehicleNitrous[Plate].level - 1 ~= 0 then
@@ -217,7 +223,7 @@ end)
 
 RegisterNetEvent('mHud:client:UpdateNitroLevel', function(Plate, level)
     VehicleNitrous[Plate].level = level
-    setNitroValue(VehicleNitrous[Plate].level)
+    setNitroValue(VehicleNitrous[Plate].level, Plate)
 
 end)
 
@@ -226,7 +232,7 @@ RegisterNetEvent('mHud:client:LoadNitrous', function(Plate)
         hasnitro = true,
         level = 100,
     }
-    setNitroValue(VehicleNitrous[Plate].level)
+    setNitroValue(VehicleNitrous[Plate].level, Plate)
   
  
 end)
@@ -239,6 +245,6 @@ RegisterNetEvent('mHud:client:UnloadNitrous', function(Plate)
         if CPlate == Plate then
             NitrousActivated = false
         end
-        setNitroValue(0)
+        setNitroValue(0, Plate)
     end
 end)

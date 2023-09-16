@@ -15,7 +15,9 @@ Config.SQL = "oxmysql" -- oxmysql, ghmattimysql, mysql-async
 Config.ShowMapWhileWalking = true -- true : display the map when walking || false : display the map only in vehicle
 Config.HudSettingsCommand = "hudsettings" 
 Config.HudSettingsEvent = "mHud:OpenHudSettings"
-Config.DefaultSpeedType = "mph" -- kmh or mph NOTE : Players can change speed type from hud settings this option only effect new players
+Config.DefaultSpeedType = "kmh" -- kmh or mph NOTE : Players can change speed type from hud settings this option only effect new players
+Config.EnableFuel = true -- Do NOT Touch if you have any fuel system
+Config.FuelSystem = 'cdn-fuel' -- LegacyFuel / ox-fuel / nd-fuel / frfuel / cdn-fuel
 Config.MilitaryTime = true -- true : display military time on the hud || false : display civilian time on the hud
 Config.AddonWeapons = { -- add weapon image in html\assets\weapons
     ["melee"] = {},
@@ -57,11 +59,11 @@ Config.Menu = { -- Toggle vehicle menu
 
 Config.Speedometers = { -- Toggle speedometers
     enableDefault = true,
-    enableSuper = false,
-    enableOldSchool = false,
-    enableSport = false,
-    enableDrift = false,
-    enableBicycle = false,
+    enableSuper = true,
+    enableOldSchool = true,
+    enableSport = true,
+    enableDrift = true,
+    enableBicycle = true,
     enableBoat = true,
     enableHeli = true,
 }
@@ -319,12 +321,23 @@ Config.SpeedometerRefreshRateTimes = {
 
 
 Config.Fuel = function(vehicle)
-    if DoesEntityExist(vehicle) then
-        if GetResourceState('LegacyFuel') == 'started' then
-            return exports["LegacyFuel"]:GetFuel(vehicle)
-        else
-            return exports["cdn-fuel"]:GetFuel(vehicle)
+    if Config.EnableFuel then
+        if DoesEntityExist(vehicle) then
+            if Config.FuelSystem == 'LegacyFuel' then
+                return exports["LegacyFuel"]:GetFuel(vehicle)
+            elseif Config.FuelSystem == 'ox-fuel' then
+                return GetVehicleFuelLevel(vehicle)
+            elseif Config.FuelSystem == 'nd-fuel' then
+                return exports["nd-fuel"]:GetFuel(vehicle)
+            elseif Config.FuelSystem == 'frfuel' then
+                return exports.frfuel:getCurrentFuelLevel(vehicle)
+            elseif Config.FuelSystem == 'cdn-fuel' then
+                return exports['cdn-fuel']:GetFuel(vehicle)
+            else
+                -- You can added export if you want it
+            end
         end
+    else
         return GetVehicleFuelLevel(vehicle)
     end
     return 0
@@ -443,11 +456,11 @@ Config.EnableUIKeys = true
 Config.UIKeys = {
     {
         key = "M",
-        desc = "Phone",
+        desc = "PHONE",
     },
     {
         key = "TAB",
-        desc = "Inventory",
+        desc = "INV",
     },
     {
         key = "K",
@@ -455,13 +468,12 @@ Config.UIKeys = {
     },
     {
         key = "L",
-        desc = "Lock Vehicle",
+        desc = "Lock Car",
     },
     {
         key = "F7",
-        desc = "Inovice",
+        desc = "Invoice",
     },
-    
 }
 
 
