@@ -797,7 +797,7 @@ Config.Locations = {
         EventName2 = 'cd_garage:EnterGarage', --DONT CHANGE THIS.
         Name = UIText, --You dont need to change this.
         x_2 = -187.58, y_2 = -1290.64, z_2 = 31.3, h_2 = 245.0, --This is the location where the vehicle spawns.vector4(, , , )
-        EnableBlip = true, --If disabled, this garage blip will not show on the map.
+        EnableBlip = false, --If disabled, this garage blip will not show on the map.
         JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
         ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.
     },
@@ -923,6 +923,20 @@ Config.Locations = {
     EventName2 = 'cd_garage:EnterGarage', --DONT CHANGE THIS.
     Name = UIText, --You dont need to change this.
     x_2 = -1685.22, y_2 = 37.39, z_2 = 64.0, h_2 = 218.31, --This is the location where the vehicle spawns.vector4(, , , )
+    EnableBlip = true, --If disabled, this garage blip will not show on the map.
+    JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
+    ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.
+},
+
+{               
+    Garage_ID = 's', --The very first car garage's `garage_id` must be the same as the default value of the `garage_id` in the database as when a vehicle is purchased it gets sent to this garage. You can change the garage id's to what ever you like but make sure to also change the default garage_id in the database.
+    Type = 'car', --The type of vehicles which use this garage. ('car'/'boat'/'air').
+    Dist = 10, --The distance that you can use this garage.
+    x_1 = -386.87, y_1 = -107.2, z_1 = 38.69, --This is the location of the garage, where you press e to open for example.vector3(, , )
+    EventName1 = 'cd_garage:QuickChoose', --DONT CHANGE THIS.
+    EventName2 = 'cd_garage:EnterGarage', --DONT CHANGE THIS.
+    Name = UIText, --You dont need to change this.
+    x_2 = -382.93, y_2 = -111.25, z_2 = 38.7, h_2 = 232.33, --This is the location where the vehicle spawns.vector4(, , , )
     EnableBlip = true, --If disabled, this garage blip will not show on the map.
     JobRestricted = nil, --This will allow only players with certain jobs to use this. This is not a job garage, its still a normal garage. (SINGLE JOB EXAMPLE:  JobRestricted = {'police'},  MULTIPLE JOBS EXAMPLE:  JobRestricted = {'police', 'ambulance'}, )
     ShellType = '40cargarage_shell', --[ '10cargarage_shell' / '40cargarage_shell' / nil ] --You can choose the shell which is loaded when you enter the inside garage from this location. If you set it to nil the script will load a shell based on the amount of cars you own.

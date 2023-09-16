@@ -354,6 +354,90 @@ QBShared.Jobs = {
             },
         },
 	},
+    ['mechanicls'] = {
+		label = 'Mechanic LS',
+		defaultDuty = false,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Recruit',
+                payment = 50
+            },
+			['1'] = {
+                name = 'Novice',
+                payment = 60
+            },
+			['2'] = {
+                name = 'Experienced',
+                payment = 70
+            },
+			['3'] = {
+                name = 'Advanced',
+                payment = 80
+            },
+			['4'] = {
+                name = 'Manager',
+				isboss = true,
+                payment = 100
+            },
+        },
+	},
+	['mechanicimp'] = {
+		label = 'Mechanic Imports',
+		defaultDuty = false,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Recruit',
+                payment = 50
+            },
+			['1'] = {
+                name = 'Novice',
+                payment = 60
+            },
+			['2'] = {
+                name = 'Experienced',
+                payment = 70
+            },
+			['3'] = {
+                name = 'Advanced',
+                payment = 80
+            },
+			['4'] = {
+                name = 'Manager',
+				isboss = true,
+                payment = 100
+            },
+        },
+	},
+	['mechanictuner'] = {
+		label = 'Mechanic Tuner',
+		defaultDuty = false,
+		offDutyPay = false,
+		grades = {
+            ['0'] = {
+                name = 'Recruit',
+                payment = 50
+            },
+			['1'] = {
+                name = 'Novice',
+                payment = 60
+            },
+			['2'] = {
+                name = 'Experienced',
+                payment = 70
+            },
+			['3'] = {
+                name = 'Advanced',
+                payment = 80
+            },
+			['4'] = {
+                name = 'Manager',
+				isboss = true,
+                payment = 100
+            },
+        },
+	},
     ["burgershot"] = {
 		label = "Burgershot Employee",
 		defaultDuty = true,
