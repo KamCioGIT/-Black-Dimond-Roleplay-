@@ -54,10 +54,20 @@ CreateThread(function()
                     end
                     if IsControlJustPressed(0, Config.JobOutfitsInteraction.openKey) then
                         OpenMenu("job")
-                        local gender = 'female'
-                        if IsPedMale(PlayerPedId()) then
-                            gener = 'male'
+                        local gender = 'male'
+
+                        if Config.Framework == 'esx' or Config.Framework == 'oldesx' then
+                            local sex = Core.GetPlayerData().sex
+                            if sex and sex == 'f' then
+                                gender = 'female'
+                            end
+                        else
+                            local sex = Core.Functions.GetPlayerData().charinfo.gender
+                            if sex == 1 then 
+                                gender = 'female'
+                            end
                         end
+                        
                         if Config.JobOutfits[GetPlayerJob()] and Config.JobOutfits[GetPlayerJob()][gender] and Config.JobOutfits[GetPlayerJob()][gender][GetPlayerJobGrade()] then
                             NuiMessage("SET_JOB_OUTFIT_DATA", Config.JobOutfits[GetPlayerJob()][gender][GetPlayerJobGrade()])
                         else

@@ -5,8 +5,6 @@ CREATE TABLE IF NOT EXISTS `codem_clothing_categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
-
-
 CREATE TABLE IF NOT EXISTS `codem_saved_clothings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` longtext DEFAULT NULL,
@@ -16,7 +14,6 @@ CREATE TABLE IF NOT EXISTS `codem_saved_clothings` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
-
 CREATE TABLE IF NOT EXISTS `codem_unpaid_outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` longtext NOT NULL,
@@ -25,4 +22,9 @@ CREATE TABLE IF NOT EXISTS `codem_unpaid_outfits` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
-
+CREATE TABLE IF NOT EXISTS `codem_user_peds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` longtext NOT NULL,
+  `ped` longtext DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;

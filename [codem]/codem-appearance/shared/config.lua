@@ -4,6 +4,8 @@ Config.SQL = "oxmysql" -- oxmysql, ghmattimysql, mysql-async
 Config.PedPage = true -- false disabled true enabled ped page
 Config.DefaultImage = 'https://cdn.discordapp.com/attachments/858833601226080286/1108105906132103178/testpp.png'
 Config.CamCoolDown = 350 -- 0.350 seconds (a cool down to prevent the game from crashing when changing camera)
+Config.PedReloadCommand = 'reloadped' 
+Config.ReloadCommand = 'reload'
 
 Config.Blacklisted = {
     male = {
@@ -15,7 +17,6 @@ Config.Blacklisted = {
         torso_2 = {},
     },
 }
-Config.ReloadCommand = 'reload'
 
 Config.OnCharacterCreated = function()
 

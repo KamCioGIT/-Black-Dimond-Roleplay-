@@ -130,5 +130,113 @@ CreateThread(function()
         end
         cb(anusVal)
     end)
+    RegisterCallback("codem-appearance:getPedModel" , function(source, cb)
+        local src = source
+        local Player = GetPlayer(src)
+        local identifier = GetIdentifier(src)
+        local parameters = { ['@identifier'] = identifier }
+        local result = ExecuteSql('SELECT ped FROM codem_user_peds WHERE identifier = @identifier', parameters)
+        if result[1] then
+            cb(result[1].ped)
+        else
+            cb(false)
+        end
+    end)
+end)
 
+
+function GetPermission()
+    if Config.Framework == 'esx' or Config.Framework == 'oldesx' then
+        return  {
+            "superadmin",
+            "admin",
+            "mod",
+        }
+    else
+        return  {
+            "god",
+            "admin",
+        }
+    end
+end
+
+function CheckPermissions(permission)
+    for _,v in pairs(GetPermission()) do
+        if v == permission then
+            return true
+        end
+    end
+    return false
+end
+
+function CheckIfAdmin(source)
+    local src = source
+    local Player = GetPlayer(src)
+    if Config.Framework == 'esx' or Config.Framework == 'oldesx' then
+        return CheckPermissions(Player.getGroup()) 
+    else
+        if Core.Functions.HasPermission(source, GetPermission()) or IsPlayerAceAllowed(src, 'command') then
+            return true
+        end
+        -- for old qb
+        -- return CheckPermissions(Core.Functions.GetPermission(src))
+    end
+    return false
+end
+
+RegisterCommand('giveped' , function(source, args)
+    local src = source
+    if not CheckIfAdmin(src) then return end
+    local id = tonumber(args[1])
+    local Identifier = GetIdentifier(id)
+    local ped = args[2]
+    local parameters = { ['@identifier'] = Identifier, ['@ped'] = ped}
+    local isExist = ExecuteSql('SELECT ped FROM codem_user_peds WHERE identifier = @identifier', parameters)
+    if isExist[1] then
+        ExecuteSql('UPDATE users SET ped = @ped WHERE identifier = @identifier', parameters)
+    else
+        ExecuteSql('INSERT INTO codem_user_peds (identifier, ped) VALUES (@identifier, @ped)', parameters)
+    end
+    TriggerClientEvent('codem-appearance:syncPed', id, ped)
+end, false)
+
+RegisterCommand('deleteped', function(source, args)
+    local src = source
+    if not CheckIfAdmin(src) then return end
+    local id = tonumber(args[1])
+    local Identifier = GetIdentifier(id)
+    local parameters = { ['@identifier'] = Identifier}
+    local exist = ExecuteSql('SELECT ped FROM codem_user_peds WHERE identifier = @identifier', parameters)
+    if exist[1] then
+        ExecuteSql('DELETE FROM codem_user_peds WHERE identifier = @identifier', parameters)
+    end 
+    TriggerClientEvent('codem-appearance:syncPed', id, false)
+end, false)
+
+RegisterServerEvent('codem-appearance:savePed')
+AddEventHandler('codem-appearance:savePed', function(ped)
+    local src = source
+    local Player = GetPlayer(src)
+    local identifier = GetIdentifier(src)
+    local parameters = { ['@identifier'] = identifier }
+    local exist = ExecuteSql('SELECT ped FROM codem_user_peds WHERE identifier = @identifier', parameters)
+    if exist[1] then
+        local parameters = { ['@identifier'] = identifier, ['@ped'] = ped}
+        ExecuteSql('UPDATE codem_user_peds SET ped = @ped WHERE identifier = @identifier', parameters)
+    else
+        local parameters = { ['@identifier'] = identifier, ['@ped'] = ped}
+        ExecuteSql('INSERT INTO codem_user_peds (identifier, ped) VALUES (@identifier, @ped)', parameters)
+    end
+end)
+
+RegisterServerEvent('codem-appearance:LoadPeds')
+AddEventHandler('codem-appearance:LoadPeds', function()
+    local src = source
+    local Player = GetPlayer(src)
+    local identifier = GetIdentifier(src)
+    local parameters = { ['@identifier'] = identifier }
+    local result = ExecuteSql('SELECT ped FROM codem_user_peds WHERE identifier = @identifier', parameters)
+    if result[1] then
+        TriggerClientEvent('codem-appearance:syncPed', src, result[1].ped)
+    end
 end)

@@ -1,5 +1,3 @@
-
-
 function FormatQBCoreData(data)
     return {
         sex = data.sex and (tonumber(data.sex) ~= nil and tonumber(data.sex) or (tonumber(data.sex.item) == nil and 0 or tonumber(data.sex.item)))  or 0,

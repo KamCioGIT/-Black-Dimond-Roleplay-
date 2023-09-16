@@ -1,6 +1,13 @@
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     TriggerServerEvent("qb-clothes:loadPlayerSkin")
+    TriggerServerEvent("codem-appearance:LoadClothingCategories")
+    TriggerServerEvent("codem-appearance:LoadSavedClothings")
+    TriggerServerEvent("codem-appearance:LoadUnpaidOutfits")
+end)
 
+RegisterNetEvent("esx:playerLoaded")
+AddEventHandler("esx:playerLoaded", function(PlayerData, isNew)
+    TriggerServerEvent("codem-appearance:LoadTattoos")
     TriggerServerEvent("codem-appearance:LoadClothingCategories")
     TriggerServerEvent("codem-appearance:LoadSavedClothings")
     TriggerServerEvent("codem-appearance:LoadUnpaidOutfits")
@@ -129,14 +136,6 @@ AddEventHandler("qb-clothes:loadSkin", function(_, model, data)
     end
 end)
 
-RegisterNetEvent("esx:playerLoaded")
-AddEventHandler("esx:playerLoaded", function(PlayerData, isNew)
-    TriggerServerEvent("codem-appearance:LoadTattoos")
-    TriggerServerEvent("codem-appearance:LoadClothingCategories")
-    TriggerServerEvent("codem-appearance:LoadSavedClothings")
-    TriggerServerEvent("codem-appearance:LoadUnpaidOutfits")
-end)
-
 RegisterNetEvent('esx_skin:openSaveableMenu')
 AddEventHandler('esx_skin:openSaveableMenu', function(submitCb, cancelCb)
     OpenSaveableMenu(submitCb, cancelCb)
@@ -208,6 +207,7 @@ RegisterNUICallback("changePedModel", function(data, cb)
     end
     SetPlayerModel(PlayerId(), model)
     SetModelAsNoLongerNeeded(model)
+    TriggerServerEvent("codem-appearance:savePed", data.model)
 end)
 
 RegisterNUICallback("randomize", function(data, cb)
@@ -324,3 +324,22 @@ function Close()
     currentCharacterPage = false
     Config.OnMenuClose()
 end
+
+RegisterNetEvent('codem-appearance:syncPed')
+AddEventHandler('codem-appearance:syncPed', function(ped)
+    if ped then
+        local pedModel = GetHashKey(ped) 
+        RequestModel(pedModel)
+        while not HasModelLoaded(pedModel) do
+            Wait(0)
+        end
+        SetPlayerModel(PlayerId(), pedModel)
+        SetModelAsNoLongerNeeded(pedModel)
+    else
+        OpenMenu("charcreator")
+    end
+end)
+
+RegisterCommand(Config.PedReloadCommand, function()
+    TriggerServerEvent('codem-appearance:LoadPeds')
+end)

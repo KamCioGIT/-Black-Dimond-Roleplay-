@@ -82,7 +82,7 @@ export default {
         {
             name : 'scarfs',
             model_name : 'chain_1',
-            texture_name : 'chain_1',
+            texture_name : 'chain_2',
             icon : 'scarfscategory',
             headerText : 'Scarfs & Chains'
         },
