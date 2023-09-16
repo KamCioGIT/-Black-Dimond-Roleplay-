@@ -70,7 +70,7 @@ CreateThread(function()
                     local distance = #(coords - GetEntityCoords(PlayerPedId()))
                     if distance < 20.0 then
                         idle = 0
-                        DrawText3Ds(coords.x, coords.y, coords.z + 0.9, Config.Locales.AdminTag)
+                        DrawText3Ds(coords.x, coords.y, coords.z + 0.9, adminTagEnabledList[GetPlayerServerId(v)])
                     else
                         idle = 500
                     end

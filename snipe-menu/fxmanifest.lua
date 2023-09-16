@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 description 'Admin Menu Script'
-version '3.1.3'
+version '3.1.4'
 author 'Snipe'
 
 lua54 'yes'

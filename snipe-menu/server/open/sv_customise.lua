@@ -7,9 +7,9 @@ if Config.Core == "QBCore" then
         QBCore = exports[Config.CoreFolderName]:GetCoreObject()
     end
 elseif Config.Core == "ESX" then
-    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    if ESX == nil then
-        ESX = exports[Config.CoreFolderName]:getSharedObject()
+    local status, errorMsg = pcall(function() ESX = exports[Config.CoreFolderName]:getSharedObject() end)
+    if (ESX == nil) then
+        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
     end
 else
     print("^1[Invalid Core] ^0You have You have not selected the right Config.Core in framework.lua ^0!")
