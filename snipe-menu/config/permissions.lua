@@ -29,9 +29,9 @@ Config.Permissions = {
     ["license:a045ed84bc7b147ab67442c4be4c70a4bb7d0ad5"] = "god", -- the role god, admin or mod should be the key from Config.GodRoles which means the values that are added in square brackets.
     ["license:2906dceb4c8a498d74b6a5d6e76a1ddb646546d7"] = "god",
     ["license:7ba03ab58fae555af1435e361c6395e34547d434"] = "god",
-    ["124584938326312"] = "god", -- discord roles (copy the role id and paste it here) (REQUIRES badger_discord_api)
-    ["XY123456"] = "god", -- citizenid for qbcore
-    ["char1:12334"] = "god", -- charid for ESX
+
+
+
  ---   ["124584938326312"] = "god", -- discord roles (copy the role id and paste it here) (REQUIRES badger_discord_api)
  ---   ["XY123456"] = "god", -- citizenid for qbcore
 ---    ["char1:12334"] = "god", -- charid for ESX
