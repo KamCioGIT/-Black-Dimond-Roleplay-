@@ -372,6 +372,78 @@ if Config.EnableOOCCommand  then
         end
     end)
 end
+if Config.EnableMECommand then
+    RegisterCommand('me', function(source, args)
+        local message = table.concat(args, " ")  
+        if #message == 0 then
+            return            
+        end
+        local reply = CheckIsReply(message)
+        for _,v in pairs(reply) do
+            if IsSourceOnline(v) then
+                message = message:gsub("@"..v, "<span style='color:#00D1FF'>@"..v.."</span>")    
+                TriggerClientEvent('mChat:PlayTagSound', v)               
+            end
+        end
+        local messageData = {
+            args = {GetPlayerRoleplayName(source), message},
+            tags = {"me"},  
+            playerId = source,
+            channel = 'me',
+        }
+        TriggerClientEvent('mchat:me:event', -1, message, source)
+        TriggerEvent('chatMessage', source, #messageData.args > 1 and messageData.args[1] or '', messageData.args[#messageData.args])
+        if Config.EnableMEProximity then
+            local myCoords = GetEntityCoords(GetPlayerPed(source))
+            for _,v in pairs(GetPlayers()) do
+                local playerCoords = GetEntityCoords(GetPlayerPed(tonumber(v)))
+                local dist = #(myCoords - playerCoords)
+                if dist < Config.MEProximityDist then
+                    TriggerClientEvent('chat:addMessage', v, messageData)                              
+                end
+            end
+        else
+            TriggerClientEvent('chat:addMessage', -1, messageData)               
+        end
+    end)
+end
+
+if Config.EnableDOCommand then
+    RegisterCommand('do', function(source, args)
+        local message = table.concat(args, " ")  
+        if #message == 0 then
+            return            
+        end
+        local reply = CheckIsReply(message)
+        for _,v in pairs(reply) do
+            if IsSourceOnline(v) then
+                message = message:gsub("@"..v, "<span style='color:#00D1FF'>@"..v.."</span>")    
+                TriggerClientEvent('mChat:PlayTagSound', v)               
+            end
+        end
+        local messageData = {
+            args = {GetPlayerRoleplayName(source), message},
+            tags = {"do"},  
+            playerId = source,
+            channel = 'do',
+        }
+        TriggerClientEvent('mchat:do:event', -1, message, source)
+        TriggerEvent('chatMessage', source, #messageData.args > 1 and messageData.args[1] or '', messageData.args[#messageData.args])
+        if Config.EnableDOProximity then
+            local myCoords = GetEntityCoords(GetPlayerPed(source))
+            for _,v in pairs(GetPlayers()) do
+                local playerCoords = GetEntityCoords(GetPlayerPed(tonumber(v)))
+                local dist = #(myCoords - playerCoords)
+                if dist < Config.DOProximityDist then
+                    TriggerClientEvent('chat:addMessage', v, messageData)                              
+                end
+            end
+        else
+            TriggerClientEvent('chat:addMessage', -1, messageData)               
+        end
+    end)
+end
+
 if Config.EnableAnonymousCommand then
     RegisterCommand("anonymous", function(source, args)
         local message = table.concat(args, " ")  

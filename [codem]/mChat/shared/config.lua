@@ -21,8 +21,8 @@ Config.AutoMessages = {
     enable = true,
     timeout = 5, -- in minutes
     messages = {
-       "discord.gg/2FqCwQaYHT",
-       "Welcome to Black Diamond Roleplay",
+        "discord.gg/2FqCwQaYHT",
+        "Welcome to Black Diamond Roleplay",
     },
 }
 
@@ -60,6 +60,17 @@ Config.EnableOOCTag = true -- if set to true adds "ooc" tag when player send a m
 
 Config.EnableOOCProximity = true -- (require onesync) if set to true only players near to message sender can see the message 
 Config.OOCProximityDist = 30.0
+
+Config.EnableMECommand = true
+Config.EnableMEProximity = true -- (require onesync) if set to true only players near to message sender can see the message 
+Config.MEProximityDist = 30.0
+
+Config.EnableDOCommand = true
+Config.EnableDOProximity = true -- (require onesync) if set to true only players near to message sender can see the message 
+Config.DOProximityDist = 30.0
+
+Config.FloatMessage = 30.0 -- This Change distance for ME/DO Floating Messages
+
 
 Config.EnableAnonymousCommand = true
 

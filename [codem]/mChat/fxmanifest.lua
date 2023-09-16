@@ -16,6 +16,8 @@ client_scripts {
     'client/main.lua',
     'client/editable.lua',
     'client/typing_indicator.lua',
+    'client/me-do.lua',
+
 }
 
 server_scripts {
