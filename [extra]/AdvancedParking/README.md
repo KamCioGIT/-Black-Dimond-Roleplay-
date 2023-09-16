@@ -68,7 +68,7 @@ marked with an **(S)** for ease of reading.
 - Status:
   - Entity, body, engine **(S)** and petrol tank **(S)** health
   - Dirt Level
-  - Fuel Level (includes compatibility with "LegacyFuel")
+  - Fuel Level (includes compatibility with "cdn-fuel")
   - Door lock status **(S)**
   - Burst/flat tires
   - Missing doors

@@ -14,14 +14,14 @@ local trailer = nil
 
 -- thread for saving vehicles a player interacted with
 function StartSavingVehicles()
-	Citizen.CreateThread(function()
-		Citizen.Wait(10000)
+	CreateThread(function()
+		Wait(10000)
 
 		local isInVehicle = false
 		local vehicle = nil
 
 		while (enabled) do
-			Citizen.Wait(50)
+			Wait(50)
 
 			local playerPed = PlayerPedId()
 			local inVeh = IsPedInAnyVehicle(playerPed)
@@ -178,7 +178,7 @@ function WaitUntilEntityWithNetworkIdExists(networkId, timeout)
 	local threshold = GetGameTimer() + timeout
 
 	while (not NetworkDoesEntityExistWithNetworkId(networkId) and GetGameTimer() < threshold) do
-		Citizen.Wait(0)
+		Wait(0)
 	end
 
 	return NetworkDoesEntityExistWithNetworkId(networkId)
@@ -187,7 +187,7 @@ function WaitUntilPlayerEqualsEntityOwner(entityHandle, timeout)
 	local threshold = GetGameTimer() + timeout
 
 	while (DoesEntityExist(entityHandle) and NetworkGetEntityOwner(entityHandle) ~= PlayerId() and GetGameTimer() < threshold) do
-		Citizen.Wait(0)
+		Wait(0)
 	end
 
 	return DoesEntityExist(entityHandle) and NetworkGetEntityOwner(entityHandle) == PlayerId()

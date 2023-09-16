@@ -73,7 +73,6 @@ Config.vehiclesBlacklist = {
 	"youga2"
 }
 
-
 -- any plates from vehicles you do not want to save, go here (not case sensitive and can use 
 -- partial strings)
 Config.platesBlacklist = {

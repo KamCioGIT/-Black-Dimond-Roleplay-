@@ -59,11 +59,11 @@ local function OnMinuteChanged()
 	end
 end
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	local currentTime = nil
 
 	while (true) do
-		Citizen.Wait(5000)
+		Wait(5000)
 
 		currentTime = GetTimeFormatted()
 

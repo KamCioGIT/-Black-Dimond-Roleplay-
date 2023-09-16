@@ -4,7 +4,7 @@ games { "gta5" }
 
 author "Philipp Decker"
 description "Saves and respawns vehicles during sessions and across server restarts."
-version "3.10.1"
+version "3.11.0"
 
 lua54 "yes"
 

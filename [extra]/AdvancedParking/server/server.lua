@@ -140,15 +140,15 @@ end
 
 function StartMainLoop()
 	-- main loop for spawning and updating vehicles
-	Citizen.CreateThread(function()
+	CreateThread(function()
 		while (true) do
-			Citizen.Wait(5000)
+			Wait(5000)
 
 			if (#GetPlayers() > 0) then
-				Citizen.CreateThread(function()
+				CreateThread(function()
 					SpawnVehicles()
 				end)
-				Citizen.CreateThread(function()
+				CreateThread(function()
 					UpdateVehicles()
 				end)
 			end
@@ -204,6 +204,7 @@ function SpawnVehicles()
 	-- cache vehicles and players
 	local vehicles	= GetAllVehicles()
 	local players	= GetPlayers()
+	local playerPedsWithHandlers = GetAllPlayerPedsWithHandles(players)
 
 	-- get vehicles that are already spawned by AP
 	local loadedVehicles = GetLoadedVehiclesWithId(vehicles)
@@ -219,9 +220,9 @@ function SpawnVehicles()
 				Entity(vehicleData.handle).state.ap_id = id
 
 				LogDebug("Found vehicle \"%s\" at %s", id, RoundVector3(GetEntityCoords(vehicleData.handle), 2))
-			elseif (GetClosestPlayer(vehicleData.position, SPAWN_DISTANCE, players)) then
+			elseif (GetClosestPlayer(vehicleData.position, SPAWN_DISTANCE, players, playerPedsWithHandlers)) then
 				-- vehicle not found, spawn it when player is close
-				Citizen.CreateThread(function()
+				CreateThread(function()
 					SpawnVehicle(id, vehicleData)
 				end)
 			end
@@ -246,7 +247,7 @@ function SpawnVehicle(id, vehicleData)
 
 	local timer = GetGameTimer()
 	while (not DoesEntityExist(vehicle)) do
-		Citizen.Wait(0)
+		Wait(0)
 
 		if (timer + SPAWN_TIMEOUT < GetGameTimer()) then
 			-- timeout
@@ -297,18 +298,20 @@ end
 
 -- update vehicles
 function UpdateVehicles()
+	local playerPeds = GetAllPlayerPeds()
+
 	for id, vehicleData in pairs(savedVehicles) do
 		if (vehicleData.handle and DoesEntityExist(vehicleData.handle)) then
-			TryUpdateVehicle(id, vehicleData)
+			TryUpdateVehicle(id, vehicleData, playerPeds)
 		end
 	end
 end
 
 -- check if update is necessary and update
-function TryUpdateVehicle(id, vehicleData)
+function TryUpdateVehicle(id, vehicleData, playerPeds)
 	local handle = vehicleData.handle
 
-	if (IsAnyPlayerInsideVehicle(handle) or Entity(handle).state.isAttached) then return end
+	if (IsAnyPlayerInsideVehicle(handle, playerPeds) or Entity(handle).state.isAttached) then return end
 
 	local newPos = RoundVector3(GetEntityCoords(handle), 2)
 	local newRot = RoundVector3(GetEntityRotation(handle), 2)
@@ -516,16 +519,16 @@ end)
 -- loop to delete vehicles when using auto deleter
 local AD = Config.autoDelete
 if (AD.timer > 0) then
-	Citizen.CreateThread(function()
+	CreateThread(function()
 		while (true) do
-			Citizen.Wait(60000 * (AD.timer - AD.notificationTimes[1]))
+			Wait(60000 * (AD.timer - AD.notificationTimes[1]))
 
 			TriggerClientEvent("AP:showNotification", -1, AD.timeLeftNotification:format(AD.notificationTimes[1]))
 			for i = 2, #AD.notificationTimes, 1 do
-				Citizen.Wait(60000 * (AD.notificationTimes[i - 1] - AD.notificationTimes[i]))
+				Wait(60000 * (AD.notificationTimes[i - 1] - AD.notificationTimes[i]))
 				TriggerClientEvent("AP:showNotification", -1, AD.timeLeftNotification:format(AD.notificationTimes[i]))
 			end
-			Citizen.Wait(60000 * AD.notificationTimes[#AD.notificationTimes])
+			Wait(60000 * AD.notificationTimes[#AD.notificationTimes])
 
 			TriggerClientEvent("AP:showNotification", -1, AD.deleteNotification)
 
@@ -944,7 +947,7 @@ function UpdatePlate(networkId, newPlate, oldPlate)
 
 		local found = false
 		while (not found) do
-			Citizen.Wait(0)
+			Wait(0)
 
 			found = Trim(GetVehicleNumberPlateText(vehicle)) == newPlate
 		end
@@ -994,19 +997,21 @@ end)
 
 
 -- prevent "ghost" vehicles that didn't spawn correctly
-local function IsGhostVehicle(spawning, handle, plate)
+local function IsGhostVehicle(spawning, handle, plate, playerPeds)
 	return 
 		not spawning 
 		and handle and DoesEntityExist(handle) 
-		and not IsAnyPlayerInsideVehicle(handle) 
+		and not IsAnyPlayerInsideVehicle(handle, playerPeds) 
 		and plate ~= GetVehicleNumberPlateText(handle)
 end
-Citizen.CreateThread(function()
+CreateThread(function()
 	while (true) do
-		Citizen.Wait(10000)
+		Wait(10000)
+
+		local playerPeds = GetAllPlayerPeds()
 
 		for id, vehicleData in pairs(savedVehicles) do
-			if (IsGhostVehicle(vehicleData.spawning, vehicleData.handle, vehicleData.tuning[1])) then
+			if (IsGhostVehicle(vehicleData.spawning, vehicleData.handle, vehicleData.tuning[1], playerPeds)) then
 				LogDebug("Deleted ghost vehicle \"%s\"", id)
 
 				DeleteEntity(vehicleData.handle)
@@ -1018,9 +1023,9 @@ Citizen.CreateThread(function()
 end)
 
 if (Config.aggressiveAntiDupe) then
-	Citizen.CreateThread(function()
+	CreateThread(function()
 		while (true) do
-			Citizen.Wait(5000)
+			Wait(5000)
 
 			local vehicles = GetAllVehicles()
 			local platesWithVehicles = {}

@@ -1,7 +1,8 @@
 
 -- returns if any player is inside a given vehicle
-function IsAnyPlayerInsideVehicle(vehicle)
-	local playerPeds = GetAllPlayerPeds()
+function IsAnyPlayerInsideVehicle(vehicle, playerPeds)
+	playerPeds = playerPeds or GetAllPlayerPeds()
+
 	for i = 1, #playerPeds do
 		local veh = GetVehiclePedIsIn(playerPeds[i], false)
 
@@ -14,24 +15,33 @@ function IsAnyPlayerInsideVehicle(vehicle)
 end
 
 -- return the id and distance of the closest player
-function GetClosestPlayer(position, maxRadius, players)
+function GetClosestPlayer(position, maxRadius, players, playerPedsWithHandles)
 	local closestDistance	= maxRadius or 1000.0
 	local closestPlayer		= nil
 
 	for i = 1, #players do
 		if (GetPlayerRoutingBucket(players[i]) == DEFAULT_BUCKET) then
-			local ped = GetPlayerPed(players[i])
-			if (DoesEntityExist(ped)) then
-				local distance = #(position - GetEntityCoords(ped))
-				if (distance < closestDistance) then
-					closestDistance	= distance
-					closestPlayer	= players[i]
-				end
+			local distance = #(position - GetEntityCoords(playerPedsWithHandles[ players[i] ]))
+			if (distance < closestDistance) then
+				closestDistance	= distance
+				closestPlayer	= players[i]
 			end
 		end
 	end
 
 	return closestPlayer, closestDistance
+end
+
+-- return all player peds associated to their player handles
+function GetAllPlayerPedsWithHandles(players)
+	local peds = {}
+
+	for i = 1, #players do
+		local ped = GetPlayerPed(players[i])
+		peds[players[i]] = DoesEntityExist(ped) and ped or nil
+	end
+
+	return peds
 end
 
 -- returns all currently loaded player peds
