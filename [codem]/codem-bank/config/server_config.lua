@@ -2,7 +2,7 @@
 -- Therefore, we moved the discord and token-related systems here. Please make corrections here.
 
 -- Discord Bot Token for player image --
-Config.DiscordBotToken = "MTEzOTkyNzE3NTcyMjcwMDg2MQ.GC0v17.NRRA8D2GNe8DoIKJxvzJxH61710-CIJzGp1MTU" -- Discord Bot Token
+Config.DiscordBotToken = "" -- Discord Bot Token
 -- Discord Bot Name --
 Config.username = "Codem - Banking" 
 -- Discord Bot Avatar --

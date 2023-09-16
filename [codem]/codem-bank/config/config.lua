@@ -4,7 +4,7 @@ Config.Framework = 'autodetect' -- newesx, oldesx, newqb, oldqb, autodetect
 -- oxmysql, ghmattimysql, mysql-async | Don't forget to set it in fxmanifest !
 Config.Mysql = "oxmysql" 
 -- bt-target, qb-target -- drawtext
-Config.InteractionHandler = 'qb-target' -- bt-target, qb-target, drawtext, qtarget
+Config.InteractionHandler = 'qb-target' -- bt-target, qb-target, drawtext, qtarget , ox-target
 
 Config.Billing = 'okok' -- okok, default
 
@@ -51,17 +51,27 @@ Config.BankLocations = {
     },
   
 }
+
 Config.ATMModels = {
-    "prop_atm_01",
-    "prop_atm_02",
-    "prop_atm_03",
-    "prop_fleeca_atm"
+    {
+        prop = "prop_atm_01",
+    },
+    {
+        prop = "prop_atm_02",
+    },
+    {
+        prop = "prop_atm_03",
+    },
+    {
+        prop = "prop_fleeca_atm",
+    }
 }
 
 Config.OpenTrigger = function()
     if Config.InteractionHandler == "qb-target" then
         
         for _,v in pairs(Config.BankLocations) do
+
             exports['qb-target']:AddBoxZone("codembank" .. _, vector3(v.coords.x,v.coords.y, v.coords.z), 1.5, 1.5, {
                 name = "codembank" .. _,
                 debugPoly = false,
@@ -73,13 +83,14 @@ Config.OpenTrigger = function()
                     {
                         type = "client",
                         event = "codem-bank:openBank",
-                        icon = "fas fa-hand-point-up",
+                        icon = 'fas fa-credit-card',
                         label = "Open Bank",
                         
                     },
                 },
                 distance = 8
             })
+   
         end
         Citizen.CreateThread(function()
             while true do 
@@ -88,11 +99,12 @@ Config.OpenTrigger = function()
                     local playerPed = PlayerPedId()
                     local coords = GetEntityCoords(playerPed)
                     for k, v in pairs(Config.ATMModels) do
-                        local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v))
+                        local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v.prop))
    
                         local distance = #(coords - GetEntityCoords(obj))
                    
-                         if distance < 1.5 then
+                        if distance < 1.5 then
+
                             exports['qb-target']:AddBoxZone("codematm" .. k, GetEntityCoords(obj), 1.5, 1.5, {
                                 name = "codematm" ..k,
                                 debugPoly = false,
@@ -104,20 +116,51 @@ Config.OpenTrigger = function()
                                     {
                                         type = "client",
                                         event = "codem-bank:openBankAtm",
-                                        icon = "fas fa-hand-point-up",
+                                        icon = 'fas fa-credit-card',
                                         label = "Open Atm",
                                         
                                     },
                                 },
                                 distance = 8
                             })
-                         end
+        
+                        end
                     end        
    
                 Citizen.Wait(wait)
             end
         end)
     
+    elseif Config.InteractionHandler == "ox-target" then
+
+        for k,v in pairs(Config.BankLocations) do 
+            exports['ox_target']:addBoxZone({
+                coords = vector3(v.coords.x,v.coords.y, v.coords.z),
+                minZ = v.coords.z - 2,
+                maxZ = v.coords.z + 2,
+                heading = -20,
+                name = "codembank" .. k,
+                options = {
+                    {
+                        type = "client",
+                        event = "codem-bank:openBank",
+                        icon = 'fas fa-credit-card',
+                        label = "Open Bank",
+                        
+                    },
+                },
+            })
+        end
+ 
+        for k,v in pairs(Config.ATMModels) do
+            options = {{
+                icon = 'fas fa-credit-card',
+                label = 'Open ATM',
+                event = "codem-bank:openBankAtm",
+            }}
+            distance = 1.5
+            exports['ox_target']:addModel(v.prop, options)
+        end
 
     elseif Config.InteractionHandler == "bt-target" then
         for _,v in pairs(Config.BankLocations) do
@@ -147,7 +190,7 @@ Config.OpenTrigger = function()
                      local playerPed = PlayerPedId()
                      local coords = GetEntityCoords(playerPed)
                      for k, v in pairs(Config.ATMModels) do
-                         local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v))
+                         local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v.prop))
     
                          local distance = #(coords - GetEntityCoords(obj))
                     
@@ -204,7 +247,7 @@ Config.OpenTrigger = function()
                      local playerPed = PlayerPedId()
                      local coords = GetEntityCoords(playerPed)
                      for k, v in pairs(Config.ATMModels) do
-                         local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v))
+                         local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v.prop))
     
                          local distance = #(coords - GetEntityCoords(obj))
                     
@@ -241,7 +284,7 @@ Config.OpenTrigger = function()
                  local playerPed = PlayerPedId()
                  local coords = GetEntityCoords(playerPed)
                  for k, v in pairs(Config.ATMModels) do
-                     local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v))
+                     local obj = GetClosestObjectOfType(GetEntityCoords(PlayerPedId()), 2.0, GetHashKey(v.prop))
                      local distance = #(coords - GetEntityCoords(obj))
                         
                       if distance < 1.5 then
