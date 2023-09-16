@@ -178,7 +178,7 @@ Config.billingSystem = 'okokBilling'
     billing_ui              = 'billing_ui:payInvoice'
     False if you are not using one
 ]]
-Config.billingpayBillEvent = 'esx_billing:payBill'
+Config.billingpayBillEvent = 'okokBilling:PayInvoice'
 
 
 --░██████╗░░█████╗░██████╗░░█████╗░░██████╗░███████╗░██████╗
@@ -202,10 +202,10 @@ Config.ValetPrice = 1000       -- Price to bring your vehicle to you
 -- 'okokGarage'
 -- 'jg-advanced-garages'
 -- 'rcore_garages'
--- 'qs-garages
+-- 'qs-garages'
 -- 'qs-advancedgarages'
 
-Config.GarageScript = 'qb-garages'
+Config.GarageScript = 'cd_garage'
 
 -- ██╗░░░██╗███████╗██╗░░██╗██╗░█████╗░██╗░░░░░███████╗ ██╗░░██╗███████╗██╗░░░██╗░██████╗
 -- ██║░░░██║██╔════╝██║░░██║██║██╔══██╗██║░░░░░██╔════╝ ██║░██╔╝██╔════╝╚██╗░██╔╝██╔════╝
@@ -463,7 +463,6 @@ Config.ChargerMarker = {
 }
 
 Config.Battery = {
-    debug = false,  -- If you use true, you will be able to see the log in F8 of your battery going down.
     default = 0.01, -- This is the rate at which the battery drains by default.
     apps = {        -- The following applications will make your battery go down faster.
         ['phone'] = 0.02,

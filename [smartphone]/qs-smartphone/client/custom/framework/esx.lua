@@ -12,12 +12,12 @@ end
 
 ESX = exports['es_extended']:getSharedObject()
 
-Citizen.CreateThread(function()
+CreateThread(function()
     while QS == nil do
         TriggerEvent('qs-base:getSharedObject', function(ASD) QS = ASD end)
-        Citizen.Wait(0)
+        Wait(0)
     end
-    Citizen.Wait(200)
+    Wait(200)
     TriggerServerEvent('qs-smartphone:server:btShare', false)
 end)
 
@@ -49,7 +49,7 @@ AddEventHandler('esx:onPlayerLogout', function()
     deleteMusic()
     UnloadPhone()
 
-    Citizen.Wait(1000)
+    Wait(1000)
     TriggerServerEvent('qs-smartphone:CheckHavePhoneStatus')
     TriggerServerEvent('smartphone:unloaded')
 end)

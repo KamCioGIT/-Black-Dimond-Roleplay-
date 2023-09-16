@@ -4,7 +4,7 @@ game 'gta5'
 
 lua54 'yes'
 
-version '2.5.6'
+version '2.5.8'
 
 ui_page 'html/index.html'
 
@@ -78,10 +78,10 @@ exports {
 
 dependencies {
     '/assetpacks',
-    '/server:4752',  -- ⚠️PLEASE READ⚠️ This requires at least server build 4700 or higher
-    'xsound',        -- Required.
+    '/server:4752',     -- ⚠️PLEASE READ⚠️ This requires at least server build 4700 or higher
+    'xsound',           -- Required.
     'screenshot-basic', -- Required.
-    'PolyZone',      -- Required.
+    'PolyZone',         -- Required.
 }
 
 dependency '/assetpacks'
