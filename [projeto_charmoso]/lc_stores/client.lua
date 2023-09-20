@@ -207,7 +207,7 @@ AddEventHandler('stores:startJob', function(truck_level,is_import)
 	local garage_coord = vector4(table.unpack(Config.market_locations[key]['garage_coord']))
 	local truck_model = Config.market_types[Config.market_locations[key].type].trucks[truck_level]
 	local blip_data = { name = Utils.translate('truck_blip'), sprite = 477, color = 26 }
-	local properties = { fuelLevel = 100.0, plate = Utils.translate('truck_plate')..tostring(math.random(1000, 9999)) }
+	local properties = { plate = Utils.translate('truck_plate')..tostring(math.random(1000, 9999)) }
 	local truck_vehicle,truck_blip = Utils.Vehicles.spawnVehicle(truck_model,garage_coord.x,garage_coord.y,garage_coord.z,garage_coord.w,blip_data,properties)
 	exports['lc_utils']:notify("success",Utils.translate('already_is_in_garage'))
 

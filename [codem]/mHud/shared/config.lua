@@ -59,11 +59,11 @@ Config.Menu = { -- Toggle vehicle menu
 
 Config.Speedometers = { -- Toggle speedometers
     enableDefault = true,
-    enableSuper = true,
-    enableOldSchool = true,
-    enableSport = true,
-    enableDrift = true,
-    enableBicycle = true,
+    enableSuper = false,
+    enableOldSchool = false,
+    enableSport = false,
+    enableDrift = false,
+    enableBicycle = false,
     enableBoat = true,
     enableHeli = true,
 }
