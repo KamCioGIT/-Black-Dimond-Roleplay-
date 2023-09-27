@@ -66,7 +66,7 @@ Config.WebhooksTranslations = { -- All webhook translations.
         title = 'New Tweet!',
         username = '**Username**: @',
         description = '\n**Description**: ',
-        image = 'https://media.discordapp.net/attachments/926274292373655562/999492805770608710/twitter.png'
+        image = 'https://media.discordapp.net/attachments/926274292373655562/999492805770608710/tweedle.png'
     },
 
     ['instagram'] = {
@@ -74,7 +74,7 @@ Config.WebhooksTranslations = { -- All webhook translations.
         title = 'New Post!',
         username = '**Username**: @',
         description = '\n**Description**: ',
-        image = 'https://media.discordapp.net/attachments/926274292373655562/999504825450500157/instagram.png'
+        image = 'https://media.discordapp.net/attachments/926274292373655562/999504825450500157/instagraph.png'
     },
 
     ['yellowpages'] = {
@@ -92,7 +92,7 @@ Config.WebhooksTranslations = { -- All webhook translations.
         storie = '**Title**: ',
         description = '\n**Description**: ',
         date = '\n**Number**: ',
-        image = 'https://media.discordapp.net/attachments/989917195972788234/1002266182994362379/weazel.png'
+        image = 'https://media.discordapp.net/attachments/989917195972788234/1002266182994362379/news.png'
     },
 }
 

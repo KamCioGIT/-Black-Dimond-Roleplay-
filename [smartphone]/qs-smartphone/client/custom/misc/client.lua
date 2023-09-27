@@ -37,11 +37,11 @@ function CheckCanOpenPhone() -- Change here if u want another parameters
     local check = false
 
     if GetResourceState('visn_are') == 'started' then
-        if exports['visn_are']:GetHealthBuffer().unconscious then
+        if not exports['visn_are']:GetHealthBuffer().unconscious then
             check = true
         end
     else
-        if Config.Framework == 'esx' then
+        if Config.Framework == 'esx' then 
             if IsPedDeadOrDying(PlayerPedId(), 1) or GetEntityHealth(PlayerPedId()) > 0 then
                 check = true
             end

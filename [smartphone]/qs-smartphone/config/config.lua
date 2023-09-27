@@ -39,6 +39,10 @@ Config.esxVersion = 'new'
 -- SET IN TRUE IF YOU USE ox_inventory
 Config.ox_inventory = false
 
+-- Target script
+Config.Target = true       -- Enable or disable target system
+Config.TargetScript = 'qb-target'  -- 'ox_target', 'qb-target' or 'qtarget' only!
+
 -- Leave it as default if you dont know what you are doing
 Config.ScreenshotBasic = 'screenshot-basic'
 Config.RepeatTimeout = 2000            -- Don't touch here
