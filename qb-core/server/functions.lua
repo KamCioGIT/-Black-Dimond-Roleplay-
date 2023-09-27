@@ -76,6 +76,13 @@ function QBCore.Functions.GetOfflinePlayerByCitizenId(citizenid)
     return QBCore.Player.GetOfflinePlayer(citizenid)
 end
 
+---Get player by license
+---@param license string
+---@return table?
+function QBCore.Functions.GetPlayerByLicense(license)
+    return QBCore.Player.GetPlayerByLicense(license)
+end
+
 ---Get player by phone number
 ---@param number number
 ---@return table?
@@ -87,6 +94,33 @@ function QBCore.Functions.GetPlayerByPhone(number)
     end
     return nil
 end
+
+---Get player by account id
+---@param account string
+---@return table?
+function QBCore.Functions.GetPlayerByAccount(account)
+    for src in pairs(QBCore.Players) do
+        if QBCore.Players[src].PlayerData.charinfo.account == account then
+            return QBCore.Players[src]
+        end
+    end
+    return nil
+end
+
+---Get player passing property and value to check exists
+---@param property string
+---@param value string  
+---@return table?
+function QBCore.Functions.GetPlayerByCharInfo(property, value)
+    for src in pairs(QBCore.Players) do
+        local charinfo = QBCore.Players[src].PlayerData.charinfo
+        if charinfo[property] ~= nil and charinfo[property] == value then
+            return QBCore.Players[src]
+        end
+    end
+    return nil
+end
+
 
 ---Get all players. Returns the server ids of all players.
 ---@return table
@@ -290,18 +324,15 @@ function PaycheckInterval()
                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('error.company_too_poor'), 'error')
                             else
                                 Player.Functions.AddMoney('bank', payment, 'paycheck')
-                                TriggerEvent('ap-government:server:systemTax', Player.PlayerData.source, "Player", payment)
                                 exports['qb-management']:RemoveMoney(Player.PlayerData.job.name, payment)
                                 TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
                             end
                         else
                             Player.Functions.AddMoney('bank', payment, 'paycheck')
-                            TriggerEvent('ap-government:server:systemTax', Player.PlayerData.source, "Player", payment)
                             TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
                         end
                     else
                         Player.Functions.AddMoney('bank', payment, 'paycheck')
-                        TriggerEvent('ap-government:server:systemTax', Player.PlayerData.source, "Player", payment)
                         TriggerClientEvent('QBCore:Notify', Player.PlayerData.source, Lang:t('info.received_paycheck', {value = payment}))
                     end
                 end

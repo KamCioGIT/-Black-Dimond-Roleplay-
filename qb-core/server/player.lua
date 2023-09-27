@@ -9,9 +9,7 @@ function QBCore.Player.Login(source, citizenid, newData)
     if source and source ~= '' then
         if citizenid then
             local license = QBCore.Functions.GetIdentifier(source, 'license')
-            local isOnline = QBCore.Functions.GetPlayerByCitizenId(citizenid)
             local PlayerData = MySQL.prepare.await('SELECT * FROM players where citizenid = ?', { citizenid })
-            if isOnline then DropPlayer(source, Lang:t("info.exploit_dropped")) return end
             if PlayerData and license == PlayerData.license then
                 PlayerData.money = json.decode(PlayerData.money)
                 PlayerData.job = json.decode(PlayerData.job)
@@ -26,7 +24,7 @@ function QBCore.Player.Login(source, citizenid, newData)
                 QBCore.Player.CheckPlayerData(source, PlayerData)
             else
                 DropPlayer(source, Lang:t("info.exploit_dropped"))
-                TriggerEvent('qb-log:server:CreateLog', 'anticheat', 'Anti-Cheat', 'white', GetPlayerName(source) .. ' Has been dropped for potential character dupe join exploit', false)
+                TriggerEvent('qb-log:server:CreateLog', 'anticheat', 'Anti-Cheat', 'white', GetPlayerName(source) .. ' Has Been Dropped For Character Joining Exploit', false)
             end
         else
             QBCore.Player.CheckPlayerData(source, newData)
@@ -40,7 +38,28 @@ end
 
 function QBCore.Player.GetOfflinePlayer(citizenid)
     if citizenid then
-        local PlayerData = MySQL.Sync.prepare('SELECT * FROM players where citizenid = ?', {citizenid})
+        local PlayerData = MySQL.prepare.await('SELECT * FROM players where citizenid = ?', {citizenid})
+        if PlayerData then
+            PlayerData.money = json.decode(PlayerData.money)
+            PlayerData.job = json.decode(PlayerData.job)
+            PlayerData.position = json.decode(PlayerData.position)
+            PlayerData.metadata = json.decode(PlayerData.metadata)
+            PlayerData.charinfo = json.decode(PlayerData.charinfo)
+            if PlayerData.gang then
+                PlayerData.gang = json.decode(PlayerData.gang)
+            else
+                PlayerData.gang = {}
+            end
+
+            return QBCore.Player.CheckPlayerData(nil, PlayerData)
+        end
+    end
+    return nil
+end
+
+function QBCore.Player.GetPlayerByLicense(license)
+    if license then
+        local PlayerData = MySQL.prepare.await('SELECT * FROM players where license = ?', {license})
         if PlayerData then
             PlayerData.money = json.decode(PlayerData.money)
             PlayerData.job = json.decode(PlayerData.job)
@@ -90,26 +109,16 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.charinfo.iban = PlayerData.charinfo.iban ~= nil and PlayerData.charinfo.iban or math.random(0,999999)
     -- Metadata
     PlayerData.metadata = PlayerData.metadata or {}
-    PlayerData.metadata['health'] = PlayerData.metadata['health'] or 200
-    PlayerData.metadata["communityservice"] = PlayerData.metadata["communityservice"] ~= nil and PlayerData.metadata["communityservice"] or 0
     PlayerData.metadata['hunger'] = PlayerData.metadata['hunger'] or 100
     PlayerData.metadata['thirst'] = PlayerData.metadata['thirst'] or 100
     PlayerData.metadata['stress'] = PlayerData.metadata['stress'] or 0
     PlayerData.metadata['isdead'] = PlayerData.metadata['isdead'] or false
     PlayerData.metadata['inlaststand'] = PlayerData.metadata['inlaststand'] or false
     PlayerData.metadata['armor'] = PlayerData.metadata['armor'] or 0
-    PlayerData.metadata['hunting'] = PlayerData.metadata['hunting'] or 0
-    PlayerData.metadata['fisherxp'] = PlayerData.metadata['fisherxp'] or 0
-    PlayerData.metadata['cargoxp'] = PlayerData.metadata['cargoxp'] or 0
-    PlayerData.metadata['thunterxp'] = PlayerData.metadata['thunterxp'] or 0
-    PlayerData.metadata['methruns'] = PlayerData.metadata['methruns'] or 0
-    PlayerData.metadata['scrapxp'] = PlayerData.metadata['scrapxp'] or 0
     PlayerData.metadata['ishandcuffed'] = PlayerData.metadata['ishandcuffed'] or false
     PlayerData.metadata['tracker'] = PlayerData.metadata['tracker'] or false
     PlayerData.metadata['injail'] = PlayerData.metadata['injail'] or 0
     PlayerData.metadata['jailitems'] = PlayerData.metadata['jailitems'] or {}
-    PlayerData.metadata['gameitems'] = PlayerData.metadata['gameitems'] or {}
-    PlayerData.metadata['gameitems'] = PlayerData.metadata['gameitems'] or {}
     PlayerData.metadata['status'] = PlayerData.metadata['status'] or {}
     PlayerData.metadata['phone'] = PlayerData.metadata['phone'] or {}
     PlayerData.metadata['fitbit'] = PlayerData.metadata['fitbit'] or {}
@@ -124,7 +133,6 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
     PlayerData.metadata['jobrep']['trucker'] = PlayerData.metadata['jobrep']['trucker'] or 0
     PlayerData.metadata['jobrep']['taxi'] = PlayerData.metadata['jobrep']['taxi'] or 0
     PlayerData.metadata['jobrep']['hotdog'] = PlayerData.metadata['jobrep']['hotdog'] or 0
-    PlayerData.metadata['carboostrep'] = PlayerData.metadata['carboostrep'] or 0
     PlayerData.metadata['callsign'] = PlayerData.metadata['callsign'] or 'NO CALLSIGN'
     PlayerData.metadata['fingerprint'] = PlayerData.metadata['fingerprint'] or QBCore.Player.CreateFingerId()
     PlayerData.metadata['walletid'] = PlayerData.metadata['walletid'] or QBCore.Player.CreateWalletId()
@@ -137,19 +145,13 @@ function QBCore.Player.CheckPlayerData(source, PlayerData)
         ['business'] = false,
         ['weapon'] = false
     }
-
     PlayerData.metadata['inside'] = PlayerData.metadata['inside'] or {
         house = nil,
         apartment = {
             apartmentType = nil,
             apartmentId = nil,
-        },
-        motel = {
-            motel = nil,
-            room = nil
         }
     }
-
     PlayerData.metadata['phonedata'] = PlayerData.metadata['phonedata'] or {
         SerialNumber = QBCore.Player.CreateSerialNumber(),
         InstalledApps = {},
@@ -267,6 +269,14 @@ function QBCore.Player.CreatePlayer(PlayerData, Offline)
         end
 
         return true
+    end
+
+    function self.Functions.Notify(text, type, lenght)
+        TriggerClientEvent('QBCore:Notify', self.PlayerData.source, text, type, lenght)
+    end
+
+    function self.Functions.HasItem(items, amount)
+        QBCore.Functions.HasItem(self.PlayerData.source, items, amount)
     end
 
     function self.Functions.SetJobDuty(onDuty)
@@ -633,12 +643,11 @@ end
 
 -- Util Functions
 
-
 function QBCore.Player.CreateCitizenId()
     local UniqueFound = false
-    local CitizenId = 00000000
+    local CitizenId = nil
     while not UniqueFound do
-        CitizenId = CitizenId + 1
+        CitizenId = tostring(QBCore.Shared.RandomStr(3) .. QBCore.Shared.RandomInt(5)):upper()
         local result = MySQL.prepare.await('SELECT COUNT(*) as count FROM players WHERE citizenid = ?', { CitizenId })
         if result == 0 then
             UniqueFound = true

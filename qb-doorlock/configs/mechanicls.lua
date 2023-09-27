@@ -1,8 +1,8 @@
 
 
--- mechanicls 1 
+-- mechanicls 1 created by UtshoBoy
 Config.DoorList['mechanicls-mechanicls 1'] = {
-    locked = false,
+    locked = true,
     doorLabel = 'mechanicls 1',
     distance = 4,
     authorizedJobs = { ['mechanicls'] = 0 },
@@ -14,7 +14,7 @@ Config.DoorList['mechanicls-mechanicls 1'] = {
     doorType = 'double',
 }
 
--- mechanicls 2 
+-- mechanicls 2 created by UtshoBoy
 Config.DoorList['mechanicls-mechanicls 2'] = {
     locked = false,
     doorLabel = 'mechanicls 2',
@@ -28,7 +28,7 @@ Config.DoorList['mechanicls-mechanicls 2'] = {
     doorType = 'double',
 }
 
--- mechanicls 3 
+-- mechanicls 3 created by UtshoBoy
 Config.DoorList['mechanicls-mechanicls 3'] = {
     locked = false,
     objName = -1726331785,
@@ -42,7 +42,7 @@ Config.DoorList['mechanicls-mechanicls 3'] = {
     doorType = 'door',
 }
 
--- mechanicls 4 
+-- mechanicls 4 created by UtshoBoy
 Config.DoorList['mechanicls-mechanicls 4'] = {
     locked = false,
     objName = 718507040,
@@ -56,7 +56,7 @@ Config.DoorList['mechanicls-mechanicls 4'] = {
     doorType = 'garage',
 }
 
--- mechanicls 5 
+-- mechanicls 5 created by UtshoBoy
 Config.DoorList['mechanicls-mechanicls 5'] = {
     locked = false,
     objName = 718507040,
@@ -70,7 +70,7 @@ Config.DoorList['mechanicls-mechanicls 5'] = {
     doorType = 'garage',
 }
 
--- mechanicls 6 
+-- mechanicls 6 created by UtshoBoy
 Config.DoorList['mechanicls-mechanicls 6'] = {
     locked = false,
     objName = -868672903,

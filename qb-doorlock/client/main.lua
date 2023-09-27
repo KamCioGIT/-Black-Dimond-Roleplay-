@@ -298,7 +298,7 @@ end
 local function lockpickFinish(success)
 	if success then
 		QBCore.Functions.Notify(Lang:t("success.lockpick_success"), 'success', 2500)
-		if closestDoor.data.coords then
+		if closestDoor.data.doors then
 			TaskTurnPedToFaceCoord(playerPed, closestDoor.data.doors[1].objCoords.x, closestDoor.data.doors[1].objCoords.y, closestDoor.data.doors[1].objCoords.z, 0)
 		else
 			TaskTurnPedToFaceCoord(playerPed, closestDoor.data.objCoords.x, closestDoor.data.objCoords.y, closestDoor.data.objCoords.z, 0)
@@ -316,10 +316,10 @@ local function lockpickFinish(success)
 		QBCore.Functions.Notify(Lang:t("error.lockpick_fail"), 'error', 2500)
 		if math.random(1,100) <= 17 then
 			if usingAdvanced then
-				TriggerServerEvent("QBCore:Server:RemoveItem", "advancedlockpick", 1, false)
+				TriggerServerEvent("qb-doorlock:server:removeLockpick", "advancedlockpick")
 				TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["advancedlockpick"], "remove")
 			else
-				TriggerServerEvent("QBCore:Server:RemoveItem", "lockpick", 1, false)
+				TriggerServerEvent("qb-doorlock:server:removeLockpick", "lockpick")
 				TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["lockpick"], "remove")
 			end
 		end
@@ -397,7 +397,7 @@ RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
 	PlayerData = val
 end)
 
-RegisterNetEvent('qb-doorlock:client:setState', function(serverId, doorID, state, src, enableAnimation, enableSounds)
+RegisterNetEvent('qb-doorlock:client:setState', function(serverId, doorID, state, src, enableSounds, enableAnimation)
 	if not Config.DoorList[doorID] then return end
 	if enableAnimation == nil then enableAnimation = true end
 	if enableSounds == nil then enableSounds = true end
@@ -486,7 +486,13 @@ end)
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
 	if not closestDoor.data or not next(closestDoor.data) or PlayerData.metadata['isdead'] or PlayerData.metadata['ishandcuffed'] or (not closestDoor.data.pickable and not closestDoor.data.lockpick) or not closestDoor.data.locked then return end
 	usingAdvanced = isAdvanced
-	TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
+	exports['VL-ui']:Circle(function(success)
+        if success then
+            lockpickFinish(success)
+        else
+            QBCore.Functions.Notify("Are you dumb? Go learn how to crack the door !", "success")
+        end
+    end, 5, 14) 
 end)
 
 RegisterNetEvent('qb-doorlock:client:addNewDoor', function()
@@ -598,7 +604,7 @@ RegisterNetEvent('qb-doorlock:client:addNewDoor', function()
 	if doorData.pickable ~= 'true' then doorData.pickable = nil end
 	if doorData.cantunlock ~= 'true' then doorData.cantunlock = nil end
 	if doorData.hidelabel ~= 'true' then doorData.hidelabel = nil end
-	
+
 	doorData.locked = doorData.locked == 'true'
 	doorData.distance = tonumber(doorData.distance)
 	if doorData.doortype == 'door' or doorData.doortype == 'sliding' or doorData.doortype == 'garage' then
@@ -763,7 +769,7 @@ RegisterCommand('toggledoorlock', function()
 	if closestDoor.data.audioRemote then src = NetworkGetNetworkIdFromEntity(playerPed) end
 
 	TriggerServerEvent('qb-doorlock:server:updateState', closestDoor.id, locked, src, false, false, true, true) -- Broadcast new state of the door to everyone
-end)
+end, false)
 TriggerEvent("chat:removeSuggestion", "/toggledoorlock")
 RegisterKeyMapping('toggledoorlock', Lang:t("general.keymapping_description"), 'keyboard', 'E')
 
@@ -805,7 +811,7 @@ RegisterCommand('remotetriggerdoor', function()
 	end
 
 	TriggerServerEvent('qb-doorlock:server:updateState', nearestDoor.id, not nearestDoor.data.locked, NetworkGetNetworkIdFromEntity(playerPed), false, false, true, true) -- Broadcast new state of the door to everyone
-end)
+end, false)
 TriggerEvent("chat:removeSuggestion", "/remotetriggerdoor")
 RegisterKeyMapping('remotetriggerdoor', Lang:t("general.keymapping_remotetriggerdoor"), 'keyboard', 'H')
 
@@ -869,7 +875,7 @@ CreateThread(function()
 								end
 							end
 
-							if displayText ~= "" then displayNUIText(displayText) end
+							if displayText ~= "" and (closestDoor.data.hideLabel == nil or not closestDoor.data.hideLabel) then displayNUIText(displayText) end
 						else
 							hideNUI()
 							break
