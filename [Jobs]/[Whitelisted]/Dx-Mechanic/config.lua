@@ -37,7 +37,7 @@ Config = {
 						-- "gks" = use gks-phone for emails
 						-- "qs" = use lb-phone for emails
 
-	CosmeticRemoval = true, -- If "true" items will be removed on successful application of a mod
+	CosmeticRemoval = false, -- If "true" items will be removed on successful application of a mod
 							-- If "false" items will not be removed on use.
 
 	ShowOdo = false, -- Wether the distance is showed in car by default
