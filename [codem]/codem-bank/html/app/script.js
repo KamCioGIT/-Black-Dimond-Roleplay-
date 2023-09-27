@@ -455,9 +455,9 @@ const app = new Vue({
         },
 
         setBilling(val){
-
             this.billingSystem = val;
         },
+        
         withdrawMoneySociety() {
             this.PlayClickSound();
             this.withdrawAmount = parseInt(this.withdrawAmount);

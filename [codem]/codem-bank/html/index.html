@@ -559,10 +559,36 @@
                   
                   </div>
 
+                  <div class="billssetting mt-4 ms-3 d-flex justify-content-start align-items-start  flex-column" style="width: 25.5%; height: 40%;  margin-left: 5vw; background-image: url('./images/bills-data-bg.png'); background-size: 100% 100%;" v-for="data in billsData" v-if="billsData != 'null' && billingSystem == 'codem-billing' && data.status == 'unpaid'">
+                    
+                    <div  class=" col-12   d-flex align-items-start justify-content-start " style="height: 13%;">
+                        <h2 class="col-4 text-center  my-0   d-flex align-items-center justify-content-center " style="color:#B00AFF; font-size:0.8vw; letter-spacing:0.1vw;height: 100%;">From</h2>
+                        <!-- <h2 class="col-6  text-end  text-white my-0 " style="font-size: 0.8vw;">12.12.2022</h2> -->
+                        <!-- <div class="col-2 my-0 d-flex align-items-center justify-content-center " style="height:100%">
+                          <img class="img-fluid" style="height: 40%;" src="./images/callender.png" alt="">
+                        </div> -->
+                      </div>
+
+                      <h2 class="col-8 " style="color:white; font-size:0.8vw; letter-spacing:0.1vw;text-indent: 1.1vw; ">{{data.societyname}} </h2>
+
+                      <h2 class="col-4  text-center " style="color:#B00AFF; font-size:0.8vw; letter-spacing:0.1vw;">{{language['type']}}</h2>
+
+                      <div class="col-11 d-flex align-items-center justify-content-center text-start  mt-2 "  style="height:7vh; ">
+                        <h2 class="col-10 h-100" style="color:white; font-size:0.8vw; letter-spacing:0.1vw;">{{data.invoicelabel}}</h2>
+                      </div>
+
+                      <div class="col-12 mt-1 d-flex align-items-center justify-content-center  flex-wrap align-content-center"  style="height: 40%; ">
+                          <h2 class="col-7    text-center  d-flex align-items-center justify-content-center" style="border-radius: 2rem; background: linear-gradient(90.76deg, #9516D3 0.5%, #00B2FF 110.52%); font-size:0.8vw; height: 30%;  color:#260047;">{{data.amount}} $</h2>
+                          <h2 class="col-7  text-center  d-flex align-items-center justify-content-center" style="border-radius: 2rem;background: linear-gradient(90.76deg, #16D38F 0.5%, #AD00FF 110.52%); font-size:0.8vw; height: 30%; 
+                          color:white; cursor: pointer;" @click="billPay(data.uniqueid,data.amount,data.invoicelabel)">{{language['pay']}}</h2>
+                      </div>
+                    </div>
+
                     <div v-else class="text-white col-12 d-flex align-items-center justify-content-center" style="height: 100%;">
                       <h2 class="text-white" style="font-family: proxima-bold; font-size: 1.3vw;">{{language['notbill']}}</h2>
                     </div>
-                </div>
+
+                  </div>
                 
                 
               </div>

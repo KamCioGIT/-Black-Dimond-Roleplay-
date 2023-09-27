@@ -85,46 +85,58 @@ Citizen.CreateThread(
                 end
         end)
         RegisterCallback("codem-bank:getBills",function(source, cb)
-                local src = source
-                if Config.Framework == "newesx" or Config.Framework == "oldesx" then
-                    local identifier = GetIdentifier(src)
-                    if Config.Billing == "default" then
-                        local data = ExecuteSql("SELECT * FROM `billing` WHERE `identifier` = '" .. identifier .. "'")
-                        if next(data) then
-                        
-                            cb(data)
-                        else
-                            cb(false)
-                        end
+            local src = source
+            if Config.Framework == "newesx" or Config.Framework == "oldesx" then
+                local identifier = GetIdentifier(src)
+                if Config.Billing == "default" then
+                    local data = ExecuteSql("SELECT * FROM `billing` WHERE `identifier` = '" .. identifier .. "'")
+                    if next(data) then
+                    
+                        cb(data)
                     else
-                        local data = ExecuteSql("SELECT * FROM `okokbilling` WHERE `receiver_identifier` = '" .. identifier .. "'")
-                        if next(data) then
-                            cb(data)
-                        else
-                            cb(false)
-                        end
+                        cb(false)
                     end
-                else
-                    local identifier = GetIdentifier(src)
-                    if Config.Billing == "default" then
-                        local data = ExecuteSql("SELECT * FROM `phone_invoices` WHERE `citizenid` = '" .. identifier .. "'")
-                        if next(data) then
-                            cb(data)
-                        else
-                            cb(false)
-                        end
+                elseif Config.Billing == "okok" then
+                    local data = ExecuteSql("SELECT * FROM `okokbilling` WHERE `receiver_identifier` = '" .. identifier .. "'")
+                    if next(data) then
+                        cb(data)
                     else
-                        local data = ExecuteSql("SELECT * FROM `okokbilling` WHERE `receiver_identifier` = '" .. identifier .. "'")
-                        if next(data) then
-                            cb(data)
-                        else
-                            cb(false)
-                        end
+                        cb(false)
                     end
-            
+                elseif Config.Billing == "codem-billing" then
+                    local data = ExecuteSql("SELECT * FROM `codem_billing` WHERE `identifier` = '" .. identifier .. "'")
+                    if next(data) then
+                        cb(data)
+                    else
+                        cb(false)
+                    end
                 end
+            else
+                local identifier = GetIdentifier(src)
+                if Config.Billing == "default" then
+                    local data = ExecuteSql("SELECT * FROM `phone_invoices` WHERE `citizenid` = '" .. identifier .. "'")
+                    if next(data) then
+                        cb(data)
+                    else
+                        cb(false)
+                    end
+                      elseif Config.Billing == "okok" then
+                    local data = ExecuteSql("SELECT * FROM `okokbilling` WHERE `receiver_identifier` = '" .. identifier .. "'")
+                    if next(data) then
+                        cb(data)
+                    else
+                        cb(false)
+                    end
+                elseif Config.Billing == "codem-billing" then
+                    local data = ExecuteSql("SELECT * FROM `codem_billing` WHERE `identifier` = '" .. identifier .. "'")
+                    if next(data) then
+                        cb(data)
+                    else
+                        cb(false)
+                    end
+                end
+            end
         end)
- 
 end)
 
 
@@ -140,8 +152,10 @@ AddEventHandler('codem-bank:billPay', function(id,amount,billname)
             xPlayer.removeAccountMoney("bank", tonumber(amount))
             if Config.Billing == "default" then
                 ExecuteSql("DELETE FROM `billing` WHERE `id` = '" .. id .. "'")
-            else
+            elseif Config.Billing == "okok" then
                 ExecuteSql("DELETE FROM `okokbilling` WHERE `id` = '" .. id .. "'")
+            elseif Config.Billing == "codem-billing" then
+                ExecuteSql("UPDATE `codem_billing` SET `status` = 'paid' WHERE `uniqueid` = '" .. id .. "'")
             end
             if Config.Webhook then
                 local ids = ExtractIdentifiers(src)
@@ -186,8 +200,10 @@ AddEventHandler('codem-bank:billPay', function(id,amount,billname)
             xPlayer.Functions.RemoveMoney("bank", tonumber(amount))
             if Config.Billing == "default" then
                 ExecuteSql("DELETE FROM `phone_invoices` WHERE `id` = '" .. id .. "'")
-            else
+            elseif Config.Billing == "okok" then
                 ExecuteSql("DELETE FROM `okokbilling` WHERE `id` = '" .. id .. "'")
+            elseif Config.Billing == "codem-billing" then
+                ExecuteSql("UPDATE `codem_billing` SET `status` = 'paid' WHERE `uniqueid` = '" .. id .. "'")
             end
             ExecuteSql("DELETE FROM `phone_invoices` WHERE `id` = '" .. id .. "'")
             if Config.Webhook then

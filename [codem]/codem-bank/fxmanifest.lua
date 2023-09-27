@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 author 'Aiakos#8317'
 description 'Codem-Bank'
-version '1.8.1'
+version '1.8.2'
 ui_page {
 	'html/index.html',
 }
