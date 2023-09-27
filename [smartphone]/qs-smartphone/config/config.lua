@@ -39,10 +39,6 @@ Config.esxVersion = 'new'
 -- SET IN TRUE IF YOU USE ox_inventory
 Config.ox_inventory = false
 
--- Target script
-Config.Target = true       -- Enable or disable target system
-Config.TargetScript = 'qb-target'  -- 'ox_target', 'qb-target' or 'qtarget' only!
-
 -- Leave it as default if you dont know what you are doing
 Config.ScreenshotBasic = 'screenshot-basic'
 Config.RepeatTimeout = 2000            -- Don't touch here
@@ -282,9 +278,9 @@ Config.Jobs = {
     to put it another way it is to enter and exit of duty.
 ]]
 Config.jobCommands = { -- Just enter a number here, this is the number that will appear when you call.
-    ['police'] = '112',
-    ['ambulance'] = '113',
-    ['mechanic'] = '114',
+    ['police'] = '911',
+    ['ambulance'] = '311',
+    ['mechanic'] = '211',
 }
 
 --██████╗░██╗░░░██╗░██████╗██╗███╗░░██╗███████╗░██████╗░██████╗

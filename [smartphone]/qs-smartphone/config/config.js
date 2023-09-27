@@ -73,670 +73,165 @@ const SpotifyArray = [{ // Don't touch this
     thumbnail: 'https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png',
     playlists: []
 }, // Don't touch this until here
-
-    {
-        name: 'Rock',
-        thumbnail: 'https://www.photolari.com/wp-content/uploads/2019/12/foto-0-portada-nevermind-nirvana.jpg',
-        playlists: [
-            {
-                url: "https://www.youtube.com/watch?v=8SbUC-UaAxE",
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=djV11Xbc914'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=hTWKbfoikeg'
-            },
-            {
-                url: "https://www.youtube.com/watch?v=1w7OgIMMRc4",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=9jK-NcRmVcw",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=OMOGaugKpzs",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=xwtdhWltSIg",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=btPJPFnesV4",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=zRIbf6JqkNc",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=Rbm6GXllBiw",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=ErvgV4P6Fzc",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=NMNgbISmF4I",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=qeMFqkcPYcg",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=UrIiLvg58SY",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=YR5ApYxkU-U",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=rY0WxgSXdEE",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=o1tj2zJ2Wvg",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=JkK8g6FMEXE",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=vabnZ9-ex7o",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=Qt2mbGP6vFI",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=xPU8OAjjS4k",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=S_E2EHVxNAE",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=qfNmyxV2Ncw",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=1Cw1ng75KP0",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=-oqAU5VxFWs",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=etAIpkdhU9Q",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=Lo2qQmj0_h4",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=zSmOvYzSeaQ",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=loWXMtjUZWM",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=a01QQZyl-_I&",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=3wxyN3z9PL4",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=l482T0yNkeo",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=dpmAY059TTY",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=KmWE9UBFwtY",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=NRtvqT_wMeY",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=yRYFKcMa_Ek",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=YgSPaXgAdzE",
-            },
-            {
-                url: "https://www.youtube.com/watch?v=CBTOGVb_cQg",
-            }
-        ]
+{
+    name: 'Pop',
+    description: 'The best pop music in English of 2022 for u!',
+    thumbnail: 'https://i1.sndcdn.com/artworks-i9YJYo6ag1fpym6b-tD6LVA-t500x500.jpg',
+    playlists: [{
+        url: "https://www.youtube.com/watch?v=CboIIxKd12Q",
     },
     {
-        name: 'Jazz',
-        thumbnail: 'https://i.discogs.com/YAjlquecpjcTyB32Ps8tocCak_Mbw8XGdpZDFWi_LTQ/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQzOTQ4/OC0xMjI2MTYxODEz/LmpwZWc.jpeg',
-        playlists: [
-            {
-                url: "https://www.youtube.com/watch?v=71Gt46aX9Z4",
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=bb1SrngIufQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=H77fRz1rybs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=ioOzsi9aHQQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=9Pes54J8PVw'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=SgXSomPE_FY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=GzmS4p3jXvs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=0G383538qzQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=zq7hltwb_yc'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=ZVLEYerz5rc'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=PsgAHFviYcY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=cEXhZ8PwM-Y'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=WcF8Aos4XDA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=5ODL5_djyBI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=TTfVNYJxXw8'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=bSfqNEvykv0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=5lrSdW8p4u4'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=bqQKE4kkrUc'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=S5NPriAa8so'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=UiHmeHZAc0s'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=gUm_VC3vBt4'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=2A6hG6Xg6zQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=-aRnzKDiIS0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=N-KluFB9A8M'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=4zAThXFOy2c'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=hC8CH0Z3L54'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=O_5oXqvxaAk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=QcJ2eb3ojPM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=rB6OlJqV1rQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=rnQzXv-bbkY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=QuHQfC01SKo'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=UjZzaTo-MYI'
-            }
-        ]
+        url: "https://www.youtube.com/watch?v=rBG-z-vtZfI",
     },
     {
-        name: 'Chill',
-        thumbnail: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/summer-chillout-cd-cover-artwork-template-design-47093542f55e5139ea7173d1c2261c92_screen.jpg?ts=1589615245',
-        playlists: [
-            {
-                url: "https://www.youtube.com/watch?v=JdqL89ZZwFw",
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=lTRiuFIWV54'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=9FvvbVI5rYA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=xocnshwEbrM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=ROy57arUE1s'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=QZTDZFtbrec'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=6H-PLF2CR18'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=LsWACxHMWBI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=c3suauAz0zQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=c3jb-47ikqY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=lf6refTxQs8'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=liHgt4CbodY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=YpGjaJ1ettI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=dTuLMnX3Vlw'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=90QqkQNzMFk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=bz5q5gl2uZA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=FjHGZj2IjBk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=bP9gMpl1gyQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=1fueZCTYkpA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=q9p0S7hGcrI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=PtIKsk1Qabw'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=CfPxlb8-ZQ0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=r0sjCawEOKk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=TGan48YE9Us'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=4mkNvBWdqFk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=TWTV4T3yxzs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=spRerxsOLXk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=1w9kNO4eq9U'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=lbpCmN1IqGk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=5mv1T3bjq_g'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=QKUNo8MOzQA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=RtWgbht6qe8'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=2LMiz9NTzVs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=UliRWJE0CaI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=LhSKG9EeFg8'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=NJuSStkIZBg'
-            }
-        ]
+        url: "https://www.youtube.com/watch?v=Ia6NYheR8Eo",
     },
     {
-        name: 'Electronic / Dance',
-        thumbnail: 'https://d2n9ha3hrkss16.cloudfront.net/uploads/stage/stage_image/62032/optimized_large_thumb_stage.jpg',
-        playlists: [
-            {
-                url: 'https://www.youtube.com/watch?v=k3DBmAlUh1A'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=3pL08H3WFrM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=EfWmWlW2PvM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=3ztSQh7jh_Q'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=BtU2xhK5PZo'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=ssKWFlclNFg'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=IIUTf007y_w'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=961v0E3b01g'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=HvvECHLHKrM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=Q22MCFC0CP0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=0OKqK8Fr72k'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=90RLzVUuXe4'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=S83AQhEWmPY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=xkejbXejA-0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=BX0lKSa_PTk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=ELXuZBD6D_g'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=T-jNkwesjpk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=EXIWlRrkjKE'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=w8mBplMtwJ8'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=vdzHlbFItlw'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=l4UkYBr1NnA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=iqVLISbFZPc'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=1VcFFvqQV8g'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=MveDLwDIZiI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=R4kRgIkpTxQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=Rvc7ZsurcSY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=TfbK_sCRapM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=r0bhF7SJLYQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=e7HBypw4lhY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=PoP2Sa7wYNQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=NkrkAsRVLEA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=1_4ELAxKrDc'
-            }
-        ]
+        url: "https://www.youtube.com/watch?v=1qjuKXw0tC4",
     },
     {
-        name: 'Metal',
-        thumbnail: 'https://www.revolvermag.com/sites/default/files/styles/original_image__844px_x_473px_/public/media/section-media/81hryxavzjl._sl1425_.jpg?itok=bjKLgbqe&timestamp=1559146162',
-        playlists: [
-            {
-                url: 'https://www.youtube.com/watch?v=l9VFg44H2z8'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=AkFqg5wAuFk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=CSvFpBOe8eY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=6fVE8kSM43I'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=DelhLppPSxY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=CD-E-LDc384'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=HCBPmxiVMKk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=X4bgXH3sJ2Q'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=3nb7DD7vdQ0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=W3q8Od5qJio'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=iywaBOMvYLI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=Nco_kh8xJDs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=F_6IjeprfEs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=94bGzWyHbu0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=jRGrNDV2mKc'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=RFc-2aNZ6VY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=UNEDa3Hqnic'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=JiDnB-CrrNs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=6rL4em-Xv5o'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=Ps0MfBG5-Uo'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=5ItHNdrPEh0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=GurkREc-q4I'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=IHS3qJdxefY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=FNdC_3LR2AI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=uhBHL3v4d3I'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=qw2LU1yS7aw'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=Fwr1Z7uyXz4'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=yPNFVj-pISU'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=-0Ao4t_fe0I'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=iPW9AbRMwFU'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=XOzs1FehYOA'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=viD6JMRGbbM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=2s3iGpDqQpQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=labytsb3gfI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=vfpgpf6QVnI'
-            }
-        ]
+        url: "https://www.youtube.com/watch?v=M7uof6Im6Do",
     },
     {
-        name: 'Hip Hop',
-        thumbnail: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/hip-hop-modern-album-cover-video-design-template-feff1ee7028b6c491f3382b8b8932c11_screen.jpg?ts=1649518691',
-        playlists: [
-            {
-                url: 'https://www.youtube.com/watch?v=-jEShhcnxIM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=hpK16l6fDsg'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=NSCZ5awmH1U'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=Xrk6JQNqM0g'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=kC8YEw9h2-Q'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=9dosj6p1DqY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=LuKm4L9ryB0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=IAJnDmMN5VU'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=a90gzeTH9MI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=a90gzeTH9MI'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=EgPaU9EBpls'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=JCf7jrglH6A'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=m4_9TFeMfJE'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=tGTKY1dpo_E'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=GHVDVz5Kcqg'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=yedPuhzfVGE'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=_yBh_I5BLRM'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=Z4N8lzKNfy4'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=IyDnzuFf9xk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=DbjDJLcNvdU'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=l21wGxlWwPw'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=t-ibVnD9A7I'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=CUj2AWEJnwQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=pDFHyA7KgDw'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=n7rE-Wlo5wg'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=fUYKSIWKbEQ'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=vq4hRDnGbDY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=UqmUxkRPBS0'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=_f0ftiBSvRs'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=pjXdDjUWkjk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=qwtyEKTGGQ8'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=6gUiQ8CqLcY'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=zLC-7Il-uYg'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=pSY3i5XHHXo'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=MtV0aeGEEYk'
-            },
-            {
-                url: 'https://www.youtube.com/watch?v=K0hDSlWGhTE'
-            }
-        ]
-    }
+        url: "https://www.youtube.com/watch?v=oRUZ5AqD-Gc",
+    },
+    {
+        url: "https://www.youtube.com/watch?v=xN5SarTkWd8",
+    },
+    {
+        url: "https://www.youtube.com/watch?v=tg4EhjKKKco",
+    },
+    {
+        url: "https://www.youtube.com/watch?v=C9sg8MBg-uM",
+    },
+    ]
+},
+{
+    name: 'Trap',
+    description: 'The best trap music in English of 2022 for u!',
+    thumbnail: 'https://assets1.sharedplaylists.cdn.crowds.dk/playlists/03/09/34/sz300x300_trap-and-bass-trending-now-magic-music-c36184d472.jpeg',
+    playlists: [{
+        url: "https://www.youtube.com/watch?v=yvCYWPe8-bM"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=IcJgCuWmhlM"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=cErCZLTrLQU"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=vLZ67WT84oA"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=75k6zia27Hs"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=uemkb0PpW3c"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=rXoTj6mHHaQ"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=UJIQWLxN4j0"
+    },
+    ]
+},
+{
+    name: 'Tech',
+    description: 'The best tech music in English of 2022 for u!',
+    thumbnail: 'https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720__340.jpg',
+    playlists: [{
+        url: "https://www.youtube.com/watch?v=Tr_7Iu3xVvA",
+    },
+    {
+        url: "https://www.youtube.com/watch?v=V2E2aF1qQ4E"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=m-gLFcfPCts"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=HujNQRTxrxk"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=JOzAentQ3d8"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=myU2NXvlvVU"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=Y2Lu0o3S2sU"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=vE4h9Z_tLYk"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=nNqCvnDTSDo"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=UJz6nhAPIR8"
+    },
+    ]
+},
+{
+    name: 'Synthwave',
+    description: 'The best synth music in English of 2022 for u!',
+    thumbnail: 'https://i.scdn.co/image/ab67706c0000bebb0d93adc83a4e3bc895242d37',
+    playlists: [{
+        url: "https://www.youtube.com/watch?v=DxPg6YQIqWE",
+    },
+    {
+        url: "https://www.youtube.com/watch?v=G3HT7JLcUhs"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=Gv0OSpS2ABU"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=HMojqnyB_zs"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=rKUXexTmqAQ"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=3lF8Op_3YtU"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=nQ1GVX66P-A"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=vt2JwpP3A3g"
+    },
+    ]
+},
+{
+    name: 'Dubstep',
+    description: 'The best dubs music in English of 2022 for u!',
+    thumbnail: 'https://i.scdn.co/image/ab67706c0000bebb11a2fa646c9d882e2f52579e',
+    playlists: [{
+        url: "https://www.youtube.com/watch?v=49mZuZ7De58",
+    },
+    {
+        url: "https://www.youtube.com/watch?v=dko41CQGgbE"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=zfyklFvstck"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=U0Qi6Zaxr8A"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=6ZIyvPr1lvw"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=omONxdFuntg"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=QSJljnPhiHI"
+    },
+    {
+        url: "https://www.youtube.com/watch?v=KZ_eXk5t0r0"
+    },
+    ]
+},
 ]
 
 Config.ConnectionBypassApps = [ // Applications that you can open without a telephone signal.

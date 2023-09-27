@@ -4,7 +4,7 @@ game 'gta5'
 
 lua54 'yes'
 
-version '2.6.2'
+version '2.6.0'
 
 ui_page 'html/index.html'
 
@@ -23,6 +23,7 @@ client_scripts {
 
     'client/custom/framework/*.lua',
     'client/*.lua',
+    'client/custom/misc/target.lua',
     'client/modules/*.lua',
     'client/apps/*.lua',
     'client/custom/**/*.lua',
