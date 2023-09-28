@@ -87,8 +87,8 @@ Config.EnableRegisterKeyMapping = true
 
 ]]--
 
-Config.SeatbeltKey = "K"
-Config.CruiseControlKey = "B" 
+Config.SeatbeltKey = "B"
+Config.CruiseControlKey = "Y" 
 Config.rightindicator = "RIGHT" 
 Config.leftindicator = "LEFT" 
 Config.hazardlights = "DOWN"  

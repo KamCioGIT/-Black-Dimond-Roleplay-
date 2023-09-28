@@ -17,26 +17,26 @@
 --- @param Important, add a webhook here, otherwise the images won't work.
 
 --- @param Set your own discord Webhook here.
-Config.Webhook = ''
+Config.Webhook = 'https://discord.com/api/webhooks/1139929456597815436/Tx_C5QeG-BzRx6g6GwrNqQKEKeLG-SruOCAJrk1KiUsGwABo2wyFI4NoER3weNVCjLEw'
 
 --- @param Set your own discord Webhook here.
-Config.TwitterWebhook = ''
+Config.TwitterWebhook = 'https://discord.com/api/webhooks/1139929456597815436/Tx_C5QeG-BzRx6g6GwrNqQKEKeLG-SruOCAJrk1KiUsGwABo2wyFI4NoER3weNVCjLEw'
 
 --- @param Set your own discord Webhook here.
-Config.InstagramWebhook = ''
+Config.InstagramWebhook = 'https://discord.com/api/webhooks/1139929456597815436/Tx_C5QeG-BzRx6g6GwrNqQKEKeLG-SruOCAJrk1KiUsGwABo2wyFI4NoER3weNVCjLEw'
 
 --- @param Set your own discord Webhook here.
-Config.YellowPagesWebhook = ''
+Config.YellowPagesWebhook = 'https://discord.com/api/webhooks/1139929456597815436/Tx_C5QeG-BzRx6g6GwrNqQKEKeLG-SruOCAJrk1KiUsGwABo2wyFI4NoER3weNVCjLEw'
 
 --- @param Set your own discord Webhook here.
-Config.NewsWebhook = ''
+Config.NewsWebhook = 'https://discord.com/api/webhooks/1139929456597815436/Tx_C5QeG-BzRx6g6GwrNqQKEKeLG-SruOCAJrk1KiUsGwABo2wyFI4NoER3weNVCjLEw'
 
 --- @param Set your own discord Webhook here.
-Config.DarkWebBuy = ''
+Config.DarkWebBuy = 'https://discord.com/api/webhooks/1139929456597815436/Tx_C5QeG-BzRx6g6GwrNqQKEKeLG-SruOCAJrk1KiUsGwABo2wyFI4NoER3weNVCjLEw'
 
 --- @param Set your own discord Webhook here.
 -- You can modify on qs-smartphone/server/custom/misc/bank.lua
-Config.BankWebhook = ''
+Config.BankWebhook = 'https://discord.com/api/webhooks/1139929456597815436/Tx_C5QeG-BzRx6g6GwrNqQKEKeLG-SruOCAJrk1KiUsGwABo2wyFI4NoER3weNVCjLEw'
 
 
 --      _       _     _   _

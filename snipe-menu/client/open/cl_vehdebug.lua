@@ -149,8 +149,10 @@ local capturedEndScore90 = false
 local capturedEndScore120 = false
 local isrecording = false
 local isRecording = false
-
+local speedThread = false
 local function SpeedThread()
+    if speedThread then return end
+    speedThread = true
     CreateThread(function()
         while debugMode do
             Wait(0)
@@ -275,6 +277,7 @@ function StartDebugThread()
 
                 Wait(0)
             end
+            speedThread = false
         end)
     end
 end

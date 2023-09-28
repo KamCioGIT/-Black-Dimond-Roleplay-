@@ -150,7 +150,7 @@ var app = new Vue({ el: '.container', data: {
     DARKCHAT_PASSWORD: "Password",
     DARKCHAT_ENTER: "Enter",
     DARKCHAT_BACK: "Back",
-    DARKCHAT_CREATE_CHAT: "Crear un chat privado",
+    DARKCHAT_CREATE_CHAT: "Create a private chat",
     DARKWEB_FOOTER_SHOP: "Store",
     DARKWEB_FOOTER_CHAT: "Chat",
 

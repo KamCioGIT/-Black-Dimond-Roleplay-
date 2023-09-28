@@ -211,7 +211,7 @@ Config.PhoneApplications = {
         blockedjobs = {},
         Alerts = 0
     },
-    --[[ [17] = {
+    [17] = {
         custom = false,
         app = "tips",
         color = "img/apps/tips.png",
@@ -220,7 +220,7 @@ Config.PhoneApplications = {
         slot = 17,
         blockedjobs = {},
         Alerts = 1
-    }, ]]
+    },
 
     -- Temple for custom app!
     -- Check in docuementation for more info.

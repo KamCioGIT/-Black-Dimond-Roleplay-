@@ -24,7 +24,7 @@ RegisterServerEvent('snipe-menu:server:healPlayer', function(otherPlayerId)
         if Config.Core == "QBCore" then
             TriggerClientEvent('hospital:client:Revive', otherPlayerId)
         elseif Config.Core == "ESX" then
-            TriggerClientEvent("esx_basicneeds:healPlayer")
+            TriggerClientEvent("esx_basicneeds:healPlayer", otherPlayerId)
         end
     else
         SendLogs(src, "exploit", Config.Locales["heal_player_exploit"])
