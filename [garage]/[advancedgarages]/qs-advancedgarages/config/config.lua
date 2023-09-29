@@ -409,7 +409,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(-338.769226, 267.428589, 85.709839),
@@ -444,7 +444,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(70.074722, 12.342858, 68.944336),
@@ -514,7 +514,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(273.705505, -344.241760, 44.916504),
@@ -549,7 +549,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(-1160.347290, -740.967041, 19.675415),
@@ -619,7 +619,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(364.074738, 297.903290, 103.486450),
@@ -689,7 +689,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(-1183.226318, -1510.958252, 4.359009),
@@ -724,7 +724,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(1142.123047, 2663.934082, 38.159668),
@@ -759,7 +759,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 1 -- Single Garage
+            shell = 7 -- Single Garage
         },
         coords = {
             menuCoords = vec3(959.683533, 3618.975830, 32.666626),
@@ -794,7 +794,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(1737.942871, 3709.199951, 34.132568),
@@ -864,7 +864,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(204.646149, -3132.843994, 5.774414),
@@ -934,7 +934,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(-352.879120, -676.470337, 32.043213),
@@ -969,7 +969,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(722.228577, -2016.342896, 29.279907),
@@ -1004,7 +1004,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(1384.325317, -2079.876953, 52.397827),
@@ -1039,7 +1039,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(903.665955, -1575.890137, 30.813232),
@@ -1074,7 +1074,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(345.151642, -1687.424194, 32.515015),
@@ -1109,7 +1109,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 1 -- Single Garage
+            shell = 7 -- Single Garage
         },
         coords = {
             menuCoords = vec3(450.448364, -1981.714233, 24.393433),
@@ -1144,7 +1144,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(807.006592, -810.000000, 26.196289),
@@ -1179,7 +1179,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(1038.092285, -764.320862, 57.924561),
@@ -1249,7 +1249,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 6 -- Small Public Garage
+            shell = 7 -- Small Public Garage
         },
         coords = {
             menuCoords = vec3(-570.382446, 311.301086, 84.479858),
@@ -1284,7 +1284,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(180.632965, 2793.375732, 45.640991),
@@ -1319,7 +1319,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 1 -- Single Garage
+            shell = 7 -- Single Garage
         },
         coords = {
             menuCoords = vec3(-379.556030, 6062.175781, 31.487183),
@@ -1354,7 +1354,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(2564.320801, 4680.435059, 34.065186),
@@ -1389,7 +1389,7 @@ Config.Garages = {
         job = false, -- You can give it a job by simply adding 'police' for example
         type = 'vehicle',
         shell = {
-            shell = 5 -- Mechanic Garage
+            shell = 7 -- Mechanic Garage
         },
         coords = {
             menuCoords = vec3(1707.230713, 4791.890137, 41.967773),
@@ -1640,113 +1640,7 @@ Config.Garages = {
         }
     },
  
---[[ ------------------------------- House
 
-['Private Founder'] = {
-    owner = true,
-    available = true,
-    isImpound = false,
-    job = false, -- You can give it a job by simply adding 'police' for example
-    type = 'vehicle',
-    shell = {
-        shell = 7 -- Big Public Garage
-    },
-    coords = {
-        menuCoords = vector3(-1683.25, 473.46, 130.29),
-        spawnCoords = vector4(-1683.25, 473.46, 130.29, 23.91),
-        polyzone = {
-            points = {
-                vector3(-1687.82, 467.0, 130.29),
-                vector3(-1691.65, 477.51, 130.29),
-                vector3(-1681.18, 481.66, 130.29),
-                vector3(-1673.41, 470.59, 130.29)
-            },
-            thickness = 25.0
-        },
-    },
-    vehicleCamera = {
-        vehicleCoords = vec4(-1683.25, 473.46, 130.29, 23.91),
-        camera = {
-            coords = vec3(-1683.25, 473.46, 130.29),
-            rotation = vec3(-4.0, 3.0, 155.0),
-            ped = vec4(-1683.25, 473.46, 130.29, 23.91)
-        }
-    },
-    cinematicCams = {
-        vec3(-1683.25, 473.46, 130.29),
-        vec3(-759.375793, -2049.982422, 8.908447)
-    }
-},
-['Desert Founder'] = {
-    owner = true,
-    available = true,
-    isImpound = false,
-    job = false, -- You can give it a job by simply adding 'police' for example
-    type = 'vehicle',
-    shell = {
-        shell = 7 -- Big Public Garage
-    },
-    coords = {
-        menuCoords = vector3(811.69, 3415.44, 60.56),
-        spawnCoords = vector4(811.69, 3415.44, 60.56, 154.96),
-        polyzone = {
-            points = {
-                vector3(810.81, 3404.95, 62.44),
-                vector3(801.18, 3408.57, 62.68),
-                vector3(808.16, 3422.58, 58.37),
-                vector3(820.47, 3424.25, 58.0)
-            },
-            thickness = 25.0
-        },
-    },
-    vehicleCamera = {
-        vehicleCoords = vector4(811.69, 3415.44, 60.56, 154.96),
-        camera = {
-            coords = vector3(811.69, 3415.44, 60.56),
-            rotation = vec3(-4.0, 3.0, 155.0),
-            ped = vector4(811.69, 3415.44, 60.56, 154.96)
-        }
-    },
-    cinematicCams = {
-        vector3(811.69, 3415.44, 60.56),
-        vector3(811.69, 3415.44, 60.56)
-    }
-},
-['Paleto Founder'] = {
-    owner = true,
-    available = true,
-    isImpound = false,
-    job = false, -- You can give it a job by simply adding 'police' for example
-    type = 'vehicle',
-    shell = {
-        shell = 7 -- Big Public Garage
-    },
-    coords = {
-        menuCoords = vector3(-88.44, 6623.33, 30.62),
-        spawnCoords = vector4(-88.45, 6623.33, 30.62, 122.79),
-        polyzone = {
-            points = {
-                vector3(-89.84, 6615.78, 30.66),
-                vector3(-101.01, 6625.55, 30.54),
-                vector3(-81.12, 6624.66, 30.62),
-                vector3(-89.91, 6634.69, 29.41)
-            },
-            thickness = 25.0
-        },
-    },
-    vehicleCamera = {
-        vehicleCoords = vector4(-88.45, 6623.33, 30.62, 122.79),
-        camera = {
-            coords = vector3(-88.44, 6623.33, 30.62),
-            rotation = vec3(-4.0, 3.0, 155.0),
-            ped = vector4(-88.45, 6623.33, 30.62, 122.79)
-        }
-    },
-    cinematicCams = {
-        vector3(-88.44, 6623.33, 30.62),
-        vector3(-88.44, 6623.33, 30.62)
-    }
-}, ]]
 
 }
 
