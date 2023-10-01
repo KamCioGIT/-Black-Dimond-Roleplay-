@@ -12,6 +12,6 @@ server_script {
 }
 
 escrow_ignore {
-    'deformation.lua',
-    'fixDeleteVehicle.lua'
+    'deformation.lua'
+  --  'fixDeleteVehicle.lua'
 }

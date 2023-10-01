@@ -743,6 +743,35 @@ Config.AirAndWaterVehicleFueling = {
                 ['coords'] = vector4(1748.31, 3297.08, 40.16, 15.0),
             }
         },
+
+        [19] = {
+            ['PolyZone'] = {
+                ['coords'] = {
+                    vector2(3658.786, -6533.989),
+                    vector2(3663.693, -6539.043),
+                    vector2(3655.49, -6547.536),
+                    vector2(3644.893, -6540.538),
+                    vector2(3655.06, -6527.368),
+                },
+                ['minmax'] = {
+                    ['min'] = 2188.00,
+                    ['max'] = 2193.50
+                },
+            },
+            ['draw_text'] = "[G] Refuel",
+            ['type'] = 'car',
+            ['whitelist'] = {
+                ['enabled'] = false,
+                ['on_duty_only'] = false,
+                ['whitelisted_jobs'] = {
+                    'police', 'ambulance'
+                },
+            },
+            ['prop'] = {
+                ['model'] = 'prop_gas_pump_1d',
+                ['coords'] = vector4(3653.89, -6541.24, 2190.00, 224.36),
+            }
+        },
         -- La Mesa Landing Pad (Custom)
         -- Does not work in conjunction with Gabz Trooper PD.
         -- [19] = {

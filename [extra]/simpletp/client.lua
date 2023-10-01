@@ -6,7 +6,7 @@ positions = {
     --[[
     {{Teleport1 X, Teleport1 Y, Teleport1 Z, Teleport1 Heading}, {Teleport2 X, Teleport 2Y, Teleport 2Z, Teleport2 Heading}, {Red, Green, Blue}, "Text for Teleport"}
     ]]
-    {{-182.37, -1326.84, 31.19, 4.39}, {5666.99, 6466.76, 440.93, 133.8},{36,237,157}, "First Teleport"}, -- Outside the Sheriff's Station
+    {{-386.78, -102.75, 38.71, 221.36}, {3606.2, -6480.78, 2190.12, 210.67},{36,237,157}, "First Teleport"}, -- Outside the Sheriff's Station
     {{1860.72, 3661.49, 33.00, 0}, {1855.02, 3673.86, 33.3, 0},{255, 157, 0}, "Testing 2nd Teleport"},
 }
 
