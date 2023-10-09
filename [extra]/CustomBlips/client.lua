@@ -26,6 +26,9 @@ local blips = {
 
 
     
+    {title="Track 1", colour=5, id=523, x = -386.78, y = -102.75, z = 38.71},
+    {title="Track 1", colour=5, id=523, x = 3606.2, y = -6480.78, z = 2190.12},
+    
  }
 
  --[[Info- To disable a blip add "--" before the blip line

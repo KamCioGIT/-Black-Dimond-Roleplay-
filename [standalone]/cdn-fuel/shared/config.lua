@@ -772,6 +772,90 @@ Config.AirAndWaterVehicleFueling = {
                 ['coords'] = vector4(3653.89, -6541.24, 2190.00, 224.36),
             }
         },
+        [20] = {
+            ['PolyZone'] = {
+                ['coords'] = {
+                    vector2(3579.994, -6619.284),
+                    vector2(3574.209, -6625.68),
+                    vector2(3567.321, -6620.781),
+                    vector2(3576.182, -6611.633),
+                    
+                },
+                ['minmax'] = {
+                    ['min'] = 2180.00,
+                    ['max'] = 2193.50
+                },
+            },
+            ['draw_text'] = "[G] Refuel",
+            ['type'] = 'car',
+            ['whitelist'] = {
+                ['enabled'] = false,
+                ['on_duty_only'] = false,
+                ['whitelisted_jobs'] = {
+                    'police', 'ambulance'
+                },
+            },
+            ['prop'] = {
+                ['model'] = 'prop_gas_pump_1d',
+                ['coords'] = vector4(3573.46, -6621.25, 2188.76, 233.06),
+            }
+        },
+        [21] = {
+            ['PolyZone'] = {
+                ['coords'] = {
+                    vector2(3471.621, -6728.541),
+                    vector2(3466.114, -6737.244),
+                    vector2(3455.963, -6730.934),
+                    vector2(3468.771, -6719.517),
+                    vector2(3477.098, -6726.564),
+                },
+                ['minmax'] = {
+                    ['min'] = 2180.00,
+                    ['max'] = 2193.50
+                },
+            },
+            ['draw_text'] = "[G] Refuel",
+            ['type'] = 'car',
+            ['whitelist'] = {
+                ['enabled'] = false,
+                ['on_duty_only'] = false,
+                ['whitelisted_jobs'] = {
+                    'police', 'ambulance'
+                },
+            },
+            ['prop'] = {
+                ['model'] = 'prop_gas_pump_1d',
+                ['coords'] = vector4(3465.45, -6731.76, 2188.42, 226.27),
+            }
+        },
+        [22] = {
+            ['PolyZone'] = {
+                ['coords'] = {
+                    vector2(3521.985, -6581.229),
+                    vector2(3517.413, -6573.998),
+                    vector2(3510.714, -6579.235),
+                    vector2(3516.941, -6586.318),
+                    
+                },
+                ['minmax'] = {
+                    ['min'] = 2180.00,
+                    ['max'] = 2193.50
+                },
+            },
+            ['draw_text'] = "[G] Refuel",
+            ['type'] = 'car',
+            ['whitelist'] = {
+                ['enabled'] = false,
+                ['on_duty_only'] = false,
+                ['whitelisted_jobs'] = {
+                    'police', 'ambulance'
+                },
+            },
+            ['prop'] = {
+                ['model'] = 'prop_gas_pump_1d',
+                ['coords'] = vector4(3518.02, -6580.55, 2188.01, 185.57),
+            }
+        },
         -- La Mesa Landing Pad (Custom)
         -- Does not work in conjunction with Gabz Trooper PD.
         -- [19] = {
