@@ -23,6 +23,36 @@ local recoils = {
     -- [1309015656] = 0.0,        --['weapon_bread']
     -- [940833800] = 0.3,        --['weapon_stone_hatchet']
 
+    -- Kyros Weapon Pack V4
+    [682284884] = 0.1,         -- WEAPON_GLOCK19X   
+    [718812301] = 0.1,         -- WEAPON_GLOCK19 
+    [3613198896] = 0.1,        -- WEAPON_GLOCK40
+    [1283665035] = 0.2,        -- WEAPON_GLOCK40S 
+    [3198471071] = 0.1,        -- WEAPON_DDM4V5   
+    [2943064302] = 0.1,        -- WEAPON_MPX
+    [3498071921] = 0.1,        -- WEAPON_PD509   
+    [2381842680] = 0.1,        -- WEAPON_APS  
+    [407090536] = 0.1,         -- WEAPON_PPK 
+    [4011089255] = 0.1,        -- WEAPON_PITVIPER 
+    [3453563995] = 0.1,        -- WEAPON_BARP 
+    [3328335563] = 0.1,        -- WEAPON_RDP 
+    [2979413870] = 0.1,        -- WEAPON_LOK
+    [362886335] = 0.1,         -- WEAPON_PLR   
+    [103397280] = 0.1,         -- WEAPON_XDS9 
+    [3924285645] = 0.1,        -- WEAPON_PPS
+    [825264973] = 0.1,         -- WEAPON_XDME   
+    [13952063] = 0.1,          -- WEAPON_SP  
+    [3032380877] = 0.2,        -- WEAPON_GLOCK17S  
+    [3345847711] = 0.1,        -- WEAPON_GLOCK18C  
+    [903049637] = 0.2,         -- WEAPON_GLOCK19S   
+    [133665706] = 0.1,         -- WEAPON_ARPISTOL
+    [5304394] = 0.1,           -- WEAPON_GLOCK26S  
+    [966284256] = 0.1,         -- WEAPON_GRENADES  
+    [790914188] = 0.1,         -- WEAPON_M32S
+    [4040129047] = 0.2,        -- WEAPON_MICRODRACO 
+    [1486689541] = 0.1,        -- WEAPON_RUGER57 
+    [870948696] = 0.1,         -- WEAPON_680
+    [3204779161] = 0.1,        -- WEAPON_ZIPTIE
     -- Handguns
     [453432689] = 0.3,            --['weapon_pistol']
     [-1075685676] = 0.5,        --['weapon_pistol_mk2']

@@ -11,6 +11,98 @@ Config.JewelleryLocation = {
 }
 
 Config.WhitelistedWeapons = {
+
+    --Kyros Weapon Pack V4
+	[`weapon_glock19x`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_glock19`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_glock40`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_glock40s`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_ddm4v5`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_mpx`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_pd509`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_aps`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_ppk`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_pitviper`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_barp`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_rdp`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_lok`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_plr`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_xds9`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_pps`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_xdme`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_sp`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_glock17s`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_glock18c`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_glock19s`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_arpistol`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_glock26s`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_grenades`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_m32s`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_microdraco`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_ruger57`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_mk18`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_680`] = {
+		["timeOut"] = 10000
+	},
+	[`weapon_ziptie`] = {
+		["timeOut"] = 10000
+	},	
     [`weapon_assaultrifle`] = {
         ["timeOut"] = 10000
     },

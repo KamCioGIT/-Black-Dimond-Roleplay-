@@ -296,7 +296,13 @@ QBCore.Commands.Add("repairweapon", "Repair Weapon (God Only)", {{name="hp", hel
 end, "god")
 
 -- Items
+QBCore.Functions.CreateUseableItem('at_clip_drum_pistol', function(source, item)
+    TriggerClientEvent('weapons:client:EquipAttachment', source, item, 'drum')
+end)
 
+QBCore.Functions.CreateUseableItem('at_clip_100_pistol', function(source, item)
+    TriggerClientEvent('weapons:client:EquipAttachment', source, item, '100roundmag')
+end)
 -- AMMO
 QBCore.Functions.CreateUseableItem('pistol_ammo', function(source, item)
     TriggerClientEvent('weapons:client:AddAmmo', source, 'AMMO_PISTOL', 12, item)
