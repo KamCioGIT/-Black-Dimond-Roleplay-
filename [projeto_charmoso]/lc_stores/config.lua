@@ -873,7 +873,7 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'samsungphone.png',
 			}, ]]
-			['classic_phone'] = {
+			--[[ ['classic_phone'] = {
 				['name'] = "Classic Phone",
 				['price_to_customer'] = 850,
 				['price_to_customer_min'] = 425,
@@ -972,7 +972,19 @@ Config.market_categories = {
 				['amount_to_delivery'] = 2,
 				['img'] = 'white_phone.png',
 			},
+ ]]
 
+ ['phone'] = {
+	['name'] = "Phone",
+	['price_to_customer'] = 850,
+	['price_to_customer_min'] = 425,
+	['price_to_customer_max'] = 1700,
+	['price_to_export'] = 637,
+	['price_to_owner'] = 425,
+	['amount_to_owner'] = 2,
+	['amount_to_delivery'] = 2,
+	['img'] = 'phone.png',
+},
 			['radio'] = {
 				['name'] = "Radio",
 				['price_to_customer'] = 200,
