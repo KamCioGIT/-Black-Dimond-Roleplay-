@@ -652,7 +652,7 @@ Config.market_types = {
 			"melee_weapons", "pistol_weapons", "rifle_weapons", "shotgun_weapons", "smg_weapons", "throwable_weapons", "ammo_weapons", "others_weapons"
 		},
 		['default_categories'] = {
-			"melee_weapons", "pistol_weapons", "ammo_weapons", "others_weapons"
+			"melee_weapons", "pistol_weapons", "rifle_weapons", "shotgun_weapons", "smg_weapons", "throwable_weapons", "ammo_weapons", "others_weapons"
 		},
 		['blips'] = {
 			['id'] = 110,
