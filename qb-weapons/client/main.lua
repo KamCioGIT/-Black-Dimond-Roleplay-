@@ -29,11 +29,11 @@ local function DrawText3Ds(x, y, z, text)
     SetTextFont(4)
     SetTextProportional(1)
     SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
+    BeginTextCommandDisplayText("STRING")
     SetTextCentre(true)
-    AddTextComponentString(text)
+    AddTextComponentSubstringPlayerName(text)
     SetDrawOrigin(x,y,z, 0)
-    DrawText(0.0, 0.0)
+    EndTextCommandDisplayText(0.0, 0.0)
     local factor = (string.len(text)) / 370
     DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
     ClearDrawOrigin()
@@ -82,7 +82,6 @@ RegisterNetEvent('weapons:client:AddAmmo', function(type, amount, itemData)
             local total = GetAmmoInPedWeapon(ped, weapon)
             local _, maxAmmo = GetMaxAmmo(ped, weapon)
             if total < maxAmmo then
-                TriggerServerEvent('weapons:server:removeWeaponAmmoItem', itemData)
                 QBCore.Functions.Progressbar("taking_bullets", Lang:t('info.loading_bullets'), Config.ReloadTime, false, true, {
                     disableMovement = false,
                     disableCarMovement = false,
@@ -93,6 +92,7 @@ RegisterNetEvent('weapons:client:AddAmmo', function(type, amount, itemData)
                         AddAmmoToPed(ped,weapon,amount)
                         TaskReloadWeapon(ped)
                         TriggerServerEvent("weapons:server:UpdateWeaponAmmo", CurrentWeaponData, total + amount)
+                        TriggerServerEvent('weapons:server:removeWeaponAmmoItem', itemData)
                         TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items[itemData.name], "remove")
                         TriggerEvent('QBCore:Notify', Lang:t('success.reloaded'), "success")
                     end
