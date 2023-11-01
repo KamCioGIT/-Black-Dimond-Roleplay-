@@ -1,60 +1,55 @@
 fx_version 'cerulean'
 game 'gta5'
-author 'Aiakos#8317'
-description 'Codem-Bank'
-version '1.8.2'
-ui_page {
-	'html/index.html',
-}
+version '1.0.1'
+author 'aiakoscodem'
 
-files {
-	'html/css/*.css',
-	'html/app/*.js',
-	'html/lib/*.js',
-	'html/lib/*.css',
-	'html/*.html',
-	'html/images/*.png',
-	'html/fonts/*.otf',
-	'html/fonts/*.OTF',
-	'html/fonts/*.TTF',
-	'html/fonts/*.ttf',
-	'html/sound/*.mp3',
-    'html/sound/*.ogg',
-}
+shared_scripts {
+	'config/*.lua',
 
-shared_script{
-	'config/config.lua',
-	'GetFrameworkObject.lua',
-}
-
-escrow_ignore {
-	'config/config.lua',
-	'GetFrameworkObject.lua',
-	'server/editable.lua',
-	'server/discordlog.lua',
-	'server/society.lua',
-	'config/server_config.lua',
-	'client/editable.lua',
 }
 
 client_scripts {
-	'GetFrameworkObject.lua',
-	'client/main.lua',
-	'client/editable.lua',
+	'client/*.lua',
+	'editable/client_editable.lua',
 }
-
 server_scripts {
-	-- '@mysql-async/lib/MySQL.lua', --⚠️PLEASE READ⚠️; Uncomment this line if you use 'mysql-async'.⚠️
-    '@oxmysql/lib/MySQL.lua', --⚠️PLEASE READ⚠️; Uncomment this line if you use 'oxmysql'.⚠️
-	'config/server_config.lua',
-	'server/main.lua',
-	'server/society.lua',
-	'server/editable.lua',
-	'server/discordlog.lua',
-	'GetFrameworkObject.lua',
+	-- '@mysql-async/lib/MySQL.lua', --:warning:PLEASE READ:warning:; Uncomment this line if you use 'mysql-async'.:warning:
+	'@oxmysql/lib/MySQL.lua', --:warning:PLEASE READ:warning:; Uncomment this line if you use 'oxmysql'.:warning:
+	'editable/server_editable.lua',
+	'editable/discordlog.lua',
+	'server/server.lua',
+	'server/utility.lua',
+	'server/crypto.lua',
+	'server/loan.lua',
+	'server/saving.lua',
+	'server/dashboard.lua',
+	'server/societydashboard.lua',
+
 }
 
+ui_page "html/index.html"
+files {
+	'html/index.html',
+	'html/css/*.css',
+	'html/fonts/*.TTF',
+	'html/fonts/*.*',
+	'html/sound/*.*',
+	'html/images/**/*.png',
+	'html/images/**/**/*.png',
+	'html/js/*.js',
+	'html/js/**/*.js',
+	'html/images/**/*.png',
+	'html/pages/**/*.js',
+	'html/pages/**/*.html',
+}
 
+escrow_ignore {
+	'editable/*.lua',
+	'config/*.lua',
+	'server/utility.lua',
+	'client/utility.lua',
+
+}
 
 lua54 'yes'
 
