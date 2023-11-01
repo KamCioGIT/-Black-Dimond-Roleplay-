@@ -1,0 +1,525 @@
+@font-face {
+    src: url("../fonts/PROXIMA_NOVA_BOLD.OTF");
+    font-family: "Proxima Nova";
+}
+
+@font-face {
+  src: url("../fonts/Enigma__2.TTF");
+  font-family: "Enigmatic";
+}
+
+.borderred {
+  border: 1px solid red;
+}
+
+body {
+    overflow: hidden;
+    user-select: none;
+    
+}
+
+
+.inventory-text{
+  color: #FFF;
+  font-family: "Proxima Nova";
+  font-size: 1.0vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 27.86px */
+  letter-spacing: 0.2vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.player-name{
+  color: #FFF;
+font-family: "Proxima Nova";
+
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 15.92px */
+letter-spacing: 0.1vw;
+}
+
+.for-placeholder::placeholder{
+  color: rgba(255, 255, 255, 0.28);
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+#inventory-weight{
+  transition: width 0.2s;
+}
+
+#rightinventory-weight{
+  transition: width 0.2s;
+}
+
+#craftweight{
+  transition: width 0.2s;
+}
+
+.draggable:active {
+  cursor: pointer;
+}
+
+
+
+
+.escinfo {
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1.3vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 12.935px */
+}
+
+.closeinfo {
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1.8vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 19.9px */
+}
+
+.slotindex {
+  color: #000;
+  text-shadow: 0px 0px 35px 0px rgba(255, 255, 255, 0.45);
+  font-family: Proxima Nova;
+  font-size: 1.4vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 14.925px */
+  letter-spacing: 1.65px;
+}
+
+.itemcount {
+  color: rgba(255, 255, 255, 0.39);
+  font-family: Proxima Nova;
+  font-size: 0.8vh;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.itemweight {
+  color: rgba(255, 255, 255, 0.39);
+  font-family: Proxima Nova;
+  font-size: 0.75vh;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.clotheindexdiv {
+  border-radius: 8px;
+border: 1px solid rgba(255, 255, 255, 0.28);
+opacity: 0.51;
+background: rgba(201, 0, 255, 0.25);
+transition: 0.3s background;
+}
+
+.clotheindexdiv:hover {
+  background: rgba(201, 0, 255, 0.80);
+}
+
+.info-item-label {
+  color: rgba(255, 255, 255, 0.31);
+  font-family: Proxima Nova;
+  font-size: 1vh;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 9.95px */
+}
+
+.inventory-text-info-desc-label{
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1.6vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 15.92px */
+  text-transform: uppercase;
+}
+
+.infodurabilitytext {
+  color: rgba(255, 255, 255, 0.57);
+  font-family: Proxima Nova;
+  font-size: 0.9vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 9.95px */
+  background:  rgba(81, 192, 105, 0.65);
+  overflow: hidden; /* taşanları gizle */
+  white-space: nowrap; /* alt satıra hiç inme */
+  text-overflow: ellipsis; /* eğer uzunsa üç nokta koy */
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.weaponshowtitle {
+  color: #000;
+  font-family: Proxima Nova;
+  font-size: 2.1vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 19.9px */
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+}
+
+.attachment-action-div{
+  background-image: url(../template/attachmentbgdark.png); background-size: 100% 100%;
+}
+
+.attachment-action-div:hover{
+  background-image: url(../template/attachmentbghover.png); background-size: 100% 100%;
+}
+
+.attachmenindexlist {
+  background-image: url(../template/attachmentbg.png); background-size: 100% 100%;
+}
+
+.haveattachment {
+  background-image: url(../template/attachmentbg.png); background-size: 100% 100%;
+}
+
+.attachmentindex {
+  color: rgba(255, 255, 255, 0.40);
+  font-family: Proxima Nova;
+  font-size: 1vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 12.935px */
+}
+
+.opacitydown {
+  opacity: 0;
+}
+
+.mainInventorySlot:hover{
+  background-image: url(../template/inv-item-hover.png) !important;
+}
+
+.groundDropped:hover {
+  background-image: url(../template/inv-item-hover.png) !important;
+}
+
+.ejectbg {
+  background-image: url(../template/ejectbg-nonhover.png); background-size: 100% 100%;
+}
+
+.ejectbg:hover {
+  background-image: url(../template/ejectbg.png); background-size: 100% 100%;
+}
+
+.ejecttitle{
+  color: #FFF;
+font-family: Proxima Nova;
+font-size: 1.2vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 12.935px */
+}
+
+.ejectindex {
+  color: rgba(255, 255, 255, 0.40);
+  font-family: Proxima Nova;
+  font-size: 1.3vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%;
+}
+
+.bordertest {
+  border: 1px solid red;
+}
+
+.bottomborder{
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.27) 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.customize{
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1.5vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 15.92px */
+}
+
+.changecolors {
+  color: rgba(255, 255, 255, 0.31);
+font-family: Proxima Nova;
+font-size: 1vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 9.95px */
+}
+
+.settingsindex{
+  border-radius: 7px;
+  background: rgba(217, 217, 217, 0.25);
+}
+
+.indextitle {
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 9.95px */
+}
+
+
+/* switch */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  height: 65%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 95%;
+  width: 31%;
+  left: 2px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #64ff3d96;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #64ff3d96;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(31px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.closesettings {
+  background-image: url(../template/closebutton.png); background-size: 100% 100%;
+}
+
+.closesettings:hover {
+  background-image: url(../template/closebutton-hover.png); background-size: 100% 100%;
+}
+
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 25%;
+	height: 95%;
+  background: #676767;
+  border-radius: 4vw;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0.5vh;
+}
+
+input[type="color"]::-webkit-color-swatch {
+	border-radius: 3vw;
+}
+
+.categorycontainer {
+  border-top-left-radius: 0.45vw;
+  border-top-right-radius: 0.45vw;
+}
+
+.inventorymain {
+  border-top-right-radius: 0.45vw;
+  border-bottom-left-radius: 0.45vw;
+  border-bottom-right-radius: 0.45vw;
+}
+
+.boxshadow {
+  -webkit-box-shadow: -2px -1px 120px -5px rgba(255,255,255,1); -moz-box-shadow: -2px -1px 120px -5px rgba(255,255,255,1); box-shadow: -2px -1px 120px -5px rgba(255,255,255,1);
+}
+
+.itemboxweight {
+  color: rgba(0, 0, 0, 0.65);
+  font-family: Proxima Nova;
+  font-size: 0.7vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 7.96px */
+}
+
+.itemboxcount {
+  color: rgba(0, 0, 0, 0.65);
+text-align: right;
+font-family: Proxima Nova;
+font-size: 0.7vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 7.96px */
+}
+
+.itemboxtype {
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 0.8vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 7.96px */
+}
+
+.crafttext {
+  color: #FFF;
+font-family: Proxima Nova;
+font-size: 1.3vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 19.9px */
+}
+
+.craftingred {
+  border-radius: 7px;
+  border: 2px solid rgba(217, 217, 217, 0.37);
+  background: ;
+}
+
+.noitemstext{
+  color: rgba(255, 255, 255, 0.40);
+font-family: Proxima Nova;
+font-size: 1.6vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 19.9px */
+}
+
+.craftbooktext {
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1.7vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 19.9px */
+}
+
+.learned {
+  color: rgba(255, 255, 255, 0.29);
+font-family: Proxima Nova;
+font-size: 1.1vh;
+font-style: normal;
+font-weight: 700;
+}
+
+.itemnamecraft {
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1.6vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 19.9px */
+}
+
+.tobecrafted {
+  color: rgba(255, 255, 255, 0.29);
+  font-family: Proxima Nova;
+  font-size: 1vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 11.94px */
+}
+
+.lbl {
+  color: #FFF;
+font-family: Proxima Nova;
+font-size: 1vh;
+font-style: normal;
+line-height: 99.5%; /* 9.95px */
+}
+
+.amount {
+  color: #FFF;
+font-family: Proxima Nova;
+font-size: 1.8vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 23.88px */
+}
+
+.prcs {
+  color: #FFF;
+font-family: Proxima Nova;
+font-size: 1.5vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 15.92px */
+}
+
+.prcstime {
+  color: rgba(255, 255, 255, 0.29);
+font-family: Proxima Nova;
+font-size: 1.3vh;
+font-style: normal;
+font-weight: 700;
+line-height: 99.5%; /* 11.94px */
+}
+
+.craftbtn{
+  color: #FFF;
+  font-family: Proxima Nova;
+  font-size: 1.5vh;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 99.5%; /* 15.92px */
+}
+
+.craftlack {
+  background: rgba(255, 167, 167, 0.33) !important;
+
+}
+
+.weapontemp{
+  background-color: white;
+  filter  : drop-shadow(3px 0px 0.8vw white);
+}

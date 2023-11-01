@@ -1,0 +1,85 @@
+<div class="w-[97.5%] h-full rounded-[0.5vw]  flex items-start content-start flex-wrap justify-between no-scrollbar"
+ style="overflow: auto;"
+ :style="{'background': this.$store.state.colorsettings.bgcolor, 'border' : `0.2vw solid ${this.$store.state.colorsettings.bordercolor}` }"
+ >
+ 
+    <div class="w-[46%] h-full"></div>
+
+    <div class="w-[54%] h-full ">
+        <div class="w-full h-[7%] "></div>
+        <div class="w-full h-[17%]  flex justify-between">
+            <div class="w-[34%] h-full rounded-[0.5vw] flex items-center justify-center " style="background: linear-gradient(270deg, rgba(201, 0, 255, 0.25) 0%, rgba(201, 0, 255, 0.00) 100%);
+                border-top: 2px solid rgba(217, 217, 217, 0.37);
+                border-right: 2px solid rgba(217, 217, 217, 0.37);
+                border-bottom: 2px solid rgba(217, 217, 217, 0.37);">
+                <h2 class="inventory-text" style="letter-spacing: 0;">{{this.$store.state.Translate.hat}}</h2>
+            </div>
+            <div class="w-[63%] h-full rounded-[0.5vw] flex items-center justify-evenly " style="
+            border-top: 2px solid rgba(217, 217, 217, 0.37);
+            border-left: 2px solid rgba(217, 217, 217, 0.37);
+            border-bottom: 2px solid rgba(217, 217, 217, 0.37);
+            
+            background:  linear-gradient(100deg, rgba(201, 0, 255, 0.25) 0%, rgba(201, 0, 255, 0.00) 100%);">
+               <div class="w-[90%] h-full  flex flex-wrap items-center justify-between">
+                <div v-for="data in 3" class="w-[24%] h-[44%] border clotheindexdiv cursor-pointer flex justify-center items-center" >
+                    <img alt="" :src="GetPhotoIndex(data, 'hat').image"  @click="SetClothes(GetPhotoIndex(data, 'hat').name, GetPhotoIndex(data, 'hat').isprop)">
+                </div>
+            </div>
+            </div>
+        </div>
+      
+        <div class="w-full h-[20%] mt-[0.5vh] flex justify-between">
+            <div class="w-[34%] h-full rounded-[0.5vw] flex items-center justify-center" style="background: linear-gradient(270deg, rgba(201, 0, 255, 0.25) 0%, rgba(201, 0, 255, 0.00) 100%);
+                border-top: 2px solid rgba(217, 217, 217, 0.37);
+                border-right: 2px solid rgba(217, 217, 217, 0.37);
+                border-bottom: 2px solid rgba(217, 217, 217, 0.37);">
+                   <h2 class="inventory-text text-center" style="letter-spacing: 0; ">{{this.$store.state.Translate.upperbody}}</h2>
+            </div>
+            <div class="w-[63%] h-full rounded-[0.5vw] flex items-center justify-center flex-wrap " style="
+            border-top: 2px solid rgba(217, 217, 217, 0.37);
+            border-left: 2px solid rgba(217, 217, 217, 0.37);
+            border-bottom: 2px solid rgba(217, 217, 217, 0.37);
+            
+            background:  linear-gradient(100deg, rgba(201, 0, 255, 0.25) 0%, rgba(201, 0, 255, 0.00) 100%);">
+            <div class="w-[90%] h-full  flex flex-wrap items-center justify-between content-center">
+                <div v-for="data in 6" class="w-[26%] h-[33%] border mt-[0.5vw] clotheindexdiv cursor-pointer flex justify-center items-center">
+                    <img alt="" :src="GetPhotoIndex(data, 'upperbody').image" @click="SetClothes(GetPhotoIndex(data, 'upperbody').name, GetPhotoIndex(data, 'upperbody').isprop)" >
+                </div>
+            </div>
+
+            </div>
+        </div>
+        <div class="w-full h-[50%] mt-[0.5vh] flex justify-between">
+            <div class="w-[34%] h-full rounded-[0.5vw] flex items-center justify-center " style="background: linear-gradient(270deg, rgba(201, 0, 255, 0.25) 0%, rgba(201, 0, 255, 0.00) 100%);
+                border-top: 2px solid rgba(217, 217, 217, 0.37);
+                border-right: 2px solid rgba(217, 217, 217, 0.37);
+                border-bottom: 2px solid rgba(217, 217, 217, 0.37);
+                ">
+                <div class="inventory-text text-center">
+                    <p>L</p>
+                    <p>O</p>
+                    <p>W</p>
+                    <p>E</p>
+                    <p>R</p>
+                    <p>B</p>
+                    <p>O</p>
+                    <p>D</p>
+                    <p>Y</p>
+                </div>
+            </div>
+            <div class="w-[63%] h-full rounded-[0.5vw] " style="
+            border-top: 2px solid rgba(217, 217, 217, 0.37);
+            border-left: 2px solid rgba(217, 217, 217, 0.37);
+            border-bottom: 2px solid rgba(217, 217, 217, 0.37);
+            
+            background:  linear-gradient(100deg, rgba(201, 0, 255, 0.25) 0%, rgba(201, 0, 255, 0.00) 100%);">
+                <div class="w-full h-full flex flex-wrap flex-col items-center justify-evenly">
+                    <div v-for="data in 2 " class="w-[40%] h-[30%] clotheindexdiv cursor-pointer flex justify-center items-center">
+                        <img alt="" :src="GetPhotoIndex(data, 'lowerboddy').image" @click="SetClothes(GetPhotoIndex(data, 'lowerboddy').name, GetPhotoIndex(data, 'lowerboddy').isprop)" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
