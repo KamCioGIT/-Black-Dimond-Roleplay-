@@ -1,3 +1,10 @@
+## PLEASE NOTE: Currently master branch has some breaking changes
+
+If you previously used `voice_defaultPhoneVolume` you will instead need to use `voice_defaultCallVolume`
+If you previously used `voice_enablePhones` you will instead need to use `voice_enableCalls`
+
+If you were previously using the state bag getter `Player(source).state.phone` you will instead need to use `Player(source).state.call`
+
 # pma-voice
 A voice system designed around the use of FiveM/RedM internal mumble server.
 
@@ -11,7 +18,7 @@ Please report any issues you have in the GitHub [Issues](https://github.com/Avar
 
 This script is not compatible with other voice systems (duh), that means if you have vMenus voice chat you will **have** to [disable](https://docs.vespura.com/vmenu/faq/#q-how-do-i-disable-voice-chat) it.
 
-Please do not override `NetworkSetTalkerProximity`, `MumbleSetAudioInputDistance`, `MumbleSetAudioOutputDistance` or `NetworkSetVoiceActive` in any of your other scripts as there have been cases where it breaks pma-voice.
+Please do not override `NetworkSetTalkerProximity`, `MumbleSetTalkerProximity`, `MumbleSetAudioInputDistance`, `MumbleSetAudioOutputDistance` or `NetworkSetVoiceActive` in any of your other scripts as there have been cases where it breaks pma-voice.
 
 # Credits
 
@@ -30,7 +37,7 @@ Native audio will not work on RedM, you will have to use 3d audio.
 
 | ConVar                     | Default | Description                                                   | Parameter(s) |
 |----------------------------|---------|---------------------------------------------------------------|--------------|
-| voice_useNativeAudio       |  false  | **This will not work for RedM** Uses the games native audio, will add 3d sound, echo, reverb, and more. **Required for submixs**   | boolean      |
+| voice_useNativeAudio       |  false  | Uses the games native audio, will add 3d sound, echo, reverb, and more. **Required for submixs**   | boolean      |
 | voice_use2dAudio           |  false  | Uses 2d audio, will result in same volume sound no matter where they're at until they leave proximity. | boolean      
 | voice_use3dAudio           |  false  | Uses 3d audio | boolean |
 | voice_useSendingRangeOnly  |  false  | Only allows you to hear people within your hear/send range, prevents people from connecting to your mumble server and trolling. | boolean      |

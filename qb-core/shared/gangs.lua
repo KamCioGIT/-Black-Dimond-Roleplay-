@@ -80,62 +80,25 @@ QBShared.Gangs = {
             },
         },
 	},
+    ['marabunta'] = {
+		label = 'Marabunta',
+		grades = {
+            ['0'] = {
+                name = 'Recruit'
+            },
+			['1'] = {
+                name = 'Enforcer'
+            },
+			['2'] = {
+                name = 'Shot Caller'
+            },
+			['3'] = {
+                name = 'Boss',
+            },
+        },
+	},
 	['families'] = {
 		label = 'Families',
-		grades = {
-            ['0'] = {
-                name = 'Recruit'
-            },
-			['1'] = {
-                name = 'Enforcer'
-            },
-			['2'] = {
-                name = 'Shot Caller'
-            },
-			['3'] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-    ['mafia'] = {
-		label = 'Mafia',
-		grades = {
-            ['0'] = {
-                name = 'Recruit'
-            },
-			['1'] = {
-                name = 'Enforcer'
-            },
-			['2'] = {
-                name = 'Shot Caller'
-            },
-			['3'] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-    ['yakuza'] = {
-		label = 'Yakuza',
-		grades = {
-            ['0'] = {
-                name = 'Recruit'
-            },
-			['1'] = {
-                name = 'Enforcer'
-            },
-			['2'] = {
-                name = 'Shot Caller'
-            },
-			['3'] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-    ['bmf'] = {
-		label = 'BMF',
 		grades = {
             ['0'] = {
                 name = 'Recruit'

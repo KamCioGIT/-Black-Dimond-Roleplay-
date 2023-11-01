@@ -1022,7 +1022,7 @@ local function SpawnPed(data)
 			end
 
 			data.currentpednumber = spawnedped
-			
+
 			if data.action then
 				data.action(data)
 			end

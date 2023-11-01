@@ -12,9 +12,9 @@
 
 - If you use a different phone/invoice system let me know and I will add support for it as best I can!
   - Currently supported are:
-    - qb-phone
+    - lb-phone
     - gks-phone
-    - qs-smartphone - Leave the setting as "qb"
+    - lb-phone - Leave the setting as "qb"
 
 ---
 # Installation
@@ -55,11 +55,11 @@ ensure [jim]
 - If you want to use phone systems for these then you need to add the event for when a payment is accepted:
 - REMINDER: IF using phone invoices, the money being added to the society accounts is handled `BY THE PHONE`, not by my script. If money isn't going to the account its the phone system or bossmenu script.
 
-#### QB-Phone:
-- Go to `[qb] > qb-phone > client > main.lua`
+#### lb-phone:
+- Go to `[qb] > lb-phone > client > main.lua`
  - Search for the event `RegisterNUICallback('PayInvoice', function(data, cb)` and look for the line:
 ```lua
-TriggerServerEvent('qb-phone:server:BillingEmail', data, true)
+TriggerServerEvent('lb-phone:server:BillingEmail', data, true)
 ```
 
 - Directly *above* this line add:
@@ -81,11 +81,11 @@ TriggerEvent('jim-payments:Tickets:Give', { sender = Ply.PlayerData.charinfo.fir
 ```
 - The phone should now be integrated with jim-payments
 
-#### Renewed QB-Phone:
-- Go to `qb-phone > server > invoices.lua`
-- Search for the event: `qb-phone:server:PayMyInvoice` and search for this line:
+#### Renewed lb-phone:
+- Go to `lb-phone > server > invoices.lua`
+- Search for the event: `lb-phone:server:PayMyInvoice` and search for this line:
 ```lua
-TriggerEvent("qb-phone:server:InvoiceHandler", true, amount, src, resource)
+TriggerEvent("lb-phone:server:InvoiceHandler", true, amount, src, resource)
 ```
 
 - Directly under this line add this event:
@@ -192,7 +192,7 @@ FineJobList = true, -- "true" to use nearby player list feature in the cash regi
   - Support for renewed banking added
   - Toggle `RenewedBanking` in the config.lua to enable this
 
-### Renewed's qb-phone
+### Renewed's lb-phone
   - Simply leave the Config.PhoneType as `"qb"`
 
 ### AP-Goverment

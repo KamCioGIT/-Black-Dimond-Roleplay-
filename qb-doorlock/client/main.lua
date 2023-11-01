@@ -24,9 +24,9 @@ function Draw3DText(coords, str)
 		SetTextProportional(1)
 		SetTextOutline()
 		SetTextCentre(1)
-        SetTextEntry("STRING")
-        AddTextComponentString(str)
-        DrawText(worldX, worldY)
+        BeginTextCommandDisplayText("STRING")
+        AddTextComponentSubstringPlayerName(str)
+        EndTextCommandDisplayText(worldX, worldY)
     end
 end
 
@@ -486,13 +486,7 @@ end)
 RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
 	if not closestDoor.data or not next(closestDoor.data) or PlayerData.metadata['isdead'] or PlayerData.metadata['ishandcuffed'] or (not closestDoor.data.pickable and not closestDoor.data.lockpick) or not closestDoor.data.locked then return end
 	usingAdvanced = isAdvanced
-	exports['VL-ui']:Circle(function(success)
-        if success then
-            lockpickFinish(success)
-        else
-            QBCore.Functions.Notify("Are you dumb? Go learn how to crack the door !", "success")
-        end
-    end, 5, 14) 
+	TriggerEvent('qb-lockpick:client:openLockpick', lockpickFinish)
 end)
 
 RegisterNetEvent('qb-doorlock:client:addNewDoor', function()

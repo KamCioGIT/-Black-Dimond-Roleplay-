@@ -142,10 +142,10 @@ RegisterServerEvent("jim-payments:server:Charge", function(citizen, price, billt
 					'INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)',
 					{billed.PlayerData.citizenid, amount, biller.PlayerData.job.name, biller.PlayerData.charinfo.firstname, biller.PlayerData.citizenid}, function(id)
 						if id then
-							TriggerClientEvent('qb-phone:client:AcceptorDenyInvoice', billed.PlayerData.source, id, biller.PlayerData.charinfo.firstname, biller.PlayerData.job.name, biller.PlayerData.citizenid, amount, GetInvokingResource())
+							TriggerClientEvent('lb-phone:client:AcceptorDenyInvoice', billed.PlayerData.source, id, biller.PlayerData.charinfo.firstname, biller.PlayerData.job.name, biller.PlayerData.citizenid, amount, GetInvokingResource())
 						end
 					end)
-				TriggerClientEvent('qb-phone:RefreshPhone', billed.PlayerData.source)
+				TriggerClientEvent('lb-phone:RefreshPhone', billed.PlayerData.source)
 			elseif Config.PhoneType == "gks" then
 				MySQL.Async.execute('INSERT INTO gksphone_invoices (citizenid, amount, society, sender, sendercitizenid, label) VALUES (@citizenid, @amount, @society, @sender, @sendercitizenid, @label)', {
 					['@citizenid'] = billed.PlayerData.citizenid,

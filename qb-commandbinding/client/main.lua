@@ -1,9 +1,9 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local keyPressed = false
 local availableKeys = {
-    --{289, "F2"},
-    --{170, "F3"},
-    --{166, "F5"},
+    {289, "F2"},
+    {170, "F3"},
+    {166, "F5"},
     {167, "F6"},
     {168, "F7"},
     {56, "F9"},
@@ -46,8 +46,6 @@ for k, v in pairs(availableKeys) do
                 else
                     QBCore.Functions.Notify('There is still nothing ['..v[2]..'] bound, /binds to bind a command', 'primary', 4000)
                 end
-            else
-                QBCore.Functions.Notify('You have not bound any commands, /binds to bind a command', 'primary', 4000)
             end
         end
     end, false)

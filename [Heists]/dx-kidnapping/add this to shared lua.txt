@@ -1,2 +1,0 @@
--- Kidnapping
-	["videorecord"] 			 			 = {["name"] = "videorecord", 			["label"] = "Video Record", 				["weight"] = 550, 		["type"] = "item", 		["image"] = "videorecord.png", 	["unique"] = true, 					["useable"] = true, 	["shouldClose"] = true,	   ["combinable"] = nil,   ["description"] = "Video Recording of Kidnapped Person"},

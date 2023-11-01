@@ -6,9 +6,12 @@ local Translations = {
         ["not_wearing"] = "Du har ikke dykkerudstyr på ..",
         ["no_coral"] = "Du har ingen koraller du kan sælge..",
         ["not_standing_up"] = "Du skal stå op for at tage dykkerudstyret på",
+        ["need_otube"] = "du har brug for iltslange",
+        ["oxygenlevel"] = 'gearniveauet er %{oxygenlevel} skal være 0%'
     },
     success = {
         ["took_out"] = "Du tog din våddragt af",
+        ["tube_filled"] = "Røret er blevet fyldt"
     },
     info = {
         ["collecting_coral"] = "Samler koraller",
@@ -30,7 +33,11 @@ local Translations = {
         ["oxygen_running_out"] = " Du er ved at løbe tør for luft",
     },
 }
-Lang = Locale:new({
-    phrases = Translations,
-    warnOnMissing = true
-})
+
+if GetConvar('qb_locale', 'en') == 'da' then
+    Lang = Locale:new({
+        phrases = Translations,
+        warnOnMissing = true,
+        fallbackLang = Lang,
+    })
+end

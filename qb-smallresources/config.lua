@@ -39,11 +39,10 @@ Config.DispatchServices = {
 Config.AmountOfItems = 10 --how many times the script will loop
 Config.OpenTime = 3000 --how long you want it to take to open the gift (in ms)
 Config.Joingiftitem = {
-    [1] =  {item = "joint", minAmount = 1,  maxAmount = 3},
-    [2] =  {item = "bandage", minAmount = 1,  maxAmount = 1},
-    [3] =  {item = "pistol_ammo", minAmount = 1,  maxAmount = 1},
-    [4] =  {item = "armor", minAmount = 1,  maxAmount = 1},
-    [5] =  {item = "lockpick", minAmount = 1,  maxAmount = 2},
+    [1] =  {item = "bandage", minAmount = 5,  maxAmount = 6},
+    [2] =  {item = "lockpick", minAmount = 5,  maxAmount = 6},
+    [3] =  {item = "joint", minAmount = 5,  maxAmount = 6},
+    
 }
 
 -- Enable or disable the wanted level
@@ -52,18 +51,18 @@ Config.EnableWantedLevel = false
 -- To Set This Up visit https://forum.cfx.re/t/how-to-updated-discord-rich-presence-custom-image/157686
 Config.Discord = {
     ["IsEnabled"] = true, -- If set to true, then discord rich presence will be enabled
-    ["ApplicationId"] = '', -- The discord application id
-    ["IconLarge"] = 'loo', -- The name of the large icon
-    ["IconLargeHoverText"] = ' ', -- The hover text of the large icon
-    ["IconSmall"] = 'loo', -- The name of the small icon
-    ["IconSmallHoverText"] = '', -- The hover text of the small icon
+    ["ApplicationId"] = '1158081636911566968', -- The discord application id
+    ["IconLarge"] = 'logo', -- The name of the large icon
+    ["IconLargeHoverText"] = 'Alpha Town Roleplay', -- The hover text of the large icon
+    ["IconSmall"] = 'logo', -- The name of the small icon
+    ["IconSmallHoverText"] = 'Alpha Town Roleplay', -- The hover text of the small icon
     ["UpdateRate"] = 60000, -- How often the player count should be updated
     ["ShowPlayerCount"] = true, -- If set to true the player count will be displayed in the rich presence
-    ["MaxPlayers"] = 100, -- Maximum amount of players
+    ["MaxPlayers"] = 64, -- Maximum amount of players
     ["Buttons"] = {
         {
             text = 'Connect',
-            url = 'fivem://connect/'
+            url = 'fivem://connect/43omoq'
         },
     }
 }
@@ -82,14 +81,14 @@ Config.Stun = {
     max = 9000
 }
 
-Config.Cruise = 'mp/h'
+Config.Cruise = 'km/h'
 Config.IdleCamera = true
 Config.disableHandsupControls = {24, 25, 47, 58, 59, 63, 64, 71, 72, 75, 140, 141, 142, 143, 257, 263, 264}
 Config.DisableAmbience = false -- Disabled distance sirens, distance car alarms, etc
 Config.HarnessUses = 20
 Config.DamageNeeded = 100.0 -- vehiclepush 0-1000
 Config.EnableProne = false -- prone isnt recomended at this time
-Config.MapText = "1" -- This is the name / text shown above the map
+Config.MapText = "Alpha Town Roleplay" -- This is the name / text shown above the map
 
 Config.Disable = {
     disableHudComponents = {1, 2, 3, 4, 7, 9, 13, 14, 19, 20, 21, 22}, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
@@ -99,22 +98,71 @@ Config.Disable = {
 
 Config.ConsumablesEat = {
 
-    ["sandwich"] = math.random(35, 54),
-    ["tosti"] = math.random(40, 50),
-    ["twerks_candy"] = math.random(35, 54),
-    ["snikkel_candy"] = math.random(40, 50),
+---    ["sandwich"] = math.random(10, 15),
+ ---   ["tosti"] = math.random(40, 50),
+---    ["twerks_candy"] = math.random(35, 54),
+---    ["snikkel_candy"] = math.random(40, 50),
+
+
+["tq_banana_nut"] = math.random(20, 40),
+["tq_chocolatecup"] = math.random(20, 40),
+["tq_strawberrycup"] = math.random(20, 40),
+
+["burgershot_bigking"] = math.random(90, 100),
+["burgershot_bleeder"] = math.random(70, 80),
+["burgershot_goatwrap"] = math.random(50, 60),
+
+["burgershot_macaroon"] = math.random(10, 15),
+["burgershot_patatob"] = math.random(15, 20),
+["burgershot_patatos"] = math.random(5, 10),
+["burgershot_shotnuggets"] = math.random(10, 15),
+["burgershot_shotrings"] = math.random(10, 15),
+["burgershot_thesmurfsicecream"] = math.random(1, 3),
+["burgershot_smurfetteicecream"] = math.random(1, 3),
+["burgershot_matchaicecream"] = math.random(1, 3),
+["burgershot_ubeicecream"] = math.random(1, 3),
+["burgershot_unicornicecream"] = math.random(1, 3),
+["burgershot_vanillaicecream"] = math.random(1, 3),
+["burgershot_chocolateicecream"] = math.random(1, 3),
+["burgershot_strawberryicecream"] = math.random(1, 3),
+
+
 }
 
 Config.ConsumablesDrink = {
-    ["water_bottle"] = math.random(35, 54),
-    ["kurkakola"] = math.random(35, 54),
-    ["coffee"] = math.random(40, 50),
+---    ["water_bottle"] = math.random(10, 15),
+ ---   ["kurkakola"] = math.random(35, 54),
+ ---   ["coffee"] = math.random(40, 50),
+ ["tq_berry_hydrating"] = math.random(20, 40),
+    ["tq_green_dream"] = math.random(20, 40),
+    ["tq_island_breeze"] = math.random(20, 40),
+    ["tq_just_peachy"] = math.random(20, 40),
+    ["tq_watermelon_dream"] = math.random(20, 40),
+    ["tq_ban_straw_juice"] = math.random(20, 40),
+    ["tq_banana_juice"] = math.random(20, 40),
+    ["tq_kiwi_juice"] = math.random(20, 40),
+    ["tq_strawberry_juice"] = math.random(20, 40),
+    ["tq_orange_juice"] = math.random(20, 40),
+    ["tq_strawberrycup"] = math.random(20, 40),
+    ["tq-chocolatecup"] = math.random(20, 40),
+    ["tq_banana_nut"] = math.random(20, 40),
+    --Burger Shot Drink
+
+    ["burgershot_colab"] = math.random(90, 100),
+    ["burgershot_colas"] = math.random(70, 80),
+    ["burgershot_coffee"] = math.random(50, 60),
 }
 
 Config.ConsumablesAlcohol = {
-    ["whiskey"] = math.random(20, 30),
-    ["beer"] = math.random(30, 40),
-    ["vodka"] = math.random(20, 40),
+ ---   ["whiskey"] = math.random(20, 30),
+ ---   ["beer"] = math.random(30, 40),
+ ---   ["vodka"] = math.random(20, 40),
+ ["tq_cocktail"] = math.random(20, 30),
+    ["tq_coconut_drink"] = math.random(30, 40),
+    ["tq_island_fantasy"] = math.random(20, 40),
+    ["tq_kamikaze"] = math.random(20, 40),
+    ["tq_redhot_daquiri"] = math.random(20, 40),
+    ["grapejuice"] = math.random(20, 40),
 }
 
 -- Custom Consumables hand bones
@@ -176,7 +224,6 @@ Config.BlacklistedVehs = {
     [`TITAN`] = true,
     [`RHINO`] = true,
     [`FIRETRUK`] = true,
-    [`MULE`] = false,
     [`MAVERICK`] = true,
     [`BLIMP`] = true,
     [`AIRTUG`] = true,
@@ -212,7 +259,7 @@ Config.BlacklistedVehs = {
     [`cargoplane2`] = true,
     [`voltic2`] = true,
     [`THRUSTER`] = true,
-    [`polmav`] = true,
+    
     [`swift`] = true,
     [`frogger`] = true,
     [`policeb`] = true,
@@ -260,6 +307,7 @@ Config.Objects = { -- for object removal
 
 -- You may add more than 2 selections and it will bring up a menu for the player to select which floor be sure to label each section though
 Config.Teleports = {
+    --- Weedlab
     [1] = {
         [1] = {
             coords = vector4(1066.2, -3183.38, -39.16, 89.3),
@@ -271,7 +319,9 @@ Config.Teleports = {
             ["AllowVehicle"] = false,
             drawText = '[E] Enter Lab'
         },
+
     },
+
 }
 
 Config.DefaultPrice = 20 -- Default price for the carwash

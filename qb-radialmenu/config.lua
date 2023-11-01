@@ -26,6 +26,14 @@ Config.MenuItems = {
                 event = 'emote:open:menu',
                 shouldClose = true
             },
+            {
+                id = 'cornerselling',
+                title = 'Corner Selling',
+                icon = 'cannabis',
+                type = 'client',
+                event = 'qb-drugs:client:cornerselling',
+                shouldClose = true
+            },
         }
     },
     [2] = {
@@ -54,14 +62,16 @@ Config.MenuItems = {
                 type = 'client',
                 event = 'police:client:SetPlayerOutVehicle',
                 shouldClose = true
-            }, {
+            }, 
+           --[[  {
                 id = 'stealplayer',
                 title = 'Rob',
                 icon = 'mask',
                 type = 'client',
                 event = 'police:client:RobPlayer',
                 shouldClose = true
-            }, {
+            }, ]] 
+            {
                 id = 'escort',
                 title = 'Kidnap',
                 icon = 'user-group',
@@ -574,7 +584,7 @@ Config.JobInteractions = {
             title = 'Depot Vehicle',
             icon = 'truck-moving',
             type = 'server',
-            event = 'vl-towing:server:ImpoundVehicle',
+            event = 'qb-towing:server:ImpoundVehicle',
             shouldClose = true
         }
     },

@@ -19,7 +19,10 @@ client_scripts {
 
 files {
 	'data/*.lua',
-	'html/**',
+	'html/*.html',
+	'html/css/*.css',
+	'html/js/*.js',
+	'html/X-Store.ogg'
 }
 
 lua54 'yes'

@@ -1,7 +1,8 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 local PlayerJob = QBCore.Functions.GetPlayerData().job
 local shownBossMenu = false
-print("saddasdadasd")
+local DynamicMenuItems = {}
+
 -- UTIL
 local function CloseMenuFull()
     exports['qb-menu']:closeMenu()
@@ -20,6 +21,20 @@ local function comma_value(amount)
     end
     return formatted
 end
+
+local function AddBossMenuItem(data, id)
+    local menuID = id or (#DynamicMenuItems + 1)
+    DynamicMenuItems[menuID] = deepcopy(data)
+    return menuID
+end
+
+exports("AddBossMenuItem", AddBossMenuItem)
+
+local function RemoveBossMenuItem(id)
+    DynamicMenuItems[id] = nil
+end
+
+exports("RemoveBossMenuItem", RemoveBossMenuItem)
 
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
@@ -40,65 +55,71 @@ RegisterNetEvent('qb-bossmenu:client:OpenMenu', function()
 
     local bossMenu = {
         {
-            header = "Boss Menu - " .. string.upper(PlayerJob.label),
+            header = Lang:t("headers.bsm").. string.upper(PlayerJob.label),
             icon = "fa-solid fa-circle-info",
             isMenuHeader = true,
         },
         {
-            header = "Manage Employees",
-            txt = "Check your Employees List",
+            header = Lang:t("body.manage"),
+            txt = Lang:t("body.managed"),
             icon = "fa-solid fa-list",
             params = {
                 event = "qb-bossmenu:client:employeelist",
             }
         },
         {
-            header = "Hire Employees",
-            txt = "Hire Nearby Civilians",
+            header = Lang:t("body.hire"),
+            txt = Lang:t("body.hired"),
             icon = "fa-solid fa-hand-holding",
             params = {
                 event = "qb-bossmenu:client:HireMenu",
             }
         },
         {
-            header = "Storage Access",
-            txt = "Open Storage",
+            header = Lang:t("body.storage"),
+            txt = Lang:t("body.storaged"),
             icon = "fa-solid fa-box-open",
             params = {
                 event = "qb-bossmenu:client:Stash",
             }
         },
         {
-            header = "Outfits",
-            txt = "See Saved Outfits",
+            header = Lang:t("body.outfits"),
+            txt = Lang:t("body.outfitsd"),
             icon = "fa-solid fa-shirt",
             params = {
                 event = "qb-bossmenu:client:Wardrobe",
             }
         },
         {
-            header = "Money Management",
-            txt = "Check your Company Balance",
+            header = Lang:t("body.money"),
+            txt = Lang:t("body.moneyd"),
             icon = "fa-solid fa-sack-dollar",
             params = {
                 event = "qb-bossmenu:client:SocietyMenu",
             }
         },
-        {
-            header = "Exit",
-            icon = "fa-solid fa-angle-left",
-            params = {
-                event = "qb-menu:closeMenu",
-            }
-        },
     }
+
+    for _, v in pairs(DynamicMenuItems) do
+        bossMenu[#bossMenu + 1] = v
+    end
+
+    bossMenu[#bossMenu + 1] = {
+        header = Lang:t("body.exit"),
+        icon = "fa-solid fa-angle-left",
+        params = {
+            event = "qb-menu:closeMenu",
+        }
+    }
+
     exports['qb-menu']:openMenu(bossMenu)
 end)
 
 RegisterNetEvent('qb-bossmenu:client:employeelist', function()
     local EmployeesMenu = {
         {
-            header = "Manage Employees - " .. string.upper(PlayerJob.label),
+            header = Lang:t("body.mempl").. string.upper(PlayerJob.label),
             isMenuHeader = true,
             icon = "fa-solid fa-circle-info",
         },
@@ -119,7 +140,7 @@ RegisterNetEvent('qb-bossmenu:client:employeelist', function()
             }
         end
         EmployeesMenu[#EmployeesMenu + 1] = {
-            header = "Return",
+            header = Lang:t("body.return"),
             icon = "fa-solid fa-angle-left",
             params = {
                 event = "qb-bossmenu:client:OpenMenu",
@@ -132,7 +153,7 @@ end)
 RegisterNetEvent('qb-bossmenu:client:ManageEmployee', function(data)
     local EmployeeMenu = {
         {
-            header = "Manage " .. data.player.name .. " - " .. string.upper(PlayerJob.label),
+            header = Lang:t("body.mngpl").. data.player.name .. " - " .. string.upper(PlayerJob.label),
             isMenuHeader = true,
             icon = "fa-solid fa-circle-info"
         },
@@ -140,7 +161,7 @@ RegisterNetEvent('qb-bossmenu:client:ManageEmployee', function(data)
     for k, v in pairs(QBCore.Shared.Jobs[data.work.name].grades) do
         EmployeeMenu[#EmployeeMenu + 1] = {
             header = v.name,
-            txt = "Grade: " .. k,
+            txt =  Lang:t("body.grade") .. k,
             params = {
                 isServer = true,
                 event = "qb-bossmenu:server:GradeUpdate",
@@ -154,7 +175,7 @@ RegisterNetEvent('qb-bossmenu:client:ManageEmployee', function(data)
         }
     end
     EmployeeMenu[#EmployeeMenu + 1] = {
-        header = "Fire Employee",
+        header = Lang:t("body.fireemp"),
         icon = "fa-solid fa-user-large-slash",
         params = {
             isServer = true,
@@ -163,7 +184,7 @@ RegisterNetEvent('qb-bossmenu:client:ManageEmployee', function(data)
         }
     }
     EmployeeMenu[#EmployeeMenu + 1] = {
-        header = "Return",
+        header = Lang:t("body.return"),
         icon = "fa-solid fa-angle-left",
         params = {
             event = "qb-bossmenu:client:OpenMenu",
@@ -187,7 +208,7 @@ end)
 RegisterNetEvent('qb-bossmenu:client:HireMenu', function()
     local HireMenu = {
         {
-            header = "Hire Employees - " .. string.upper(PlayerJob.label),
+            header = Lang:t("body.hireemp").. string.upper(PlayerJob.label),
             isMenuHeader = true,
             icon = "fa-solid fa-circle-info",
         },
@@ -197,7 +218,7 @@ RegisterNetEvent('qb-bossmenu:client:HireMenu', function()
             if v and v ~= PlayerId() then
                 HireMenu[#HireMenu + 1] = {
                     header = v.name,
-                    txt = "Citizen ID: " .. v.citizenid .. " - ID: " .. v.sourceplayer,
+                    txt = Lang:t("body.cid").. v.citizenid .. " - ID: " .. v.sourceplayer,
                     icon = "fa-solid fa-user-check",
                     params = {
                         isServer = true,
@@ -208,7 +229,7 @@ RegisterNetEvent('qb-bossmenu:client:HireMenu', function()
             end
         end
         HireMenu[#HireMenu + 1] = {
-            header = "Return",
+            header = Lang:t("body.return"),
             icon = "fa-solid fa-angle-left",
             params = {
                 event = "qb-bossmenu:client:OpenMenu",
@@ -222,30 +243,30 @@ RegisterNetEvent('qb-bossmenu:client:SocietyMenu', function()
     QBCore.Functions.TriggerCallback('qb-bossmenu:server:GetAccount', function(cb)
         local SocietyMenu = {
             {
-                header = "Balance: $" .. comma_value(cb) .. " - " .. string.upper(PlayerJob.label),
+                header = Lang:t("body.balance").. comma_value(cb) .. " - " .. string.upper(PlayerJob.label),
                 isMenuHeader = true,
                 icon = "fa-solid fa-circle-info",
             },
             {
-                header = "Deposit",
+                header = Lang:t("body.deposit"),
                 icon = "fa-solid fa-money-bill-transfer",
-                txt = "Deposit Money into account",
+                txt = Lang:t("body.depositd"),
                 params = {
                     event = "qb-bossmenu:client:SocetyDeposit",
                     args = comma_value(cb)
                 }
             },
             {
-                header = "Withdraw",
+                header = Lang:t("body.withdraw"),
                 icon = "fa-solid fa-money-bill-transfer",
-                txt = "Withdraw Money from account",
+                txt = Lang:t("body.withdrawd"),
                 params = {
                     event = "qb-bossmenu:client:SocetyWithDraw",
                     args = comma_value(cb)
                 }
             },
             {
-                header = "Return",
+                header = Lang:t("body.return"),
                 icon = "fa-solid fa-angle-left",
                 params = {
                     event = "qb-bossmenu:client:OpenMenu",
@@ -258,14 +279,14 @@ end)
 
 RegisterNetEvent('qb-bossmenu:client:SocetyDeposit', function(money)
     local deposit = exports['qb-input']:ShowInput({
-        header = "Deposit Money <br> Available Balance: $" .. money,
-        submitText = "Confirm",
+        header = Lang:t("body.depositm").. money,
+        submitText = Lang:t("body.submit"),
         inputs = {
             {
                 type = 'number',
                 isRequired = true,
                 name = 'amount',
-                text = 'Amount'
+                text = Lang:t("body.amount")
             }
         }
     })
@@ -277,14 +298,14 @@ end)
 
 RegisterNetEvent('qb-bossmenu:client:SocetyWithDraw', function(money)
     local withdraw = exports['qb-input']:ShowInput({
-        header = "Withdraw Money <br> Available Balance: $" .. money,
-        submitText = "Confirm",
+        header = Lang:t("body.withdrawm").. money,
+        submitText = Lang:t("body.submit"),
         inputs = {
             {
                 type = 'number',
                 isRequired = true,
                 name = 'amount',
-                text = 'Amount'
+                text = Lang:t("body.amount")
             }
         }
     })
@@ -302,7 +323,7 @@ CreateThread(function()
                 exports['qb-target']:AddBoxZone(job.."-BossMenu-"..index, data.coords, data.length, data.width, {
                     name = job.."-BossMenu-"..index,
                     heading = data.heading,
-                    debugPoly = true,
+                    -- debugPoly = true,
                     minZ = data.minZ,
                     maxZ = data.maxZ,
                 }, {
@@ -311,7 +332,7 @@ CreateThread(function()
                             type = "client",
                             event = "qb-bossmenu:client:OpenMenu",
                             icon = "fas fa-sign-in-alt",
-                            label = "Boss Menu",
+                            label = Lang:t("target.label"),
                             canInteract = function() return job == PlayerJob.name and PlayerJob.isboss end,
                         },
                     },
@@ -329,15 +350,13 @@ CreateThread(function()
                 wait = 0
                 for k, menus in pairs(Config.BossMenus) do
                     for _, coords in ipairs(menus) do
-
                         if k == PlayerJob.name and PlayerJob.isboss then
-
                             if #(pos - coords) < 5.0 then
                                 inRangeBoss = true
                                 if #(pos - coords) <= 1.5 then
                                     nearBossmenu = true
                                     if not shownBossMenu then
-                                        exports['qb-core']:DrawText('[E] Open Job Management', 'left')
+                                        exports['qb-core']:DrawText(Lang:t("drawtext.label"), 'left')
                                         shownBossMenu = true
                                     end
                                     if IsControlJustReleased(0, 38) then

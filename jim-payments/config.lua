@@ -43,7 +43,7 @@ Config = {
 						-- This is helpful for phones that don't support invoices well
 
 	PhoneType = "qb", -- Change this setting to make invoices work with your phone script [still testing this currently]
-						-- "qb" for qb-phone
+						-- "qb" for lb-phone
 						-- "gks"" for GKSPhone
 
 	CashInLocation = vector4(252.23, 223.11, 106.29, 159.2), -- Default Third Window along in Pacific Bank

@@ -1,10 +1,8 @@
-name "qb-input"
-author "Mr_Dx#0879"
-version "7.0"
-description "Made By Mr_Dx"
-fx_version "cerulean"
-game "gta5"
-lua54 'yes'
+fx_version 'cerulean'
+game 'gta5'
+
+description 'QB-Input'
+version '1.2.0'
 
 client_scripts {
     'client/*.lua'
@@ -19,5 +17,3 @@ files {
 }
 
 lua54 'yes'
-
-dependency '/assetpacks'

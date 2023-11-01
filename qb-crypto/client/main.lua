@@ -10,11 +10,11 @@ local function DrawText3Ds(coords, text)
     SetTextFont(4)
     SetTextProportional(1)
     SetTextColour(255, 255, 255, 215)
-    SetTextEntry("STRING")
+    BeginTextCommandDisplayText("STRING")
     SetTextCentre(true)
-    AddTextComponentString(text)
+    AddTextComponentSubstringPlayerName(text)
     SetDrawOrigin(coords.x, coords.y, coords.z, 0)
-    DrawText(0.0, 0.0)
+    EndTextCommandDisplayText(0.0, 0.0)
     local factor = (string.len(text)) / 370
     DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
     ClearDrawOrigin()
@@ -71,7 +71,7 @@ CreateThread(function()
 				sleep = 5
 				if dist < 1.5 then
 					if not Crypto.Exchange.RebootInfo.state then
-						DrawText3Ds(Crypto.Exchange.coords, '~g~E~w~ - Enter USB')
+						DrawText3Ds(Crypto.Exchange.coords, Lang:t('text.enter_usb'))
 						if not requiredItemsShowed then
 							requiredItemsShowed = true
 							TriggerEvent('inventory:client:requiredItems', requiredItems, true)
@@ -83,12 +83,12 @@ CreateThread(function()
 									TriggerEvent("mhacking:show")
 									TriggerEvent("mhacking:start", math.random(4, 6), 45, HackingSuccess)
 								else
-									QBCore.Functions.Notify('You have no Cryptostick', 'error')
+									QBCore.Functions.Notify(Lang:t('error.you_dont_have_a_cryptostick'), 'error')
 								end
 							end)
 						end
 					else
-						DrawText3Ds(Crypto.Exchange.coords, 'Systeem is rebooting - '..Crypto.Exchange.RebootInfo.percentage..'%')
+						DrawText3Ds(Crypto.Exchange.coords, Lang:t('text.system_is_rebooting', {rebootInfoPercentage = Crypto.Exchange.RebootInfo.percentage}) )
 					end
 				else
 					if requiredItemsShowed then

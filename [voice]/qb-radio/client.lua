@@ -4,6 +4,12 @@ local radioMenu = false
 local onRadio = false
 local RadioChannel = 0
 local RadioVolume = 50
+local hasRadio = false
+local radioProp = nil
+
+local keybindControls = {
+	["`"] = 243, ["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57, ["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177, ["TAB"] = 37, ["Q"] = 44, ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40, ["ENTER"] = 18, ["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311, ["L"] = 182, ["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, ["M"] = 244, [","] = 82, ["."] = 81, ["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70, ["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178, ["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173, ["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
+}
 
 --Function
 local function LoadAnimDic(dict)
@@ -81,6 +87,7 @@ local function toggleRadio(toggle)
     else
         toggleRadioAnimation(false)
         SendNUIMessage({type = "close"})
+        DeleteObject(radioProp)
     end
 end
 
@@ -88,21 +95,49 @@ local function IsRadioOn()
     return onRadio
 end
 
+local function DoRadioCheck(PlayerItems)
+    local _hasRadio = false
+
+    for _, item in pairs(PlayerItems) do
+        if item.name == "radio" then
+            _hasRadio = true
+            break;
+        end
+    end
+
+    hasRadio = _hasRadio
+end
+
 --Exports
 exports("IsRadioOn", IsRadioOn)
 
 --Events
-AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+
+-- Handles state right when the player selects their character and location.
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     PlayerData = QBCore.Functions.GetPlayerData()
+    DoRadioCheck(PlayerData.items)
 end)
 
+-- Resets state on logout, in case of character change.
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
+    DoRadioCheck({})
     PlayerData = {}
     leaveradio()
 end)
 
+-- Handles state when PlayerData is changed. We're just looking for inventory updates.
 RegisterNetEvent('QBCore:Player:SetPlayerData', function(val)
     PlayerData = val
+    DoRadioCheck(PlayerData.items)
+end)
+
+-- Handles state if resource is restarted live.
+AddEventHandler('onResourceStart', function(resource)
+    if GetCurrentResourceName() == resource then
+        PlayerData = QBCore.Functions.GetPlayerData()
+        DoRadioCheck(PlayerData.items)
+    end
 end)
 
 RegisterNetEvent('qb-radio:use', function()
@@ -114,6 +149,14 @@ RegisterNetEvent('qb-radio:onRadioDrop', function()
         leaveradio()
     end
 end)
+
+CreateThread(function()
+    local OpenRadioBind = Config.keyBind.useRadio
+    if IsControlPressed(1, keybindControls[OpenRadioBind]) then
+        TriggerClientEvent('qb-radio:use')
+    end
+end)
+
 
 -- NUI
 RegisterNUICallback('joinRadio', function(data, cb)
@@ -139,18 +182,84 @@ RegisterNUICallback('joinRadio', function(data, cb)
     else
         QBCore.Functions.Notify(Config.messages['invalid_radio'] , 'error')
     end
+    cb("ok")
 end)
 
-RegisterNUICallback('leaveRadio', function(data, cb)
+RegisterNUICallback('leaveRadio', function(_, cb)
     if RadioChannel == 0 then
         QBCore.Functions.Notify(Config.messages['not_on_radio'], 'error')
     else
         leaveradio()
     end
+    cb("ok")
 end)
 
-RegisterNUICallback("volumeUp", function()
+RegisterNUICallback("volumeUp", function(_, cb)
 	if RadioVolume <= 95 then
+		RadioVolume = RadioVolume + 5
+		QBCore.Functions.Notify(Config.messages["volume_radio"] .. RadioVolume, "success")
+		exports["pma-voice"]:setRadioVolume(RadioVolume)
+	else
+		QBCore.Functions.Notify(Config.messages["decrease_radio_volume"], "error")
+	end
+    cb('ok')
+end)
+
+RegisterNUICallback("volumeDown", function(_, cb)
+	if RadioVolume >= 10 then
+		RadioVolume = RadioVolume - 5
+		QBCore.Functions.Notify(Config.messages["volume_radio"] .. RadioVolume, "success")
+		exports["pma-voice"]:setRadioVolume(RadioVolume)
+	else
+		QBCore.Functions.Notify(Config.messages["increase_radio_volume"], "error")
+	end
+    cb('ok')
+end)
+
+RegisterNUICallback("increaseradiochannel", function(_, cb)
+    local newChannel = RadioChannel + 1
+    connecttoradio(newChannel)
+    QBCore.Functions.Notify(Config.messages["increase_decrease_radio_channel"] .. newChannel, "success")
+    cb("ok")
+end)
+
+RegisterNUICallback("decreaseradiochannel", function(_, cb)
+    if not onRadio then return end
+    local newChannel = RadioChannel - 1
+    if newChannel >= 1 then
+        connecttoradio(newChannel)
+        QBCore.Functions.Notify(Config.messages["increase_decrease_radio_channel"] .. newChannel, "success")
+        cb("ok")
+    end
+end)
+RegisterCommand('openradio', function()
+    if hasRadio then
+        TriggerEvent('qb-radio:use')
+    elseif not hasRadio then
+        -- print('no radio')
+    end
+
+end)
+
+RegisterKeyMapping('openradio', 'Open Radio', 'keyboard', Config.keyBind.openRadio)
+RegisterKeyMapping('Volup1', 'Turn Radio Up', 'keyboard', Config.keyBind.volUp1)
+RegisterKeyMapping('Radiovoldown', 'Turn Radio Down', 'keyboard', Config.keyBind.radioVolDown)
+
+RegisterNUICallback('poweredOff', function(_, cb)
+    leaveradio()
+    cb("ok")
+end)
+
+RegisterCommand('Volup1', function()
+    TriggerEvent('Volup')
+end)
+
+RegisterCommand('Radiovoldown', function()
+    TriggerEvent('Voldown')
+end)
+
+RegisterNetEvent('Volup', function()
+    if RadioVolume <= 95 then
 		RadioVolume = RadioVolume + 5
 		QBCore.Functions.Notify(Config.messages["volume_radio"] .. RadioVolume, "success")
 		exports["pma-voice"]:setRadioVolume(RadioVolume)
@@ -159,8 +268,8 @@ RegisterNUICallback("volumeUp", function()
 	end
 end)
 
-RegisterNUICallback("volumeDown", function()
-	if RadioVolume >= 10 then
+RegisterNetEvent('Voldown', function()
+	if RadioVolume >= 0 then
 		RadioVolume = RadioVolume - 5
 		QBCore.Functions.Notify(Config.messages["volume_radio"] .. RadioVolume, "success")
 		exports["pma-voice"]:setRadioVolume(RadioVolume)
@@ -169,27 +278,9 @@ RegisterNUICallback("volumeDown", function()
 	end
 end)
 
-RegisterNUICallback("increaseradiochannel", function(data, cb)
-    local newChannel = RadioChannel + 1
-    exports["pma-voice"]:setRadioChannel(newChannel)
-    QBCore.Functions.Notify(Config.messages["increase_decrease_radio_channel"] .. newChannel, "success")
-end)
-
-RegisterNUICallback("decreaseradiochannel", function(data, cb)
-    if not onRadio then return end
-    local newChannel = RadioChannel - 1
-    if newChannel >= 1 then
-        exports["pma-voice"]:setRadioChannel(newChannel)
-        QBCore.Functions.Notify(Config.messages["increase_decrease_radio_channel"] .. newChannel, "success")
-    end
-end)
-
-RegisterNUICallback('poweredOff', function(data, cb)
-    leaveradio()
-end)
-
-RegisterNUICallback('escape', function(data, cb)
+RegisterNUICallback('escape', function(_, cb)
     toggleRadio(false)
+    cb("ok")
 end)
 
 --Main Thread
@@ -197,79 +288,176 @@ CreateThread(function()
     while true do
         Wait(1000)
         if LocalPlayer.state.isLoggedIn and onRadio then
-            QBCore.Functions.TriggerCallback('qb-radio:server:GetItem', function(hasItem)
-                if not hasItem then
-                    if RadioChannel ~= 0 then
-                        leaveradio()
-                    end
+            if not hasRadio or PlayerData.metadata.isdead or PlayerData.metadata.inlaststand then
+                if RadioChannel ~= 0 then
+                    leaveradio()
                 end
-            end, "radio")
+            end
         end
     end
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel1')
-AddEventHandler('qb-radio:client:JoinRadioChannel1', function(channel)
-    local channel = 1
-    exports["pma-voice"]:setRadioChannel(channel)
-    if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
-    else
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
-    end
+RegisterNetEvent('qb-radio:client:JoinRadioChannel1', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 1
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel2')
-AddEventHandler('qb-radio:client:JoinRadioChannel2', function(channel)
-    local channel = 2
-    exports["pma-voice"]:setRadioChannel(channel)
-    if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
-    else
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
-    end
+RegisterNetEvent('qb-radio:client:JoinRadioChannel2', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 2
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel3')
-AddEventHandler('qb-radio:client:JoinRadioChannel3', function(channel)
-    local channel = 3
-    exports["pma-voice"]:setRadioChannel(channel)
-    if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
-    else
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
-    end
+
+RegisterNetEvent('qb-radio:client:JoinRadioChannel3', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 3
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel4')
-AddEventHandler('qb-radio:client:JoinRadioChannel4', function(channel)
-    local channel = 4
-    exports["pma-voice"]:setRadioChannel(channel)
-    if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
-    else
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
-    end
+RegisterNetEvent('qb-radio:client:JoinRadioChannel4', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 4
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel5')
-AddEventHandler('qb-radio:client:JoinRadioChannel5', function(channel)
-    local channel = 5
-    exports["pma-voice"]:setRadioChannel(channel)
-    if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
-    else
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
-    end
+RegisterNetEvent('qb-radio:client:JoinRadioChannel5', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 5
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
 end)
 
-RegisterNetEvent('qb-radio:client:JoinRadioChannel6')
-AddEventHandler('qb-radio:client:JoinRadioChannel6', function(channel)
-    local channel = 6
-    exports["pma-voice"]:setRadioChannel(channel)
-    if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
-    else
-        QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
-    end
+RegisterNetEvent('qb-radio:client:JoinRadioChannel6', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 5
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
+end)
+
+RegisterNetEvent('qb-radio:client:JoinRadioChannel7', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 5
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
+end)
+
+RegisterNetEvent('qb-radio:client:JoinRadioChannel8', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 5
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
+end)
+
+RegisterNetEvent('qb-radio:client:JoinRadioChannel9', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 5
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
+end)
+
+RegisterNetEvent('qb-radio:client:JoinRadioChannel10', function(channel)
+    QBCore.Functions.TriggerCallback('qb-radio:radiocheck', function(radio)
+        if radio then
+            local channel = 5
+            exports["pma-voice"]:setRadioChannel(channel)
+            if SplitStr(tostring(channel), ".")[2] ~= nil and SplitStr(tostring(channel), ".")[2] ~= "" then
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. ' MHz', 'success')
+            else
+                QBCore.Functions.Notify(Config.messages['joined_to_radio'] ..channel.. '.00 MHz', 'success')
+            end
+        elseif not radio then
+            QBCore.Functions.Notify(Config.messages['invalid_radio'], 'error')
+        end
+    end)
+end)
+
+RegisterNetEvent('qb-radio:client:JoinRadioChannelToggle', function()
+    leaveradio()
 end)

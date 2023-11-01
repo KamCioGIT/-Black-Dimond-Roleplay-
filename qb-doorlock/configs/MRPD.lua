@@ -1,367 +1,383 @@
 
 
--- mrpd_doorlock_backgarage_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_doorlock_backgarage_01'] = {
-    doorRate = 1.0,
-    authorizedJobs = { ['police'] = 0 },
-    objCoords = vec3(488.894806, -1017.211975, 27.149349),
-    distance = 5,
-    objYaw = 90.003562927246,
-    locked = true,
-    doorType = 'sliding',
-    doorLabel = 'Back Slide',
-    fixText = false,
-    objName = -1603817716,
-}
-
--- mrpd_backcell_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_backcell_door_01'] = {
+-- PD created by Dx
+Config.DoorList['MRPD-PD'] = {
+    pickable = true,
+    distance = 1,
     doorType = 'double',
-    doors = {
-        {objName = -692649124, objYaw = 0.0, objCoords = vec3(467.368622, -1014.406006, 26.483816)},
-        {objName = -692649124, objYaw = 180.00001525879, objCoords = vec3(469.774261, -1014.406006, 26.483816)}
-    },
     doorRate = 1.0,
+    doors = {
+        {objName = 320433149, objYaw = 270.00003051758, objCoords = vec3(434.317474, -983.225098, 30.878422)},
+        {objName = 320433149, objYaw = 90.0, objCoords = vec3(434.317474, -980.625732, 30.878422)}
+    },
     authorizedJobs = { ['police'] = 0 },
-    doorLabel = 'back entry',
-    distance = 1,
-    locked = true,
+    locked = false,
 }
 
--- mrpd_backcell_door_02 created by Briggzy
-Config.DoorList['MRPD-mrpd_backcell_door_02'] = {
+-- PD1 created by Dx
+Config.DoorList['MRPD-PD1'] = {
+    doorRate = 1.0,
+    distance = 1,
+    authorizedJobs = { ['police'] = 0 },
+    doors = {
+        {objName = 952639784, objYaw = 89.999977111816, objCoords = vec3(449.522369, -982.958435, 30.874449)},
+        {objName = -1481015543, objYaw = 89.999977111816, objCoords = vec3(449.522369, -980.361023, 30.874449)}
+    },
     doorType = 'double',
+    locked = true,
+}
+
+-- PD3 created by Dx
+Config.DoorList['MRPD-PD3'] = {
+    authorizedJobs = { ['police'] = 0 },
+    doorRate = 1.0,
+    doorType = 'double',
+    distance = 1,
     doors = {
-        {objName = 149284793, objYaw = 89.999977111816, objCoords = vec3(471.375824, -1010.197876, 26.405483)},
-        {objName = 149284793, objYaw = 270.19003295898, objCoords = vec3(471.367859, -1007.793396, 26.405483)}
-    },
-    doorRate = 1.0,
-    authorizedJobs = { ['police'] = 0 },
-    doorLabel = 'back Cell',
-    distance = 1,
-    locked = true,
-}
-
--- mrpd_backcell_door_03 created by Briggzy
-Config.DoorList['MRPD-mrpd_backcell_door_03'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -53345114,
-    objYaw = 270.13998413086,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'back Cell01',
-    objCoords = vec3(476.615692, -1008.875427, 26.480055),
-    locked = true,
-}
-
--- mrpd_cell_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_cell_door_01'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -53345114,
-    objYaw = 0.0,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'Cell01',
-    objCoords = vec3(477.912598, -1012.188660, 26.480055),
-    locked = true,
-}
-
--- mrpd_cell_door_02 created by Briggzy
-Config.DoorList['MRPD-mrpd_cell_door_02'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -53345114,
-    objYaw = 0.0,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'Cell02',
-    objCoords = vec3(480.912811, -1012.188660, 26.480055),
-    locked = true,
-}
-
--- mrpd_cell_door_03 created by Briggzy
-Config.DoorList['MRPD-mrpd_cell_door_03'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -53345114,
-    objYaw = 0.0,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'Cell03',
-    objCoords = vec3(483.912720, -1012.188660, 26.480055),
-    locked = true,
-}
-
--- mrpd_cell_door_04 created by Briggzy
-Config.DoorList['MRPD-mrpd_cell_door_04'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -53345114,
-    objYaw = 0.0,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'Cell04',
-    objCoords = vec3(486.913116, -1012.188660, 26.480055),
-    locked = true,
-}
-
--- mrpd_cell_door_05 created by Briggzy
-Config.DoorList['MRPD-mrpd_cell_door_05'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -53345114,
-    objYaw = 180.00001525879,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'Cell05',
-    objCoords = vec3(484.176422, -1007.734375, 26.480055),
-    locked = true,
-}
-
--- mrpd_maincell_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_maincell_door_01'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -53345114,
-    objYaw = 180.00001525879,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'frontCell',
-    objCoords = vec3(481.008362, -1004.117981, 26.480055),
-    locked = true,
-}
-
--- mrpd_inv_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_inv_door_01'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -1406685646,
-    objYaw = 270.00003051758,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'InvCell1',
-    objCoords = vec3(482.670258, -995.728516, 26.405483),
-    locked = true,
-}
-
--- mrpd_inv_door_02 created by Briggzy
-Config.DoorList['MRPD-mrpd_inv_door_02'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -1406685646,
-    objYaw = 270.00003051758,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'InvCell2',
-    objCoords = vec3(482.670135, -987.579163, 26.405483),
-    locked = true,
-}
-
--- mrpd_evidance_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_evidance_door_01'] = {
-    authorizedJobs = { ['police'] = 0 },
-    fixText = false,
-    objName = -692649124,
-    objYaw = 134.97177124023,
-    doorType = 'door',
-    doorRate = 1.0,
-    distance = 1,
-    doorLabel = 'Evidance1',
-    objCoords = vec3(475.832336, -990.483948, 26.405483),
-    locked = true,
-}
-
-
--- mrpd_evidance_door_02 created by Briggzy
-Config.DoorList['MRPD-mrpd_evidance_door_02'] = {
-    doors = {
-        {objName = -1406685646, objYaw = 270.00003051758, objCoords = vec3(471.375305, -985.031921, 26.405483)},
-        {objName = -96679321, objYaw = 270.00003051758, objCoords = vec3(471.375305, -987.437378, 26.405483)}
+        {objName = 1847320387, objYaw = 360.0, objCoords = vec3(442.750885, -998.583801, 31.118603)},
+        {objName = -688443112, objYaw = 0.0, objCoords = vec3(440.114258, -998.584351, 31.118141)}
     },
     locked = true,
-    distance = 1,
-    doorLabel = 'evidanceentry',
-    doorType = 'double',
-    authorizedJobs = { ['police'] = 0 },
-    doorRate = 1.0,
 }
 
--- mrpd_backout_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_backout_door_01'] = {
+-- PD4 created by Dx
+Config.DoorList['MRPD-PD4'] = {
+    authorizedJobs = { ['police'] = 0 },
+    doorRate = 1.0,
+    doorType = 'double',
+    distance = 1,
+    pickable = true,
     doors = {
-        {objName = -288803980, objYaw = 180.00001525879, objCoords = vec3(469.927368, -1000.543701, 26.405483)},
-        {objName = -288803980, objYaw = 0.0, objCoords = vec3(467.522217, -1000.543701, 26.405483)}
+        {objName = 952639784, objYaw = 270.00003051758, objCoords = vec3(445.918518, -992.436646, 30.874199)},
+        {objName = -1481015543, objYaw = 270.00003051758, objCoords = vec3(445.918518, -995.031250, 30.874199)}
     },
-    locked = true,
-    distance = 1,
-    doorLabel = 'BackOut',
+    locked = false,
+}
+
+-- PD5 created by Dx
+Config.DoorList['MRPD-PD5'] = {
+    authorizedJobs = { ['police'] = 0 },
+    doorRate = 1.0,
     doorType = 'double',
-    authorizedJobs = { ['police'] = 0 },
-    doorRate = 1.0,
+    distance = 1,
+    pickable = true,
+    doors = {
+        {objName = 952639784, objYaw = 89.999977111816, objCoords = vec3(455.546631, -988.383118, 35.212101)},
+        {objName = -1481015543, objYaw = 89.999977111816, objCoords = vec3(455.546631, -985.783264, 35.212101)}
+    },
+    locked = false,
 }
 
--- mrpd_downgarage_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_downgarage_door_01'] = {
-    objYaw = 89.870010375977,
-    doorLabel = 'garagein',
-    objName = 1830360419,
+
+
+-- PD6 created by Dx
+Config.DoorList['MRPD-PD6'] = {
+    objYaw = 315.0,
+    fixText = false,
     doorType = 'door',
+    objCoords = vec3(458.398224, -992.107056, 35.212627),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
     authorizedJobs = { ['police'] = 0 },
     locked = true,
-    distance = 1,
-    fixText = false,
-    objCoords = vec3(464.156555, -997.509277, 26.370705),
-    doorRate = 1.0,
 }
 
--- mrpd_downgarage_door_02 created by Briggzy
-Config.DoorList['MRPD-mrpd_downgarage_door_02'] = {
-    objYaw = 269.79000854492,
-    doorLabel = 'garagein1',
-    objName = 1830360419,
+-- PD7 created by Dx
+Config.DoorList['MRPD-PD7'] = {
+    objYaw = 134.99995422363,
+    fixText = false,
     doorType = 'door',
+    objCoords = vec3(467.507172, -994.437988, 35.212627),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
     authorizedJobs = { ['police'] = 0 },
     locked = true,
-    distance = 1,
-    fixText = false,
-    objCoords = vec3(464.159058, -974.665588, 26.370705),
-    doorRate = 1.0,
 }
 
--- mrpd_downgaragecar_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_downgaragecar_door_01'] = {
-    objYaw = 0.0,
-    doorLabel = 'garageCar1',
-    objName = 2130672747,
+-- PD8 created by Dx
+Config.DoorList['MRPD-PD8'] = {
+    doorRate = 1.0,
+    distance = 1,
+    authorizedJobs = { ['police'] = 0 },
+    doors = {
+        {objName = -1036090959, objYaw = 0.0, objCoords = vec3(477.091370, -979.453003, 28.143826)},
+        {objName = -1036090959, objYaw = 180.00001525879, objCoords = vec3(479.690887, -979.453003, 28.143826)}
+    },
+    doorType = 'double',
+    locked = true,
+}
+
+-- PD9 created by Dx
+Config.DoorList['MRPD-PD9'] = {
+    objYaw = 90.000022888184,
+    fixText = false,
     doorType = 'garage',
+    objCoords = vec3(488.767578, -1021.413147, 28.898113),
+    doorRate = 1.0,
+    distance = 7,
+    objName = -1195127879,
     authorizedJobs = { ['police'] = 0 },
     locked = true,
-    distance = 4,
-    fixText = false,
-    objCoords = vec3(452.300507, -1000.771667, 26.696609),
-    doorRate = 1.0,
 }
 
--- mrpd_downgaragecar_door_02 created by Briggzy
-Config.DoorList['MRPD-mrpd_downgaragecar_door_02'] = {
+-- PD10 created by Dx
+Config.DoorList['MRPD-PD10'] = {
     objYaw = 0.0,
-    doorLabel = 'garageCar2',
-    objName = 2130672747,
+    fixText = false,
     doorType = 'garage',
+    objCoords = vec3(449.897766, -999.903198, 26.114243),
+    doorRate = 1.0,
+    distance = 7,
+    objName = -1195127879,
     authorizedJobs = { ['police'] = 0 },
     locked = true,
-    distance = 5,
-    fixText = false,
-    objCoords = vec3(431.411926, -1000.771667, 26.696609),
-    doorRate = 1.0,
 }
 
--- mrpd_pdentry_door_01 created by Briggzy
-Config.DoorList['MRPD-mrpd_pdentry_door_01'] = {
-    doors = {
-        {objName = -1547307588, objYaw = 0.0, objCoords = vec3(440.739197, -998.746216, 30.815304)},
-        {objName = -1547307588, objYaw = 180.00001525879, objCoords = vec3(443.061768, -998.746216, 30.815304)}
-    },
-    locked = true,
-    distance = 1,
-    doorLabel = 'garageside1',
-    doorType = 'double',
-    authorizedJobs = { ['police'] = 0 },
-    doorRate = 1.0,
-}
-
--- mrpd_pdentry_door_02 created by Briggzy
-Config.DoorList['MRPD-mrpd_pdentry_door_02'] = {
-    objYaw = 180.00001525879,
-    doorLabel = 'mainside1',
-    objName = -96679321,
-    doorType = 'door',
-    authorizedJobs = { ['police'] = 0 },
-    locked = true,
-    distance = 1,
-    fixText = false,
-    objCoords = vec3(440.520081, -986.233459, 30.823193),
-    doorRate = 1.0,
-}
-
-
--- mrpd_mainside_door_3 created by Briggzy
-Config.DoorList['MRPD-mrpd_mainside_door_3'] = {
-    doorRate = 1.0,
-    distance = 2,
-    objName = -1406685646,
-    objCoords = vec3(440.520081, -977.601074, 30.823193),
-    doorType = 'door',
-    fixText = false,
-    authorizedJobs = { ['police'] = 0 },
+-- PD11 created by Dx
+Config.DoorList['MRPD-PD11'] = {
     objYaw = 0.0,
-    doorLabel = 'maniside3',
+    fixText = false,
+    doorType = 'garage',
+    objCoords = vec3(433.815125, -999.920471, 26.115582),
+    doorRate = 1.0,
+    distance = 7,
+    objName = -1195127879,
+    authorizedJobs = { ['police'] = 0 },
     locked = true,
 }
 
--- mrpd_mainside_backdoor_4 created by Briggzy
-Config.DoorList['MRPD-mrpd_mainside_backdoor_4'] = {
+-- PD12 created by Dx
+Config.DoorList['MRPD-PD12'] = {
+    doorRate = 1.0,
+    distance = 1,
+    authorizedJobs = { ['police'] = 0 },
     doors = {
-        {objName = -1547307588, objYaw = 0.0, objCoords = vec3(455.886169, -972.254272, 30.815308)},
-        {objName = -1547307588, objYaw = 180.00001525879, objCoords = vec3(458.208740, -972.254272, 30.815308)}
+        {objName = 1255964982, objYaw = 270.00003051758, objCoords = vec3(463.187622, -991.515686, 25.617481)},
+        {objName = 1255964982, objYaw = 90.000022888184, objCoords = vec3(463.187622, -988.916992, 25.617481)}
     },
     doorType = 'double',
-    doorRate = 1.0,
-    authorizedJobs = { ['police'] = 0 },
-    locked = true,
-    doorLabel = 'maniside4',
-    distance = 2,
-}
-
--- mrpd_main_archive_1 created by Briggzy
-Config.DoorList['MRPD-mrpd_main_archive_1'] = {
-    doorRate = 1.0,
-    distance = 2,
-    objName = -96679321,
-    objCoords = vec3(452.266266, -995.525391, 30.823193),
-    doorType = 'door',
-    fixText = false,
-    authorizedJobs = { ['police'] = 0 },
-    objYaw = 134.97177124023,
-    doorLabel = 'Archive',
     locked = true,
 }
 
--- mrpd_main_armor_1 created by Briggzy
-Config.DoorList['MRPD-mrpd_main_armor_1'] = {
+-- PD13 created by Dx
+Config.DoorList['MRPD-PD13'] = {
+    doorRate = 1.0,
+    distance = 1,
+    authorizedJobs = { ['police'] = 0 },
     doors = {
-        {objName = -288803980, objYaw = 270.00003051758, objCoords = vec3(469.440613, -985.031311, 30.823193)},
-        {objName = -288803980, objYaw = 89.999977111816, objCoords = vec3(469.440613, -987.437683, 30.823193)}
+        {objName = 1255964982, objYaw = 1.0017911336035e-05, objCoords = vec3(474.457062, -993.203369, 25.616543)},
+        {objName = 1255964982, objYaw = 180.00001525879, objCoords = vec3(471.858215, -993.203369, 25.616543)}
     },
     doorType = 'double',
-    doorRate = 1.0,
-    authorizedJobs = { ['police'] = 0 },
     locked = true,
-    doorLabel = 'Armor',
-    distance = 2,
 }
 
--- mrpd_main_roof_1 created by Briggzy
-Config.DoorList['MRPD-mrpd_main_roof_1'] = {
-    doorRate = 1.0,
-    distance = 2,
-    objName = -692649124,
-    objCoords = vec3(464.308563, -984.528442, 43.771240),
-    doorType = 'door',
+-- PDcell1 created by Dx
+Config.DoorList['MRPD-PDcell1'] = {
+    objYaw = 89.999961853027,
     fixText = false,
+    doorType = 'door',
+    objCoords = vec3(480.817352, -1006.746033, 30.612476),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
     authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell2 created by Dx
+Config.DoorList['MRPD-PDcell2'] = {
+    objYaw = 89.999961853027,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(484.083130, -1006.736145, 30.612476),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell3 created by Dx
+Config.DoorList['MRPD-PDcell3'] = {
+    objYaw = 89.999961853027,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(480.817291, -1010.842468, 30.612476),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell4 created by Dx
+Config.DoorList['MRPD-PDcell4'] = {
+    objYaw = 89.999961853027,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(484.083069, -1010.842529, 30.612476),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell5 created by Dx
+Config.DoorList['MRPD-PDcell5'] = {
+    objYaw = 89.999961853027,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(480.817291, -1014.956787, 30.612476),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell6 created by Dx
+Config.DoorList['MRPD-PDcell6'] = {
+    objYaw = 89.999961853027,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(484.083069, -1014.943298, 30.612476),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1036090959,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PD14 created by Dx
+Config.DoorList['MRPD-PD14'] = {
     objYaw = 89.999977111816,
-    doorLabel = 'roof',
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(468.018616, -998.500244, 30.611513),
+    doorRate = 1.0,
+    distance = 1,
+    objName = 749848321,
+    authorizedJobs = { ['police'] = 0 },
     locked = true,
 }
+
+-- PDcell17 created by Dx
+Config.DoorList['MRPD-PDcell17'] = {
+    objYaw = 270.00003051758,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(482.664459, -996.257568, 35.214233),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1481015543,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell18 created by Dx
+Config.DoorList['MRPD-PDcell18'] = {
+    objYaw = 269.99996948242,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(477.647491, -996.258484, 35.212360),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1481015543,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell19 created by Dx
+Config.DoorList['MRPD-PDcell19'] = {
+    objYaw = 269.99996948242,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(477.647491, -988.151062, 35.212360),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -824920418,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell20 created by Dx
+Config.DoorList['MRPD-PDcell20'] = {
+    objYaw = 269.99996948242,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(477.643097, -987.182007, 35.211697),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1481015543,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell21 created by Dx
+Config.DoorList['MRPD-PDcell21'] = {
+    objYaw = 269.99996948242,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(477.643829, -979.079346, 35.209061),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -824920418,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell22 created by Dx
+Config.DoorList['MRPD-PDcell22'] = {
+    objYaw = 270.00003051758,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(482.660797, -979.072021, 35.210934),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -824920418,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PDcell23 created by Dx
+Config.DoorList['MRPD-PDcell23'] = {
+    objYaw = 270.00003051758,
+    fixText = false,
+    doorType = 'door',
+    objCoords = vec3(482.660065, -987.188049, 35.213570),
+    doorRate = 1.0,
+    distance = 1,
+    objName = -1481015543,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+--[[ -- PD1122 created by Dx
+Config.DoorList['MRPD-PD1122'] = {
+    objYaw = 89.999969482422,
+    fixText = false,
+    doorType = 'garage',
+    objCoords = vec3(411.723907, -1025.198975, 28.449730),
+    doorRate = 1.0,
+    distance = 7,
+    objName = -115255438,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+}
+
+-- PD1123 created by Dx
+Config.DoorList['MRPD-PD1123'] = {
+    objYaw = 89.999969482422,
+    fixText = false,
+    doorType = 'garage',
+    objCoords = vec3(411.723907, -1025.198975, 28.449730),
+    doorRate = 1.0,
+    distance = 7,
+    objName = -1489554537,
+    authorizedJobs = { ['police'] = 0 },
+    locked = true,
+} ]]
