@@ -51,11 +51,11 @@ Config.EnableWantedLevel = false
 -- To Set This Up visit https://forum.cfx.re/t/how-to-updated-discord-rich-presence-custom-image/157686
 Config.Discord = {
     ["IsEnabled"] = true, -- If set to true, then discord rich presence will be enabled
-    ["ApplicationId"] = '1158081636911566968', -- The discord application id
+    ["ApplicationId"] = '1139927175722700861', -- The discord application id
     ["IconLarge"] = 'logo', -- The name of the large icon
-    ["IconLargeHoverText"] = 'Alpha Town Roleplay', -- The hover text of the large icon
+    ["IconLargeHoverText"] = 'Black Diamond Roleplay', -- The hover text of the large icon
     ["IconSmall"] = 'logo', -- The name of the small icon
-    ["IconSmallHoverText"] = 'Alpha Town Roleplay', -- The hover text of the small icon
+    ["IconSmallHoverText"] = 'Black Diamond Roleplay', -- The hover text of the small icon
     ["UpdateRate"] = 60000, -- How often the player count should be updated
     ["ShowPlayerCount"] = true, -- If set to true the player count will be displayed in the rich presence
     ["MaxPlayers"] = 64, -- Maximum amount of players
@@ -88,7 +88,7 @@ Config.DisableAmbience = false -- Disabled distance sirens, distance car alarms,
 Config.HarnessUses = 20
 Config.DamageNeeded = 100.0 -- vehiclepush 0-1000
 Config.EnableProne = false -- prone isnt recomended at this time
-Config.MapText = "Alpha Town Roleplay" -- This is the name / text shown above the map
+Config.MapText = "Black Diamond Roleplay" -- This is the name / text shown above the map
 
 Config.Disable = {
     disableHudComponents = {1, 2, 3, 4, 7, 9, 13, 14, 19, 20, 21, 22}, -- Hud Components: https://docs.fivem.net/natives/?_0x6806C51AD12B83B8
