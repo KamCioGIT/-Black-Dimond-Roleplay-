@@ -328,17 +328,17 @@ CreateThread(function()
             })
         end
 
-        RegisterNetEvent("qb-phone:server:sendNewMail", function(data)
+        RegisterNetEvent("lb-phone:server:sendNewMail", function(data)
             local phoneNumber = GetEquippedPhoneNumber(source)
             sendQBMail(phoneNumber, data)
         end)
 
-        RegisterNetEvent("qb-phone:server:sendNewMailToOffline", function(citizenid, data)
+        RegisterNetEvent("lb-phone:server:sendNewMailToOffline", function(citizenid, data)
             local phoneNumber = GetEquippedPhoneNumber(citizenid)
             sendQBMail(phoneNumber, data)
         end)
 
-        AddEventHandler("__cfx_export_qb-phone_sendNewMailToOffline", function(citizenid, data)
+        AddEventHandler("__cfx_export_lb-phone_sendNewMailToOffline", function(citizenid, data)
             local phoneNumber = GetEquippedPhoneNumber(citizenid)
             sendQBMail(phoneNumber, data)
         end)
