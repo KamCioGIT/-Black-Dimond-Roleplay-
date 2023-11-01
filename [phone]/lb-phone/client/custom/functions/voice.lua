@@ -122,6 +122,7 @@ CreateThread(function()
             if contains(watchingSources, source) then
                 MumbleSetVolumeOverrideByServerId(source, 1.0)
             else
+                debugprint("volume:", audio and 0.7 or -1.0)
                 MumbleSetVolumeOverrideByServerId(source, audio and 0.7 or -1.0)
             end
         end
@@ -144,7 +145,7 @@ RegisterNetEvent("phone:phone:addVoiceTarget", function(sources, audio, phoneCal
 
     for i = 1, #sources do
         local id = sources[i]
-        if id == GetPlayerServerId(PlayerId()) then
+        if id == GetPlayerServerId(PlayerId()) or voiceTargets[id] then
             goto continue
         end
 

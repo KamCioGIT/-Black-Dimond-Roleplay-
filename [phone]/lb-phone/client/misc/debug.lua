@@ -67,9 +67,18 @@ CreateThread(function()
         })
     end)
 
+    registerDebugCommand("flashlight", function()
+        local flashlightEnabled = exports["lb-phone"]:GetFlashlight()
+        print("Flashlight enabled:", flashlightEnabled)
+
+        local shouldEnable = not flashlightEnabled
+        exports["lb-phone"]:ToggleFlashlight(shouldEnable)
+        print((shouldEnable and "Enabled" or "Disabled") .. " flashlight")
+    end)
+
     if Config.QBMailEvent then
         registerDebugCommand("qbmail", function()
-            TriggerServerEvent('lb-phone:server:sendNewMail', {
+            TriggerServerEvent('qb-phone:server:sendNewMail', {
                 sender = "Very Cool",
                 subject = "Delivery Location",
                 message = "whatever",
@@ -85,13 +94,6 @@ CreateThread(function()
     RegisterNetEvent("phone:debug:mail", function(id, data)
         print(id, json.encode(data))
     end)
-
-    RegisterCommand("crashnotify", function()
-        exports["lb-phone"]:SendNotification({
-            app = "Phone",
-            title = L("BACKEND.CALLS.NEW_VOICEMAIL")
-        })
-    end, false)
 end)
 
 -- local control = 24

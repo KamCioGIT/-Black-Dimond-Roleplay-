@@ -33,7 +33,7 @@ end
 function contains(t, v)
     for i = 1, #t do
         if t[i] == v then
-            return true
+            return true, i
         end
     end
     return false
