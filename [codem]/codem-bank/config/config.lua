@@ -6,7 +6,7 @@ Config.Mysql = "oxmysql"
 -- bt-target, qb-target -- drawtext
 Config.InteractionHandler = 'qb-target' -- bt-target, qb-target, drawtext, qtarget , ox-target
 
-Config.Billing = 'okok' -- 'codem-billing', 'okok', 'default'
+Config.Billing = 'codem-billing' -- 'codem-billing', 'okok', 'default'
 
 --- UI LOGO ---
 Config.Logo = {
