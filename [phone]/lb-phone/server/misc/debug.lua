@@ -90,31 +90,4 @@ CreateThread(function()
     RegisterCommand("endcall", function(source)
         exports["lb-phone"]:EndCall(source)
     end, false)
-
-    RegisterCommand("testamberexport", function(source)
-        exports['lb-phone']:SendAmberAlert(source, {
-            title = "Emergency Alert", -- the title of the notification
-            content = "This is a test emergency alert", -- the description of the notification
-            icon = "danger", -- the icon of the notification (optional), "warning" or "danger"
-        })
-    end, false)
-
-    RegisterCommand("customCrypto", function()
-        -- https://lbphone.com/assets/logo2.png
-        exports["lb-phone"]:AddCustomCoin(
-            "lb-coin",
-            "LB Coin",
-            "lbc",
-            "https://lbphone.com/assets/logo2.png",
-            18.5723523,
-            {
-                15.45253,
-                16.234234,
-                15.6843,
-                17.000002,
-                18.5723523,
-            },
-            0.5
-        )
-    end, false)
 end)

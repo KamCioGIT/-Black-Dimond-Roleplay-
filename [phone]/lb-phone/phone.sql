@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `phone_last_phone` (
 CREATE TABLE IF NOT EXISTS `phone_photos` (
     `phone_number` VARCHAR(15) NOT NULL,
 
-    `link` VARCHAR(500) NOT NULL,
+    `link` VARCHAR(200) NOT NULL,
     `is_video` BOOLEAN DEFAULT FALSE,
     `size` FLOAT NOT NULL DEFAULT 0,
 
@@ -254,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `phone_phone_voicemail` (
     `caller` VARCHAR(15) NOT NULL,
     `callee` VARCHAR(15) NOT NULL,
     
-    `url` VARCHAR(500) NOT NULL,
+    `url` VARCHAR(200) NOT NULL,
     `duration` INT NOT NULL,
     `hide_caller_id` BOOLEAN DEFAULT FALSE,
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -926,7 +926,7 @@ CREATE TABLE IF NOT EXISTS `phone_voice_memos_recordings` (
     `phone_number` VARCHAR(15) NOT NULL,
     
     `file_name` VARCHAR(50) NOT NULL,
-    `file_url` VARCHAR(500) NOT NULL,
+    `file_url` VARCHAR(100) NOT NULL,
     `file_length` INT(11) NOT NULL,
     
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

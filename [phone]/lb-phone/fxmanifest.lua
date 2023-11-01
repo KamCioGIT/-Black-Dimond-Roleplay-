@@ -2,7 +2,7 @@ fx_version "cerulean"
 game "gta5"
 lua54 "yes"
 
-version "1.4.3"
+version "1.4.2"
 
 shared_script {
     "config/*.lua",
@@ -23,6 +23,7 @@ files {
 }
 
 ui_page "ui/dist/index.html"
+
 
 dependencies {
     "loaf_lib",

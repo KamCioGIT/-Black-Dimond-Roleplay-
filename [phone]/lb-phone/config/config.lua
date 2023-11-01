@@ -11,7 +11,7 @@ Config.Framework = "qb"
         * standalone: no framework, note that framework specific apps will not work unless you implement the functions
 ]]
 Config.CustomFramework = false -- if set to true and you use standalone, you will be able to use framework specific apps
-Config.QBMailEvent = true -- if you want this script to listen for qb email events, enable this. NOTE: This allows players to send emails from the client.
+Config.QBMailEvent = false -- if you want this script to listen for qb email events, enable this. NOTE: This allows players to send emails from the client.
 
 Config.Item = {}
 Config.Item.Require = true -- require a phone item to use the phone
@@ -137,7 +137,7 @@ Config.Valet = {}
 Config.Valet.Enabled = true -- allow players to get their vehicles from the phone
 Config.Valet.Price = 100 -- price to get your vehicle
 
-Config.HouseScript = "qb-houses" --[[
+Config.HouseScript = "loaf_housing" --[[
     The housing script you use on your server
     Supported:
         * loaf_housing - https://store.loaf-scripts.com/package/4310850
@@ -267,9 +267,9 @@ Config.FrameColor = "#39334d" -- This is the color of the phone frame. Default (
 Config.AllowFrameColorChange = true -- Allow players to change the color of their phone frame?
 
 Config.PhoneNumber = {}
-Config.PhoneNumber.Format = "({3}) {3}-{4}" -- Don't touch unless you know what you're doing. IMPORTANT: The sum of the numbers needs to be equal to the phone number length + prefix length
+Config.PhoneNumber.Format = "({3}) {3}-{4}" -- Don't touch unless you know what you're doing. IMPORTANT: The sum of the numbers needs to be equal to the phone number length
 Config.PhoneNumber.Length = 7 -- This is the length of the phone number WITHOUT the prefix.
-Config.PhoneNumber.Prefixes = { -- These are the first numbers of the phone number, usually the area code. They all need to be the same length
+Config.PhoneNumber.Prefixes = { -- These are the first numbers of the phone number, usually the area code. 
     "205",
     "907",
     "480",
@@ -294,7 +294,7 @@ Config.CityName = "Los Santos" -- The name that's being used in the weather app 
 Config.RealTime = true -- if true, the time will use real life time depending on where the user lives, if false, the time will be the ingame time.
 Config.CustomTime = false -- NOTE: disable Config.RealTime if using this. you can set this to a function that returns custom time, as a table: { hour = 0-24, minute = 0-60 }
 
-Config.EmailDomain = "lbphone.com"
+Config.EmailDomain = "atrp.com"
 
 Config.DeleteMessages = true -- allow players to delete messages in the messages app?
 
@@ -405,8 +405,8 @@ Config.ICEServers = false -- ICE Servers for WebRTC (ig live, facetim). If you d
 Config.Crypto = {}
 Config.Crypto.Coins = {"bitcoin","ethereum","tether","binancecoin","usd-coin","ripple","binance-usd","cardano","dogecoin","solana","shiba-inu","polkadot","litecoin","bitcoin-cash"}
 Config.Crypto.Currency = "usd" -- currency to use for crypto prices. https://api.coingecko.com/api/v3/simple/supported_vs_currencies
-Config.Crypto.Refresh = 5 * 60 * 1000 -- how often should the crypto prices be refreshed (client cache)? (Default 5 minutes)
-Config.Crypto.QBit = true -- support QBit? (requires qb-crypto & qb-core)
+Config.Crypto.Refresh = 60 * 60 * 1000 -- how often should the crypto prices be refreshed (client cache)? (Default 5 minutes)
+Config.Crypto.QBit = false -- support QBit? (requires qb-crypto)
 
 Config.KeyBinds = {
     -- Find keybinds here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
