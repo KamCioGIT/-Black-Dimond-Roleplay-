@@ -1,0 +1,160 @@
+<div class="w-[97.5%] h-full rounded-[0.5vw] gap-[1vh]   flex flex-col justify-center items-center " style="z-index: 999;"  :style="{'background': this.$store.state.colorsettings.bgcolor, 'border' : `2px solid ${this.$store.state.colorsettings.bordercolor}` }">
+    <div class="w-full h-[45%] flex flex-col items-center gap-[1vh]" >
+        <div class="w-full h-[30%]  flex items-center justify-center gap-[1vh]">
+            <div class="w-[85%] crafttext  h-[30%] flex  items-center" v-if="!islearnedpage">{{this.$store.state.Translate.putitem}}</div>
+            <div class="w-[85%]   h-[70%] flex gap-[0.2vh]  flex-col justify-center" v-if="islearnedpage">
+                <p class="craftbooktext">{{this.$store.state.Translate.craftbook}}</p>
+                <p class="learned">{{this.$store.state.Translate.learneditems}}</p>
+            </div>
+            <div class="w-[10%]  h-[60%] flex justify-center items-center cursor-pointer" v-if="!islearnedpage" @click="islearnedpage = !islearnedpage;">
+                <img src="./template/book.png">
+            </div>
+            <div class="w-[10%]  h-[60%] flex justify-center items-center cursor-pointer" v-if="islearnedpage" @click="islearnedpage = !islearnedpage;">
+                <img src="./template/learnedtocraft.png">
+            </div>
+        </div>
+        <div class="w-full h-[70%]  flex justify-center items-center" >
+            <div class="w-[97.5%] h-full flex-wrap flex content-start justify-between no-scrollbar overflow-hidden" style="overflow: auto;" v-if="!islearnedpage">
+                <div  v-for="(slot,index) in 10" class="w-[19%] h-[67.5%] mt-[0.5vh] craftinventorydroppable craftinventorydraggable overflow-hidden rounded-md  "  
+                    :class="{'item-nodrag' : this.$store.state.itemlock}"
+                    :data-id='index + 1'
+                    style="background-size: 100% 100%;"
+                    :style="`background-repeat: no-repeat; background-image: url('./template/${GetItemBackground($store.state.craftinventory[index + 1])}.png');`"
+                >
+                
+
+                    <div class="w-full h-full relative  flex items-center justify-center cursor-pointer" v-if="$store.state.craftinventory[index + 1]">
+                        <div class="absolute w-[4vw] h-[2.7vh] top-[0] overflow-hidden  slotindex flex justify-end items-center" style="margin-left: 2.9vh;">
+                            <div class="w-[50%] h-full itemweight overflow-hidden truncate flex justify-end items-center" v-if="$store.state.craftinventory[index + 1]"> {{$store.state.craftinventory[index + 1].weight * $store.state.craftinventory[index + 1].count }}g   </div>
+                            <div class="w-[40%] h-full itemcount overflow-hidden flex items-center justify-end" v-if="$store.state.craftinventory[index + 1]">{{$store.state.craftinventory[index + 1].count}}x</div>
+                        </div>
+                        <div class="w-[60%] h-[50%]  flex items-center justify-center cursor-pointer" 
+                            style=" background-size: 100% 100%; background-repeat: no-repeat;" 
+                            :style="`background-repeat: no-repeat; background-image: url('./itemimages/${$store.state.craftinventory[index + 1].name}.png');`">
+                        </div> 
+                        <div class="absolute w-full h-[15%] bottom-[0vh] "  style="border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;">
+                            <div v-if="$store.state.craftinventory[index + 1].info[0].quality != undefined" class="w-full absolute h-full flex justify-center items-center inventory-text" style="font-size: 0.4vw; letter-spacing: 0.1vw; text-transform: uppercase; z-index: 99; ">{{$store.state.craftinventory[index + 1].label}}</div>
+                            <div class="absolute  h-full   " :style="{ width: `${$store.state.craftinventory[index + 1].info[0].quality}%`, background: $store.state.colorsettings.underlinecolor }" style="z-index: 1; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;" ></div>
+                            <div class="absolute  h-full "    style="z-index: 1; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw; width: 100%;" :style="{ background: $store.state.colorsettings.underlinecolor }" v-if="$store.state.craftinventory[index + 1].info[0].quality == undefined"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[97.5%] h-full flex-wrap flex content-start justify-between no-scrollbar overflow-hidden" style="overflow: auto;" v-if="islearnedpage">
+                <div  v-for="(slot,index) in 30" class="w-[19%] h-[67.5%] mt-[0.5vh]  overflow-hidden rounded-md  "  
+                    :data-id='index + 1'
+                    style="background-size: 100% 100%;"
+                    :style="`background-repeat: no-repeat; background-image: url('./template/${GetItemBackground(this.$store.state.learnedcraftitems[index + 1], true)}.png');`"
+                    @click="poscraftdata = this.$store.state.learnedcraftitems[index + 1]; inlearned = true"
+                >
+                
+                <div class="w-full h-full relative  flex items-center justify-center cursor-pointer" v-if="this.$store.state.learnedcraftitems[index + 1]">
+                        <div class="absolute w-[4vw] h-[2.7vh] top-[0] overflow-hidden  slotindex flex justify-end items-center" style="margin-left: 2.9vh; "></div>
+                        <div class="w-[60%] h-[50%]  flex items-center justify-center cursor-pointer" v-if="this.$store.state.learnedcraftitems[index + 1]" 
+                            style=" background-size: 100% 100%; background-repeat: no-repeat;" 
+                            :style="`background-repeat: no-repeat; background-image: url('./itemimages/${this.$store.state.learnedcraftitems[index + 1].name}.png');`">
+                        </div> 
+                        <div class="absolute w-full h-[15%] bottom-[0.1vh] "  style="border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;">
+                            <div class="w-full absolute h-full flex justify-center items-center inventory-text" v-if="this.$store.state.learnedcraftitems[index + 1]" style="font-size: 0.4vw; letter-spacing: 0.1vw; text-transform: uppercase; z-index: 99; ">{{this.$store.state.learnedcraftitems[index + 1].label}}</div>
+                            <div class="absolute  h-full ml-[0.1vh] max-w-[97.5%] " v-if="this.$store.state.learnedcraftitems[index + 1]" :style="{ width: `100%`, background: $store.state.colorsettings.underlinecolor }" style="z-index: 1; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;" ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="w-full h-[10%] flex justify-center items-center " >
+        <img src="./template/line.png" class="w-[95%] h-[2%]" style="object-fit: contain;" alt="">
+    </div>
+    <div class="w-full h-[45%] flex justify-center items-center " >
+        <div class="w-[97.5%] h-[95%] craftingred flex justify-center items-center gap-[0.5vh] flex-col" :style="{'background': GetBg(poscraftdata)}">
+            <p v-if="!islearnedpage && poscraftdata == undefined" class="noitemstext">{{this.$store.state.Translate.crafterror}}</p>
+            <p v-if="islearnedpage && poscraftdata == undefined" class="noitemstext">{{this.$store.state.Translate.selectitem}}</p>
+            <div class="w-[92.5%] h-[25%]  flex justify-between items-center gap-[0.5vh]" v-if="poscraftdata">
+                <div class="w-[20%] h-full  flex flex-col justify-center gap-[0.5vh]">
+                    <p class="itemnamecraft">{{poscraftdata.label}}</p>
+                    <p class="tobecrafted">{{this.$store.state.Translate.tobecraft}}!</p>
+                </div>
+                <div class="w-[60%] h-full  flex flex-col justify-center gap-[0.5vh]">
+                    <p class="itemnamecraft">{{this.$store.state.Translate.ingredients}}</p>
+                    <p class="tobecrafted">{{poscraftdata.ingredients}}.</p>
+                </div>
+                <div class="w-[15%] h-full  flex justify-end items-center cursor-pointer">
+                    <img src="./template/alreadyincraftbook.png" @click="AddToLearnedBook()">
+                </div>
+            </div>
+            <div class="w-[92.5%] h-[40%]  flex justify-between items-center gap-[0.2vh]" v-if="poscraftdata">
+                <div class="w-[19.5%] h-full flex justify-between items-center flex-col  overflow-hidden " style="border-radius: 7px; background: rgba(217, 217, 217, 0.25);">
+                    <div class="w-full h-[20%]  flex justify-end items-center">
+                        <div class="w-[50%] h-full itemweight overflow-hidden truncate flex justify-end items-center" >{{poscraftdata.weight * $store.state.craftitemcount}}g</div>
+                        <div class="w-[40%] h-full itemcount overflow-hidden flex items-center justify-center" >{{$store.state.craftitemcount}}x</div>
+                    </div>
+                    <div class="w-[60%] h-[70%]   flex items-center justify-center cursor-pointer" style=" background-size: 100% 100%; background-repeat: no-repeat;" :style="`background-repeat: no-repeat; background-image: url('./itemimages/${poscraftdata.name}.png');`">
+
+                    </div>
+                    <div class="w-full h-[18%]  lbl flex justify-center items-center" :style="{ width: `100%`, background: $store.state.colorsettings.underlinecolor }" style="z-index: 1; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;" >{{poscraftdata.label}}</div>
+                </div>
+                <div class="w-[77%] h-[75%]  flex flex-wrap overflow-auto gap-[0.2vh] no-scrollbar" v-if="poscraftdata">
+                    <div class="w-[19.5%] h-full flex justify-between items-center flex-col overflow-hidden" v-for="(value, key) in poscraftdata.itemlist"  style="border-radius: 7px; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; background-image: url(./template/craftnotpass.png);" v-if="!poscraftdata.pass">
+                        <div class="w-full h-[20%]  overflow-hidden flex justify-end items-center">
+                            <div class="w-[50%] h-full itemweight overflow-hidden truncate flex justify-end items-center" >{{value.weight * $store.state.craftitemcount}}</div>
+                            <div class="w-[40%] h-full itemcount overflow-hidden flex items-center justify-center" >{{$store.state.craftitemcount}}x</div>
+                        </div>
+                        <div class="w-[60%] h-[70%]   flex items-center justify-center cursor-pointer" style=" background-size: 100% 100%; background-repeat: no-repeat;" :style="`background-repeat: no-repeat; background-image: url('./itemimages/${value.name}.png');`">
+    
+                        </div>
+                        <div class="w-full h-[18%] overflow-hidden lbl flex justify-center items-center" :style="{ width: `99.5%`, background: $store.state.colorsettings.underlinecolor }" style="z-index: 1; font-size: 0.8vh; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;" >{{value.label}}</div>
+                    </div>
+
+                    <div class="w-[19.5%] h-full flex justify-between items-center flex-col overflow-hidden" v-for="(value, key) in poscraftdata.itemlist"  style="border-radius: 7px; background-size: 100% 100%; background-repeat: no-repeat; background-position: center; background-image: url(./template/craftitembg.png);" v-if="poscraftdata.pass">
+                        <div class="w-full h-[20%]  overflow-hidden flex justify-end items-center">
+                            <div class="w-[50%] h-full itemweight overflow-hidden truncate flex justify-end items-center" >{{value.weight * $store.state.craftitemcount}}</div>
+                            <div class="w-[40%] h-full itemcount overflow-hidden flex items-center justify-center" >{{$store.state.craftitemcount}}x</div>
+                        </div>
+                        <div class="w-[60%] h-[70%]   flex items-center justify-center cursor-pointer" style=" background-size: 100% 100%; background-repeat: no-repeat;" :style="`background-repeat: no-repeat; background-image: url('./itemimages/${value.name}.png');`">
+    
+                        </div>
+                        <div class="w-full h-[18%] overflow-hidden lbl flex justify-center items-center" :style="{ width: `99.5%`, background: $store.state.colorsettings.underlinecolor }" style="z-index: 1; font-size: 0.8vh; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;" >{{value.label}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[92.5%] h-[25%]  flex items-center justify-between gap-[0.5vh]" v-if="poscraftdata">
+                <div class="w-[19.5%] h-[60%]  flex justify-between items-center" style="border-radius: 7px;background: rgba(217, 217, 217, 0.25);">
+                    <div class="w-[25%] h-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="2" viewBox="0 0 13 2" fill="none" class="cursor-pointer" @click="SetCount(true)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 0.000121269C7.0668 0.000121269 7.47593 3.8326e-06 7.22447 0L7.52632 0.000247517H11.9737C12.5405 0.000247517 13 0.447926 13 1.00012C13 1.55232 12.5405 2 11.9737 2H7.52632C7.11905 2 7.0668 2 6.5 2C5.9332 2 5.9766 2 5.47368 2H1.02632C0.459502 2 0 1.55232 0 1.00012C0 0.447926 0.459502 0.000247517 1.02632 0.000247517H5.47368C5.72765 0.000247517 5.9332 0.000121269 6.5 0.000121269Z" fill="white"/>
+                          </svg>
+                    </div>
+                    <div class="w-[50%] h-full flex justify-center items-center amount">{{$store.state.craftitemcount}}</div>
+                    <div class="w-[25%] h-full flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" fill="none" class="cursor-pointer" style="margin-bottom: 0.3vh;" @click="SetCount(false)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 0C8.154 0 8.68421 0.530195 8.68421 1.18421V6.31579H13.8158C14.4698 6.31579 15 6.846 15 7.5C15 8.154 14.4698 8.68421 13.8158 8.68421H8.68421V13.8158C8.68421 14.4698 8.154 15 7.5 15C6.846 15 6.31579 14.4698 6.31579 13.8158V8.68421H1.18421C0.530195 8.68421 0 8.154 0 7.5C0 6.846 0.530195 6.31579 1.18421 6.31579H6.31579V1.18421C6.31579 0.530195 6.846 0 7.5 0Z" fill="white"/>
+                          </svg>
+                    </div>
+                </div>
+                <div class="w-[55%] h-full  flex gap-1 flex-col justify-center" v-if="poscraftdata">
+                    <p class="prcs" v-if="poscraftdata.pass">{{this.$store.state.Translate.processtime}}</p>
+                    <p class="prcs" v-if="!poscraftdata.pass">{{this.$store.state.Translate.lackofingredients}}</p>
+                    
+                    <div class="w-full h-[40%]  gap-[0.5vh] flex  items-center">
+                        <svg v-if="poscraftdata.pass" aria-hidden="true" class="w-4 h-4 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                        </svg>
+                        <img v-if="!poscraftdata.pass" src="./template/warn.png">
+                        <p v-if="poscraftdata.pass" class="prcstime">{{poscraftdata.secondsforcraft}}&nbsp;{{this.$store.state.Translate.craftsecond}}.</p>
+                        <p v-if="!poscraftdata.pass" class="prcstime">{{this.$store.state.Translate.needingredients}}.</p>
+                    </div>
+                </div>
+                <div class="w-[19.5%] h-[60%]  flex justify-center items-center craftbtn cursor-pointer"  @click="Craft()" v-if="poscraftdata && !poscraftdata.started" :style="{'background': GetBgForButton(poscraftdata)}" style="border-radius: 7px;border: 2px solid rgba(217, 217, 217, 0.37);">
+                    {{this.$store.state.Translate.crafttext}}
+                </div>
+                <div class="w-[19.5%] h-[60%]  flex justify-center items-center craftbtn cursor-pointer" style="border-radius: 7px;border: 2px solid rgba(217, 217, 217, 0.37);background: #FFA7A7;"  @click="StopCraft()" v-if="poscraftdata && poscraftdata.started">
+                    {{this.$store.state.Translate.cancel}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 

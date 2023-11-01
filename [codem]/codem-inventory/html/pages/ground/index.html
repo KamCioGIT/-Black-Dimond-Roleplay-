@@ -1,0 +1,31 @@
+<div class="w-full h-full flex justify-center items-center rounded-[0.5vw]" :style="{'background': this.$store.state.colorsettings.bgcolor, 'border' : `1px solid ${this.$store.state.colorsettings.bordercolor}` }">
+    <div class="w-[97.5%] h-[99%] flex items-start content-start flex-wrap justify-between no-scrollbar" style="overflow: auto;" >
+        <div v-for="(data, index) in this.$store.state.rightinvslot" class="w-[19%] h-[18%] mt-[0.5vh] groundDropped groundDraggable" :data-id = 'index +1' 
+        
+        @mousemove="handleMouseMove" @contextmenu.prevent="handleContextMenu($event, this.$store.state.groundItemTable[index + 1] )"
+        :class="{'item-nodrag' : this.$store.state.groundItemTable[index + 1] == undefined}"
+        style="background-size: 100% 100%;"
+        :style="`background-repeat: no-repeat; background-image: url('./template/${GetItemBackground(this.$store.state.groundItemTable[index + 1])}.png');`"
+        >
+    
+        <div class="w-full h-full relative  flex items-center justify-center" @click="showItemAccount(this.$store.state.groundItemTable[index + 1])" v-if="this.$store.state.groundItemTable[index + 1]" 
+            
+            >
+            <div class="absolute w-[4vw] h-[2.7vh] top-[0] overflow-hidden  slotindex flex justify-end items-center" style="margin-left: 2.9vh; ">
+                <div class="w-[50%] h-full itemweight overflow-hidden truncate flex justify-end items-center" v-if="this.$store.state.groundItemTable[index + 1] && this.$store.state.rightInventoryType != 'Shop'"> {{this.$store.state.groundItemTable[index + 1].weight * this.$store.state.groundItemTable[index + 1].count }}g   </div>
+                <div class="w-[90%] h-full itemweight overflow-hidden truncate flex justify-end items-center" style="color: green; padding-right: 0.5vh;" v-if="this.$store.state.groundItemTable[index + 1] && this.$store.state.rightInventoryType == 'Shop'">{{this.$store.state.groundItemTable[index + 1].price}}$ </div>
+                <div class="w-[40%] h-full itemcount overflow-hidden flex items-center justify-end pr-2"  v-if="this.$store.state.groundItemTable[index + 1] && this.$store.state.rightInventoryType != 'Shop'">{{this.$store.state.groundItemTable[index + 1].count}}x</div>
+            </div>
+            <div class="w-[60%] h-[50%]  flex items-center justify-center cursor-pointer" 
+                style=" background-size: 100% 100%; background-repeat: no-repeat;" 
+                :style="`background-repeat: no-repeat; background-image: url('./itemimages/${this.$store.state.groundItemTable[index + 1].name}.png');`">
+            </div> 
+            <div class="absolute w-full h-[15%] bottom-[0vh]"  style="border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;">
+                <div class="w-full absolute h-full flex justify-center items-center inventory-text" style="font-size: 0.4vw; letter-spacing: 0.1vw; text-transform: uppercase; z-index: 99; ">{{this.$store.state.groundItemTable[index + 1].label}}</div>
+                <div class="absolute  h-full " :style="{ width: `${$store.state.groundItemTable[index + 1].info[0].quality}%`, background: $store.state.colorsettings.underlinecolor }"   style="z-index: 1; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;" v-if="this.$store.state.groundItemTable[index + 1].info[0].quality"></div>
+                <div class="absolute  h-full w-full"     style="z-index: 1; border-bottom-left-radius: 0.4vw;  border-bottom-right-radius: 0.4vw;" :style="{ background: $store.state.colorsettings.underlinecolor }" v-if="this.$store.state.groundItemTable[index + 1].info[0].quality == undefined"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
