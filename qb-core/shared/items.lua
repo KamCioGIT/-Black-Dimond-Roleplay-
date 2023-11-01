@@ -1112,6 +1112,13 @@ QBShared.Items = {
 	["axleparts"]=          {["name"] = "axleparts",        ["label"] = "Axle Parts",			["weight"] = 0, ["type"] = "item",  ["image"] = "axleparts.png",        ["unique"] = false, ["useable"] = false,["shouldClose"] = false,["description"] = ""},
 	["sparetire"]=          {["name"] = "sparetire",        ["label"] = "Spare Tire",			["weight"] = 0, ["type"] = "item",  ["image"] = "sparetire.png",        ["unique"] = true,  ["useable"] = false,["shouldClose"] = false,["description"] = ""},
 	
+
+
+
+	----- tuning
+	['tunertablet']                          = {['name'] = 'tunertablet',                            ['label'] = 'Tablet',                    ['weight'] = 2000,         ['type'] = 'item',         ['image'] = 'tablet.png',                  ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Tuner Tablet'},
+	['tunerchecker']                          = {['name'] = 'tunerchecker',                            ['label'] = 'Tablet',                    ['weight'] = 2000,         ['type'] = 'item',         ['image'] = 'tablet.png',                  ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Tuner Tablet'},
+
 	["backpack1"] = {
 		["name"] = "backpack1",
 		["label"] = "Backpack 1",

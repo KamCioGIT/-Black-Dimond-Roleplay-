@@ -87,7 +87,7 @@ Config.EnableRegisterKeyMapping = true
 
 ]]--
 
-Config.SeatbeltKey = "B"
+Config.SeatbeltKey = "K"
 Config.CruiseControlKey = "Y" 
 Config.rightindicator = "RIGHT" 
 Config.leftindicator = "LEFT" 
@@ -473,6 +473,10 @@ Config.UIKeys = {
     {
         key = "F7",
         desc = "Invoice",
+    },
+    {
+        key = "F9",
+        desc = "Car Control",
     },
 }
 
