@@ -172,6 +172,96 @@ Config.ElectricVehicles = { -- List of Electric Vehicles in the Base Game.
     ["khamelion"] = {
         isElectric = true,
     },
+    ["ipace"] = {
+        isElectric = true,
+    },
+    ["ocni422spe"] = {
+        isElectric = true,
+    },
+    ["gcmeqs2022"] = {
+        isElectric = true,
+    },
+    ["eqssuv"] = {
+        isElectric = true,
+    },
+    ["ikx3machegt21"] = {
+        isElectric = true,
+    },
+    ["trmodel"] = {
+        isElectric = true,
+    },
+    ["foxy"] = {
+        isElectric = true,
+    },
+    ["teslamodels"] = {
+        isElectric = true,
+    },
+    ["models21"] = {
+        isElectric = true,
+    },
+    ["teslapd"] = {
+        isElectric = true,
+    },
+    ["oycmodelx"] = {
+        isElectric = true,
+    },
+    ["tr22"] = {
+        isElectric = true,
+    },
+    ["ix21"] = {
+        isElectric = true,
+    },
+    ["i723"] = {
+        isElectric = true,
+    },
+    ["22lyriq"] = {
+        isElectric = true,
+    },
+    ["ikx3supervan22"] = {
+        isElectric = true,
+    },
+    ["ikx3f15022"] = {
+        isElectric = true,
+    },
+    ["gcmeletre2023"] = {
+        isElectric = true,
+    },
+    ["ikx3ev22"] = {
+        isElectric = true,
+    },
+    ["ikx3battista"] = {
+        isElectric = true,
+    },
+    ["ikx3nevera21"] = {
+        isElectric = true,
+    },
+    ["fortwo17"] = {
+        isElectric = true,
+    },
+    ["taycan"] = {
+        isElectric = true,
+    },
+    ["ikx3etron22"] = {
+        isElectric = true,
+    },
+    ["i8"] = {
+        isElectric = true,
+    },
+    ["i8r"] = {
+        isElectric = true,
+    },
+    ["ikx3cross22"] = {
+        isElectric = true,
+    },
+    ["taycants21"] = {
+        isElectric = true,
+    },
+    ["taycan21prior"] = {
+        isElectric = true,
+    },
+    ["ikx3r22"] = {
+        isElectric = true,
+    },
 }
 Config.ElectricSprite = 620 -- This is for when the player is in an electric charger, the blips with change to this sprite. (Sprite with a car with a bolt going through it: 620)
 Config.ElectricChargerModel = true -- If you wish, you can set this to false to add your own props, or use a ymap for the props instead.
