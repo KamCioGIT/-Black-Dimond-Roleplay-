@@ -10,7 +10,7 @@ local function openMenu(data)
     if not data or not next(data) then return end
 	for _, v in pairs(data) do
 		if v["icon"] then
-			local img = "nui://qb-inventory/html/"
+			local img = "nui://qs-inventory/html/"
 			if QBCore.Shared.Items[tostring(v["icon"])] then
 				if not string.find(QBCore.Shared.Items[tostring(v["icon"])].image, "http") then
 					if not string.find(QBCore.Shared.Items[tostring(v["icon"])].image, "images/") then

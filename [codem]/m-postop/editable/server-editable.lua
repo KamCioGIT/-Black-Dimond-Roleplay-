@@ -38,12 +38,12 @@ HSN.Inventory.AddMoney = function(source, money)
     if not source then return print("unknown source") end
     money = tonumber(money)
     local Player = HSN.GetPlayer(source)
-    if (HSN.Config.Inventory == "qb-inventory") then
+    if (HSN.Config.Inventory == "qs-inventory") then
         if (HSN.Config.Framework == "qb" or HSN.Config.Framework == "new-qb") then
             Player.Functions.AddMoney(HSN.Config.MoneyType, money, 'postop')
             -- notification
         else
-            -- your qb to esx converted qb-inventory codes
+            -- your qb to esx converted qs-inventory codes
         end
     elseif (HSN.Config.Inventory == "ox_inventory") then
         if HSN.Config.MoneyType == "cash" then
@@ -72,11 +72,11 @@ end
 HSN.Inventory.GetMoney = function(source)
     if not source then return print("unknown source") end
     local Player = HSN.GetPlayer(source)
-    if (HSN.Config.Inventory == "qb-inventory") then
+    if (HSN.Config.Inventory == "qs-inventory") then
         if (HSN.Config.Framework == "qb" or HSN.Config.Framework == "new-qb") then
             return Player.Functions.GetMoney(HSN.Config.MoneyType)
         else
-            -- your qb to esx converted qb-inventory codes
+            -- your qb to esx converted qs-inventory codes
         end
     elseif HSN.Config.Inventory == "ox_inventory" then
         if HSN.Config.MoneyType == "cash" then
@@ -113,7 +113,7 @@ HSN.Inventory.RemoveMoney = function(source, money)
     if not source then return print("unknown source") end
     money = tonumber(money)
     local Player = HSN.GetPlayer(source)
-    if (HSN.Config.Inventory == "qb-inventory") then
+    if (HSN.Config.Inventory == "qs-inventory") then
         if (HSN.Config.Framework == "qb" or HSN.Config.Framework == "new-qb") then
             if Player.Functions.RemoveMoney(HSN.Config.MoneyType, money, 'postop-remove') then
                 return true
@@ -121,7 +121,7 @@ HSN.Inventory.RemoveMoney = function(source, money)
                 return false
             end
         else
-            -- your qb to esx converted qb-inventory codes
+            -- your qb to esx converted qs-inventory codes
         end
     elseif (HSN.Config.Inventory == "ox_inventory") then
         local PlayerMoney = HSN.Inventory.GetMoney(source)

@@ -30,7 +30,7 @@
     },
 ```
 
-- in qb-inventory\js\app.js find FormatItemInfo() and add this code at end of the function
+- in qs-inventory\js\app.js find FormatItemInfo() and add this code at end of the function
 ```js
 if (itemData.name == "blueprint_document") { // Blueprint for crafting
     $(".item-info-title").html("<p>" + itemData.label + "</p>");

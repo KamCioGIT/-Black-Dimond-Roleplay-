@@ -14,7 +14,7 @@ Full Credit to wildbrick142 for the inclusion of the Chameleon Paint Mod
 
 ---
 # Item installation
-- Add the image files from the zip to your `qb-inventory > html > images` folder
+- Add the image files from the zip to your `qs-inventory > html > images` folder
 
 - Add these lines to your qb-core > shared lua under the Items section
 ```lua
@@ -267,9 +267,9 @@ The MechBoard item is an item given to the person who uses the preview menu and 
 
 To make full use of this item you need to add the ability for the item to show item info in your inventory system
 
-I have only done this with `qb-inventory` and `lj-inventory` as they are similar
+I have only done this with `qs-inventory` and `lj-inventory` as they are similar
 
-`qb-inventory/html/js/app.js`
+`qs-inventory/html/js/app.js`
 
 - Search for "harness" or Scroll down until you find:
 ```js

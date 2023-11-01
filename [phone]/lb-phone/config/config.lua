@@ -18,11 +18,11 @@ Config.Item.Require = true -- require a phone item to use the phone
 Config.Item.Name = "phone" -- name of the phone item
 
 Config.Item.Unique = false -- should each phone be unique? https://docs.lbphone.com/phone/configuration#unique-phones
-Config.Item.Inventory = "qb-inventory" --[[
+Config.Item.Inventory = "qs-inventory" --[[
     The inventory you use, IGNORE IF YOU HAVE Config.Item.Unique DISABLED.
     Supported:
         * ox_inventory - https://github.com/overextended/ox_inventory
-        * qb-inventory - https://github.com/qbcore-framework/qb-inventory
+        * qs-inventory - https://github.com/qbcore-framework/qs-inventory
         * lj-inventory - https://github.com/loljoshie/lj-inventory
         * core_inventory - https://www.c8re.store/package/5121548
         * mf-inventory - https://modit.store/products/mf-inventory?variant=39985142268087

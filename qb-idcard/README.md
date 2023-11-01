@@ -17,7 +17,7 @@ Simple id card you can use for **[qb-core](https://github.com/qbcore-framework/q
 
 ## How to use
 ### Let's delete the default CreateUseableItem codes
-+ qb-inventory > server > main.lua > Find and Delete 
++ qs-inventory > server > main.lua > Find and Delete 
  ```lua
 CreateUsableItem("driver_license", function(source, item)
 	local playerPed = GetPlayerPed(source)

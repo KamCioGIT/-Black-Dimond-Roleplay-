@@ -3,8 +3,8 @@ Config = {
 	System = {
 		Debug = false, -- Set to true to show green debug boxes to help track any issues
 
-		img = "qb-inventory/html/images/", 	-- Set this to the directory for your inventory image files
-											-- "ox_inventory/web/images/", "qb-inventory/html/images", "lj-inventory/html/images"
+		img = "qs-inventory/html/images/", 	-- Set this to the directory for your inventory image files
+											-- "ox_inventory/web/images/", "qs-inventory/html/images", "lj-inventory/html/images"
 		Inv = "qb",  				-- "qb", "ox", "qs"
 		Menu = "qb",  				-- "qb", "ox"
 		Notify = "qb",				-- "qb", "ox"

@@ -21,7 +21,7 @@ A black market UI created in React for FiveM QBCore Framework. This script allow
 ## Installation
 - Download latest release at https://github.com/christikat/glow_blackmarket/releases
 - Open the ZIP and move `glow-blackmarket` into your resource folder and `ensure glow-blackmarket` in server.cfg
-- This script uses the server sided export `OpenInventory`. If you are using a version of `qb-inventory` from before Dec 2022, you'll need to update
+- This script uses the server sided export `OpenInventory`. If you are using a version of `qs-inventory` from before Dec 2022, you'll need to update
 - Add a useable item that will trigger opening the UI, by default the script uses an item called "encryptedtablet" 
 ```lua
 	['encryptedtablet'] 			 = {['name'] = 'encryptedtablet', 				['label'] = 'Encrypted Tablet', 		['weight'] = 2000, 		['type'] = 'item', 		['image'] = 'tablet.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A secured tablet'},
