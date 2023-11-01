@@ -8,15 +8,15 @@ Config.Debug = false -- true = Debug mode, it will show the debug messages on th
 
 Config.DebugZones = false -- true = Debug mode, it will show the zones created
 
-Config.UseOkokNotify = true -- true = okokNotify | false = qb-notify (You can change the notification system on cl_utils.lua)
+Config.UseOkokNotify = false -- true = okokNotify | false = qb-notify (You can change the notification system on cl_utils.lua)
 
-Config.UseOkokTextUI = true -- true = okokTextUI | false = qb-drawtext 
+Config.UseOkokTextUI = false -- true = okokTextUI | false = qb-drawtext 
 
-Config.UseOkokRequests = true -- true = okokRequests | false = Hire right away
+Config.UseOkokRequests = false -- true = okokRequests | false = Hire right away
 
 Config.UseOkokBanking = false -- true = The transactions will be registered on okokBanking
 
-Config.UseOkokChat = true -- true = When a auction starts the notification will be sent by okokChat, otherwise it will send a notification
+Config.UseOkokChat = false -- true = When a auction starts the notification will be sent by okokChat, otherwise it will send a notification
 
 Config.UseOkokContract = true -- true = The vehicle purchase / sell will be handled by okokContract
 
@@ -28,9 +28,9 @@ Config.BuyVehicleOutright = false -- true = The player will be able to purchase 
 
 Config.UseSameImageForVehicles = true -- true = The vehicle image will be the same
 
-Config.PrioritizeCash = false -- If true, it will prioritize cash over bank money when you buy a vehicle
+Config.PrioritizeCash = true -- If true, it will prioritize cash over bank money when you buy a vehicle
 
-Config.Currency = '€' -- The currency used on the script
+Config.Currency = '$' -- The currency used on the script
 
 Config.CurrencyonLeft = false -- true = The currency symbol will be in the left side | false = On the right side on UI
 
@@ -63,10 +63,10 @@ Config.SalesHistoryLimit = 25 -- Records for each shop that will be saved on the
 Config.SalesDateFormat = "%d/%m - %H:%M" -- The Date that will be shown on Sales History
 
 Config.Ranks = {  -- These are the ranks available on the shops, you can add or remove as many as you want but leave at least 1
-	{ rank = 1, label = "Newbie"      },
+	{ rank = 1, label = "Apprentice"      },
 	{ rank = 2, label = "Experienced" },
-	{ rank = 3, label = "Expert"      },
-	{ rank = 4, label = "Sub-Owner"   },
+	{ rank = 3, label = "Car Seller"      },
+	{ rank = 4, label = "Director"   },
 }
 
 Config.AuctionsTimes = { -- Auction times to select
@@ -82,7 +82,7 @@ Config.AuctionsTimes = { -- Auction times to select
 
 Config.Stores = { 
     {
-		name = "Larry RV Sales", -- Name of the dealership
+		name = "Black Showroom", -- Name of the dealership
 		currency = "bank", -- Used to buy/sell the business
 		coords = vector3(1224.85, 2728.06, 38.0), -- Marker/Shop position for clients
 		ownerCoords = vector3(1224.85, 2728.06, 38.0), -- Marker/Shop position for owner/employees
@@ -104,7 +104,7 @@ Config.Stores = {
 			vector3(1253.08, 2705.82, 38.0),
 		},
 		radius = 1, -- Interaction radius for the markers
-		price = 20000, -- Price of the Shop
+		price = 10000000, -- Price of the Shop
 		blip = { blipId = 523, blipColor = 3, blipScale = 0.8, blipText = "Vehicle Sales" }, -- Blip informations for dealership blip
 		ownerBlip = { blipId = 523, blipColor = 2, blipScale = 0.8, blipText = "Store Panel" }, -- Blip informations for dealership you own
 		buyBlip = { blipId = 523, blipColor = 1, blipScale = 0.8, blipText = "Purchasable Store" }, -- Blip informations for dealership on sale
@@ -117,7 +117,7 @@ Config.Stores = {
 
 Config.BotName = 'ServerName' -- Write the desired bot name
 
-Config.ServerName = 'ServerName' -- Write your server's name
+Config.ServerName = 'Black Diamond Roleplay' -- Write your server's name
 
 Config.IconURL = '' -- Insert your desired image link
 
