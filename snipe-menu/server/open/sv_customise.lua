@@ -34,7 +34,7 @@ RegisterServerEvent("snipe-menu:server:setjob", function(playerid, job, grade)
         if Config.Phone == "renewed" then
             local otherPlayer = QBCore.Functions.GetPlayer(playerid)
             otherPlayer.Functions.SetJob(job, grade)
-            exports['qb-phone']:hireUser(job, otherPlayer.PlayerData.citizenid, grade)
+            exports['lb-phone']:hireUser(job, otherPlayer.PlayerData.citizenid, grade)
         else
             if Config.Core == "QBCore" then
                 local otherPlayer = QBCore.Functions.GetPlayer(playerid)

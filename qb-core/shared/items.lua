@@ -365,9 +365,6 @@ QBShared.Items = {
     ['oxy']                             = {['name'] = 'oxy',                               ['label'] = 'Prescription Oxy',          ['weight'] = 0,            ['type'] = 'item',         ['image'] = 'oxy.png',                     ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'The Label Has Been Ripped Off'},
     ['meth']                            = {['name'] = 'meth',                              ['label'] = 'Meth',                      ['weight'] = 100,          ['type'] = 'item',         ['image'] = 'meth_baggy.png',              ['unique'] = false,         ['useable'] = true,     ['shouldClose'] = true,       ['combinable'] = nil,   ['description'] = 'A baggie of Meth'},
     
-    	----- tuning
-	['tunertablet']                          = {['name'] = 'tunertablet',                            ['label'] = 'Tablet',                    ['weight'] = 2000,         ['type'] = 'item',         ['image'] = 'tablet.png',                  ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Tuner Tablet'},
-	['tunerchecker']                          = {['name'] = 'tunerchecker',                            ['label'] = 'Tablet',                    ['weight'] = 2000,         ['type'] = 'item',         ['image'] = 'tablet.png',                  ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Tuner Tablet'},
     --- ps-weedplanting
 ['weedplant_seedm'] 			 = {['name'] = 'weedplant_seedm', 			    ['label'] = 'Male Weed Seed', 			['weight'] = 0, 		['type'] = 'item', 		['image'] = 'weedplant_seed.png', 		['unique'] = false, 	['useable'] = false, 	['shouldClose'] = false,   ['combinable'] = nil,   ['description'] = 'Male Weed Seed'},
 ['weedplant_seedf'] 			 = {['name'] = 'weedplant_seedf', 			    ['label'] = 'Female Weed Seed', 		['weight'] = 0, 		['type'] = 'item', 		['image'] = 'weedplant_seed.png', 		['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Female Weed Seed'},
@@ -546,7 +543,7 @@ QBShared.Items = {
 	['mdt'] 				 		= {['name'] = 'mdt', 			  	  		    ['label'] = 'MDT', 					    ['weight'] = 2000, 		['type'] = 'item', 		['image'] = 'mdt.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Expensive mdt', ['created'] = nil, ['decay'] = 14.0},
 	['encryptedtablet'] 			= {['name'] = 'encryptedtablet', 			 	['label'] = 'Encrypted Tablet', 		['weight'] = 2000, 		['type'] = 'item', 		['image'] = 'tablet.png', 				['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'Expensive tablet', ['created'] = nil, ['decay'] = 14.0},
 	
-    ["giftbox"] 					 = {["name"] = "giftbox", 						["label"] = "Gift Box", 				["weight"] = 7000, 		["type"] = "item", 		["image"] = "startergift.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true, 	["combinable"] = nil, 	["description"] = 'Welcome to Black Diamond Roleplay! Here\'s a little gift for being to the city :)'},
+    ["giftbox"] 					 = {["name"] = "giftbox", 						["label"] = "Gift Box", 				["weight"] = 7000, 		["type"] = "item", 		["image"] = "startergift.png", 			["unique"] = true, 		["useable"] = true, 	["shouldClose"] = true, 	["combinable"] = nil, 	["description"] = 'Welcome to Alpha Town! Here\'s a little gift for being to the city :)'},
     
     --Jim-Mechanic Vehicles
 	["mechanic_tools"] =    {["name"] = "mechanic_tools",   ["label"] = "Mechanic tools",		["weight"] = 0, ["type"] = "item",  ["image"] = "mechanic_tools.png",   ["unique"] = true,  ["useable"] = true, ["shouldClose"] = true, ["description"] = "Needed for vehicle repairs"},
@@ -1183,7 +1180,9 @@ QBShared.Items = {
     ['combinable'] = nil,   
     ['description'] = 'Description'
 },
-
+----- tuning
+['tunertablet']                          = {['name'] = 'tunertablet',                            ['label'] = 'Tablet',                    ['weight'] = 2000,         ['type'] = 'item',         ['image'] = 'tablet.png',                  ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Tuner Tablet'},
+['tunerchecker']                          = {['name'] = 'tunerchecker',                            ['label'] = 'Tablet',                    ['weight'] = 2000,         ['type'] = 'item',         ['image'] = 'tablet.png',                  ['unique'] = true,         ['useable'] = true,     ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Tuner Tablet'},
 
     ['weed_pooch'] 			 	 	 = {['name'] = 'weed_pooch', 					['label'] = 'Weed Pooch', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'weed_pooch.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,   ['combinable'] = nil, ['description'] = 'Your description here'},
 	['coke_pooch'] 					 = {['name'] = 'coke_pooch', 					['label'] = 'Coke Pooch', 				['weight'] = 100, 		['type'] = 'item', 		['image'] = 'coke_pooch.png', 			['unique'] = false, 	['useable'] = true,  	['shouldClose'] = true,   ['combinable'] = nil, ['description'] = 'Your description here'},
