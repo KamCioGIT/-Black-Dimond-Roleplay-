@@ -8,7 +8,7 @@ Config.Hotbar = {
 }
 
 Config.InteractionType = "drawtext" -- drawtext -- qb-target
-Config.ProfilePicture = "discord"   -- discord -- steam -- default
+Config.ProfilePicture = "steam"   -- discord -- steam -- default
 Config.DefaultPicture = "https://cdn.discordapp.com/attachments/983471660684423240/1147567519712940044/example-pp.png"
 Config.EnableOpenAnim = true
 Config.EnableSecretSlot = false
