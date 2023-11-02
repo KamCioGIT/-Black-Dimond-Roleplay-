@@ -298,7 +298,8 @@ Config.MarketItems = {
          itemPrice = 1000,
          itemCategories = 'tools'
       },
-
+      
+      
       {
          name = 'Orange',
          itemName = 'portakal',
@@ -392,7 +393,35 @@ Config.MarketItems = {
          itemPrice = 1000,
          itemCategories = 'drinks'
       },
+      {
+         name = 'Kurkakola',
+         itemName = 'kurkakola',
+         itemImage = 'kurkakola',
+         itemPrice = 1000,
+         itemCategories = 'drinks'
+      },
 
+      {
+         name = 'Twerks Candy',
+         itemName = 'twerks_candy',
+         itemImage = 'twerks_candy',
+         itemPrice = 1000,
+         itemCategories = 'fastfood'
+      },
+      {
+         name = 'Snikkel Candy',
+         itemName = 'snikkel_candy',
+         itemImage = 'snikkel_candy',
+         itemPrice = 1000,
+         itemCategories = 'fastfood'
+      },
+      {
+         name = 'Sandwich',
+         itemName = 'sandwich',
+         itemImage = 'sandwich',
+         itemPrice = 1000,
+         itemCategories = 'fastfood'
+      },
       {
          name = 'Bread',
          itemName = 'bread',
@@ -423,14 +452,142 @@ Config.MarketItems = {
          itemPrice = 1000,
          itemCategories = 'medicals'
       },
-
       {
-         name = 'Repairkit',
-         itemName = 'fixkit',
-         itemImage = 'fixkit',
+         name = 'Lockpick',
+         itemName = 'lockpick',
+         itemImage = 'lockpick',
          itemPrice = 1000,
          itemCategories = 'tools'
       },
+      {
+         name = 'weapon_wrench',
+         itemName = 'weapon_wrench',
+         itemImage = 'weapon_wrench',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'weapon_hammer',
+         itemName = 'weapon_hammer',
+         itemImage = 'weapon_hammer',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'screwdriverset',
+         itemName = 'screwdriverset',
+         itemImage = 'screwdriverset',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'firework1',
+         itemName = 'firework1',
+         itemImage = 'firework1',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'firework2',
+         itemName = 'firework2',
+         itemImage = 'firework2',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'firework3',
+         itemName = 'firework3',
+         itemImage = 'firework3',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'firework4',
+         itemName = 'firework4',
+         itemImage = 'firework4',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'cleaningkit',
+         itemName = 'cleaningkit',
+         itemImage = 'cleaningkit',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'advancedrepairkit',
+         itemName = 'advancedrepairkit',
+         itemImage = 'advancedrepairkit',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'radio',
+         itemName = 'radio',
+         itemImage = 'radio',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'binoculars',
+         itemName = 'binoculars',
+         itemImage = 'binoculars',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'fitbit',
+         itemName = 'fitbit',
+         itemImage = 'fitbit',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'handcuffs',
+         itemName = 'handcuffs',
+         itemImage = 'handcuffs',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      {
+         name = 'lighter',
+         itemName = 'lighter',
+         itemImage = 'lighter',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      
+      {
+         name = 'Repair Kit',
+         itemName = 'repairkit',
+         itemImage = 'repairkit',
+         itemPrice = 1000,
+         itemCategories = 'tools'
+      },
+      
+      {
+         name = 'Beer',
+         itemName = 'beer',
+         itemImage = 'beer',
+         itemPrice = 1000,
+         itemCategories = 'alcohols'
+      },
+      {
+         name = 'Whiskey',
+         itemName = 'whiskey',
+         itemImage = 'whiskey',
+         itemPrice = 1000,
+         itemCategories = 'alcohols'
+      },
+      {
+         name = 'Vodka',
+         itemName = 'vodka',
+         itemImage = 'vodka',
+         itemPrice = 1000,
+         itemCategories = 'alcohols'
+      },
+      
 
       {
          name = 'Orange',
