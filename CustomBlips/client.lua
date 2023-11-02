@@ -26,7 +26,7 @@ local blips = {
 
 
     
-    {title="Track 1", colour=5, id=523, x = -386.78, y = -102.75, z = 38.71},
+    {title="Track 1", colour=5, id=523, x = -388.245, y = -105.6, z = 38.684},
     {title="Track 1", colour=5, id=523, x = 3606.2, y = -6480.78, z = 2190.12},
     
  }
