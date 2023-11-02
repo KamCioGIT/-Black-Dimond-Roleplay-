@@ -1,3 +1,18 @@
+--- RPEmotes by TayMcKenzieNZ, Mathu_lmn and MadsL, maintained by TayMcKenzieNZ ---
+--- Download OFFICIAL version and updates ONLY at https://github.com/TayMcKenzieNZ/rpemotes ---
+--- RPEmotes is FREE and ALWAYS will be. STOP PAYING SCAMMY FUCKERS FOR SOMEONE ELSE'S WORK!!! ---
+
+-- You can edit this function to add support for your favorite notification system
+function SimpleNotify(message)
+    if Config.NotificationsAsChatMessage then
+        TriggerEvent("chat:addMessage", { color = { 255, 255, 255 }, args = { tostring(message) } })
+    else
+        BeginTextCommandThefeedPost("STRING")
+        AddTextComponentSubstringPlayerName(message)
+        EndTextCommandThefeedPostTicker(0, 1)
+    end
+end
+
 function DebugPrint(args)
     if Config.DebugDisplay then
         print(args)
@@ -8,16 +23,9 @@ function firstToUpper(str)
     return (str:gsub("^%l", string.upper))
 end
 
-function ShowNotification(text)
-    if Config.NotificationsAsChatMessage then
-        TriggerEvent("chat:addMessage", { color = { 255, 255, 255 }, args = { tostring(text) } })
-    else
-        TriggerEvent('QBCore:Notify', text)
-    end
-end
 
 function IsPlayerAiming(player)
-    return IsPlayerFreeAiming(player) or IsAimCamActive() or IsAimCamThirdPersonActive()
+    return (IsPlayerFreeAiming(player) or IsAimCamActive() or IsAimCamThirdPersonActive()) and tonumber(GetSelectedPedWeapon(player)) ~= tonumber(GetHashKey("WEAPON_UNARMED"))
 end
 
 function CanPlayerCrouchCrawl(playerPed)
@@ -30,8 +38,7 @@ end
 
 function PlayAnimOnce(playerPed, animDict, animName, blendInSpeed, blendOutSpeed, duration, startTime)
     LoadAnim(animDict)
-    TaskPlayAnim(playerPed, animDict, animName, blendInSpeed or 2.0, blendOutSpeed or 2.0, duration or -1, 0,
-        startTime or 0.0, false, false, false)
+    TaskPlayAnim(playerPed, animDict, animName, blendInSpeed or 2.0, blendOutSpeed or 2.0, duration or -1, 0, startTime or 0.0, false, false, false)
     RemoveAnimDict(animDict)
 end
 
@@ -137,14 +144,6 @@ function NearbysOnCommand(source, args, raw)
     end
     EmoteChatMessage(NearbysCommand)
     EmoteChatMessage(Config.Languages[lang]['emotemenucmd'])
-end
-
-function SimpleNotify(message)
-    if Config.NotificationsAsChatMessage then
-        TriggerEvent("chat:addMessage", { color = { 255, 255, 255 }, args = { tostring(message) } })
-    else
-        TriggerEvent('QBCore:Notify', message)
-    end
 end
 
 function GetClosestPlayer()
