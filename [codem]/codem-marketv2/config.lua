@@ -1,6 +1,6 @@
 Config = {}
 Config.Framework = 'autodetect' -- oldesx,  newesx, oldqb, newqb or autodetect
-Config.InteractionHandler = 'qb-target' -- qb-target, ox_target or drawtext 
+Config.InteractionHandler = 'drawtext' -- qb-target, ox_target or drawtext 
 
 Config.OpenTrigger = function()
    if Config.InteractionHandler == "qb-target" then
@@ -220,13 +220,7 @@ Config.Bestsellers = {   --max 5
       itemCategories = 'fastfood'
 
    },
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
 
    {
       name = 'Donut',
@@ -244,7 +238,7 @@ Config.Bestsellers = {   --max 5
 Config.MarketItems = {
    [1] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -252,17 +246,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -288,25 +276,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -326,98 +301,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -452,22 +427,12 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
 
    [2] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -475,17 +440,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'Cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -511,25 +470,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -549,98 +495,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -675,243 +621,204 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [3] = { -- Config.Market  number market ---
 
       {
-         name = 'Water',
-         itemName = 'water',
-         itemImage = 'water',
-         itemPrice = 1000,
-         itemCategories = 'drinks'
-      },
+      name = 'Water',
+      itemName = 'water',
+      itemImage = 'water',
+      itemPrice = 1000,
+      itemCategories = 'drinks'
+   },
 
-      {
-         name = 'Cola',
-         itemName = 'cola',
-         itemImage = 'cola',
-         itemPrice = 1000,
-         itemCategories = 'drinks'
-      },
-      {
-         name = 'Kurkakola',
-         itemName = 'kurkakola',
-         itemImage = 'kurkakola',
-         itemPrice = 1000,
-         itemCategories = 'drinks'
-      },
+   
+   {
+      name = 'Kurkakola',
+      itemName = 'kurkakola',
+      itemImage = 'cola',
+      itemPrice = 1000,
+      itemCategories = 'drinks'
+   },
 
-      {
-         name = 'Twerks Candy',
-         itemName = 'twerks_candy',
-         itemImage = 'twerks_candy',
-         itemPrice = 1000,
-         itemCategories = 'fastfood'
-      },
-      {
-         name = 'Snikkel Candy',
-         itemName = 'snikkel_candy',
-         itemImage = 'snikkel_candy',
-         itemPrice = 1000,
-         itemCategories = 'fastfood'
-      },
-      {
-         name = 'Sandwich',
-         itemName = 'sandwich',
-         itemImage = 'sandwich',
-         itemPrice = 1000,
-         itemCategories = 'fastfood'
-      },
-      {
-         name = 'Bread',
-         itemName = 'bread',
-         itemImage = 'bread',
-         itemPrice = 1000,
-         itemCategories = 'fastfood'
-      },
-      {
-         name = 'Hamburger',
-         itemName = 'hamburger',
-         itemImage = 'hamburger',
-         itemPrice = 1000,
-         itemCategories = 'fastfood'
-      },
+   {
+      name = 'Twerks Candy',
+      itemName = 'twerks_candy',
+      itemImage = 'twerks_candy',
+      itemPrice = 1000,
+      itemCategories = 'fastfood'
+   },
+   {
+      name = 'Snikkel Candy',
+      itemName = 'snikkel_candy',
+      itemImage = 'snikkel_candy',
+      itemPrice = 1000,
+      itemCategories = 'fastfood'
+   },
+   {
+      name = 'Sandwich',
+      itemName = 'sandwich',
+      itemImage = 'sandwich',
+      itemPrice = 1000,
+      itemCategories = 'fastfood'
+   },
+  
 
 
-      {
-         name = 'Medkit',
-         itemName = 'MedArmor',
-         itemImage = 'MedArmor',
-         itemPrice = 1000,
-         itemCategories = 'medicals'
-      },
-      {
-         name = 'Bandage',
-         itemName = 'bandage',
-         itemImage = 'bandage',
-         itemPrice = 1000,
-         itemCategories = 'medicals'
-      },
-      {
-         name = 'Lockpick',
-         itemName = 'lockpick',
-         itemImage = 'lockpick',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'weapon_wrench',
-         itemName = 'weapon_wrench',
-         itemImage = 'weapon_wrench',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'weapon_hammer',
-         itemName = 'weapon_hammer',
-         itemImage = 'weapon_hammer',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'screwdriverset',
-         itemName = 'screwdriverset',
-         itemImage = 'screwdriverset',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'firework1',
-         itemName = 'firework1',
-         itemImage = 'firework1',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'firework2',
-         itemName = 'firework2',
-         itemImage = 'firework2',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'firework3',
-         itemName = 'firework3',
-         itemImage = 'firework3',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'firework4',
-         itemName = 'firework4',
-         itemImage = 'firework4',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'cleaningkit',
-         itemName = 'cleaningkit',
-         itemImage = 'cleaningkit',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'advancedrepairkit',
-         itemName = 'advancedrepairkit',
-         itemImage = 'advancedrepairkit',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'radio',
-         itemName = 'radio',
-         itemImage = 'radio',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'binoculars',
-         itemName = 'binoculars',
-         itemImage = 'binoculars',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'fitbit',
-         itemName = 'fitbit',
-         itemImage = 'fitbit',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'handcuffs',
-         itemName = 'handcuffs',
-         itemImage = 'handcuffs',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      {
-         name = 'lighter',
-         itemName = 'lighter',
-         itemImage = 'lighter',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      
-      {
-         name = 'Repair Kit',
-         itemName = 'repairkit',
-         itemImage = 'repairkit',
-         itemPrice = 1000,
-         itemCategories = 'tools'
-      },
-      
-      {
-         name = 'Beer',
-         itemName = 'beer',
-         itemImage = 'beer',
-         itemPrice = 1000,
-         itemCategories = 'alcohols'
-      },
-      {
-         name = 'Whiskey',
-         itemName = 'whiskey',
-         itemImage = 'whiskey',
-         itemPrice = 1000,
-         itemCategories = 'alcohols'
-      },
-      {
-         name = 'Vodka',
-         itemName = 'vodka',
-         itemImage = 'vodka',
-         itemPrice = 1000,
-         itemCategories = 'alcohols'
-      },
-      
-
-      {
-         name = 'Orange',
-         itemName = 'portakal',
-         itemImage = 'portakal',
-         itemPrice = 1000,
-         itemCategories = 'fruits'
-      }
-
+   {
+      name = 'Pain Killers',
+      itemName = 'painkillers',
+      itemImage = 'MedArmor',
+      itemPrice = 1000,
+      itemCategories = 'medicals'
+   },
+   {
+      name = 'Bandage',
+      itemName = 'bandage',
+      itemImage = 'bandage',
+      itemPrice = 1000,
+      itemCategories = 'medicals'
+   },
+   {
+      name = 'Lockpick',
+      itemName = 'lockpick',
+      itemImage = 'lockpick',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Wrench',
+      itemName = 'weapon_wrench',
+      itemImage = 'weapon_wrench',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Hammer',
+      itemName = 'weapon_hammer',
+      itemImage = 'weapon_hammer',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Toolkit',
+      itemName = 'screwdriverset',
+      itemImage = 'screwdriverset',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = '2Brothers',
+      itemName = 'firework1',
+      itemImage = 'firework1',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Poppelers',
+      itemName = 'firework2',
+      itemImage = 'firework2',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'WipeOut',
+      itemName = 'firework3',
+      itemImage = 'firework3',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Weeping Willow',
+      itemName = 'firework4',
+      itemImage = 'firework4',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Cleaning Kit',
+      itemName = 'cleaningkit',
+      itemImage = 'cleaningkit',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Advanced Repairkit',
+      itemName = 'advancedrepairkit',
+      itemImage = 'advancedkit',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Radio',
+      itemName = 'radio',
+      itemImage = 'radio',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Binoculars',
+      itemName = 'binoculars',
+      itemImage = 'binoculars',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Fitbit',
+      itemName = 'fitbit',
+      itemImage = 'fitbit',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Hand Cuffs',
+      itemName = 'handcuffs',
+      itemImage = 'handcuffs',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   {
+      name = 'Lighter',
+      itemName = 'lighter',
+      itemImage = 'lighter',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   
+   {
+      name = 'Repair Kit',
+      itemName = 'repairkit',
+      itemImage = 'repairkit',
+      itemPrice = 1000,
+      itemCategories = 'tools'
+   },
+   
+   {
+      name = 'Beer',
+      itemName = 'beer',
+      itemImage = 'beer',
+      itemPrice = 1000,
+      itemCategories = 'alcohols'
+   },
+   {
+      name = 'Whiskey',
+      itemName = 'whiskey',
+      itemImage = 'whiskey',
+      itemPrice = 1000,
+      itemCategories = 'alcohols'
+   },
+   {
+      name = 'Vodka',
+      itemName = 'vodka',
+      itemImage = 'vodka',
+      itemPrice = 1000,
+      itemCategories = 'alcohols'
+   }
    },
    [4] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -919,17 +826,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -955,25 +856,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -993,98 +881,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -1119,21 +1007,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [5] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -1141,17 +1019,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -1177,25 +1049,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -1215,98 +1074,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -1341,18 +1200,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
    },
    [6] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -1360,17 +1212,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -1396,25 +1242,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -1434,98 +1267,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -1560,21 +1393,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [7] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -1582,17 +1405,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -1618,25 +1435,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -1656,98 +1460,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -1782,21 +1586,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [8] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -1804,17 +1598,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -1840,25 +1628,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -1878,98 +1653,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -2004,20 +1779,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [9] = { -- Config.Market  number market ---
-   {
+
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -2025,17 +1791,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -2061,25 +1821,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -2099,98 +1846,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -2225,21 +1972,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [10] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -2247,17 +1984,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -2283,25 +2014,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -2321,98 +2039,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -2447,21 +2165,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [11] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -2469,17 +2177,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -2505,25 +2207,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -2543,98 +2232,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -2669,21 +2358,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [12] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -2691,17 +2370,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -2727,25 +2400,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -2765,98 +2425,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -2891,20 +2551,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
    },
    [13] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -2912,17 +2563,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -2948,25 +2593,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -2986,98 +2618,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -3112,21 +2744,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [14] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -3134,17 +2756,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -3170,25 +2786,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -3208,98 +2811,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -3334,21 +2937,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [15] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -3356,17 +2949,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -3392,25 +2979,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -3430,98 +3004,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -3556,21 +3130,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [16] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -3578,17 +3142,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -3614,25 +3172,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -3652,98 +3197,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -3778,20 +3323,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
    },
    [17] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -3799,17 +3335,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -3835,25 +3365,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -3873,98 +3390,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -3999,21 +3516,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [18] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -4021,17 +3528,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -4057,25 +3558,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -4095,98 +3583,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -4221,21 +3709,11 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
-
    },
    [19] = { -- Config.Market  number market ---
 
-   {
+      {
       name = 'Water',
       itemName = 'water',
       itemImage = 'water',
@@ -4243,17 +3721,11 @@ Config.MarketItems = {
       itemCategories = 'drinks'
    },
 
-   {
-      name = 'Cola',
-      itemName = 'cola',
-      itemImage = 'cola',
-      itemPrice = 1000,
-      itemCategories = 'drinks'
-   },
+   
    {
       name = 'Kurkakola',
       itemName = 'kurkakola',
-      itemImage = 'kurkakola',
+      itemImage = 'cola',
       itemPrice = 1000,
       itemCategories = 'drinks'
    },
@@ -4279,25 +3751,12 @@ Config.MarketItems = {
       itemPrice = 1000,
       itemCategories = 'fastfood'
    },
-   {
-      name = 'Bread',
-      itemName = 'bread',
-      itemImage = 'bread',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
-   {
-      name = 'Hamburger',
-      itemName = 'hamburger',
-      itemImage = 'hamburger',
-      itemPrice = 1000,
-      itemCategories = 'fastfood'
-   },
+  
 
 
    {
-      name = 'Medkit',
-      itemName = 'MedArmor',
+      name = 'Pain Killers',
+      itemName = 'painkillers',
       itemImage = 'MedArmor',
       itemPrice = 1000,
       itemCategories = 'medicals'
@@ -4317,98 +3776,98 @@ Config.MarketItems = {
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_wrench',
+      name = 'Wrench',
       itemName = 'weapon_wrench',
       itemImage = 'weapon_wrench',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'weapon_hammer',
+      name = 'Hammer',
       itemName = 'weapon_hammer',
       itemImage = 'weapon_hammer',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'screwdriverset',
+      name = 'Toolkit',
       itemName = 'screwdriverset',
       itemImage = 'screwdriverset',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework1',
+      name = '2Brothers',
       itemName = 'firework1',
       itemImage = 'firework1',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework2',
+      name = 'Poppelers',
       itemName = 'firework2',
       itemImage = 'firework2',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework3',
+      name = 'WipeOut',
       itemName = 'firework3',
       itemImage = 'firework3',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'firework4',
+      name = 'Weeping Willow',
       itemName = 'firework4',
       itemImage = 'firework4',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'cleaningkit',
+      name = 'Cleaning Kit',
       itemName = 'cleaningkit',
       itemImage = 'cleaningkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'advancedrepairkit',
+      name = 'Advanced Repairkit',
       itemName = 'advancedrepairkit',
-      itemImage = 'advancedrepairkit',
+      itemImage = 'advancedkit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'radio',
+      name = 'Radio',
       itemName = 'radio',
       itemImage = 'radio',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'binoculars',
+      name = 'Binoculars',
       itemName = 'binoculars',
       itemImage = 'binoculars',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'fitbit',
+      name = 'Fitbit',
       itemName = 'fitbit',
       itemImage = 'fitbit',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'handcuffs',
+      name = 'Hand Cuffs',
       itemName = 'handcuffs',
       itemImage = 'handcuffs',
       itemPrice = 1000,
       itemCategories = 'tools'
    },
    {
-      name = 'lighter',
+      name = 'Lighter',
       itemName = 'lighter',
       itemImage = 'lighter',
       itemPrice = 1000,
@@ -4443,15 +3902,6 @@ Config.MarketItems = {
       itemImage = 'vodka',
       itemPrice = 1000,
       itemCategories = 'alcohols'
-   },
-   
-
-   {
-      name = 'Orange',
-      itemName = 'portakal',
-      itemImage = 'portakal',
-      itemPrice = 1000,
-      itemCategories = 'fruits'
    }
    },
  
