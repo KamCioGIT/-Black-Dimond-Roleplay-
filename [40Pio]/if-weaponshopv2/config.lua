@@ -67,7 +67,67 @@ Config.ShopWeapons = {
       displayName = 'Knife',
       category = 'coldWeapons'
    },
-
+   ['weapon_katana'] = {
+      infos = {
+         weight = 0.1,
+         damage = 15,
+         speed = 0,
+         returns = 0
+      },
+      price = 500,
+      ammoData = nil,
+      displayName = 'Katana',
+      category = 'coldWeapons'
+   },
+   ['weapon_shiv'] = {
+      infos = {
+         weight = 0.1,
+         damage = 15,
+         speed = 0,
+         returns = 0
+      },
+      price = 500,
+      ammoData = nil,
+      displayName = 'Shiv',
+      category = 'coldWeapons'
+   },
+   ['weapon_sledgehammer'] = {
+      infos = {
+         weight = 0.1,
+         damage = 15,
+         speed = 0,
+         returns = 0
+      },
+      price = 500,
+      ammoData = nil,
+      displayName = 'Sledge Hammer',
+      category = 'coldWeapons'
+   },
+   ['weapon_karambit'] = {
+      infos = {
+         weight = 0.1,
+         damage = 15,
+         speed = 0,
+         returns = 0
+      },
+      price = 500,
+      ammoData = nil,
+      displayName = 'Karambit',
+      category = 'coldWeapons'
+   },
+   ['weapon_keyboard'] = {
+      infos = {
+         weight = 0.1,
+         damage = 15,
+         speed = 0,
+         returns = 0
+      },
+      price = 500,
+      ammoData = nil,
+      displayName = 'Keyboard',
+      category = 'coldWeapons'
+   },
+----------------pistol
    ['WEAPON_PISTOL_MK2'] = {
       infos = {
          weight = 1.1,
@@ -84,6 +144,119 @@ Config.ShopWeapons = {
       displayName = 'Pistol',
       category = 'pistolWeapons'
    },
+   ['weapon_glock17'] = {
+      infos = {
+         weight = 1.1,
+         damage = 26,
+         speed = 40,
+         returns = 25
+      },
+      price = 2000,
+      ammoData = {
+         price = 20,
+         item = 'pistol_ammo',
+         amount = 50
+      },
+      displayName = 'Glock-17',
+      category = 'pistolWeapons'
+   },
+   ['weapon_glock22'] = {
+      infos = {
+         weight = 1.1,
+         damage = 26,
+         speed = 40,
+         returns = 25
+      },
+      price = 2000,
+      ammoData = {
+         price = 20,
+         item = 'pistol_ammo',
+         amount = 50
+      },
+      displayName = 'Glock-22',
+      category = 'pistolWeapons'
+   },
+   ['weapon_deagle'] = {
+      infos = {
+         weight = 1.1,
+         damage = 26,
+         speed = 40,
+         returns = 25
+      },
+      price = 2000,
+      ammoData = {
+         price = 20,
+         item = 'pistol_ammo',
+         amount = 50
+      },
+      displayName = 'Desert Eagle',
+      category = 'pistolWeapons'
+   },
+   ['weapon_fnx45'] = {
+      infos = {
+         weight = 1.1,
+         damage = 26,
+         speed = 40,
+         returns = 25
+      },
+      price = 2000,
+      ammoData = {
+         price = 20,
+         item = 'pistol_ammo',
+         amount = 50
+      },
+      displayName = 'FN FNX-45',
+      category = 'pistolWeapons'
+   },
+   ['weapon_m1911'] = {
+      infos = {
+         weight = 1.1,
+         damage = 26,
+         speed = 40,
+         returns = 25
+      },
+      price = 2000,
+      ammoData = {
+         price = 20,
+         item = 'pistol_ammo',
+         amount = 50
+      },
+      displayName = 'M1911',
+      category = 'pistolWeapons'
+   },
+   ['weapon_glock20'] = {
+      infos = {
+         weight = 1.1,
+         damage = 26,
+         speed = 40,
+         returns = 25
+      },
+      price = 2000,
+      ammoData = {
+         price = 20,
+         item = 'pistol_ammo',
+         amount = 50
+      },
+      displayName = 'Glock-20',
+      category = 'pistolWeapons'
+   },
+   ['weapon_glock19gen4'] = {
+      infos = {
+         weight = 1.1,
+         damage = 26,
+         speed = 40,
+         returns = 25
+      },
+      price = 2000,
+      ammoData = {
+         price = 20,
+         item = 'pistol_ammo',
+         amount = 50
+      },
+      displayName = 'Glock-19 Gen 4',
+      category = 'pistolWeapons'
+   },
+
    ['WEAPON_MARKSMANPISTOL'] = {
       infos = {
          weight = 1.1,
@@ -134,7 +307,7 @@ Config.ShopWeapons = {
       displayName = 'Sawnoff Shotgun',
       category = 'shotgunWeapons'
    },
-
+----------  smg
    ['WEAPON_MICROSMG'] = {
       infos = {
          weight = 2.1,
@@ -149,6 +322,38 @@ Config.ShopWeapons = {
          amount = 50
       },
       displayName = 'Micro SMG',
+      category = 'smgWeapons'
+   },
+   ['weapon_pmxfm'] = {
+      infos = {
+         weight = 2.1,
+         damage = 21,
+         speed = 60,
+         returns = 40
+      },
+      price = 3000,
+      ammoData = {
+         price = 30,
+         item = 'smg_ammo',
+         amount = 50
+      },
+      displayName = 'Beretta PMX',
+      category = 'smgWeapons'
+   },
+   ['weapon_mac10'] = {
+      infos = {
+         weight = 2.1,
+         damage = 21,
+         speed = 60,
+         returns = 40
+      },
+      price = 3000,
+      ammoData = {
+         price = 30,
+         item = 'smg_ammo',
+         amount = 50
+      },
+      displayName = 'MAC-10',
       category = 'smgWeapons'
    },
    ['WEAPON_ASSAULTSMG'] = {
@@ -167,7 +372,152 @@ Config.ShopWeapons = {
       displayName = 'Assault SMG',
       category = 'smgWeapons'
    },
+------------ riffel
 
+['weapon_mk47fm'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'MK47 Mutant',
+   category = 'rifleWeapons'
+},
+['weapon_m6ic'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'LWRC M6IC',
+   category = 'rifleWeapons'
+},
+['weapon_scarsc'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'Scar SC',
+   category = 'rifleWeapons'
+},
+['weapon_m4'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'M4A1 Carbine',
+   category = 'rifleWeapons'
+},
+['weapon_ak47'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'Ak-47 Valhalla',
+   category = 'rifleWeapons'
+},
+['weapon_ak74'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'Ak-47 HelRaiser',
+   category = 'rifleWeapons'
+},
+['weapon_aks74'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'AKS-74',
+   category = 'rifleWeapons'
+},
+['weapon_groza'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'OTs-14 Groza',
+   category = 'rifleWeapons'
+},
+['weapon_scarh'] = {
+   infos = {
+      weight = 3.3,
+      damage = 34,
+      speed = 70,
+      returns = 55
+   },
+   price = 5000,
+   ammoData = {
+      price = 35,
+      item = 'rifle_ammo',
+      amount = 50
+   },
+   displayName = 'Scar-H',
+   category = 'rifleWeapons'
+},
    ['WEAPON_ADVANCEDRIFLE'] = {
       infos = {
          weight = 3.3,
