@@ -11,7 +11,7 @@ Vehicle Classes:
  Config = Config or {}
 
  Config.Locations = {
---[[ 
+
     ['Innocence'] = {
         settings = {
             label = 'Bennys Motorworks', -- Text label for anything that wants it
@@ -56,8 +56,8 @@ Vehicle Classes:
             { coords = vector3(-212.15, -1325.63, 30.91), length = 6.0, width = 4.0, heading = 333.61, minZ = 29.88, maxZ = 33.48 },
             { coords = vector3(-212.15, -1325.63, 30.91), length = 6.0, width = 4.4, heading = 333.61, minZ = 29.88, maxZ = 33.48 },
         }
-    }, ]]
-    --[[  ['MRPD'] = {
+    },
+     ['MRPD'] = {
          settings = {
              label = 'MRPD Motorworks',
              welcomeLabel = "Welcome to MRPD Motorworks!",
@@ -114,5 +114,5 @@ Vehicle Classes:
              { coords = vector3(337.2, -579.6, 28.8), length = 9.4, width = 4.2, heading = 340.0, minZ = 27.5, maxZ = 31.5 },
              { coords = vector3(340.38, -570.8, 28.8), length = 8.8, width = 4.2, heading = 340.0, minZ = 27.5, maxZ = 31.5 },
          }
-     }, ]]
+     },
  }
