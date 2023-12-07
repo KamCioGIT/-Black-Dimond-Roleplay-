@@ -14,7 +14,7 @@ Config.format = {
 }
 
 Config.keyToOpenMenu = {
-	['enabled'] = true,							-- Config to enable/disable the open menu using key
+	['enabled'] = false,							-- Config to enable/disable the open menu using key
 	['key'] = 303								-- Key to open menu (303 = U)
 }
 

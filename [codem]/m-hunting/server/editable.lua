@@ -75,7 +75,7 @@ Editable.AddItem = function(source, item, amount)
     if Config.Inventory == "qb" then
         if item == Config.WeaponHash then
             info = {
-                ammo = Config.Ammo
+                ammo = Config.AmmoItem.count
             }
             user.Functions.AddItem(item, amount, false, info)
             return
@@ -86,16 +86,18 @@ Editable.AddItem = function(source, item, amount)
             if Config.WeaponAsItem then
                 user.addInventoryItem(item, amount)
             else
-                user.addWeapon(item, Config.Ammo)
+                user.addWeapon(item, Config.AmmoItem.count)
             end
+            user.addInventoryItem(Config.AmmoItem.name, Config.AmmoItem.count)
+            return
         end
         user.addInventoryItem(item, amount)
     elseif Config.Inventory == "ox_inventory" then
         if item == Config.WeaponHash then
             info = {
-                ammo = Config.Ammo
+                ammo = Config.AmmoItem.count
             }
-            exports.ox_inventory:AddItem(source, item, info)
+            exports.ox_inventory:AddItem(source, item, 1, info)
             return
         end
         exports.ox_inventory:AddItem(source, item, amount)
@@ -109,6 +111,7 @@ Editable.RemoveItem = function(source, item, amount)
         user.Functions.RemoveItem(item, amount)
     elseif Config.Inventory == "esx" then
         user.removeInventoryItem(item, amount)
+        user.removeInventoryItem(Config.AmmoItem.name, Config.AmmoItem.count)
     elseif Config.Inventory == "ox_inventory" then
         exports.ox_inventory:RemoveItem(source, item, amount)
     end
@@ -120,7 +123,7 @@ Editable.GetName = function(source)
         if Config.Framework == "new-qb" or Config.Framework == 'old-qb' then
             return Player.PlayerData.charinfo.firstname..' '..Player.PlayerData.charinfo.lastname
         else
-            return GetPlayerCharacterNameESX(source) -- esx get player name
+            return GetPlayerCharacterNameESX(source) 
         end
     else
         return GetPlayerName(source)
@@ -129,8 +132,23 @@ end
 
 GetPlayerCharacterNameESX = function(source)
     local identifier = Editable.GetUserIdentifier(source)
-    local result = HSN.ExecuteSql("SELECT * FROM users WHERE identifier = '"..identifier.."'")
+    local result = ExecuteSql("SELECT * FROM users WHERE identifier = '"..identifier.."'")
     if result[1] then 
         return result[1].firstname..' '..result[1].lastname 
+    end
+end
+
+SavePlayerDataToSQL = function(identifier, level, xp, huntedanimals, hunts, recenthunts, name, image)
+    local result = ExecuteSql("SELECT * FROM m_hunting WHERE identifier = '"..identifier.."'")
+    if result[1] == nil then
+        ExecuteSql(string.format(
+            "INSERT INTO m_hunting (identifier, level, xp, huntedanimals, hunts, recenthunts, name, image) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')",
+            identifier, level, xp, huntedanimals, hunts, json.encode(recenthunts), name:gsub("'", "''"), image:gsub("'", "''")
+        ))
+    else
+        ExecuteSql(string.format(
+            "UPDATE m_hunting SET level = '%s', xp = '%s', huntedanimals = '%s', hunts = '%s', recenthunts = '%s', name = '%s', image = '%s' WHERE identifier = '%s'",
+            level, xp, huntedanimals, hunts, json.encode(recenthunts), name:gsub("'", "''"), image:gsub("'", "''"), identifier
+        ))
     end
 end

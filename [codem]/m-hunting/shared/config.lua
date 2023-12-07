@@ -1,22 +1,26 @@
 Config = {}
 Config.Framework = "new-qb" -- new-qb, old-qb, esx
-Config.NewESX = false -- if you are using esx legacy set this to true
+Config.NewESX = true -- if you are using esx legacy set this to true
 Config.WeaponAsItem = true -- if you want to use weapon as item set this to true (for default esx inventory set this to false)
 Config.Inventory = 'qb' -- qb , esx , ox_inventory (if you are using a different inventory you can write your default framework e.g QBCore qs-inventory 'qb' or ESX qs-inventory 'esx')
 Config.UseCharacterName = true
+Config.PedProtection = true -- If true, players cannot harm each other with Config.WeaponHash, but the client resmon value is increased when players have weapons in their hands
 Config.ServerImage = "https://cdn.discordapp.com/attachments/1116058928044843028/1135970581053968485/mrp.png"
 Config.CarSpawnCoord = vector4(-771.86, 5578.4, 33.49, 85.42)
 Config.WeaponHash = "weapon_sniperrifle"
 Config.VehicleHash = "kamacho"
-Config.MySQL = "oxmysql"
+Config.MySQL = "oxmysql" -- oxmysql, mysql-async , ghmattimysql
 Config.PedCoords = vector4(-767.42, 5600.31, 33.74-0.98, 72.86)
 Config.RandomXPForKillAnimal = {min = 5, max = 20}
-Config.PedSpawnCount = 80
-Config.Ammo = 125
+Config.PedSpawnCount = 80 
+Config.AmmoItem = {
+    item = "ammo-sniper", 
+    count = 250
+}
 
 Config.Action = {
     actiontype = 'drawtext', -- or "drawtext"
-    target = 'qb-target' -- or "ox_target"
+    target = 'qb-target' -- "qb-target" or "ox_target" 
 }
 
 Config.Ped = "cs_hunter"
@@ -684,5 +688,61 @@ Config.SendMessage = function(message, isError, part, source)
         else
             TriggerClientEvent("esx:showNotification",source, message)
         end
+    end
+end
+
+Config.Vehiclekey = true -- Do NOT Touch if you have any car lock system
+Config.VehicleKeySystem = "qb-vehiclekeys" -- cd_garage / qs-vehiclekeys / wasabi-carlock / qb-vehiclekeys
+
+Config.GiveVehicleKey = function(vehicle)
+    local plate = GetVehicleNumberPlateText(vehicle)
+    if Config.Vehiclekey then
+        TriggerEvent("vehiclekeys:client:SetOwner", plate)
+        if Config.VehicleSystem == 'cd_garage' then
+            TriggerEvent('cd_garage:AddKeys', exports['cd_garage']:GetPlate(vehicle))
+        elseif Config.VehicleSystem == 'qs-vehiclekeys' then
+            exports['qs-vehiclekeys']:GiveKeys(plate)
+        elseif Config.VehicleSystem == 'wasabi-carlock' then
+            exports.wasabi_carlock:GiveKey(plate)
+        elseif Config.VehicleSystem == 'qb-vehiclekeys' then
+            TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', plate) 
+        end
+    end
+end
+Config.VehicleRemovekey = true -- Do NOT Touch if you have any car lock system
+Config.VehicleRemoveKeySystem = "qb-vehiclekeys" -- cd_garage / qs-vehiclekeys / qb-vehiclekeys
+
+Config.RemoveVehicleKey = function(vehicle, plate)
+    if Config.VehicleRemovekey then
+        if Config.VehicleRemoveKeySystem == 'cd_garage' then
+            TriggerServerEvent('cd_garage:RemovePersistentVehicles', exports['cd_garage']:GetPlate(vehicle))
+        elseif Config.VehicleRemoveKeySystem == 'qs-vehiclekeys' then
+            exports['qs-vehiclekeys']:RemoveKeys(plate)
+        elseif Config.VehicleRemoveKeySystem == 'qb-vehiclekeys' then
+            TriggerServerEvent('qb-vehiclekeys:client:RemoveKeys', plate)
+        end
+    end
+end
+
+Config.EnableFuel = true -- Do NOT Touch if you have any fuel system
+Config.FuelSystem = 'LegacyFuel' -- LegacyFuel / ox-fuel / nd-fuel / frfuel / cdn-fuel / hyon_gas_station
+Config.SetVehicleFuel = function(vehicle,fuel_level) -- you can change LegacyFuel export if you use another fuel system 
+    if fuel_level == nil then fuel_level = 90 end
+    if Config.EnableFuel then
+        if Config.FuelSystem == 'LegacyFuel' then
+            return exports["LegacyFuel"]:SetFuel(vehicle, fuel_level)
+        elseif Config.FuelSystem == 'ox-fuel' then
+            return GetVehicleFuelLevel(vehicle, fuel_level)
+        elseif Config.FuelSystem == 'nd-fuel' then
+            return exports["nd-fuel"]:SetFuel(vehicle, fuel_level)
+        elseif Config.FuelSystem == 'frfuel' then
+            return exports.frfuel:setFuel(vehicle, fuel_level)
+        elseif Config.FuelSystem == 'cdn-fuel' then
+            return exports['cdn-fuel']:SetFuel(vehicle, fuel_level)
+        elseif Config.FuelSystem == 'hyon_gas_station' then
+            return exports["hyon_gas_station"]:SetFuel(vehicle, fuel_level)
+        end
+    else     
+        return SetVehicleFuelLevel(vehicle, fuel_level + 0.0)
     end
 end

@@ -1,31 +1,29 @@
 fx_version 'adamant'
-lua54 'yes'
 game 'gta5'
-author 'CodeM'
-version '1.2'
-
+author 'CodeM Team'
+version '1.2.6'
+lua54 'yes'
 
 ui_page 'ui/index.html'
 
 client_scripts {
-    'GetFrameworkObject.lua',
+    'shared/GetFrameworkObject.lua',
     '@PolyZone/client.lua',
     '@PolyZone/BoxZone.lua',
     '@PolyZone/EntityZone.lua',
     '@PolyZone/CircleZone.lua',
     '@PolyZone/ComboZone.lua',
-    'config.lua',
-    'client.lua',
-    'client-editable.lua'
+    'shared/config.lua',
+    'client/main.lua',
+    'client/editable.lua'
 }
 
 server_scripts {
-    'GetFrameworkObject.lua',
-    'config.lua',
-    'server.lua',
-    'editable.lua'
+    'shared/GetFrameworkObject.lua',
+    'shared/config.lua',
+    'server/main.lua',
+    'server/editable.lua'
 }
-
 
 files {
     'ui/index.html',
@@ -37,8 +35,8 @@ files {
 }
 
 escrow_ignore {
-    'config.lua',
-    'client-editable.lua',
-    'editable.lua'
+    'shared/*.lua',
+    'client/editable.lua',
+    'server/editable.lua'
 }
 dependency '/assetpacks'
